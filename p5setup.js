@@ -29,7 +29,7 @@ function setup() {
     }),
   });
 
-  testVideo = createVideo("videos/BAckup.mp4");
+  // testVideo = createVideo("videos/BAckup.mp4");
 }
 window.setup = setup;
 

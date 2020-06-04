@@ -99,12 +99,16 @@ export default class InteractiveObject extends DisplayObject {
   hoverEnd() {}
 
   addChild(obj) {
+    if (obj instanceof DisplayObject) {
+      obj.parent = this;
+    }
     this.children.push(obj);
   }
 
   removeChild(obj) {
     let index = this.children.indexOf(obj);
     if (index >= 0) {
+      obj.parent = undefined;
       this.children.splice(index, 1);
       return true;
     }

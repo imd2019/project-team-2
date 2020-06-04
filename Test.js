@@ -9,7 +9,7 @@ export default class Test extends InteractiveObject {
     rect(0, 0, 10, 10);
   }
   clicked() {
-    console.log("clicked");
+    console.log(this.parent);
   }
   released() {
     console.log("released");
