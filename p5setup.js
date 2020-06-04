@@ -2,6 +2,7 @@ let sketch = new p5();
 let width = windowWidth;
 let heigh = windowHeight;
 let emolga;
+let testVideo;
 
 function preload() {
   console.log("preload");
@@ -27,6 +28,8 @@ function setup() {
       RECT: 1,
     }),
   });
+
+  testVideo = createVideo("videos/BAckup.mp4");
 }
 window.setup = setup;
 
