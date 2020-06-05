@@ -6,7 +6,7 @@ export default class Test extends InteractiveObject {
   }
   draw() {
     fill(255);
-    rect(0, 0, 10, 10);
+    rect(0, 0, 100, 400);
   }
   clicked() {
     console.log(this.parent);

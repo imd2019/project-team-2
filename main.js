@@ -6,8 +6,8 @@ let init = true;
 function draw() {
   if (init) {
     world = new InteractiveObject(
-      40,
-      40,
+      0,
+      0,
       windowWidth,
       windowHeight,
       window.ENUMS.SHAPE.RECT
@@ -17,6 +17,7 @@ function draw() {
     test.addImage("emolga", window.emolga);
     test.switchImage("emolga");
     init = false;
+    test.rot = 0.2;
   }
   background(0);
   world.mouseHover();

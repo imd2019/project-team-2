@@ -36,10 +36,16 @@ export default class InteractiveObject extends DisplayObject {
       switch (this.shape) {
         case window.ENUMS.SHAPE.RECT:
           let leftX = realCord.x;
-          let topY = realCord.y;
           let rightX = leftX + this.width;
+          let topY = realCord.y;
           let botY = topY + this.height;
-          if (x >= leftX && x <= rightX && y >= topY && y <= botY) {
+          let rotatedVec = this.rotateRealPoint(x, y);
+          if (
+            rotatedVec.x >= leftX &&
+            rotatedVec.x <= rightX &&
+            rotatedVec.y >= topY &&
+            rotatedVec.y <= botY
+          ) {
             return true;
           }
           break;
@@ -159,6 +165,34 @@ export default class InteractiveObject extends DisplayObject {
     while (p != undefined) {
       result.x += p.x;
       result.y += p.y;
+      p = p.parent;
+    }
+    return result;
+  }
+  rotateRealPoint(x, y) {
+    let p = this.parent;
+    let realCord = this.getRealXY();
+    let realDiffrence = [0, 0];
+    let vector = [x - realCord.x, y - realCord.y];
+    realDiffrence[0] += realCord.x;
+    realDiffrence[1] += realCord.y;
+    vector = Util.vecRotate(vector, -this.rot);
+    while (p != undefined) {
+      let pRealCord = p.getRealXY();
+      vector = [vector[0] - pRealCord.x, vector[1] - pRealCord.y];
+      realDiffrence[0] += pRealCord.x;
+      realDiffrence[1] += pRealCord.y;
+      vector = Util.vecRotate(vector, -p.rot);
+      p = p.parent;
+    }
+    return { x: vector[0] + realDiffrence[0], y: vector[1] + realDiffrence[1] };
+  }
+
+  getRealRotation() {
+    let result = this.rot;
+    let p = this.parent;
+    while (p != undefined) {
+      result += p.rot;
       p = p.parent;
     }
     return result;
