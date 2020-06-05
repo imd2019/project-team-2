@@ -5,6 +5,7 @@ export default class InteractiveObject extends DisplayObject {
     super(x, y);
     this.width = width;
     this.height = height;
+    this.setImageSize(width, height);
     this.shape = shape;
     this.enabled = true;
     this.children = [];

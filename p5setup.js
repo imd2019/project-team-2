@@ -1,6 +1,8 @@
 let sketch = new p5();
+
 let width = windowWidth;
 let heigh = windowHeight;
+
 let emolga;
 let testVideo;
 
@@ -11,10 +13,11 @@ function preload() {
   	BILDNAME = loadImage("images/bildname.png");
   */
   emolga = loadImage("images/Emolga2.png");
+  // testVideo = createVideo("videos/Backup.mp4");
 }
+window.preload = preload;
 
 function setup() {
-  preload();
   console.log("setup");
   sketch.createCanvas(windowWidth, windowHeight);
   sketch.frameRate(30);
@@ -28,8 +31,6 @@ function setup() {
       RECT: 1,
     }),
   });
-
-  // testVideo = createVideo("videos/BAckup.mp4");
 }
 window.setup = setup;
 
