@@ -159,33 +159,27 @@ export default class InteractiveObject extends DisplayObject {
       pop();
     }
   }
-  getRealXY() {
-    let result = { x: this.x, y: this.y };
-    let p = this.parent;
-    while (p != undefined) {
-      result.x += p.x;
-      result.y += p.y;
-      p = p.parent;
-    }
-    return result;
-  }
+
   rotateRealPoint(x, y) {
     let p = this.parent;
-    let realCord = this.getRealXY();
-    let realDiffrence = [0, 0];
-    let vector = [x - realCord.x, y - realCord.y];
-    realDiffrence[0] += realCord.x;
-    realDiffrence[1] += realCord.y;
+    let vector = [x - this.x, y - this.y];
     vector = Util.vecRotate(vector, -this.rot);
+    vector[0] += this.x;
+    vector[1] += this.y;
+
     while (p != undefined) {
-      let pRealCord = p.getRealXY();
-      vector = [vector[0] - pRealCord.x, vector[1] - pRealCord.y];
-      realDiffrence[0] += pRealCord.x;
-      realDiffrence[1] += pRealCord.y;
-      vector = Util.vecRotate(vector, -p.rot);
+      let pvector = [vector[0] - p.x, vector[1] - p.y];
+
+      vector = Util.vecRotate(pvector, -p.rot);
+      vector[0] += p.x;
+      vector[1] += p.y;
       p = p.parent;
     }
-    return { x: vector[0] + realDiffrence[0], y: vector[1] + realDiffrence[1] };
+
+    return {
+      x: vector[0],
+      y: vector[1],
+    };
   }
 
   getRealRotation() {

@@ -67,4 +67,14 @@ export class DisplayObject {
       pop();
     }
   }
+  getRealXY() {
+    let result = { x: this.x, y: this.y };
+    let p = this.parent;
+    while (p != undefined) {
+      result.x += p.x;
+      result.y += p.y;
+      p = p.parent;
+    }
+    return result;
+  }
 }

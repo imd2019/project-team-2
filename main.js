@@ -17,7 +17,7 @@ function draw() {
     test.addImage("emolga", window.emolga);
     test.switchImage("emolga");
     init = false;
-    test.rot = 0.2;
+    test.rot = 0.4;
   }
   background(0);
   world.mouseHover();
