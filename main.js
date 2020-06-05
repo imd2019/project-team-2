@@ -6,8 +6,8 @@ let init = true;
 function draw() {
   if (init) {
     world = new InteractiveObject(
-      0,
-      0,
+      40,
+      40,
       windowWidth,
       windowHeight,
       window.ENUMS.SHAPE.RECT

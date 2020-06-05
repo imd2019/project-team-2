@@ -1,3 +1,5 @@
+import InteractiveObject from "./interactiveObject.js";
+
 export class DisplayObject {
   constructor(x, y) {
     this.x = x;
@@ -56,6 +58,9 @@ export class DisplayObject {
       scale(this.scale);
       rotate(this.rot);
       if (this.currentImage != undefined) {
+        if (this instanceof InteractiveObject) {
+          if (this.shape === window.ENUMS.SHAPE.ROUND) imageMode(CENTER);
+        }
         image(this.currentImage, 0, 0, this.imageWidth, this.imageHeight);
       }
       this.draw();
