@@ -6,6 +6,7 @@ let heigh = windowHeight;
 let emolga;
 let buttonWeiter;
 let buttonWeiter_2;
+let buttonRetry;
 
 let testVideo;
 
@@ -18,6 +19,7 @@ function preload() {
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
+  buttonRetry = loadImage("images/Button_Retry.png");
   // testVideo = sketch.createVideo("videos/Backup.mp4");
 }
 window.preload = preload;
@@ -30,6 +32,8 @@ function setup() {
   emolga.loadPixels();
   buttonWeiter.loadPixels();
   buttonWeiter_2.loadPixels();
+  buttonRetry.loadPixels();
+  window.buttonRetry = buttonRetry;
   window.buttonWeiter = buttonWeiter;
   window.buttonWeiter_2 = buttonWeiter_2;
 

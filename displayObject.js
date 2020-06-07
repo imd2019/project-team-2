@@ -29,6 +29,10 @@ export class DisplayObject {
     this.images[key] = image;
   }
 
+  setRotInDegree(degree) {
+    this.rot = radians(degree);
+  }
+
   //Wechselt das aktuelle Bild auf das Bild des entsprechenden Keys aus der Bilderliste
   switchImage(key) {
     if (this.images.hasOwnProperty(key)) {
