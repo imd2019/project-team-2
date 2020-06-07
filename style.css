@@ -4,6 +4,15 @@ body {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: "MarkerFelt";
+  src: url(/typo/MarkerFelt.ttf) format("truetype");
+}
+
+#typo1 {
+  font-family: "MarkerFelt";
+}
+
 * {
   margin: 0;
   padding: 0;
