@@ -14,13 +14,15 @@ function draw() {
     );
     test = new Test();
     world.addChild(test);
-    test.addImage("emolga", window.emolga);
-    test.switchImage("emolga");
+    test.addImage("Weiter", window.buttonWeiter);
+    test.addImage("Weiter_2", window.buttonWeiter_2);
+    test.switchImage("Weiter");
+    console.log(test);
     init = false;
-    test.rot = 0.4;
   }
   background(0);
   world.mouseHover();
+  world.onUpdate();
   world.display();
 }
 window.draw = draw;

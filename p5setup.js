@@ -4,6 +4,9 @@ let width = windowWidth;
 let heigh = windowHeight;
 
 let emolga;
+let buttonWeiter;
+let buttonWeiter_2;
+
 let testVideo;
 
 function preload() {
@@ -13,7 +16,9 @@ function preload() {
   	BILDNAME = loadImage("images/bildname.png");
   */
   emolga = loadImage("images/Emolga2.png");
-  // testVideo = createVideo("videos/Backup.mp4");
+  buttonWeiter = loadImage("images/Button_Weiter.png");
+  buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
+  // testVideo = sketch.createVideo("videos/Backup.mp4");
 }
 window.preload = preload;
 
@@ -23,6 +28,11 @@ function setup() {
   sketch.frameRate(30);
 
   emolga.loadPixels();
+  buttonWeiter.loadPixels();
+  buttonWeiter_2.loadPixels();
+  window.buttonWeiter = buttonWeiter;
+  window.buttonWeiter_2 = buttonWeiter_2;
+
   window.emolga = emolga;
 
   window.ENUMS = Object.freeze({

@@ -62,6 +62,16 @@ export default class InteractiveObject extends DisplayObject {
     return false;
   }
 
+  onUpdate() {
+    if (this.enable) {
+      this.update();
+      for (let element of this.children) {
+        if (element instanceof DisplayObject) {
+          element.onUpdate();
+        }
+      }
+    }
+  }
   mouseClicked() {
     if (this.hitTest(mouseX, mouseY)) {
       for (let element of this.children) {

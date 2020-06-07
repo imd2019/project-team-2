@@ -1,13 +1,13 @@
 import InteractiveObject from "./interactiveObject.js";
+import Util from "./util.js";
+import Button from "./Button.js";
 
-export default class Test extends InteractiveObject {
+export default class Test extends Button {
   constructor() {
-    super(200, 300, 100, 400, window.ENUMS.SHAPE.RECT);
+    super(200, 300, 221, 210, window.ENUMS.SHAPE.RECT);
+    this.color = color(125, 125, 125);
   }
-  draw() {
-    fill(255);
-    rect(0, 0, 100, 400);
-  }
+  draw() {}
   clicked() {
     console.log(this.parent);
   }
@@ -17,10 +17,11 @@ export default class Test extends InteractiveObject {
   pressed() {
     console.log("pressed");
   }
-  hover() {
-    console.log("hover");
+  animate() {
+    this.setImageSize(
+      221 + 113 * this.animationProgress,
+      180 - 30 * this.animationProgress
+    );
   }
-  hoverEnd() {
-    console.log("HoverEnd");
-  }
+  hoverEnd() {}
 }
