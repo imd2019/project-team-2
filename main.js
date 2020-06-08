@@ -11,21 +11,27 @@ let retry;
 let test;
 let init = true;
 let testScene;
+let testScene2;
 
 function draw() {
   if (init) {
     world = new Game("world");
     testScene = new Scene("SzeneTest");
+    testScene2 = new Scene("SzeneTest2");
     world.addScene(testScene);
+    world.addScene(testScene2);
     world.start();
     world.addChild(testScene);
+    world.addChild(testScene2);
     test = new Test();
     weiter = new Button_Weiter(750, 100);
     retry = new Button_Retry(800, 500);
     testScene.addChild(retry);
     testScene.addChild(weiter);
-    testScene.addChild(test);
+    testScene2.addChild(test);
     world.onInit();
+    world.nextScene(0);
+
     init = false;
   }
   background(0);

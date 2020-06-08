@@ -10,6 +10,12 @@ export default class Game extends InteractiveObject {
     this.scenes = [];
     this.started = false;
   }
+
+  onUpdate() {
+    this.update();
+    this.getCurrentScene().onUpdate();
+  }
+
   draw() {
     if (this.started) {
       this.getCurrentScene().display();
