@@ -5,18 +5,29 @@ export default class Button_Retry extends Button {
     super(x, y, 200, 0, window.ENUMS.SHAPE.ROUND);
     this.color = color(125, 125, 125);
   }
+
+  init() {
+    this.addImage("Retry", window.buttonRetry);
+    this.switchImage("Retry");
+  }
+
   draw() {}
+
   clicked() {
     console.log(this.parent);
   }
+
   released() {
     console.log("released");
   }
+
   pressed() {
     console.log("pressed");
   }
+
   animate() {
     this.setRotInDegree(-90 * this.animationProgress);
   }
+
   hoverEnd() {}
 }

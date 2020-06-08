@@ -18,19 +18,14 @@ function draw() {
     testScene = new Scene("SzeneTest");
     world.addScene(testScene);
     world.start();
+    world.addChild(testScene);
     test = new Test();
-    weiter = new Button_Weiter(500, 300);
-    retry = new Button_Retry(100, 400);
+    weiter = new Button_Weiter(750, 100);
+    retry = new Button_Retry(800, 500);
     testScene.addChild(retry);
     testScene.addChild(weiter);
     testScene.addChild(test);
-    retry.addImage("Retry", window.buttonRetry);
-    retry.switchImage("Retry");
-    weiter.addImage("Weiter", window.buttonWeiter);
-    weiter.addImage("Weiter_2", window.buttonWeiter_2);
-    weiter.switchImage("Weiter");
-    test.addImage("emolga", window.emolga);
-    test.switchImage("emolga");
+    world.onInit();
     init = false;
   }
   background(0);

@@ -18,6 +18,7 @@ export default class Game extends InteractiveObject {
 
   addScene(scene) {
     if (scene instanceof Scene) {
+      scene.disable();
       this.scenes.push(scene);
       return true;
     }
@@ -28,6 +29,7 @@ export default class Game extends InteractiveObject {
   start() {
     if (this.scenes.length > 0 && this.unlocked === true) {
       this.currentScene = 0;
+      this.nextScene(this.currentScene);
       this.started = true;
       return true;
     }
@@ -39,12 +41,16 @@ export default class Game extends InteractiveObject {
     return this.scenes[this.currentScene];
   }
 
-  nextLevel(specific = null) {
+  nextScene(specific = null) {
+    for (let element of this.scenes) {
+      element.disable();
+    }
     specific === null ? this.currentScene++ : (this.currentScene = specific);
-    this.onNextLevel();
+    this.getCurrentScene().enable();
+    this.onNextScene();
   }
 
-  onNextLevel() {}
+  onNextScene() {}
 
   end() {
     this.start = false;

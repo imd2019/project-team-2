@@ -11,7 +11,13 @@ export default class Test extends MoveableObject {
     this.setRotAcceleration(0.03);
     this.setRotMaxMinSpeed(0.5, -0.5);
   }
+  init() {
+    this.addImage("emolga", window.emolga);
+    this.switchImage("emolga");
+  }
+
   draw() {}
+
   update() {
     if (this.x > 400) {
       this.setAcceleration(-0.4, 0);

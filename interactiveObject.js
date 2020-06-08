@@ -20,6 +20,21 @@ export default class InteractiveObject extends DisplayObject {
     this.hovered = false;
   }
 
+  onInit() {
+    if (this.enable) {
+      this.init();
+      for (let element of this.children) {
+        if (element instanceof InteractiveObject) {
+          element.onInit();
+        } else if (element instanceof DisplayObject) {
+          if (element.enable) {
+            element.init();
+          }
+        }
+      }
+    }
+  }
+
   enable(hide = false) {
     this.enabled = true;
     this.hide(hide);

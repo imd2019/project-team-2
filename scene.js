@@ -6,6 +6,10 @@ export default class Scene extends InteractiveObject {
     this.name = name;
   }
 
+  init() {
+    console.log("init");
+  }
+
   end() {}
 
   onEnd() {}

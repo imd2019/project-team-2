@@ -18,6 +18,8 @@ export class DisplayObject {
   //Malt Objekte über ein evtl drunterliegendes Bild
   draw() {}
 
+  init() {}
+
   update() {}
   //Macht das Objekt unsichtbar
   hide(hide = true) {

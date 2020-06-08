@@ -5,7 +5,15 @@ export default class Button_Weiter extends Button {
     super(x, y, 221, 210, window.ENUMS.SHAPE.RECT);
     this.color = color(125, 125, 125);
   }
+
+  init() {
+    this.addImage("Weiter", window.buttonWeiter);
+    this.addImage("Weiter_2", window.buttonWeiter_2);
+    this.switchImage("Weiter");
+  }
+
   draw() {}
+
   clicked() {
     console.log(this.parent);
   }
