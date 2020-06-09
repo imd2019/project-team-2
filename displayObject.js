@@ -9,7 +9,9 @@ export class DisplayObject {
     this.rot = 0;
     this.scale = 1;
     this.images = {};
+    this.doms = {};
     this.currentImage = undefined;
+    this.currentDom = undefined;
     this.offSetX = 0;
     this.offSetY = 0;
     this.visible = true;
@@ -31,6 +33,11 @@ export class DisplayObject {
     this.images[key] = image;
   }
 
+  addDom(key, dom) {
+    dom.position(this.x, this.y);
+    this.doms[key] = dom;
+  }
+
   setRotInDegree(degree) {
     this.rot = radians(degree);
   }
@@ -46,10 +53,51 @@ export class DisplayObject {
     return false;
   }
 
+  switchDom(key) {
+    if (this.currentDom != undefined) {
+      this.stopDom();
+    }
+    if (this.doms.hasOwnProperty(key)) {
+      this.currentDom = this.doms[key];
+      return true;
+    }
+
+    console.error("There is no Dom named " + key);
+    return false;
+  }
+
   //Setzt die größen des aktuell gezeichneten Bildes neu
   setImageSize(width, height) {
     this.imageWidth = width;
     this.imageHeight = height;
+  }
+
+  setDomSize(width, height) {
+    this.currentDom.size(width, height);
+  }
+
+  playDom() {
+    if (this.currentDom != undefined && this.visible && this.enable) {
+      this.currentDom.show();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nichts abgespielt werden."
+      );
+      return false;
+    }
+  }
+
+  stopDom() {
+    if (this.currentDom != undefined && this.visible && this.enable) {
+      this.currentDom.hide();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nichts versteckt werden."
+      );
+      return false;
+    }
   }
 
   //Setze das bildliche Offset des Objektes

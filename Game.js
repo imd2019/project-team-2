@@ -18,6 +18,12 @@ export default class Game extends InteractiveObject {
 
   update() {}
 
+  onInit() {
+    for (let element of this.scenes) {
+      element.onInit();
+    }
+  }
+
   clicked() {
     this.wait(4);
   }
@@ -53,9 +59,10 @@ export default class Game extends InteractiveObject {
         element.disable();
       }
       specific === null ? this.currentScene++ : (this.currentScene = specific);
-      this.addChild(this.getCurrentScene);
+      this.addChild(this.getCurrentScene());
       this.getCurrentScene().enable();
       this.onNextScene();
+      console.log(this.children);
     }
   }
 

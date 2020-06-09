@@ -14,11 +14,15 @@ export default class Test extends MoveableObject {
   init() {
     this.addImage("emolga", window.ENUMS.IMAGE.EMOLGA);
     this.switchImage("emolga");
+    this.addDom("white", window.ENUMS.DOM.ANIMATION_BROWN);
+    this.switchDom("white");
   }
 
   draw() {}
 
   update() {
+    this.playDom();
+
     if (this.x > 400) {
       this.setAcceleration(-0.4, 0);
     } else if (this.x < 100) {

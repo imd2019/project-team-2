@@ -21,8 +21,6 @@ function draw() {
     world.addScene(testScene);
     world.addScene(testScene2);
     world.start();
-    world.addChild(testScene);
-    world.addChild(testScene2);
     test = new Test();
     weiter = new Button_Weiter(750, 100);
     retry = new Button_Retry(800, 500);

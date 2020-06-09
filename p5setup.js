@@ -52,9 +52,11 @@ function setup() {
       BUTTON_RETRY: buttonRetry,
       BUTTON_WEITER_1: buttonWeiter,
       BUTTON_WEITER_2: buttonWeiter_2,
+      EMOLGA: emolga,
+    }),
+    DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,
       ANIMATION_WHITE: animation_white,
-      EMOLGA: emolga,
     }),
   });
 }
