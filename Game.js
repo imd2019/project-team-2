@@ -6,20 +6,20 @@ export default class Game extends InteractiveObject {
     super(0, 0, windowWidth, windowHeight, window.ENUMS.SHAPE.RECT);
     this.name = name;
     this.currentScene;
-    this.unlocked = true;
     this.scenes = [];
     this.started = false;
+    window.addEventListener("nextScene", (e) => {
+      this.nextScene();
+    });
+    window.addEventListener("restartScene", (e) => {
+      this.restartScene();
+    });
   }
 
-  onUpdate() {
-    this.update();
-    this.getCurrentScene().onUpdate();
-  }
+  update() {}
 
-  draw() {
-    if (this.started) {
-      this.getCurrentScene().display();
-    }
+  clicked() {
+    this.wait(4);
   }
 
   addScene(scene) {
@@ -33,7 +33,7 @@ export default class Game extends InteractiveObject {
   }
 
   start() {
-    if (this.scenes.length > 0 && this.unlocked === true) {
+    if (this.scenes.length > 0) {
       this.currentScene = 0;
       this.nextScene(this.currentScene);
       this.started = true;
@@ -48,15 +48,22 @@ export default class Game extends InteractiveObject {
   }
 
   nextScene(specific = null) {
-    for (let element of this.scenes) {
-      element.disable();
+    if (this.started === true) {
+      for (let element of this.scenes) {
+        element.disable();
+      }
+      specific === null ? this.currentScene++ : (this.currentScene = specific);
+      this.addChild(this.getCurrentScene);
+      this.getCurrentScene().enable();
+      this.onNextScene();
     }
-    specific === null ? this.currentScene++ : (this.currentScene = specific);
-    this.getCurrentScene().enable();
-    this.onNextScene();
   }
 
   onNextScene() {}
+
+  restartScene() {
+    this.getCurrentScene().restart();
+  }
 
   end() {
     this.start = false;
@@ -64,14 +71,4 @@ export default class Game extends InteractiveObject {
   }
 
   onEnd() {}
-
-  lock() {
-    this.unlocked = false;
-  }
-  unlock() {
-    this.unlocked = true;
-  }
-  isUnlocked() {
-    return this.unlocked;
-  }
 }

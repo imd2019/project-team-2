@@ -18,6 +18,8 @@ export default class InteractiveObject extends DisplayObject {
     this.enabled = true;
     this.children = [];
     this.hovered = false;
+    this.waitStarttime = 0;
+    this.waitTime = 0;
   }
 
   onInit() {
@@ -78,15 +80,34 @@ export default class InteractiveObject extends DisplayObject {
   }
 
   onUpdate() {
-    if (this.enable) {
-      this.update();
-      for (let element of this.children) {
-        if (element instanceof DisplayObject) {
-          element.onUpdate();
+    if (this.waitStarttime === 0) {
+      if (this.enable) {
+        this.update();
+        for (let element of this.children) {
+          if (element instanceof InteractiveObject) {
+            element.onUpdate();
+          } else if (element instanceof DisplayObject) {
+            element.update();
+          }
         }
+      }
+    } else {
+      let timeNow = Date.now();
+      if (timeNow >= this.waitStarttime + this.waitTime) {
+        this.enable();
+        this.waitStarttime = 0;
       }
     }
   }
+
+  wait(sek) {
+    this.waitTime = sek * 1000;
+    console.log(Date.now());
+    this.waitStarttime = Date.now();
+    this.disable(false);
+    console.log(this);
+  }
+
   mouseClicked() {
     if (this.hitTest(mouseX, mouseY)) {
       for (let element of this.children) {

@@ -7,15 +7,15 @@ export default class Button_Weiter extends Button {
   }
 
   init() {
-    this.addImage("Weiter", window.buttonWeiter);
-    this.addImage("Weiter_2", window.buttonWeiter_2);
+    this.addImage("Weiter", window.ENUMS.IMAGE.BUTTON_WEITER_1);
+    this.addImage("Weiter_2", window.ENUMS.IMAGE.BUTTON_WEITER_2);
     this.switchImage("Weiter");
   }
 
   draw() {}
 
   clicked() {
-    console.log(this.parent);
+    window.dispatchEvent(new CustomEvent("nextScene"));
   }
   released() {
     console.log("released");

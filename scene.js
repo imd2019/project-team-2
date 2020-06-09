@@ -22,13 +22,13 @@ export default class Scene extends InteractiveObject {
     return false;
   }
 
-  init() {
-    console.log("init");
-  }
+  init() {}
 
   end() {}
 
   onEnd() {}
 
-  restart() {}
+  restart() {
+    console.log("RESTART");
+  }
 }

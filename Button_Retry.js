@@ -7,14 +7,14 @@ export default class Button_Retry extends Button {
   }
 
   init() {
-    this.addImage("Retry", window.buttonRetry);
+    this.addImage("Retry", window.ENUMS.IMAGE.BUTTON_RETRY);
     this.switchImage("Retry");
   }
 
   draw() {}
 
   clicked() {
-    console.log(this.parent);
+    window.dispatchEvent(new CustomEvent("restartScene"));
   }
 
   released() {
