@@ -29,8 +29,10 @@ function draw() {
     testScene.addChild(retry);
     testScene.addChild(weiter);
     testScene2.addChild(test);
+    testScene2.addVideo("test", window.testVideo);
+    testScene2.playVideo("test");
     world.onInit();
-    world.nextScene(0);
+    world.nextScene(1);
 
     init = false;
   }

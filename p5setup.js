@@ -20,7 +20,7 @@ function preload() {
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
   buttonRetry = loadImage("images/Button_Retry.png");
-  // testVideo = sketch.createVideo("videos/Backup.mp4");
+  testVideo = sketch.createVideo("videos/Backup.mp4");
 }
 window.preload = preload;
 
@@ -38,7 +38,7 @@ function setup() {
   window.buttonWeiter_2 = buttonWeiter_2;
 
   window.emolga = emolga;
-
+  window.testVideo = testVideo;
   window.ENUMS = Object.freeze({
     SHAPE: Object.freeze({
       ROUND: 0,
