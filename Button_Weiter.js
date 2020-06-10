@@ -12,17 +12,19 @@ export default class Button_Weiter extends Button {
     this.switchImage("Weiter");
   }
 
-  draw() {}
+  draw() {
+    textFont(window.ENUMS.FONT.MARKER_FELT);
+    fill(255);
+    textAlign(CENTER);
+    textSize(30);
+    text("Ich bin ein Weiterbutton", 0, this.height / 2 - 25, this.width);
+  }
 
   clicked() {
     window.dispatchEvent(new CustomEvent("nextScene"));
   }
-  released() {
-    console.log("released");
-  }
-  pressed() {
-    console.log("pressed");
-  }
+  released() {}
+  pressed() {}
   animate() {
     this.setImageSize(
       221 + 113 * this.animationProgress,

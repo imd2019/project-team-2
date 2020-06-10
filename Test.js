@@ -14,15 +14,16 @@ export default class Test extends MoveableObject {
   init() {
     this.addImage("emolga", window.ENUMS.IMAGE.EMOLGA);
     this.switchImage("emolga");
-    this.addDom("white", window.ENUMS.DOM.ANIMATION_BROWN);
+    this.addDom("white", window.ENUMS.DOM.TEST_VIDEO);
     this.switchDom("white");
+    this.setDomSize(200, 200);
   }
 
   draw() {}
 
   update() {
-    this.playDom();
-
+    this.hideDom();
+    this.stopDom();
     if (this.x > 400) {
       this.setAcceleration(-0.4, 0);
     } else if (this.x < 100) {
@@ -36,12 +37,10 @@ export default class Test extends MoveableObject {
     this.move();
   }
   clicked() {
-    console.log(this.parent);
+    this.showDom();
+    this.playDom();
+    this.wait(4);
   }
-  released() {
-    console.log("released");
-  }
-  pressed() {
-    console.log("pressed");
-  }
+  released() {}
+  pressed() {}
 }

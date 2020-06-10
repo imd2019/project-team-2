@@ -77,8 +77,8 @@ export class DisplayObject {
   }
 
   playDom() {
-    if (this.currentDom != undefined && this.visible && this.enable) {
-      this.currentDom.show();
+    if (this.currentDom != undefined && this.visible) {
+      this.currentDom.play();
       return true;
     } else {
       console.error(
@@ -89,7 +89,31 @@ export class DisplayObject {
   }
 
   stopDom() {
-    if (this.currentDom != undefined && this.visible && this.enable) {
+    if (this.currentDom != undefined && this.visible) {
+      this.currentDom.stop();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nichts abgespielt werden."
+      );
+      return false;
+    }
+  }
+
+  showDom() {
+    if (this.currentDom != undefined && this.visible) {
+      this.currentDom.show();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nicht angezeigt werden."
+      );
+      return false;
+    }
+  }
+
+  hideDom() {
+    if (this.currentDom != undefined && this.visible) {
       this.currentDom.hide();
       return true;
     } else {
@@ -104,6 +128,10 @@ export class DisplayObject {
   setOffset(x, y) {
     this.offSetX = x;
     this.offSetY = y;
+  }
+
+  setDomOffset(x, y) {
+    this.currentDom.position(this.x + x, this.y + y);
   }
 
   display() {

@@ -8,6 +8,9 @@ export default class Game extends InteractiveObject {
     this.currentScene;
     this.scenes = [];
     this.started = false;
+  }
+
+  init() {
     window.addEventListener("nextScene", (e) => {
       this.nextScene();
     });
@@ -19,13 +22,14 @@ export default class Game extends InteractiveObject {
   update() {}
 
   onInit() {
+    this.init();
     for (let element of this.scenes) {
       element.onInit();
     }
   }
 
   clicked() {
-    this.wait(4);
+    // this.wait(4);
   }
 
   addScene(scene) {
@@ -62,7 +66,6 @@ export default class Game extends InteractiveObject {
       this.addChild(this.getCurrentScene());
       this.getCurrentScene().enable();
       this.onNextScene();
-      console.log(this.children);
     }
   }
 

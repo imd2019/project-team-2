@@ -102,10 +102,8 @@ export default class InteractiveObject extends DisplayObject {
 
   wait(sek) {
     this.waitTime = sek * 1000;
-    console.log(Date.now());
     this.waitStarttime = Date.now();
     this.disable(false);
-    console.log(this);
   }
 
   mouseClicked() {

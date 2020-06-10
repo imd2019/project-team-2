@@ -5,15 +5,22 @@ let sketch = new p5();
 let width = windowWidth;
 let heigh = windowHeight;
 
+let eventDispatcher = new EventDispatcher();
+window.EventDispatcher = eventDispatcher;
+
+//Images
 let emolga;
 let buttonWeiter;
 let buttonWeiter_2;
 let buttonRetry;
+
+//DOMS
 let animation_brown;
 let animation_white;
-let eventDispatcher = new EventDispatcher();
-window.EventDispatcher = eventDispatcher;
 let testVideo;
+
+//Schriftarten
+let markerFelt;
 
 function preload() {
   console.log("preload");
@@ -30,10 +37,10 @@ function preload() {
   animation_white.hide();
   animation_brown.hide();
 
-  animation_brown.size(600, 500);
-  animation_brown.position(300, 200);
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
+
+  markerFelt = loadFont("typo/MarkerFelt.ttf");
 }
 window.preload = preload;
 
@@ -57,6 +64,10 @@ function setup() {
     DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,
       ANIMATION_WHITE: animation_white,
+      TEST_VIDEO: testVideo,
+    }),
+    FONT: Object.freeze({
+      MARKER_FELT: markerFelt,
     }),
   });
 }
