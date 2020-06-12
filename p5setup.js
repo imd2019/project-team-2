@@ -13,6 +13,8 @@ let emolga;
 let buttonWeiter;
 let buttonWeiter_2;
 let buttonRetry;
+let backgroundHaendewaschen;
+let virus_1;
 
 //DOMS
 let animation_brown;
@@ -26,12 +28,15 @@ function preload() {
   console.log("preload");
 
   /* BeispielCode
-  	BILDNAME = loadImage("images/bildname.png");
+  	VARIABLENNAME = loadImage("images/bildname.png");
   */
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
   buttonRetry = loadImage("images/Button_Retry.png");
+  backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
+  virus_1 = loadImage("images/Virus_1.png");
+
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white = createImg("images/Animation_White.gif");
   animation_white.hide();
@@ -60,6 +65,8 @@ function setup() {
       BUTTON_WEITER_1: buttonWeiter,
       BUTTON_WEITER_2: buttonWeiter_2,
       EMOLGA: emolga,
+      BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
+      VIRUS_1: virus_1,
     }),
     DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,

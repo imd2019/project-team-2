@@ -79,6 +79,22 @@ export default class InteractiveObject extends DisplayObject {
     return false;
   }
 
+  setHitboxSize(w, h) {
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+      return true;
+    }
+    console.error("Die Höhe und Breite müssen positiv sein");
+    return false;
+  }
+
+  resize(sizeX, sizeY) {
+    this.setImageSize(sizeX, sizeY);
+    this.setDomSize(sizeX, sizeY);
+    this.setHitboxSize(sizeX, sizeY);
+  }
+
   onUpdate() {
     if (this.waitStarttime === 0) {
       if (this.enable) {

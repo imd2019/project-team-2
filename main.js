@@ -4,6 +4,7 @@ import Button_Retry from "./Button_Retry.js";
 import Button_Weiter from "./Button_Weiter.js";
 import Game from "./Game.js";
 import Scene from "./scene.js";
+import Haendewaschen from "./scene_haendewaschen.js";
 
 let weiter;
 let world;
@@ -12,22 +13,24 @@ let test;
 let init = true;
 let testScene;
 let testScene2;
+let sceneHaendewaschen;
 
 function draw() {
   if (init) {
     world = new Game("world");
+    sceneHaendewaschen = new Haendewaschen();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");
+    world.addScene(sceneHaendewaschen);
     world.addScene(testScene);
     world.addScene(testScene2);
     world.start();
     test = new Test();
-    weiter = new Button_Weiter(750, 100);
+    weiter = new Button_Weiter(750, 100, "nextScene");
     retry = new Button_Retry(800, 500);
     testScene.addChild(retry);
     testScene.addChild(weiter);
     testScene2.addChild(test);
-    testScene2.addVideo("test", window.testVideo);
     world.onInit();
     world.nextScene(0);
 
