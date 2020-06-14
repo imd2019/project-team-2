@@ -11,7 +11,6 @@ window.EventDispatcher = eventDispatcher;
 //Images
 let emolga;
 let buttonWeiter;
-let buttonWeiter_2;
 let buttonRetry;
 let backgroundHaendewaschen;
 let virus_1;
@@ -32,7 +31,6 @@ function preload() {
   */
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
-  buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
   buttonRetry = loadImage("images/Button_Retry.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   virus_1 = loadImage("images/Virus_1.png");
@@ -63,7 +61,6 @@ function setup() {
     IMAGE: Object.freeze({
       BUTTON_RETRY: buttonRetry,
       BUTTON_WEITER_1: buttonWeiter,
-      BUTTON_WEITER_2: buttonWeiter_2,
       EMOLGA: emolga,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       VIRUS_1: virus_1,
