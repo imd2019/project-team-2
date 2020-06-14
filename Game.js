@@ -14,9 +14,6 @@ export default class Game extends InteractiveObject {
     window.addEventListener("nextScene", (e) => {
       this.nextScene();
     });
-    window.addEventListener("restartScene", (e) => {
-      this.restartScene();
-    });
   }
 
   update() {}
@@ -70,10 +67,6 @@ export default class Game extends InteractiveObject {
   }
 
   onNextScene() {}
-
-  restartScene() {
-    this.getCurrentScene().restart();
-  }
 
   end() {
     this.start = false;

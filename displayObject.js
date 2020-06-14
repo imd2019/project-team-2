@@ -1,5 +1,7 @@
 import InteractiveObject from "./interactiveObject.js";
 
+//Zeichnet ein Bild oder Video oder Gif
+
 export class DisplayObject {
   constructor(x, y) {
     this.x = x;
@@ -73,7 +75,9 @@ export class DisplayObject {
   }
 
   setDomSize(width, height) {
-    this.currentDom.size(width, height);
+    if (this.currentDom != undefined) {
+      this.currentDom.size(width, height);
+    }
   }
 
   playDom() {

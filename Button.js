@@ -2,12 +2,13 @@ import InteractiveObject from "./interactiveObject.js";
 import Util from "./util.js";
 
 export default class Test extends InteractiveObject {
-  constructor(x, y, width, height, shape) {
+  constructor(x, y, width, height, shape, event) {
     super(x, y, width, height, shape);
     this.color = color(125, 125, 125);
     this.hoverTime = 0;
     this.animationProgress = 0;
     this.animationSpeed = 0.06;
+    this.event = event;
   }
   draw() {
     // fill(this.color);
@@ -19,7 +20,9 @@ export default class Test extends InteractiveObject {
     this.animate();
   }
 
-  clicked() {}
+  clicked() {
+    window.dispatchEvent(new CustomEvent(this.event));
+  }
 
   released() {}
 
