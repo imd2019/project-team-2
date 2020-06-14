@@ -1,25 +1,25 @@
 import Button from "./Button.js";
 
-export default class Button_Weiter extends Button {
+export default class Button_Start extends Button {
   constructor(x, y) {
-    super(x, y, 221, 210, window.ENUMS.SHAPE.RECT, "Weiter");
+    super(x, y, 115, 65, window.ENUMS.SHAPE.RECT, "Weiter");
     this.color = color(125, 125, 125);
   }
 
   init() {
-    this.addImage("Weiter", window.ENUMS.IMAGE.BUTTON_WEITER_1);
-    this.addImage("Weiter_2", window.ENUMS.IMAGE.BUTTON_WEITER_2);
-    this.switchImage("Weiter");
   }
 
   draw() {
     textFont(window.ENUMS.FONT.MARKER_FELT);
-
+    strokeWeight(5);
+    stroke("#6bb592");
     fill(this.color);
     textAlign(CENTER);
     textSize(30);
-    rect(255, 255, 255, 255);
-    text("Start", 0, this.height / 2 - 25, this.width);
+    rect(0, 0, this.width, this.height,10);
+    fill(255);
+    noStroke();
+    text("START", 0, this.height / 2+10, this.width);
   }
 
   clicked() {
@@ -28,7 +28,7 @@ export default class Button_Weiter extends Button {
   released() {}
   pressed() {}
   animate() {
-    this.color = color(170, 101 + 100 * this.animationProgress, 91);
+    this.color = color(125+45*this.animationProgress, 125 + 76 * this.animationProgress, 125-34*this.animationProgress);
     this.setImageSize(
       221 + 113 * this.animationProgress,
       180 - 30 * this.animationProgress
