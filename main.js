@@ -5,6 +5,8 @@ import Button_Weiter from "./Button_Weiter.js";
 import Game from "./Game.js";
 import Scene from "./scene.js";
 
+import Startscreen from "./scene_startscreen.js";
+
 let weiter;
 let world;
 let retry;
@@ -13,11 +15,17 @@ let init = true;
 let testScene;
 let testScene2;
 
+let sceneStartscreen;
+
 function draw() {
   if (init) {
     world = new Game("world");
+
+    sceneStartscreen = new Startscreen();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");
+
+    world.addScene(sceneStartscreen);
     world.addScene(testScene);
     world.addScene(testScene2);
     world.start();

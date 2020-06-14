@@ -14,6 +14,8 @@ let buttonWeiter;
 let buttonWeiter_2;
 let buttonRetry;
 
+let backgroundStartscreen;
+
 //DOMS
 let animation_brown;
 let animation_white;
@@ -32,6 +34,9 @@ function preload() {
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonWeiter_2 = loadImage("images/Button_Weiter_2.png");
   buttonRetry = loadImage("images/Button_Retry.png");
+
+  backgroundStartscreen = loadImage("images/background_Startscreen.png");
+
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white = createImg("images/Animation_White.gif");
   animation_white.hide();
@@ -60,6 +65,8 @@ function setup() {
       BUTTON_WEITER_1: buttonWeiter,
       BUTTON_WEITER_2: buttonWeiter_2,
       EMOLGA: emolga,
+
+      BACKGROUND_STARTSCREEN: backgroundStartscreen,
     }),
     DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,
