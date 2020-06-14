@@ -6,6 +6,8 @@ import Game from "./Game.js";
 import Scene from "./scene.js";
 import Haendewaschen from "./scene_haendewaschen.js";
 
+import Startscreen from "./scene_startscreen.js";
+
 let weiter;
 let world;
 let retry;
@@ -15,9 +17,17 @@ let testScene;
 let testScene2;
 let sceneHaendewaschen;
 
+let sceneStartscreen;
+
 function draw() {
   if (init) {
     world = new Game("world");
+
+    sceneStartscreen = new Startscreen();
+    testScene = new Scene("SzeneTest");
+    testScene2 = new Scene("SzeneTest2");
+
+    world.addScene(sceneStartscreen);
     sceneHaendewaschen = new Haendewaschen();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");

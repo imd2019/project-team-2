@@ -15,6 +15,8 @@ let buttonRetry;
 let backgroundHaendewaschen;
 let virus_1;
 
+let backgroundStartscreen;
+
 //DOMS
 let animation_brown;
 let animation_white;
@@ -32,6 +34,8 @@ function preload() {
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonRetry = loadImage("images/Button_Retry.png");
+
+  backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   virus_1 = loadImage("images/Virus_1.png");
 
@@ -62,6 +66,8 @@ function setup() {
       BUTTON_RETRY: buttonRetry,
       BUTTON_WEITER_1: buttonWeiter,
       EMOLGA: emolga,
+
+      BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       VIRUS_1: virus_1,
     }),
