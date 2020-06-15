@@ -15,7 +15,7 @@ let buttonRetry;
 let backgroundHaendewaschen;
 let virus_1;
 let hand_white;
-
+let sign;
 let backgroundStartscreen;
 
 //DOMS
@@ -39,6 +39,7 @@ function preload() {
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   virus_1 = loadImage("images/Virus_1.png");
+  sign = loadImage("images/Schild.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white = createImg("images/Animation_White.gif");
@@ -76,6 +77,7 @@ function setup() {
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       VIRUS_1: virus_1,
+      SIGN: sign,
     }),
     DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,
@@ -88,8 +90,3 @@ function setup() {
   });
 }
 window.setup = setup;
-
-function windowResized() {
-  sketch.resizeCanvas(windowWidth, windowHeight);
-}
-window.addEventListener("resize", windowResized);
