@@ -2,7 +2,7 @@ import MoveableObject from "./moveableObject.js";
 
 export default class Virus extends MoveableObject {
   constructor(x, y) {
-    super(x, y, 200, 200, window.ENUMS.SHAPE.ROUND);
+    super(x, y, 130, 0, window.ENUMS.SHAPE.ROUND);
     this.dragDrop = false;
   }
   init() {
@@ -13,7 +13,7 @@ export default class Virus extends MoveableObject {
   update() {
     if (this.dragDrop) {
       this.setCoordinats(mouseX, mouseY);
-      this.resize(70, 70);
+      this.resize(55, 55);
     }
   }
 

@@ -12,10 +12,12 @@ export default class MoveableObject extends InteractiveObject {
     this.rotMinSpeed = 0;
     this.rotAcceleration = 0;
   }
+
   setCoordinats(x, y) {
     this.x = x;
     this.y = y;
   }
+
   move() {
     this.x += this.velocity.x;
     this.y += this.velocity.y;
@@ -33,17 +35,21 @@ export default class MoveableObject extends InteractiveObject {
     if (this.rotVelocity <= this.rotMinSpeed)
       this.rotVelocity = this.rotMinSpeed;
   }
+
   setAcceleration(x, y) {
     this.acceleration.x = x;
     this.acceleration.y = y;
   }
+
   setMaxMinSpeed(max, min = 0) {
     this.maxSpeed = max;
     this.minSpeed = min;
   }
+
   setRotAcceleration(acc) {
     this.rotAcceleration = acc;
   }
+
   setRotMaxMinSpeed(max, min = 0) {
     this.rotMaxSpeed = max;
     this.rotMinSpeed = min;
@@ -51,6 +57,13 @@ export default class MoveableObject extends InteractiveObject {
 
   getVelocity() {
     return { rot: this.rotVelocity, x: this.velocity.x, y: this.velocity.y };
+  }
+
+  stop() {
+    this.velocity.x = 0;
+    this.velocity.y = 0;
+    this.acceleration.x = 0;
+    this.acceleration.y = 0;
   }
 
   onHit() {}
