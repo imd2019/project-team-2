@@ -8,7 +8,6 @@ export default class Button_Weiter extends Button {
 
   init() {
     this.addImage("Weiter", window.ENUMS.IMAGE.BUTTON_WEITER_1);
-    this.addImage("Weiter_2", window.ENUMS.IMAGE.BUTTON_WEITER_2);
     this.switchImage("Weiter");
   }
 
