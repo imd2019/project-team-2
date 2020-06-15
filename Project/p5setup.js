@@ -14,6 +14,7 @@ let buttonWeiter;
 let buttonRetry;
 let backgroundHaendewaschen;
 let virus_1;
+let hand_white;
 
 let backgroundStartscreen;
 
@@ -34,7 +35,7 @@ function preload() {
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonRetry = loadImage("images/Button_Retry.png");
-
+  hand_white = loadImage("images/Haendewaschen_Hand_Weiß.png");
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   virus_1 = loadImage("images/Virus_1.png");
@@ -53,11 +54,15 @@ window.preload = preload;
 
 function setup() {
   console.log("setup");
-  sketch.createCanvas(windowWidth, windowHeight);
+  sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
 
   window.testVideo = testVideo;
   window.ENUMS = Object.freeze({
+    SIZE: Object.freeze({
+      X: 1366,
+      Y: 768,
+    }),
     SHAPE: Object.freeze({
       ROUND: 0,
       RECT: 1,
@@ -67,6 +72,7 @@ function setup() {
       BUTTON_WEITER_1: buttonWeiter,
       EMOLGA: emolga,
 
+      HAND_WHITE: hand_white,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       VIRUS_1: virus_1,

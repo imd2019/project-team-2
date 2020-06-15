@@ -2,12 +2,12 @@ import Button from "./Button.js";
 
 export default class Button_Start extends Button {
   constructor(x, y) {
-    super(x, y, 115, 65, window.ENUMS.SHAPE.RECT, "Weiter");
-    this.color = color(125, 125, 125);
+    super(x, y, 100, 60, window.ENUMS.SHAPE.RECT, "Weiter");
+    this.color = color(170, 201, 91);
+    this.textSize = 25;
   }
 
-  init() {
-  }
+  init() {}
 
   draw() {
     textFont(window.ENUMS.FONT.MARKER_FELT);
@@ -15,11 +15,11 @@ export default class Button_Start extends Button {
     stroke("#6bb592");
     fill(this.color);
     textAlign(CENTER);
-    textSize(30);
-    rect(0, 0, this.width, this.height,10);
+    textSize(this.textSize);
+    rect(0, 0, this.width, this.height, 10);
     fill(255);
     noStroke();
-    text("START", 0, this.height / 2+10, this.width);
+    text("START", 0, this.height / 2 + 10, this.width);
   }
 
   clicked() {
@@ -28,7 +28,10 @@ export default class Button_Start extends Button {
   released() {}
   pressed() {}
   animate() {
-    this.color = color(125+45*this.animationProgress, 125 + 76 * this.animationProgress, 125-34*this.animationProgress);
+    this.width = 100 + 20 * this.animationProgress;
+    this.height = 60 + 10 * this.animationProgress;
+    //this.color = color(125+45*this.animationProgress, 125 + 76 * this.animationProgress, 125-34*this.animationProgress);
+    this.textSize = 25 + 5 * this.animationProgress;
     this.setImageSize(
       221 + 113 * this.animationProgress,
       180 - 30 * this.animationProgress
