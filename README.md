@@ -6,20 +6,20 @@
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
-|**x:**|Aktuelle X-Position|  
-|**y:** |Aktuelle Y-Position|
-|**imageWidth:** |Breite, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
-|**imageHeight:** |Höhe, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
-|**rot:** |Aktuelle Rotation des Objektes in Bogenmaß|
-|**scale:** |Skallierung des gezeichneten Bildes. 1 = 100% | 0.5 = 50%|
-|**images:** |Eine Liste, welche unter einem bestimmten Schlüsselstring ein bestimmtes Bild abspeichert|
-|**doms:** |Eine Liste welche unter einem bestimmten Schlüsselstring ein bestimmtes Video oder Gif abspeichert|
-|**currentImage:** |Das Bild, welches gerade ausgewählt ist|
-|**currentDom:** |Das Video oder Gif, welches gerade ausgewählt ist|
-|**offsetX:** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in X-Richtung verschoben wird.|
-|**offsetY:** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in Y-Richtung verschoben wird.|
-|**visible:** |Bestimmt, ob das Objekt dargestellt wird oder nicht. True: das aktuelle Image wird gezeichnet und die Draw-Funktion ausgeführt.| 
-|**parent:** |Wenn das Objekt einem anderem Objekt(einem Elternobjekt) als Child zugewiesen wird, wird hier das Elternobejekt gespeichert.|
+|**x**|Aktuelle X-Position|  
+|**y** |Aktuelle Y-Position|
+|**imageWidth** |Breite, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
+|**imageHeight** |Höhe, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
+|**rot** |Aktuelle Rotation des Objektes in Bogenmaß|
+|**scale** |Skallierung des gezeichneten Bildes. 1 = 100% | 0.5 = 50%|
+|**images** |Eine Liste, welche unter einem bestimmten Schlüsselstring ein bestimmtes Bild abspeichert|
+|**doms** |Eine Liste welche unter einem bestimmten Schlüsselstring ein bestimmtes Video oder Gif abspeichert|
+|**currentImage** |Das Bild, welches gerade ausgewählt ist|
+|**currentDom** |Das Video oder Gif, welches gerade ausgewählt ist|
+|**offsetX** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in X-Richtung verschoben wird.|
+|**offsetY** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in Y-Richtung verschoben wird.|
+|**visible** |Bestimmt, ob das Objekt dargestellt wird oder nicht. True: das aktuelle Image wird gezeichnet und die Draw-Funktion ausgeführt.| 
+|**parent** |Wenn das Objekt einem anderem Objekt(einem Elternobjekt) als Child zugewiesen wird, wird hier das Elternobejekt gespeichert.|
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
