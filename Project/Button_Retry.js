@@ -2,7 +2,7 @@ import Button from "./Button.js";
 
 export default class Button_Retry extends Button {
   constructor(x, y) {
-    super(x, y, 200, 0, window.ENUMS.SHAPE.ROUND, "restartScene");
+    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "restartScene");
     this.color = color(125, 125, 125);
   }
 
