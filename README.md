@@ -1,7 +1,7 @@
 # Dokumentation
 
 ## Klassenbeschreibung: 
-### Display Object
+### DisplayObject
 
 #### Constructor
   Der Constructor verlangt **x**, **y**. Setzt alle unten aufgeführten Attribute.
@@ -46,7 +46,7 @@
 |  display() | custom |Verwaltet die Reinfolge der Anzeigen von draw und currentImage. Wendet auch die angegebenen Transformationen(Rotation und Offset) an.| nein |
 |  getRealXY() | custom |Gibt die echten Koordinaten auf dem Canvas als Objekt zurück.| nein |
 
-### Interactive Object extendes Interactive Obejct
+### InteractiveObject extendes DisplayObejct
 
 #### Constructor
   Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. Außerdem wird die imageWidth und imageHeight gleich width und height gesetzt.
@@ -88,6 +88,34 @@
 | display() | custom |Überschreibt die Display Funktion von displayObject. Sorgt erst für die eigene Dastellung, und führt danach die display() Methoden der Kinder aus| nein |
 | rotateRealPoint(`x`, `y`) | custom |Rotiert den Punkt(`x`, `y`), um die Achse und Rotation des Objekts und aller Eltern Objekte.| nein |
 | getRealRotation() | custom |Gibt die Summe der eigenen Rotation mit der Rotation der Eltern Objekte zurück.| nein |
+
+### MoveableObject extendes InteractiveObejct
+
+#### Constructor
+Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute.minSpeed und maySpeed sind am Anfang 0!.
+
+#### Attribute
+|name|Bescheibung|
+| --- | --- |
+|**velocity**|Speichert die aktuelle Geschwindigkeit als Objekt.{x: X-Geschwindigkeit, y: Y-Geschwindigkeit}|
+|**acceleration**|Speichert die aktuelle Beschleunigung als Objekt.{x: X-Beschleunigung, y: Y-Beschleunigung}|
+|**maxSpeed**|Speichert die maximale **velocity** als Objekt.{x: X-Max-Geschindigkeit, y: Y-Max-Geschindigkeit}|
+|**minSpeed**|Speichert die minimale **velocity** als Objekt.{x: X-Max-Geschindigkeit, y: Y-Min-Geschindigkeit}|
+|**rotVelocity**|Speichert die aktuelle Rotationsgeschwindigkeit als in Bogenmaß|
+|**rotAcceleration**|Speichert die aktuelle Rotationsbeschleunigung als in Bogenmaß|
+|**maxRotSpeed**|Speichert die maximale **rotVelocity** in Bogenmaß |
+|**minRotSpeed**|Speichert die minimale **rotVelocity** in Bogenmaß |
+
+
+#### Methoden
+| Name | Aufruf | Beschreibung|Leer|
+| --- | --- | --- | --- |
+|  setCoordinats(`x`,`y`) | custom | Setzt die **x** Koordinate auf `x` und die **y** Koordinate auf `y`| nein |
+|  move() | custom | Bewegt das Objekt anhand von den Attributen. Die **velocity** wird um die **acceleration** erhöt. Das gleiche passiert für die Rotation. Auch wird überprüft, dass die minimalen und Maximalen nicht unter oder über schritten werden.| nein |
+|  setAcceleration(`x`,`y`) | custom | Setzt die X-Beschleunigung auf `x` und die Y-Beschleunigung auf `y`| nein |
+|  setMaxMinSpeed(`max`,`min`) | custom | `min` muss nicht angegeben werden und wird standardmäßig auf 0 gesetzt. Die Methode setzt sowohl **x** als auch **y** **minSpeed** und **maxSpeed**| nein |
+
+
 
 
 
