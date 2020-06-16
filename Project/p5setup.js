@@ -12,6 +12,8 @@ window.EventDispatcher = eventDispatcher;
 let emolga;
 let buttonWeiter;
 let buttonRetry;
+let buttonWeiterGrau;
+let buttonRetryGrau;
 let backgroundHaendewaschen;
 let virus_1;
 let hand_white;
@@ -35,6 +37,8 @@ function preload() {
   emolga = loadImage("images/Emolga2.png");
   buttonWeiter = loadImage("images/Button_Weiter.png");
   buttonRetry = loadImage("images/Button_Retry.png");
+  buttonWeiterGrau = loadImage("images/Button_Weiter_grau.png");
+  buttonRetryGrau = loadImage("images/Button_Retry_grau.png");
   hand_white = loadImage("images/Haendewaschen_Hand_Weiß.png");
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
@@ -69,8 +73,10 @@ function setup() {
       RECT: 1,
     }),
     IMAGE: Object.freeze({
-      BUTTON_RETRY: buttonRetry,
       BUTTON_WEITER_1: buttonWeiter,
+      BUTTON_RETRY: buttonRetry,
+      BUTTON_WEITER_GRAU: buttonWeiterGrau,
+      BUTTON_RETRY_GRAU: buttonRetryGrau,
       EMOLGA: emolga,
 
       HAND_WHITE: hand_white,
