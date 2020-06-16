@@ -5,6 +5,9 @@
 
 #### Constructor
   Der Constructor verlangt **x**, **y**. Setzt alle unten aufgeführten Attribute.
+<br>
+<br>
+
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
@@ -22,6 +25,8 @@
 |**offsetY** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in Y-Richtung verschoben wird.|
 |**visible** |Bestimmt, ob das Objekt dargestellt wird oder nicht. True: das aktuelle Image wird gezeichnet und die Draw-Funktion ausgeführt.| 
 |**parent** |Wenn das Objekt einem anderem Objekt(einem Elternobjekt) als Child zugewiesen wird, wird hier das Elternobejekt gespeichert.|
+<br>
+<br>
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
@@ -45,11 +50,18 @@
 |  setDomOffset(`x`,`y`) | custom |Setzt ein Offset für das aktuell ausgewählte Dom| nein |
 |  display() | custom |Verwaltet die Reinfolge der Anzeigen von draw und currentImage. Wendet auch die angegebenen Transformationen(Rotation und Offset) an.| nein |
 |  getRealXY() | custom |Gibt die echten Koordinaten auf dem Canvas als Objekt zurück.| nein |
+<br>
+<br>
+<br>
+<br>
 
 ### InteractiveObject extendes DisplayObejct
 
 #### Constructor
   Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. Außerdem wird die imageWidth und imageHeight gleich width und height gesetzt.
+<br>
+<br>
+
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
@@ -61,7 +73,8 @@
 |**hovered** |Ist true/false, je nachdem ob das Objekt gehovered wird oder nicht.|
 |**waitStarttime** |Wenn die Funktion wait() aufgerufen wird, wird hier die Startzeit des Wartepunktes zwischengespeichert.|
 |**waitTime** |Speichert die Zeit die gewartet werden soll, wenn wait() aufgerufen wird in Sekunden.|
-
+<br>
+<br>
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
@@ -88,11 +101,17 @@
 | display() | custom |Überschreibt die Display Funktion von displayObject. Sorgt erst für die eigene Dastellung, und führt danach die display() Methoden der Kinder aus| nein |
 | rotateRealPoint(`x`, `y`) | custom |Rotiert den Punkt(`x`, `y`), um die Achse und Rotation des Objekts und aller Eltern Objekte.| nein |
 | getRealRotation() | custom |Gibt die Summe der eigenen Rotation mit der Rotation der Eltern Objekte zurück.| nein |
+<br>
+<br>
+<br>
+<br>
 
 ### MoveableObject extendes InteractiveObejct
 
 #### Constructor
 Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute.minSpeed und maySpeed sind am Anfang 0!.
+<br>
+<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -105,7 +124,8 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 |**rotAcceleration**|Speichert die aktuelle Rotationsbeschleunigung als in Bogenmaß|
 |**maxRotSpeed**|Speichert die maximale **rotVelocity** in Bogenmaß |
 |**minRotSpeed**|Speichert die minimale **rotVelocity** in Bogenmaß |
-
+<br>
+<br>
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
@@ -114,6 +134,11 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 |  move() | custom | Bewegt das Objekt anhand von den Attributen. Die **velocity** wird um die **acceleration** erhöt. Das gleiche passiert für die Rotation. Auch wird überprüft, dass die minimalen und Maximalen nicht unter oder über schritten werden.| nein |
 |  setAcceleration(`x`,`y`) | custom | Setzt die X-Beschleunigung auf `x` und die Y-Beschleunigung auf `y`| nein |
 |  setMaxMinSpeed(`max`,`min`) | custom | `min` muss nicht angegeben werden und wird standardmäßig auf 0 gesetzt. Die Methode setzt sowohl **x** als auch **y** **minSpeed** und **maxSpeed**| nein |
+|  setRotationAcceleration(`degree`) | custom | Rechnet `degree` in Bogenmaß um, und setzt die **rotAcceleration** auf den Wert.| nein |
+|  setRotMaxMinSpeed(`max`, `min`) | custom | `min` muss nicht angegeben werden und wird standardmäßig auf 0 gesetzt. Die Methode setzt **maxRotSpeed** auf `max` und **minRotSpeed** auf `min`| nein |
+|  getVelocity() | custom | Gibt ein Objekt zurück: {rot: **rotVelocity**, x: **velocity.x**, y: **velocity.y** }| nein |
+|  stop() | custom | Setzt **velocity.x**, **velocity.y**, **acceleration.x**, **acceleration.y** **rotVelocity** und **rotAcceleration** auf 0| nein |
+|  onHit() | custom, aber eher von außerhalb | Kann aufgerufen werden, wenn dieses Objekt mit einem anderem Objekt kollidiert. Muss allerdings von außen und nicht in dieser Klasse aufgerufen werden.| ja |
 
 
 
