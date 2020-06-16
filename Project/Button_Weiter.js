@@ -2,7 +2,7 @@ import Button from "./Button.js";
 
 export default class Button_Weiter extends Button {
   constructor(x, y, event) {
-    super(x, y, 221, 210, window.ENUMS.SHAPE.RECT, event);
+    super(x, y, 110, 120, window.ENUMS.SHAPE.RECT, event);
     this.color = color(125, 125, 125);
   }
 
@@ -11,20 +11,14 @@ export default class Button_Weiter extends Button {
     this.switchImage("Weiter");
   }
 
-  draw() {
-    textFont(window.ENUMS.FONT.MARKER_FELT);
-    fill(255);
-    textAlign(CENTER);
-    textSize(30);
-    text("Ich bin ein Weiterbutton", 0, this.height / 2 - 25, this.width);
-  }
+  draw() {}
 
   released() {}
   pressed() {}
   animate() {
     this.setImageSize(
-      221 + 113 * this.animationProgress,
-      210 - 30 * this.animationProgress
+      this.width + 25 * this.animationProgress,
+      this.height - 15 * this.animationProgress
     );
   }
   hoverEnd() {}
