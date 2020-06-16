@@ -40,10 +40,6 @@ export class DisplayObject {
     this.doms[key] = dom;
   }
 
-  setRotInDegree(degree) {
-    this.rot = radians(degree);
-  }
-
   //Wechselt das aktuelle Bild auf das Bild des entsprechenden Keys aus der Bilderliste
   switchImage(key) {
     if (this.images.hasOwnProperty(key)) {
@@ -58,6 +54,7 @@ export class DisplayObject {
   switchDom(key) {
     if (this.currentDom != undefined) {
       this.stopDom();
+      this.hideDom();
     }
     if (this.doms.hasOwnProperty(key)) {
       this.currentDom = this.doms[key];
@@ -77,6 +74,30 @@ export class DisplayObject {
   setDomSize(width, height) {
     if (this.currentDom != undefined) {
       this.currentDom.size(width, height);
+    }
+  }
+
+  showDom() {
+    if (this.currentDom != undefined && this.visible) {
+      this.currentDom.show();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nicht angezeigt werden."
+      );
+      return false;
+    }
+  }
+
+  hideDom() {
+    if (this.currentDom != undefined && this.visible) {
+      this.currentDom.hide();
+      return true;
+    } else {
+      console.error(
+        "Es ist kein currentDom ausgewählt, daher kann auch nichts versteckt werden."
+      );
+      return false;
     }
   }
 
@@ -104,28 +125,8 @@ export class DisplayObject {
     }
   }
 
-  showDom() {
-    if (this.currentDom != undefined && this.visible) {
-      this.currentDom.show();
-      return true;
-    } else {
-      console.error(
-        "Es ist kein currentDom ausgewählt, daher kann auch nicht angezeigt werden."
-      );
-      return false;
-    }
-  }
-
-  hideDom() {
-    if (this.currentDom != undefined && this.visible) {
-      this.currentDom.hide();
-      return true;
-    } else {
-      console.error(
-        "Es ist kein currentDom ausgewählt, daher kann auch nichts versteckt werden."
-      );
-      return false;
-    }
+  setRotInDegree(degree) {
+    this.rot = radians(degree);
   }
 
   //Setze das bildliche Offset des Objektes

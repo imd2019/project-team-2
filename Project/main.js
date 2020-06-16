@@ -42,7 +42,7 @@ function draw() {
     testScene.addChild(weiter);
     testScene2.addChild(test);
     world.onInit();
-    world.nextScene(1);
+    world.nextScene(0);
 
     init = false;
   }

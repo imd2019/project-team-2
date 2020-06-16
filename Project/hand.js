@@ -14,7 +14,6 @@ export default class Hand extends MoveableObject {
   update() {
     if (this.y <= 200) {
       this.stop();
-      console.log("stop");
     }
     this.move();
   }

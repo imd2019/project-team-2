@@ -62,6 +62,7 @@ export default class Game extends InteractiveObject {
 
   nextScene(specific = null) {
     if (this.started === true) {
+      if (this.children.length > 0) this.removeChild(this.getCurrentScene());
       for (let element of this.scenes) {
         element.disable();
       }
