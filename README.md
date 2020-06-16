@@ -139,6 +139,43 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 |  getVelocity() | custom | Gibt ein Objekt zurück: {rot: **rotVelocity**, x: **velocity.x**, y: **velocity.y** }| nein |
 |  stop() | custom | Setzt **velocity.x**, **velocity.y**, **acceleration.x**, **acceleration.y** **rotVelocity** und **rotAcceleration** auf 0| nein |
 |  onHit() | custom, aber eher von außerhalb | Kann aufgerufen werden, wenn dieses Objekt mit einem anderem Objekt kollidiert. Muss allerdings von außen und nicht in dieser Klasse aufgerufen werden.| ja |
+<br>
+<br>
+<br>
+<br>
+
+### Button extendes InteractiveObejct
+
+#### Constructor
+Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event**. Setzt alle unten aufgeführten Attribute.
+<br>
+<br>
+
+#### Attribute
+|name|Bescheibung|
+| --- | --- |
+|**animationTime**|Speichert den linearen Fortschritt der Animation 1 = 100% |
+|**animationProgress**|Speichert den durch die jeweilige Animationsfunktion errechneten Fortschritt der Animation 1 = 100%|
+|**animationSpeed**|legt den Wert fest, um den animationTime erhöht pro frame erhöht wird. Gibt somit auch die "Geschwindigkeit" der Animation vor|
+|**event**|Enthält ein CustomEvent Objekt von JavaScript. Dieses wird aufgerufen wenn der Button angeklickt wurde.|
+<br>
+<br>
+
+#### Methoden
+| Name | Aufruf | Beschreibung|Leer|
+| --- | --- | --- | --- |
+|  update() | jeden Frame | Überschreibt die standard update() Methode!! Führt nach einander updateAnimationValues() und animate() aus| nein |
+| animate() | jedes update() | Hier kann festgelegt werden, wie sich der Button bei veränderndem **animationProgress** verhalten soll.| ja|
+|  updateAnimationValues() | jedes update() | Wenn **hovered** false ist, wird die **animationTime** um **animationSpeed** reduziert, bis **animationTime** 0 ist. Wenn **hovered** true ist, wird die **animationTime** um **animationSpeed** erhöht, bis **animationTime** 1 ist. Je nach dem ob **hovered** true oder false ist, wird die **animationTime** durch eine Funktion von Util in den Animationsfortschritt umgewandelt und in **animationProgress** gespeichert.| nein |
+| clicked() | Nach dem die Maus geklickt wurde | Überschreibt die clicked() Methode aus InteractiveObject. Ruft über den an das window angehängten Eventdispatcher das zugewiesene **event** auf.| nein|
+
+
+
+
+
+
+
+
 
 
 
