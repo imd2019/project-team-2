@@ -109,7 +109,7 @@
 ### MoveableObject extendes InteractiveObejct
 
 #### Constructor
-Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute.minSpeed und maySpeed sind am Anfang 0!.
+Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. **minSpeed** und **maxSpeed** sind am Anfang 0!.
 <br>
 <br>
 
