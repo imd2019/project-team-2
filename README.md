@@ -4,7 +4,7 @@
 ### Display Object
 
 #### Constructor
-  Der Constructor verlangt **x**, **y**
+  Der Constructor verlangt **x**, **y**. Setzt alle unten aufgeführten Attribute.
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
