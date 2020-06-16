@@ -8,12 +8,12 @@
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
-|**x**|Aktuelle X-Position|  
-|**y** |Aktuelle Y-Position|
+|**x**|Aktuelle X-Position (in abhängikeit von Elternobjekt, wenn es eines gibt!)|  
+|**y** |Aktuelle Y-Position (in abhängikeit von Elternobjekt, wenn es eines gibt!)|
 |**imageWidth** |Breite, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
 |**imageHeight** |Höhe, in welcher das aktuelle Bild des Objektes gezeichnet wird|  
 |**rot** |Aktuelle Rotation des Objektes in Bogenmaß|
-|**scale** |Skallierung des gezeichneten Bildes und der draw-Funktion. 1 = 100% | 0.5 = 50%|
+|**scale** |Skallierung des gezeichneten Bildes und der draw-Funktion. 1 = 100% / 0.5 = 50%|
 |**images** |Eine Liste, welche unter einem bestimmten Schlüsselstring ein bestimmtes Bild abspeichert|
 |**doms** |Eine Liste welche unter einem bestimmten Schlüsselstring ein bestimmtes Video oder Gif abspeichert|
 |**currentImage** |Das Bild, welches gerade ausgewählt ist|
@@ -44,7 +44,36 @@
 |  stopDom() | custom |Stoppt das aktuell ausgewählte Dom. Wird nur bei Videos benutzt.| nein |
 |  setDomOffset(`x`,`y`) | custom |Setzt ein Offset für das aktuell ausgewählte Dom| nein |
 |  display() | custom |Verwaltet die Reinfolge der Anzeigen von draw und currentImage. Wendet auch die angegebenen Transformationen(Rotation und Offset) an.| nein |
+|  getRealXY() | custom |Gibt die echten Koordinaten auf dem Canvas als Objekt zurück.| nein |
 
+### Interactive Object extendes Interactive Obejct
+
+#### Constructor
+  Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute.
+#### Attribute
+|name|Bescheibung|
+| --- | --- |
+|**width**|Setzt die Breite der Hitbox. Bei einem ROUND Shape zählt nur dieser Wert.|  
+|**height** |Setzt die Höhe der Hitbox.|
+|**shape** |Bestimmt das Shape der Hitbox. Auch wird hier bestimmt, wie das Bild des Obejektes gezeichnet wird. RECT Shapes beginnen oben Links, ROUND Shapes beginnen in der Mitte|  
+|**enabled** |Bestimmt true/false , ob das Objekt interagierbar ist.(Anklickbar, Update, etc)|
+|**children** |Speichert die Kinder des Obejektes in einem Array|
+|**hovered** |Ist true/false, je nachdem ob das Objekt gehovered wird oder nicht.|
+|**waitStarttime** |Wenn die Funktion wait() aufgerufen wird, wird hier die Startzeit des Wartepunktes zwischengespeichert.|
+|**waitTime** |Speichert die Zeit die gewartet werden soll, wenn wait() aufgerufen wird in Sekunden.|
+
+
+#### Methoden
+| Name | Aufruf | Beschreibung|Leer|
+| --- | --- | --- | --- |
+|  onUpdate() | jeden Frame | Löst die onUpdate()-Funktion bei allen **children** aus, welche Interactive Objects sind. Ansonsten wird update() aufgerufen. Wird nur ausgeführt, wenn die waitStartTime === 0 ist und das Objekt enabled ist.| nein |
+|  onInit() | Am Anfang der Anwendung | Löst die onInit()-Funktion bei allen **children** aus, welche Interactive Objects sind. Ansonsten wird init() aufgerufen.| nein |
+|  enable(`hide`) | custom | Kann mit oder ohne Argument ausgeführt werden.**Enabeld** wird auf true gesetzt. Wenn es `ohne Argument` aufgerufen wird, wird das Objekt auch eingeblendet. Wenn `true übergeben` wird, wird das Objekt versteckt.| nein |
+|  disable(`hide`) | custom | Kann mit oder ohne Argument ausgeführt werden.**Enabeld** wird auf false gesetzt. Wenn es `ohne Argument` aufgerufen wird, wird das Objekt versteckt. Wenn `false übergeben` wird, wird das Objekt angezeigt.| nein |
+|  hitTest(`x`,`y`) | custom | Überprüft ob der Punkt(`x`, `y`) in dem Objekt liegt. Gibt true oder false zurück | nein |
+|  setHitboxSize(`w`,`h`) | custom | Ändert die Breite und Höhe der Hitbox auf `w` und `h` | nein |
+|  resize(`sizeX`,`sizeY`) | custom | Ändert die Breite und Höhe der Hitbox, des angezeigten Bildes und des **currentDom** auf einen schlag.(**width**, **height**, **imageWidth**, **imageHeight**, setDomSize()) | nein |
+| wait(`sek`) | custom | Setzt **waitTime** auf `sek` und rechnet `sek` in Millisekunden um. Das Objekt ist nicht mehr interaktiv. (update und die ganzen Mouseevents werden nicht mehr aufgerufen).| nein |
 
 
 
