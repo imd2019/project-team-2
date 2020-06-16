@@ -74,6 +74,8 @@
 |  setHitboxSize(`w`,`h`) | custom | Ändert die Breite und Höhe der Hitbox auf `w` und `h` | nein |
 |  resize(`sizeX`,`sizeY`) | custom | Ändert die Breite und Höhe der Hitbox, des angezeigten Bildes und des **currentDom** auf einen schlag.(**width**, **height**, **imageWidth**, **imageHeight**, setDomSize()) | nein |
 | wait(`sek`) | custom | Setzt **waitTime** auf `sek` und rechnet `sek` in Millisekunden um. Das Objekt ist nicht mehr interaktiv. (update und die ganzen Mouseevents werden nicht mehr aufgerufen).| nein |
+| addChild(`obj`) | custom |Fügt das `obj` hinten an die **children** Liste an.| nein |
+| removeChild(`obj`) | custom |Entfernt das `obj` von **children** Liste.| nein |
 | clicked() | Nach dem die Maus geklickt wurde |Die Funktion ist Standard mäßig leer. Sie kann in erbenden Klassen geändert werden. Sie wird nur aufgerufen wenn die Maus über diesem Objekt ist.| ja |
 | released() | Nach dem die Maus losgelassen wurde |Die Funktion ist Standard mäßig leer. Sie kann in erbenden Klassen geändert werden. Sie wird nur aufgerufen wenn die Maus über diesem Objekt ist.| ja |
 | pressed() | Wird *einmal* aufgerufen, wenn die Maus gepresst wird |Die Funktion ist Standard mäßig leer. Sie kann in erbenden Klassen geändert werden. Sie wird nur aufgerufen wenn die Maus über diesem Objekt ist.| ja |
@@ -83,8 +85,6 @@
 | mouseReleased() | Nach dem die Maus losgelassen wurde |Ruft erst released() der in **children** gespeicherten Objekte auf, dann ihre eigene.| nein |
 | mousePressed() |  Wird *einmal* aufgerufen, wenn die Maus gepresst wird |Ruft erst pressed() der in **children** gespeicherten Objekte auf, dann ihre eigene.| nein |
 | mouseHover() |   Während die Maus über den Objekt hovered  |Ruft erst hovered() der in **children** gespeicherten Objekte auf, dann ihre eigene. Setzt **hovered** auf true, wenn das Objekt gehovered wird, ansonsten auf false. Außerdem ruft es hoverEnd auf, wenn der Hover endet.| nein |
-| addChild(`obj`) | custom |Fügt das `obj` hinten an die **children** Liste an.| nein |
-| removeChild(`obj`) | custom |Entfernt das `obj` von **children** Liste.| nein |
 | display() | custom |Überschreibt die Display Funktion von displayObject. Sorgt erst für die eigene Dastellung, und führt danach die display() Methoden der Kinder aus| nein |
 | rotateRealPoint(`x`, `y`) | custom |Rotiert den Punkt(`x`, `y`), um die Achse und Rotation des Objekts und aller Eltern Objekte.| nein |
 | getRealRotation() | custom |Gibt die Summe der eigenen Rotation mit der Rotation der Eltern Objekte zurück.| nein |
