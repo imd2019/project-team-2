@@ -3,6 +3,8 @@
 ## Klassenbeschreibung: 
 ### Display Object
 
+#### Constructor
+  Der Constructor verlangt **x**, **y**
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
