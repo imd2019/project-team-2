@@ -101,7 +101,7 @@ export default class InteractiveObject extends DisplayObject {
 
   onUpdate() {
     if (this.waitStarttime === 0) {
-      if (this.enable) {
+      if (this.enabled) {
         this.update();
         for (let element of this.children) {
           if (element instanceof InteractiveObject) {

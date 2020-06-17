@@ -3,7 +3,7 @@ import Button_Start from "./button_Start.js";
 
 export default class Startscreen extends Scene {
   constructor() {
-    super("Startscreen");
+    super(window.ENUMS.SCENE_NAMES.START);
     this.startbutton;
   }
   init() {

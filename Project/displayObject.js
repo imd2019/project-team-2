@@ -53,7 +53,6 @@ export class DisplayObject {
 
   switchDom(key) {
     if (this.currentDom != undefined) {
-      this.stopDom();
       this.hideDom();
     }
     if (this.doms.hasOwnProperty(key)) {
