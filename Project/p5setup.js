@@ -23,7 +23,9 @@ let backgroundMap;
 
 //DOMS
 let animation_brown;
-let animation_white;
+let animation_white1;
+let animation_white2;
+let animation_white3;
 let testVideo;
 
 //Schriftarten
@@ -48,9 +50,13 @@ function preload() {
   sign = loadImage("images/Schild.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
-  animation_white = createImg("images/Animation_White.gif");
-  animation_white.hide();
+  animation_white1 = createImg("images/Händewaschen_1_White.gif");
+  animation_white2 = createImg("images/Händewaschen_2_Nagellack.gif");
+  animation_white3 = createImg("images/Händewaschen_3_Nagellack.gif");
   animation_brown.hide();
+  animation_white1.hide();
+  animation_white2.hide();
+  animation_white3.hide();
 
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
@@ -99,7 +105,9 @@ function setup() {
     }),
     DOM: Object.freeze({
       ANIMATION_BROWN: animation_brown,
-      ANIMATION_WHITE: animation_white,
+      ANIMATION_WHITE_1: animation_white1,
+      ANIMATION_WHITE_2: animation_white2,
+      ANIMATION_WHITE_3: animation_white3,
       TEST_VIDEO: testVideo,
     }),
     FONT: Object.freeze({

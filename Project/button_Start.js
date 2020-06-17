@@ -2,7 +2,7 @@ import Button from "./Button.js";
 
 export default class Button_Start extends Button {
   constructor(x, y) {
-    super(x, y, 100, 60, window.ENUMS.SHAPE.RECT, "Weiter");
+    super(x, y, 80, 60, window.ENUMS.SHAPE.RECT, "Weiter");
     this.color = color(170, 201, 91);
     this.textSize = 25;
   }
@@ -28,7 +28,7 @@ export default class Button_Start extends Button {
   released() {}
   pressed() {}
   animate() {
-    this.width = 100 + 20 * this.animationProgress;
+    this.width = 80 + 20 * this.animationProgress;
     this.height = 60 + 10 * this.animationProgress;
     //this.color = color(125+45*this.animationProgress, 125 + 76 * this.animationProgress, 125-34*this.animationProgress);
     this.textSize = 25 + 5 * this.animationProgress;
