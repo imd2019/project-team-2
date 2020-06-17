@@ -7,7 +7,7 @@ import Button_Retry from "./Button_Retry.js";
 
 export default class Haendewaschen extends Scene {
   constructor() {
-    super("Haendewaschen");
+    super(window.ENUMS.SCENE_NAMES.HAENDEWASCHEN);
     this.weiterButton;
     this.retryButton;
     this.hand;
@@ -33,12 +33,6 @@ export default class Haendewaschen extends Scene {
         this.width - 170,
         this.height - 135,
         "CheckPlacement"
-      );
-    } else if (this.level == 3) {
-      this.weiterButton = new Button_Weiter(
-        this.width - 170,
-        this.height - 135,
-        "nextScene"
       );
     }
     this.retryButton = new Button_Retry(
@@ -94,6 +88,7 @@ export default class Haendewaschen extends Scene {
       this.animation2 = true;
       this.animation1 = false;
       this.wait(1);
+      return;
     } else if (this.animation2) {
       this.switchDom("Animation2");
       this.setDomSize(1000, 800);
@@ -102,14 +97,16 @@ export default class Haendewaschen extends Scene {
       this.animation3 = true;
       this.animation2 = false;
       this.wait(1);
+      return;
     } else if (this.animation3) {
       this.switchDom("Animation3");
       this.setDomSize(1000, 800);
       this.setDomOffset(100, 80);
       this.showDom();
       this.wait(1);
-      this.animation3 = false;
       this.animation4 = true;
+      this.animation3 = false;
+      return;
     } else if (this.animation4) {
       this.hideDom();
       this.nextLevel();
@@ -122,12 +119,19 @@ export default class Haendewaschen extends Scene {
     this.animation1 = true;
   }
   nextLevel() {
+    console.log(this.animation4);
     this.hand.enable();
     this.level++;
-    this.sign_level.changeText("Level " + this.level + "/3");
+
     this.virus.enable();
     this.virus.x = width / 2;
     this.virus.y = height / 2 + 38;
     this.virus.resize(150, 150);
+    if (this.animation4 === true && this.level == 4) {
+      this.weiterButton.changeEvent("nextScene");
+      this.weiterButton.switchSceneId = window.ENUMS.SCENE_NAMES.MAP;
+      this.level = 3;
+    }
+    this.sign_level.changeText("Level " + this.level + "/3");
   }
 }

@@ -21,7 +21,6 @@ export default class Button_Map extends Button {
   onDisable() {
     this.transperency = 100;
     this.color = color(100, 100, 100, this.transperency);
-    console.log(this);
   }
   clicked() {
     window.dispatchEvent(
