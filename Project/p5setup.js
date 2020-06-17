@@ -49,12 +49,12 @@ function preload() {
   backgroundMap = loadImage("images/background_Karte.png");
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
-  mentorVirus = loadImage ("images/MentorVirus.png");
+  mentorVirus = loadImage("images/MentorVirus.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white1 = createImg("images/Händewaschen_1_White.gif");
-  animation_white2 = createImg("images/Händewaschen_2_Nagellack.gif");
-  animation_white3 = createImg("images/Händewaschen_3_Nagellack.gif");
+  animation_white2 = createImg("images/Händewaschen_2_White.gif");
+  animation_white3 = createImg("images/Händewaschen_3_White.gif");
   animation_brown.hide();
   animation_white1.hide();
   animation_white2.hide();

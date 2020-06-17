@@ -87,7 +87,7 @@ export default class Haendewaschen extends Scene {
       this.showDom();
       this.animation2 = true;
       this.animation1 = false;
-      this.wait(1);
+      this.wait(2.5);
       return;
     } else if (this.animation2) {
       this.switchDom("Animation2");
@@ -96,14 +96,14 @@ export default class Haendewaschen extends Scene {
       this.showDom();
       this.animation3 = true;
       this.animation2 = false;
-      this.wait(1);
+      this.wait(4.5);
       return;
     } else if (this.animation3) {
       this.switchDom("Animation3");
       this.setDomSize(1000, 800);
       this.setDomOffset(100, 80);
       this.showDom();
-      this.wait(1);
+      this.wait(3);
       this.animation4 = true;
       this.animation3 = false;
       return;
