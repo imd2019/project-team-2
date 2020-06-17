@@ -10,7 +10,9 @@ export default class Button extends InteractiveObject {
     this.event = event;
   }
   draw() {}
-
+  changeEvent(event) {
+    this.event = event;
+  }
   update() {
     this.updateAnimationValues();
     this.animate();
