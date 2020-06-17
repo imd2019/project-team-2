@@ -3,7 +3,7 @@ import Button_Map from "./button_map.js";
 
 export default class Map extends Scene {
   constructor() {
-    super("Map");
+    super(window.ENUMS.SCENE_NAMES.MAP);
     this.buttonMap1;
     this.buttonMap2;
     this.buttonMap3;

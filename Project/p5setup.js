@@ -77,6 +77,7 @@ function setup() {
 
     SCENE_NAMES: Object.freeze({
       START: "Startscreen",
+      MAP: "Map",
       HAENDEWASCHEN: "Haendewaschen",
       MASK: "SzeneTest",
       PEOPLE_BOUNCY: "SzeneTest2",
