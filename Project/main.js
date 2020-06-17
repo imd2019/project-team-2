@@ -7,6 +7,7 @@ import Scene from "./scene.js";
 import Haendewaschen from "./scene_haendewaschen.js";
 
 import Startscreen from "./scene_startscreen.js";
+import Map from "./scene_map.js";
 
 let weiter;
 let world;
@@ -16,6 +17,7 @@ let init = true;
 let testScene;
 let testScene2;
 let sceneHaendewaschen;
+let sceneMap1;
 
 let sceneStartscreen;
 
@@ -24,6 +26,7 @@ function draw() {
     world = new Game("world");
 
     sceneStartscreen = new Startscreen();
+    sceneMap1 = new Map();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");
 
@@ -31,9 +34,11 @@ function draw() {
     sceneHaendewaschen = new Haendewaschen();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");
+    world.addScene(sceneMap1);
     world.addScene(sceneHaendewaschen);
     world.addScene(testScene);
     world.addScene(testScene2);
+
     world.start();
     test = new Test();
     weiter = new Button_Weiter(750, 100, "nextScene");
@@ -42,7 +47,7 @@ function draw() {
     testScene.addChild(weiter);
     testScene2.addChild(test);
     world.onInit();
-    world.nextScene(0);
+    world.nextScene(window.ENUMS.SCENE_NAMES.START);
 
     init = false;
   }
