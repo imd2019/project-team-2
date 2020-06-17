@@ -18,7 +18,7 @@ export default class Game extends InteractiveObject {
 
   init() {
     window.addEventListener("nextScene", (e) => {
-      this.nextScene();
+      this.nextScene(e.detail);
     });
   }
 
@@ -66,7 +66,9 @@ export default class Game extends InteractiveObject {
       for (let element of this.scenes) {
         element.disable();
       }
-      specific === null ? this.currentScene++ : (this.currentScene = specific);
+      specific === null
+        ? this.currentScene++
+        : (this.currentScene = this.getSceneByName(specific));
       this.addChild(this.getCurrentScene());
       this.getCurrentScene().enable();
       this.onNextScene();
@@ -81,4 +83,14 @@ export default class Game extends InteractiveObject {
   }
 
   onEnd() {}
+
+  getSceneByName(name) {
+    let result = -1;
+    for (let i in this.scenes) {
+      if (this.scenes[i].name === name) {
+        result = i;
+      }
+    }
+    return result;
+  }
 }

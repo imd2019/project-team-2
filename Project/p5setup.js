@@ -19,6 +19,7 @@ let virus_1;
 let hand_white;
 let sign;
 let backgroundStartscreen;
+let backgroundMap;
 
 //DOMS
 let animation_brown;
@@ -42,6 +43,7 @@ function preload() {
   hand_white = loadImage("images/Haendewaschen_Hand_Weiß.png");
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
+  backgroundMap = loadImage("images/background_Karte.png");
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
 
@@ -72,6 +74,14 @@ function setup() {
       ROUND: 0,
       RECT: 1,
     }),
+
+    SCENE_NAMES: Object.freeze({
+      START: "Startscreen",
+      HAENDEWASCHEN: "Haendewaschen",
+      MASK: "SzeneTest",
+      PEOPLE_BOUNCY: "SzeneTest2",
+    }),
+
     IMAGE: Object.freeze({
       BUTTON_WEITER_1: buttonWeiter,
       BUTTON_RETRY: buttonRetry,
@@ -82,6 +92,7 @@ function setup() {
       HAND_WHITE: hand_white,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
+      BACKGROUND_MAP: backgroundMap,
       VIRUS_1: virus_1,
       SIGN: sign,
     }),
