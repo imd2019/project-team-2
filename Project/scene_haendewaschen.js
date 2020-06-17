@@ -4,15 +4,12 @@ import Virus from "./virus.js";
 import Hand from "./hand.js";
 import Sign from "./sign.js";
 import Button_Retry from "./Button_Retry.js";
-import Button_Weiter_Grau from "./Button_Weiter_Grau.js";
 
 export default class Haendewaschen extends Scene {
   constructor() {
     super("Haendewaschen");
     this.weiterButton;
     this.retryButton;
-    this.weiterButtonGrau;
-    //this.retryButtonGrau;
     this.hand;
     this.virus;
     this.sign_name;
@@ -29,25 +26,18 @@ export default class Haendewaschen extends Scene {
       "nextScene"
     );
     this.retryButton = new Button_Retry(0 + 130, this.height - 75, "nextScene");
-    this.weiterButtonGrau = new Button_Weiter_Grau(
-      this.width - 170,
-      this.height - 135
-    );
-    //this.retryButtonGrau = new Button_Retry(0 + 130, this.height - 75);
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
     this.virus = new Virus(width / 2, height / 2 + 38);
     this.sign_name = new Sign(50, 0, "Händewaschen");
     this.sign_level = new Sign(215, 0, "Level 1");
+    this.retryButton.disable(false);
+    this.weiterButton.disable(false);
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
-    this.addChild(this.weiterButtonGrau);
-    //this.addChild(this.retryButtonGrau)
     this.addChild(this.virus);
     this.addChild(this.sign_name);
     this.addChild(this.sign_level);
-    this.retryButton.disable();
-    this.weiterButton.disable();
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_HAENDEWASCHEN);
     this.switchImage("background");
   }

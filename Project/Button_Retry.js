@@ -9,9 +9,16 @@ export default class Button_Retry extends Button {
   init() {
     this.addImage("Retry", window.ENUMS.IMAGE.BUTTON_RETRY);
     this.switchImage("Retry");
+    this.addImage("RetryGrau", window.ENUMS.IMAGE.BUTTON_RETRY_GRAU);
   }
 
-  draw() {}
+  draw() {
+    if (this.enabled) {
+      this.switchImage("Retry");
+    } else {
+      this.switchImage("RetryGrau");
+    }
+  }
 
   released() {
     console.log("released");

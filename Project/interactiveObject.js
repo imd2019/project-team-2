@@ -39,11 +39,15 @@ export default class InteractiveObject extends DisplayObject {
 
   enable(hide = false) {
     this.enabled = true;
+    this.onEnable();
     this.hide(hide);
   }
+  onEnable() {}
+  onDisable() {}
 
   disable(hide = true) {
     this.enabled = false;
+    this.onDisable();
     this.hide(hide);
   }
 
