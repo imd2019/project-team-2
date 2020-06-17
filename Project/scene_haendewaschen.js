@@ -17,13 +17,16 @@ export default class Haendewaschen extends Scene {
     window.addEventListener("VirusReleased", (e) => {
       this.virusReleased();
     });
+    window.addEventListener("CheckPlacement", (e) => {
+      this.checkPlacement();
+    });
   }
 
   init() {
     this.weiterButton = new Button_Weiter(
       this.width - 170,
       this.height - 135,
-      "nextScene"
+      "CheckPlacement"
     );
     this.retryButton = new Button_Retry(0 + 130, this.height - 75, "nextScene");
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
@@ -40,10 +43,31 @@ export default class Haendewaschen extends Scene {
     this.addChild(this.sign_level);
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_HAENDEWASCHEN);
     this.switchImage("background");
+    this.addDom("Animation1", window.ENUMS.DOM.ANIMATION_WHITE);
+    this.switchDom("Animation1");
+    this.setDomSize(this.width / 2, this.height / 2);
   }
-
   virusReleased() {
-    this.weiterButton.enable();
-    this.retryButton.enable();
+    if (
+      (this.virus.x > 245 &&
+        this.virus.x < 610 &&
+        this.virus.y > 205 &&
+        this.virus.y < 1080) ||
+      (this.virus.x > 770 &&
+        this.virus.x < 1140 &&
+        this.virus.y > 205 &&
+        this.virus.y < 1080)
+    ) {
+      this.weiterButton.enable();
+      this.retryButton.enable();
+    }
+  }
+  checkPlacement() {
+    this.showDom();
+    this.playDom();
+    this.stopDom(4);
+    this.hand.disable();
+    // this.scene.wait
+    // play DOM
   }
 }
