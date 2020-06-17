@@ -49,7 +49,7 @@ function preload() {
   backgroundMap = loadImage("images/background_Karte.png");
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
-  mentorVirus = loadImage ("images/MentorVirus.png");
+  mentorVirus = loadImage("images/MentorVirus.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white1 = createImg("images/Händewaschen_1_White.gif");
