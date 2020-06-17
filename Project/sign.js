@@ -26,4 +26,7 @@ export default class Sign extends MoveableObject {
     textAlign(CENTER);
     text(this.text + "", 0, 60, this.width);
   }
+  changeText(string) {
+    this.text = string;
+  }
 }
