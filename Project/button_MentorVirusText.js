@@ -13,32 +13,22 @@ export default class Button_MentorVirusText extends Button {
     this.switchImage("MentorVirusText");
   }
 
-  onEnable() {
-    this.switchImage("MentorVirusText");
-  }
-  onDisable() {
-    this.switchImage("MentorVirusText");
-
-  }
 
   released() {
-    console.log("released");
+  }
+
+  draw(){
+    fill(0);
+    textSize(17);
+    textFont(window.ENUMS.FONT.MARKER_FELT);
+   
+    text("hxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxi", 10, 28, this.width-20,this.height-20);
   }
 
   pressed() {
-    console.log("pressed");
   }
 
   clicked() {
- //   if(this.text==false) {
-//    this.switchImage("MentorVirusText");
-//    this.resize(200, 160);
- //   this.text=true;
- // } else {
-//    this.switchImage("MentorVirusText");
-//    this.resize(200, 160);
-//    this.text=false;
-  //}
 }
 
   hoverEnd() {}
