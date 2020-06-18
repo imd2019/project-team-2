@@ -44,7 +44,7 @@ function preload() {
   buttonRetry = loadImage("images/Button_Retry.png");
   buttonWeiterGrau = loadImage("images/Button_Weiter_grau.png");
   buttonRetryGrau = loadImage("images/Button_Retry_grau.png");
-  hand_white = loadImage("images/Haendewaschen_Hand_Weiß.png");
+  hand_white = loadImage("images/Haendewaschen_Weiss_Hand.png");
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
@@ -53,11 +53,10 @@ function preload() {
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
-
   animation_brown = createImg("images/Animation_Brown.gif");
-  animation_white1 = createImg("images/Händewaschen_1_White.gif");
-  animation_white2 = createImg("images/Händewaschen_2_White.gif");
-  animation_white3 = createImg("images/Händewaschen_3_White.gif");
+  animation_white1 = createImg("images/Haendewaschen_Weiss_Handflaechen.gif");
+  animation_white2 = createImg("images/Haendewaschen_Weiss_Zwischenraeume.gif");
+  animation_white3 = createImg("images/Haendewaschen_Weiss_Fingerspitzen.gif");
   animation_brown.hide();
   animation_white1.hide();
   animation_white2.hide();

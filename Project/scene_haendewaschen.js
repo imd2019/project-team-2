@@ -102,6 +102,7 @@ console.log(this.mentorVirus);
   }
   update() {
     if (this.animation1) {
+      this.weiterButton.disable(false);
       this.switchDom("Animation1");
       this.setDomSize(1000, 800);
       this.setDomOffset(100, 80);
@@ -162,7 +163,6 @@ console.log(this.mentorVirus);
   }
 
   askMentor() {
-//console.log("hi");
-
+    //console.log("hi");
   }
 }
