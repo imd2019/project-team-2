@@ -1,23 +1,24 @@
 import Button from "./Button.js";
 
-export default class Button_Retry extends Button {
+export default class Button_MentorVirus extends Button {
   constructor(x, y) {
-    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "restartScene");
-    this.color = color(125, 125, 125);
+    super(x, y, 330, 250, window.ENUMS.SHAPE.RECT, "MentorVirus");
+   // this.color = color(125, 125, 125);
+   this.text=false;
   }
 
   init() {
-    this.addImage("Retry", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
-    this.switchImage("Retry");
-    this.addImage("RetryGrau", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
+    this.addImage("MentorVirus", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
+    this.switchImage("MentorVirus");
+    this.addImage("MentorVirusText", window.ENUMS.IMAGE.BUTTON_MENTORVIRUSTEXT);
   }
 
-  draw() {
-    if (this.enabled) {
-      this.switchImage("Retry");
-    } else {
-      this.switchImage("RetryGrau");    
-    }
+  onEnable() {
+    this.switchImage("MentorVirus");
+  }
+  onDisable() {
+    this.switchImage("MentorVirus");
+
   }
 
   released() {
@@ -28,9 +29,17 @@ export default class Button_Retry extends Button {
     console.log("pressed");
   }
 
-  animate() {
-    this.setRotInDegree(-90 * this.animationProgress);
+  clicked() {
+    if(this.text==false) {
+    this.switchImage("MentorVirusText");
+    this.resize(330,250);
+    this.text=true;
+  } else {
+    this.switchImage("MentorVirus");
+    this.resize(330,250);
+    this.text=false;
   }
+}
 
   hoverEnd() {}
 }

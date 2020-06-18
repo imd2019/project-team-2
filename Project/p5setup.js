@@ -21,6 +21,7 @@ let sign;
 let backgroundStartscreen;
 let backgroundMap;
 let mentorVirus;
+let mentorVirusText;
 
 //DOMS
 let animation_brown;
@@ -43,18 +44,19 @@ function preload() {
   buttonRetry = loadImage("images/Button_Retry.png");
   buttonWeiterGrau = loadImage("images/Button_Weiter_grau.png");
   buttonRetryGrau = loadImage("images/Button_Retry_grau.png");
-  hand_white = loadImage("images/Haendewaschen_Hand_Weiß.png");
+  hand_white = loadImage("images/Haendewaschen_Weiss_Hand.png");
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
+  mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
-  animation_white1 = createImg("images/Händewaschen_1_White.gif");
-  animation_white2 = createImg("images/Händewaschen_2_White.gif");
-  animation_white3 = createImg("images/Händewaschen_3_White.gif");
+  animation_white1 = createImg("images/Haendewaschen_Weiss_Handflaechen.gif");
+  animation_white2 = createImg("images/Haendewaschen_Weiss_Zwischenraeume.gif");
+  animation_white3 = createImg("images/Haendewaschen_Weiss_Fingerspitzen.gif");
   animation_brown.hide();
   animation_white1.hide();
   animation_white2.hide();
@@ -97,6 +99,7 @@ function setup() {
       BUTTON_WEITER_GRAU: buttonWeiterGrau,
       BUTTON_RETRY_GRAU: buttonRetryGrau,
       BUTTON_MENTORVIRUS: mentorVirus,
+      BUTTON_MENTORVIRUSTEXT: mentorVirusText,
       EMOLGA: emolga,
 
       HAND_WHITE: hand_white,

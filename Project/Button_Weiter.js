@@ -4,13 +4,12 @@ export default class Button_Weiter extends Button {
   constructor(x, y, event) {
     super(x, y, 110, 120, window.ENUMS.SHAPE.RECT, event);
     this.switchSceneId = null;
-  }
-
-  init() {
     this.addImage("Weiter", window.ENUMS.IMAGE.BUTTON_WEITER_1);
     this.switchImage("Weiter");
     this.addImage("WeiterGrau", window.ENUMS.IMAGE.BUTTON_WEITER_GRAU);
   }
+
+  init() {}
 
   draw() {}
   onEnable() {
@@ -18,6 +17,7 @@ export default class Button_Weiter extends Button {
   }
   onDisable() {
     this.switchImage("WeiterGrau");
+    this.resize(this.width, this.height);
   }
   released() {}
   pressed() {}
