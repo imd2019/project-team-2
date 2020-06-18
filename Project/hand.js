@@ -11,14 +11,19 @@ export default class Hand extends MoveableObject {
       thumb: [],
     };
     this.hitBoxInit = false;
+    this.addImage("Weiss-Hand", window.ENUMS.IMAGE.HAND_WHITE);
+    this.addImage("Braun-Hand", window.ENUMS.IMAGE.HAND_BROWN);
   }
   init() {
-    this.addImage("HandWeiss", window.ENUMS.IMAGE.HAND_WHITE);
-    this.switchImage("HandWeiss");
+    this.setSpeed();
+  }
+
+  setSpeed() {
     this.velocity.y = -25;
     this.setAcceleration(0, 0.5);
     this.setMaxMinSpeed(0, -200);
   }
+
   update() {
     if (this.y <= 200) {
       this.stop();

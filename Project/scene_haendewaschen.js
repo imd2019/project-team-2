@@ -21,6 +21,9 @@ export default class Haendewaschen extends Scene {
     this.animation3 = false;
     this.animation4 = false;
     this.level = 1;
+    this.handColor = ["Weiss-", "Braun-"];
+    this.currentColor = "";
+
     this.savePlace = ["palm", "spaces", "tips", "thumb"];
     window.addEventListener("VirusReleased", (e) => {
       this.virusReleased();
@@ -56,6 +59,8 @@ export default class Haendewaschen extends Scene {
     this.mentorVirus = new Button_MentorVirus(1180, 10, "MentorVirus");
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
+    this.newHandColor();
+
     this.virus = new Virus(width / 2, height / 2 + 38);
     this.sign_name = new Sign(50, 0, "Händewaschen");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
@@ -141,14 +146,17 @@ export default class Haendewaschen extends Scene {
       if (index >= 0) {
         this.virus.hide(false);
         this.savePlace.splice(index, 1);
-        //Mentorvirus Textupdaten
+        this.mentorVirus.updateText(
+          "Du hast es geschafft. Auf zur nächsten Person!"
+        );
         this.weiterButton.enable();
       } else {
-        //Mentorvirus Textupdaten
+        this.mentorVirus.updateText(
+          "Du wurdest abgewaschen! Probiere es nochmal ..."
+        );
         this.retryButton.enable();
       }
-      //Mentorvirus ausklappen
-
+      this.mentorVirus.showText();
       this.hand.enable();
       this.weiterButton.changeEvent("nextHaendeLevel");
       if (this.animation4 === true && this.level == 4) {
@@ -188,6 +196,9 @@ export default class Haendewaschen extends Scene {
   setUpLevel() {
     this.weiterButton.disable(false);
     this.retryButton.disable(false);
+    this.hand.setSpeed();
+    this.hand.y = window.ENUMS.SIZE.Y + 50;
+    this.newHandColor();
     this.virus.enable();
     this.weiterButton.changeEvent("PlayAnimation");
 
@@ -206,5 +217,10 @@ export default class Haendewaschen extends Scene {
 
   askMentor() {
     //console.log("hi");
+  }
+
+  newHandColor() {
+    this.currentColor = random(this.handColor);
+    this.hand.switchImage(this.currentColor + "Hand");
   }
 }
