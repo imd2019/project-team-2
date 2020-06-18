@@ -62,7 +62,7 @@ export default class Hand extends MoveableObject {
       push();
       translate(element.x, element.y);
       rotate(element.rot);
-      fill(0);
+      fill(0, 0, 0, 100);
       if (element.shape === window.ENUMS.SHAPE.ROUND) {
         ellipse(0, 0, element.width, element.height);
       } else {
