@@ -24,7 +24,6 @@ let mentorVirus;
 let mentorVirusText;
 
 //DOMS
-let animation_brown;
 let animation_white1;
 let animation_white2;
 let animation_white3;
@@ -53,11 +52,9 @@ function preload() {
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
-  animation_brown = createImg("images/Animation_Brown.gif");
   animation_white1 = createImg("images/Haendewaschen_Weiss_Handflaechen.gif");
   animation_white2 = createImg("images/Haendewaschen_Weiss_Zwischenraeume.gif");
   animation_white3 = createImg("images/Haendewaschen_Weiss_Fingerspitzen.gif");
-  animation_brown.hide();
   animation_white1.hide();
   animation_white2.hide();
   animation_white3.hide();
@@ -110,7 +107,6 @@ function setup() {
       SIGN: sign,
     }),
     DOM: Object.freeze({
-      ANIMATION_BROWN: animation_brown,
       ANIMATION_WHITE_1: animation_white1,
       ANIMATION_WHITE_2: animation_white2,
       ANIMATION_WHITE_3: animation_white3,

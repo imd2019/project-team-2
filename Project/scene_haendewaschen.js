@@ -46,19 +46,25 @@ export default class Haendewaschen extends Scene {
       "retryScene"
     );
 
-    this.mentorVirus = new Button_MentorVirus(1020, 10, "MentorVirus");
+    this.mentorVirus = new Button_MentorVirus(
+    1170,
+    10,
+      "MentorVirus"
+    );
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
     this.virus = new Virus(width / 2, height / 2 + 38);
     this.sign_name = new Sign(50, 0, "Händewaschen");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
     this.retryButton.disable(false);
-    this.weiterButton.disable(false);
+    this.weiterButton.disable(false); 
+
     this.mentorVirus.enable();
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
     this.addChild(this.virus);
+
     this.addChild(this.sign_name);
     this.addChild(this.sign_level);
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_HAENDEWASCHEN);
@@ -70,7 +76,8 @@ export default class Haendewaschen extends Scene {
     this.addDom("Animation3", window.ENUMS.DOM.ANIMATION_WHITE_3);
     //this.switchDom("Animation3");
     this.addChild(this.mentorVirus);
-    console.log(this.mentorVirus);
+
+console.log(this.mentorVirus);
   }
   virusReleased() {
     if (
@@ -124,6 +131,7 @@ export default class Haendewaschen extends Scene {
       this.nextLevel();
       this.animation4 = false;
     }
+    
   }
   checkPlacement() {
     this.hand.disable();
