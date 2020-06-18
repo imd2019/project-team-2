@@ -4,6 +4,7 @@ import Virus from "./virus.js";
 import Hand from "./hand.js";
 import Sign from "./sign.js";
 import Button_Retry from "./Button_Retry.js";
+import Button_MentorVirus from "./button_MentorVirus.js";
 
 export default class Haendewaschen extends Scene {
   constructor() {
@@ -45,10 +46,10 @@ export default class Haendewaschen extends Scene {
       "retryScene"
     );
 
-    this.retryButton = new Button_Retry(
-      0 + 130,
-      this.height - 75,
-      "retryScene"
+    this.mentorVirus = new Button_MentorVirus(
+    1200,
+    0,
+      "MentorVirus"
     );
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
@@ -56,7 +57,8 @@ export default class Haendewaschen extends Scene {
     this.sign_name = new Sign(50, 0, "Händewaschen");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
     this.retryButton.disable(false);
-    this.weiterButton.disable(false);
+    this.weiterButton.disable(false);    
+    this.mentorVirus.enable();
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
@@ -71,6 +73,8 @@ export default class Haendewaschen extends Scene {
     //this.switchDom("Animation2");
     this.addDom("Animation3", window.ENUMS.DOM.ANIMATION_WHITE_3);
     //this.switchDom("Animation3");
+    this.addChild(this.mentorVirus);
+console.log(this.mentorVirus);
   }
   virusReleased() {
     if (
@@ -147,7 +151,7 @@ export default class Haendewaschen extends Scene {
   }
 
   askMentor() {
-
+console.log("hi");
 
   }
 }

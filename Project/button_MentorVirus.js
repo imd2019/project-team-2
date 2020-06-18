@@ -2,22 +2,21 @@ import Button from "./Button.js";
 
 export default class Button_MentorVirus extends Button {
   constructor(x, y) {
-    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "MentorVirus");
-    this.color = color(125, 125, 125);
+    super(x, y, 200, 250, window.ENUMS.SHAPE.RECT, "MentorVirus");
+   // this.color = color(125, 125, 125);
   }
 
   init() {
     this.addImage("MentorVirus", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
     this.switchImage("MentorVirus");
-    this.addImage("MentorVirusText", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
+    this.addImage("MentorVirusText", window.ENUMS.IMAGE.BUTTON_MENTORVIRUSTEXT);
   }
 
-  draw() {
-    if (this.enabled) {
-      this.switchImage("MentorVirus");
-    } else {
-      this.switchImage("MentorVirusText");    
-    }
+  onEnable() {
+    this.switchImage("MentorVirus");
+  }
+  onDisable() {
+    
   }
 
   released() {
@@ -29,7 +28,7 @@ export default class Button_MentorVirus extends Button {
   }
 
   animate() {
-    this.setRotInDegree(-90 * this.animationProgress);
+    this.switchImage("MentorVirusText") * this.animationProgress;
   }
 
   hoverEnd() {}

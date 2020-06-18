@@ -21,6 +21,7 @@ let sign;
 let backgroundStartscreen;
 let backgroundMap;
 let mentorVirus;
+let mentorVirusText;
 
 //DOMS
 let animation_brown;
@@ -49,7 +50,9 @@ function preload() {
   backgroundMap = loadImage("images/background_Karte.png");
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
+  mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
+
 
   animation_brown = createImg("images/Animation_Brown.gif");
   animation_white1 = createImg("images/Händewaschen_1_White.gif");
@@ -97,6 +100,7 @@ function setup() {
       BUTTON_WEITER_GRAU: buttonWeiterGrau,
       BUTTON_RETRY_GRAU: buttonRetryGrau,
       BUTTON_MENTORVIRUS: mentorVirus,
+      BUTTON_MENTORVIRUSTEXT: mentorVirusText,
       EMOLGA: emolga,
 
       HAND_WHITE: hand_white,
