@@ -4,7 +4,7 @@ export default class Button_MentorVirusText extends Button {
   constructor(x, y) {
     super(x, y, 200, 150, window.ENUMS.SHAPE.RECT, "MentorVirusText");
    // this.color = color(125, 125, 125);
-   this.text=false;
+   this.ausgabeText="hi";
   }
 
   init() {
@@ -22,7 +22,7 @@ export default class Button_MentorVirusText extends Button {
     textSize(17);
     textFont(window.ENUMS.FONT.MARKER_FELT);
    
-    text("hxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxi", 10, 28, this.width-20,this.height-20);
+    text(this.ausgabeText, 20, 30, this.width-30,this.height-30);
   }
 
   pressed() {

@@ -18,13 +18,6 @@ export default class Button_MentorVirus extends Button {
     console.log(this);
   }
 
-  onEnable() {
-    this.switchImage("MentorVirus");
-  }
-  onDisable() {
-    this.switchImage("MentorVirus");
-
-  }
 
   released() {
     console.log("released");
