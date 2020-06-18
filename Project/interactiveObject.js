@@ -51,7 +51,7 @@ export default class InteractiveObject extends DisplayObject {
     this.hide(hide);
   }
 
-  hitTest(x, y) {
+  hitTest(x, y, debug = false) {
     if (this.enabled) {
       let realCord = this.getRealXY();
       switch (this.shape) {
@@ -60,7 +60,18 @@ export default class InteractiveObject extends DisplayObject {
           let rightX = leftX + this.width;
           let topY = realCord.y;
           let botY = topY + this.height;
-          let rotatedVec = this.rotateRealPoint(x, y);
+          let rotatedVec = this.rotateRealPoint(x, y, debug);
+          if (debug) console.log(mouseX, mouseY);
+          if (debug) console.log(rotatedVec);
+          if (debug) {
+            push();
+            noFill();
+            stroke("red");
+            translate(leftX, topY);
+            rotate(this.getRealRotation());
+            rect(0, 0, this.width, this.height);
+            pop();
+          }
           if (
             rotatedVec.x >= leftX &&
             rotatedVec.x <= rightX &&
@@ -224,17 +235,17 @@ export default class InteractiveObject extends DisplayObject {
     }
   }
 
-  rotateRealPoint(x, y) {
+  rotateRealPoint(x, y, debug = false) {
     let p = this.parent;
     let vector = [x - this.x, y - this.y];
     vector = Util.vecRotate(vector, -this.rot);
     vector[0] += this.x;
     vector[1] += this.y;
-
     while (p != undefined) {
       let pvector = [vector[0] - p.x, vector[1] - p.y];
 
       vector = Util.vecRotate(pvector, -p.rot);
+
       vector[0] += p.x;
       vector[1] += p.y;
       p = p.parent;

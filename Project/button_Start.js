@@ -36,9 +36,6 @@ export default class Button_Start extends Button {
       221 + 113 * this.animationProgress,
       180 - 30 * this.animationProgress
     );
-    if (this.animationProgress === 1) {
-      this.switchImage("Weiter_2");
-    }
   }
   hoverEnd() {}
 }
