@@ -31,6 +31,7 @@ export default class Hand extends MoveableObject {
   }
 
   initHitBox() {
+    //Hitbox Handfläche
     let palm1 = new InteractiveObject(
       655,
       335,
@@ -39,15 +40,109 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.ROUND
     );
     let palm2 = new InteractiveObject(
-      655,
-      500,
-      230,
-      230,
+      580,
+      420,
+      160,
+      150,
       window.ENUMS.SHAPE.RECT
     );
-    palm2.setRotInDegree(40);
+
     this.hitBoxen.palm.push(palm1);
     this.hitBoxen.palm.push(palm2);
+
+    //Hitbox Fingerzwischenräume von links nach rechts
+    //linke Hand
+    let spacesBelow1 = new InteractiveObject(
+      75,
+      240,
+      30,
+      400,
+      window.ENUMS.SHAPE.ROUND
+    );
+    let spacesAbove1 = new InteractiveObject(
+      45,
+      170,
+      30,
+      70,
+      window.ENUMS.SHAPE.RECT
+    );
+
+    let spacesBelow2 = new InteractiveObject(
+      133,
+      215,
+      30,
+      400,
+      window.ENUMS.SHAPE.ROUND
+    );
+    let spacesAbove2 = new InteractiveObject(
+      112,
+      115,
+      35,
+      90,
+      window.ENUMS.SHAPE.RECT
+    );
+    let spacesBelow3 = new InteractiveObject(
+      190,
+      220,
+      30,
+      400,
+      window.ENUMS.SHAPE.ROUND
+    );
+    let spacesAbove3 = new InteractiveObject(
+      190,
+      115,
+      35,
+      90,
+      window.ENUMS.SHAPE.RECT
+    );
+    let spacesBelow4 = new InteractiveObject(
+      260,
+      320,
+      60,
+      400,
+      window.ENUMS.SHAPE.ROUND
+    );
+    let spacesAbove4 = new InteractiveObject(
+      300,
+      270,
+      35,
+      60,
+      window.ENUMS.SHAPE.RECT
+    );
+
+    spacesAbove1.setRotInDegree(-12);
+    spacesAbove2.setRotInDegree(-1);
+    spacesAbove3.setRotInDegree(10);
+    spacesAbove4.setRotInDegree(45);
+    this.hitBoxen.spaces.push(spacesAbove1);
+    this.hitBoxen.spaces.push(spacesBelow1);
+    this.hitBoxen.spaces.push(spacesAbove2);
+    this.hitBoxen.spaces.push(spacesBelow2);
+    this.hitBoxen.spaces.push(spacesAbove3);
+    this.hitBoxen.spaces.push(spacesBelow3);
+    this.hitBoxen.spaces.push(spacesAbove4);
+    this.hitBoxen.spaces.push(spacesBelow4);
+
+    //rechte Hand Hier weitermachen !!!!!
+
+    let spacesBelow5 = new InteractiveObject(
+      595,
+      230,
+      30,
+      400,
+      window.ENUMS.SHAPE.ROUND
+    );
+    let spacesAbove5 = new InteractiveObject(
+      570,
+      160,
+      30,
+      70,
+      window.ENUMS.SHAPE.RECT
+    );
+
+    spacesAbove5.setRotInDegree(-12);
+    this.hitBoxen.spaces.push(spacesAbove5);
+    this.hitBoxen.spaces.push(spacesBelow5);
 
     for (let i in this.hitBoxen) {
       let array = this.hitBoxen[i];
