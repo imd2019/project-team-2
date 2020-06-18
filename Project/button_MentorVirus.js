@@ -1,22 +1,22 @@
 import Button from "./Button.js";
 
-export default class Button_Retry extends Button {
+export default class Button_MentorVirus extends Button {
   constructor(x, y) {
-    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "restartScene");
+    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "MentorVirus");
     this.color = color(125, 125, 125);
   }
 
   init() {
-    this.addImage("Retry", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
-    this.switchImage("Retry");
-    this.addImage("RetryGrau", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
+    this.addImage("MentorVirus", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
+    this.switchImage("MentorVirus");
+    this.addImage("MentorVirusText", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
   }
 
   draw() {
     if (this.enabled) {
-      this.switchImage("Retry");
+      this.switchImage("MentorVirus");
     } else {
-      this.switchImage("RetryGrau");    
+      this.switchImage("MentorVirusText");    
     }
   }
 

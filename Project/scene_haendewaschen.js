@@ -12,6 +12,7 @@ export default class Haendewaschen extends Scene {
     this.retryButton;
     this.hand;
     this.virus;
+    this.mentorVirus;
     this.sign_name;
     this.sign_level;
     this.animation1 = false;
@@ -24,6 +25,9 @@ export default class Haendewaschen extends Scene {
     });
     window.addEventListener("CheckPlacement", (e) => {
       this.checkPlacement();
+    });
+    window.addEventListener("MentorVirus", (e) => {
+      this.askMentor();
     });
   }
 
@@ -40,6 +44,13 @@ export default class Haendewaschen extends Scene {
       this.height - 75,
       "retryScene"
     );
+
+    this.retryButton = new Button_Retry(
+      0 + 130,
+      this.height - 75,
+      "retryScene"
+    );
+
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
     this.virus = new Virus(width / 2, height / 2 + 38);
     this.sign_name = new Sign(50, 0, "Händewaschen");
@@ -133,5 +144,10 @@ export default class Haendewaschen extends Scene {
       this.level = 3;
     }
     this.sign_level.changeText("Level " + this.level + "/3");
+  }
+
+  askMentor() {
+
+
   }
 }
