@@ -52,9 +52,9 @@ function preload() {
   mentorVirus = loadImage("images/MentorVirus.png");
 
   animation_brown = createImg("images/Animation_Brown.gif");
-  animation_white1 = createImg("images/Händewaschen_1_White.gif");
-  animation_white2 = createImg("images/Händewaschen_2_White.gif");
-  animation_white3 = createImg("images/Händewaschen_3_White.gif");
+  animation_white1 = createImg("images/Haendewaschen_Weiss_Handflaechen.gif");
+  animation_white2 = createImg("images/Haendewaschen_Weiss_Zwischenraeume.gif");
+  animation_white3 = createImg("images/Haendewaschen_Weiss_Fingerspitzen.gif");
   animation_brown.hide();
   animation_white1.hide();
   animation_white2.hide();
