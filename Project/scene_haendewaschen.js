@@ -28,6 +28,7 @@ export default class Haendewaschen extends Scene {
     window.addEventListener("PlayAnimation", (e) => {
       this.playAnimation();
     });
+<<<<<<< HEAD
     window.addEventListener("MentorVirus", (e) => {
       this.askMentor();
     });
@@ -37,6 +38,8 @@ export default class Haendewaschen extends Scene {
     window.addEventListener("resetLevel", (e) => {
       this.resetLevel();
     });
+=======
+>>>>>>> 96a3a30a81893e931a153fd072bb1e560e0bd0e6
   }
 
   init() {
@@ -53,7 +56,15 @@ export default class Haendewaschen extends Scene {
       "resetLevel"
     );
 
+<<<<<<< HEAD
     this.mentorVirus = new Button_MentorVirus(1170, 10, "MentorVirus");
+=======
+    this.mentorVirus = new Button_MentorVirus(
+    1180,
+    10,
+      "MentorVirus"
+    );
+>>>>>>> 96a3a30a81893e931a153fd072bb1e560e0bd0e6
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
     this.virus = new Virus(width / 2, height / 2 + 38);
@@ -63,6 +74,7 @@ export default class Haendewaschen extends Scene {
     this.weiterButton.disable(false);
 
     this.mentorVirus.enable();
+    this.mentorVirus.updateText("Du wurdest abgewaschen! Probiere es nochmal ...");
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
@@ -80,7 +92,11 @@ export default class Haendewaschen extends Scene {
     //this.switchDom("Animation3");
     this.addChild(this.mentorVirus);
 
+<<<<<<< HEAD
     console.log(this.mentorVirus);
+=======
+    //console.log(this.mentorVirus);
+>>>>>>> 96a3a30a81893e931a153fd072bb1e560e0bd0e6
   }
   virusReleased() {
     if (
@@ -194,6 +210,7 @@ export default class Haendewaschen extends Scene {
     this.virus.resize(150, 150);
   }
 
+<<<<<<< HEAD
   checkNextLevel() {
     this.level++;
     this.setUpLevel();
@@ -204,4 +221,6 @@ export default class Haendewaschen extends Scene {
   askMentor() {
     //console.log("hi");
   }
+=======
+>>>>>>> 96a3a30a81893e931a153fd072bb1e560e0bd0e6
 }
