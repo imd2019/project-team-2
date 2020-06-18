@@ -122,7 +122,6 @@ export default class Haendewaschen extends Scene {
     } else if (this.animation4) {
       this.hideDom();
       this.nextLevel();
-      this.weiterButton.enable();
       this.animation4 = false;
     }
   }

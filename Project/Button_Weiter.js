@@ -17,6 +17,7 @@ export default class Button_Weiter extends Button {
   }
   onDisable() {
     this.switchImage("WeiterGrau");
+    this.resize(this.width, this.height);
   }
   released() {}
   pressed() {}
