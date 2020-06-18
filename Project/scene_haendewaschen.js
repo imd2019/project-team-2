@@ -47,8 +47,8 @@ export default class Haendewaschen extends Scene {
     );
 
     this.mentorVirus = new Button_MentorVirus(
-    1200,
-    0,
+    1020,
+    10,
       "MentorVirus"
     );
 
@@ -151,7 +151,7 @@ console.log(this.mentorVirus);
   }
 
   askMentor() {
-console.log("hi");
+//console.log("hi");
 
   }
 }
