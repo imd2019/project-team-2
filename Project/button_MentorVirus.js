@@ -3,9 +3,9 @@ import Button_MentorVirusText from "./button_MentorVirusText.js";
 
 export default class Button_MentorVirus extends Button {
   constructor(x, y) {
-    super(x, y, 175, 160, window.ENUMS.SHAPE.RECT, "MentorVirus");
+    super(x, y, 165, 165, window.ENUMS.SHAPE.RECT, "MentorVirus");
    // this.color = color(125, 125, 125);
-   this.text=false;
+   this.text=true;
    this.mentorVirusText;
   }
 
@@ -13,9 +13,11 @@ export default class Button_MentorVirus extends Button {
     this.addImage("MentorVirus", window.ENUMS.IMAGE.BUTTON_MENTORVIRUS);
     
     this.switchImage("MentorVirus");
-    this.mentorVirusText = new Button_MentorVirusText (-200,0);
+    this.mentorVirusText = new Button_MentorVirusText (-150,70);
     this.addChild(this.mentorVirusText); 
+    this.mentorVirusText.enable();
     console.log(this);
+    this.updateText();
   }
 
 
@@ -27,6 +29,10 @@ export default class Button_MentorVirus extends Button {
     console.log("pressed");
   }
 
+  updateText(string) {
+    this.mentorVirusText.textbubble = string;
+    }
+
   clicked() {
     if(this.text==false) {
     this.mentorVirusText.enable();
@@ -37,5 +43,7 @@ export default class Button_MentorVirus extends Button {
   }
 }
 
+
   hoverEnd() {}
 }
+
