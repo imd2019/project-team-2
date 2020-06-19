@@ -83,6 +83,33 @@ export default class Haendewaschen extends Scene {
     this.addDom("Weiss-spaces", window.ENUMS.DOM.ANIMATION_WHITE_SPACES);
     this.addDom("Weiss-thumb", window.ENUMS.DOM.ANIMATION_WHITE_THUMB);
 
+    this.addDom("Weiss-Lack-palm", window.ENUMS.DOM.ANIMATION_WHITE_LACK_PALM);
+    this.addDom("Weiss-Lack-tips", window.ENUMS.DOM.ANIMATION_WHITE_LACK_TIPS);
+    this.addDom(
+      "Weiss-Lack-spaces",
+      window.ENUMS.DOM.ANIMATION_WHITE_LACK_SPACES
+    );
+    this.addDom(
+      "Weiss-Lack-thumb",
+      window.ENUMS.DOM.ANIMATION_WHITE_LACK_THUMB
+    );
+
+    this.addDom("Braun-palm", window.ENUMS.DOM.ANIMATION_BROWN_PALM);
+    this.addDom("Braun-tips", window.ENUMS.DOM.ANIMATION_BROWN_TIPS);
+    this.addDom("Braun-spaces", window.ENUMS.DOM.ANIMATION_BROWN_SPACES);
+    this.addDom("Braun-thumb", window.ENUMS.DOM.ANIMATION_BROWN_THUMB);
+
+    this.addDom("Braun-Lack-palm", window.ENUMS.DOM.ANIMATION_BROWN_LACK_PALM);
+    this.addDom("Braun-Lack-tips", window.ENUMS.DOM.ANIMATION_BROWN_LACK_TIPS);
+    this.addDom(
+      "Braun-Lack-spaces",
+      window.ENUMS.DOM.ANIMATION_BROWN_LACK_SPACES
+    );
+    this.addDom(
+      "Braun-Lack-thumb",
+      window.ENUMS.DOM.ANIMATION_BROWN_LACK_THUMB
+    );
+
     this.addChild(this.mentorVirus);
   }
   virusReleased() {
