@@ -67,7 +67,7 @@ export default class Haendewaschen extends Scene {
 
     this.mentorVirus.enable();
     this.mentorVirus.updateText(
-      "Du wurdest abgewaschen! Probiere es nochmal ..."
+      "Beginnen wir mit deinem Training. Setze dich auf die Hand!"
     );
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
@@ -81,6 +81,8 @@ export default class Haendewaschen extends Scene {
     this.addDom("Weiss-palm", window.ENUMS.DOM.ANIMATION_WHITE_PALM);
     this.addDom("Weiss-tips", window.ENUMS.DOM.ANIMATION_WHITE_TIPS);
     this.addDom("Weiss-spaces", window.ENUMS.DOM.ANIMATION_WHITE_SPACES);
+    this.addDom("Weiss-thumb", window.ENUMS.DOM.ANIMATION_WHITE_THUMB);
+
     this.addChild(this.mentorVirus);
   }
   virusReleased() {
