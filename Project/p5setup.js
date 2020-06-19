@@ -31,6 +31,7 @@ let mentorVirusText;
 let animation_white_palm;
 let animation_white_tips;
 let animation_white_spaces;
+let animation_white_thumb;
 let testVideo;
 
 //Schriftarten
@@ -71,9 +72,12 @@ function preload() {
   animation_white_spaces = createImg(
     "images/Haendewaschen_Weiss_Zwischenraeume.gif"
   );
+  animation_white_thumb = createImg("images/Haendewaschen_Weiss_Daumen.gif");
+
   animation_white_palm.hide();
   animation_white_tips.hide();
   animation_white_spaces.hide();
+  animation_white_thumb.hide();
 
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
@@ -131,6 +135,7 @@ function setup() {
       ANIMATION_WHITE_PALM: animation_white_palm,
       ANIMATION_WHITE_TIPS: animation_white_tips,
       ANIMATION_WHITE_SPACES: animation_white_spaces,
+      ANIMATION_WHITE_THUMB: animation_white_thumb,
       TEST_VIDEO: testVideo,
     }),
     FONT: Object.freeze({
