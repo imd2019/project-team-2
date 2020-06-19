@@ -11,14 +11,21 @@ export default class Hand extends MoveableObject {
       thumb: [],
     };
     this.hitBoxInit = false;
+    this.addImage("Weiss-Hand", window.ENUMS.IMAGE.HAND_WHITE);
+    this.addImage("Braun-Hand", window.ENUMS.IMAGE.HAND_BROWN);
+    this.addImage("Weiss-Lack-Hand", window.ENUMS.IMAGE.HAND_WHITE_LACK);
+    this.addImage("Braun-Lack-Hand", window.ENUMS.IMAGE.HAND_BROWN_LACK);
   }
   init() {
-    this.addImage("HandWeiss", window.ENUMS.IMAGE.HAND_WHITE);
-    this.switchImage("HandWeiss");
+    this.setSpeed();
+  }
+
+  setSpeed() {
     this.velocity.y = -25;
     this.setAcceleration(0, 0.5);
     this.setMaxMinSpeed(0, -200);
   }
+
   update() {
     if (this.y <= 200) {
       this.stop();
@@ -33,22 +40,38 @@ export default class Hand extends MoveableObject {
   initHitBox() {
     //Hitbox Handfläche
     let palm1 = new InteractiveObject(
-      655,
-      335,
-      230,
+      640,
+      355,
+      220,
       190,
       window.ENUMS.SHAPE.ROUND
     );
     let palm2 = new InteractiveObject(
-      580,
-      420,
-      160,
+      570,
+      430,
       150,
+      140,
       window.ENUMS.SHAPE.RECT
     );
 
     this.hitBoxen.palm.push(palm1);
     this.hitBoxen.palm.push(palm2);
+
+    // Fingerinnenseite
+    // let palm1 = new InteractiveObject(
+    //   640,
+    //   355,
+    //   220,
+    //   190,
+    //   window.ENUMS.SHAPE.RECT
+    // );
+    // let palm2 = new InteractiveObject(
+    //   570,
+    //   430,
+    //   150,
+    //   140,
+    //   window.ENUMS.SHAPE.RECT
+    // );
 
     //Hitbox Fingerzwischenräume von links nach rechts
     //linke Hand
@@ -144,6 +167,24 @@ export default class Hand extends MoveableObject {
     this.hitBoxen.spaces.push(spacesAbove5);
     this.hitBoxen.spaces.push(spacesBelow5);
 
+    let tip1 = new InteractiveObject(
+      518,
+      125,
+      30,
+      70,
+      window.ENUMS.SHAPE.ROUND
+    );
+    this.hitBoxen.tips.push(tip1);
+
+    let thumbLeft = new InteractiveObject(
+      370,
+      280,
+      50,
+      70,
+      window.ENUMS.SHAPE.ROUND
+    );
+    this.hitBoxen.thumb.push(thumbLeft);
+
     for (let i in this.hitBoxen) {
       let array = this.hitBoxen[i];
       for (let element of array) {
@@ -194,7 +235,7 @@ export default class Hand extends MoveableObject {
 }
 
 /* 4 Zonen:
-    - Handinnenfläche
+    - Handinnenfläche und Fingerinnenseite
     - Zwischenräume/Handrückseite
     - Fingerspitzen
     - Daumenrückseite
