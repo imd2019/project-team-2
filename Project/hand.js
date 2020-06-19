@@ -473,7 +473,7 @@ export default class Hand extends MoveableObject {
   }
 
   draw() {
-    this.drawHitBox();
+    // this.drawHitBox();
   }
 
   onHand(x, y) {
