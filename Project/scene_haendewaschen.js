@@ -67,7 +67,7 @@ export default class Haendewaschen extends Scene {
 
     this.mentorVirus.enable();
     this.mentorVirus.updateText(
-      "Du wurdest abgewaschen! Probiere es nochmal ..."
+      "Beginnen wir mit deinem Training. Setze dich auf die Hand!"
     );
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
