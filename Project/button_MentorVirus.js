@@ -25,13 +25,16 @@ export default class Button_MentorVirus extends Button {
     this.mentorVirusText.enable();
     this.text = true;
   }
+  hideText() {
+    this.mentorVirusText.disable();
+    this.text = false;
+  }
 
   clicked() {
     if (this.text == false) {
       this.showText();
     } else {
-      this.mentorVirusText.disable();
-      this.text = false;
+      this.hideText();
     }
   }
 
