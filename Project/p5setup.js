@@ -18,6 +18,8 @@ let backgroundHaendewaschen;
 let virus_1;
 let hand_white;
 let hand_brown;
+let hand_brown_lack;
+let hand_white_lack;
 let sign;
 let backgroundStartscreen;
 let backgroundMap;
@@ -25,9 +27,9 @@ let mentorVirus;
 let mentorVirusText;
 
 //DOMS
-let animation_white1;
-let animation_white2;
-let animation_white3;
+let animation_white_palm;
+let animation_white_tips;
+let animation_white_spaces;
 let testVideo;
 
 //Schriftarten
@@ -47,6 +49,8 @@ function preload() {
   //Hände
   hand_white = loadImage("images/Haendewaschen_Weiss_Hand.png");
   hand_brown = loadImage("images/Haendewaschen_Braun_Hand.png");
+  hand_brown_lack = loadImage("images/Haendewaschen_Braun_Lack_Hand.png");
+  hand_white_lack = loadImage("images/Haendewaschen_Weiss_Lack_Hand.png");
 
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
@@ -56,12 +60,18 @@ function preload() {
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
-  animation_white1 = createImg("images/Haendewaschen_Weiss_Handflaechen.gif");
-  animation_white2 = createImg("images/Haendewaschen_Weiss_Zwischenraeume.gif");
-  animation_white3 = createImg("images/Haendewaschen_Weiss_Fingerspitzen.gif");
-  animation_white1.hide();
-  animation_white2.hide();
-  animation_white3.hide();
+  animation_white_palm = createImg(
+    "images/Haendewaschen_Weiss_Handflaechen.gif"
+  );
+  animation_white_tips = createImg(
+    "images/Haendewaschen_Weiss_Fingerspitzen.gif"
+  );
+  animation_white_spaces = createImg(
+    "images/Haendewaschen_Weiss_Zwischenraeume.gif"
+  );
+  animation_white_palm.hide();
+  animation_white_tips.hide();
+  animation_white_spaces.hide();
 
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
@@ -105,7 +115,8 @@ function setup() {
 
       HAND_WHITE: hand_white,
       HAND_BROWN: hand_brown,
-
+      HAND_WHITE_LACK: hand_white_lack,
+      HAND_BROWN_LACK: hand_brown_lack,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_MAP: backgroundMap,
@@ -113,9 +124,9 @@ function setup() {
       SIGN: sign,
     }),
     DOM: Object.freeze({
-      ANIMATION_WHITE_1: animation_white1,
-      ANIMATION_WHITE_2: animation_white2,
-      ANIMATION_WHITE_3: animation_white3,
+      ANIMATION_WHITE_PALM: animation_white_palm,
+      ANIMATION_WHITE_TIPS: animation_white_tips,
+      ANIMATION_WHITE_SPACES: animation_white_spaces,
       TEST_VIDEO: testVideo,
     }),
     FONT: Object.freeze({
