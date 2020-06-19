@@ -47,7 +47,7 @@ function draw() {
     testScene.addChild(weiter);
     testScene2.addChild(test);
     world.onInit();
-    world.nextScene(window.ENUMS.SCENE_NAMES.HAENDEWASCHEN);
+    world.nextScene(window.ENUMS.SCENE_NAMES.HAENDEWASCHEN); //hier
 
     init = false;
   }
