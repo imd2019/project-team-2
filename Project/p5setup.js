@@ -20,6 +20,7 @@ let hand_white;
 let hand_brown;
 let hand_brown_lack;
 let hand_white_lack;
+let hand_heatmap;
 let sign;
 let backgroundStartscreen;
 let backgroundMap;
@@ -51,6 +52,7 @@ function preload() {
   hand_brown = loadImage("images/Haendewaschen_Braun_Hand.png");
   hand_brown_lack = loadImage("images/Haendewaschen_Braun_Lack_Hand.png");
   hand_white_lack = loadImage("images/Haendewaschen_Weiss_Lack_Hand.png");
+  hand_heatmap = loadImage("images/Haendewaschen_HeatMap.png");
 
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
@@ -117,6 +119,8 @@ function setup() {
       HAND_BROWN: hand_brown,
       HAND_WHITE_LACK: hand_white_lack,
       HAND_BROWN_LACK: hand_brown_lack,
+      HAND_HEATMAP: hand_heatmap,
+
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_MAP: backgroundMap,

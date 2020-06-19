@@ -15,6 +15,7 @@ export default class Hand extends MoveableObject {
     this.addImage("Braun-Hand", window.ENUMS.IMAGE.HAND_BROWN);
     this.addImage("Weiss-Lack-Hand", window.ENUMS.IMAGE.HAND_WHITE_LACK);
     this.addImage("Braun-Lack-Hand", window.ENUMS.IMAGE.HAND_BROWN_LACK);
+    this.addImage("Heatmap", window.ENUMS.IMAGE.HAND_HEATMAP);
   }
   init() {
     this.setSpeed();
