@@ -125,7 +125,7 @@ export default class Haendewaschen extends Scene {
             this.wait(4.5);
             break;
           case "thumb":
-            this.wait(2.5);
+            this.wait(3);
             break;
         }
         this.animationIndexNow++;
