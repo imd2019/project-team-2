@@ -41,9 +41,9 @@ export default class Hand extends MoveableObject {
   initHitBox() {
     //Hitbox Handfläche
     let palm1 = new InteractiveObject(
-      640,
+      645,
       355,
-      220,
+      250,
       190,
       window.ENUMS.SHAPE.ROUND
     );
@@ -54,9 +54,17 @@ export default class Hand extends MoveableObject {
       140,
       window.ENUMS.SHAPE.RECT
     );
+    let palm3 = new InteractiveObject(
+      730,
+      410,
+      40,
+      30,
+      window.ENUMS.SHAPE.RECT
+    );
 
     this.hitBoxen.palm.push(palm1);
     this.hitBoxen.palm.push(palm2);
+    this.hitBoxen.palm.push(palm3);
 
     // Fingerinnenseite
     let innenseite1a = new InteractiveObject(
@@ -70,61 +78,104 @@ export default class Hand extends MoveableObject {
       525,
       190,
       30,
+      50,
+      window.ENUMS.SHAPE.RECT
+    );
+    let innenseite1c = new InteractiveObject(
+      525,
+      235,
       30,
+      60,
       window.ENUMS.SHAPE.RECT
     );
     let innenseite2 = new InteractiveObject(
       580,
-      110,
-      30,
       90,
+      40,
+      130,
       window.ENUMS.SHAPE.RECT
     );
 
     let innenseite3 = new InteractiveObject(
       657,
-      80,
-      30,
-      110,
+      60,
+      40,
+      150,
       window.ENUMS.SHAPE.RECT
     );
     let innenseite4 = new InteractiveObject(
       730,
-      110,
-      30,
       90,
+      40,
+      130,
       window.ENUMS.SHAPE.RECT
     );
 
-    let kleinerFingerAußenA = new InteractiveObject(
+    //Fingeraußenseite
+
+    let außenseite1a = new InteractiveObject(
       18,
       170,
       30,
       30,
       window.ENUMS.SHAPE.RECT
     );
-    let kleinerFingerAußenB = new InteractiveObject(
+    let außenseite1b = new InteractiveObject(
       28,
       200,
       30,
       30,
       window.ENUMS.SHAPE.RECT
     );
+    let außenseite1c = new InteractiveObject(
+      28,
+      235,
+      30,
+      70,
+      window.ENUMS.SHAPE.RECT
+    );
+
+    let außenseite2 = new InteractiveObject(
+      85,
+      95,
+      40,
+      120,
+      window.ENUMS.SHAPE.RECT
+    );
+    let außenseite3 = new InteractiveObject(
+      155,
+      75,
+      40,
+      130,
+      window.ENUMS.SHAPE.RECT
+    );
+    let außenseite4 = new InteractiveObject(
+      230,
+      110,
+      25,
+      155,
+      window.ENUMS.SHAPE.RECT
+    );
 
     this.hitBoxen.palm.push(innenseite1a);
     this.hitBoxen.palm.push(innenseite1b);
+    this.hitBoxen.palm.push(innenseite1c);
     this.hitBoxen.palm.push(innenseite2);
     this.hitBoxen.palm.push(innenseite3);
     this.hitBoxen.palm.push(innenseite4);
-    this.hitBoxen.palm.push(kleinerFingerAußenA);
-    this.hitBoxen.palm.push(kleinerFingerAußenB);
+    this.hitBoxen.palm.push(außenseite1a);
+    this.hitBoxen.palm.push(außenseite1b);
+    this.hitBoxen.palm.push(außenseite1c);
+    this.hitBoxen.palm.push(außenseite2);
+    this.hitBoxen.palm.push(außenseite3);
+    this.hitBoxen.palm.push(außenseite4);
 
     //Hitbox Fingerzwischenräume von links nach rechts
     //linke Hand
     let spacesBelow1 = new InteractiveObject(
       85,
       250,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -139,7 +190,7 @@ export default class Hand extends MoveableObject {
     let spacesBelow2 = new InteractiveObject(
       140,
       225,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -153,7 +204,7 @@ export default class Hand extends MoveableObject {
     let spacesBelow3 = new InteractiveObject(
       200,
       230,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -165,17 +216,24 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
     let spacesBelow4 = new InteractiveObject(
-      260,
-      330,
+      270,
+      340,
       60,
       400,
       window.ENUMS.SHAPE.ROUND
     );
-    let spacesAbove4 = new InteractiveObject(
+    let spacesAbove4a = new InteractiveObject(
       280,
       300,
-      35,
+      45,
       30,
+      window.ENUMS.SHAPE.RECT
+    );
+    let spacesAbove4b = new InteractiveObject(
+      255,
+      110,
+      20,
+      120,
       window.ENUMS.SHAPE.RECT
     );
 
@@ -189,14 +247,15 @@ export default class Hand extends MoveableObject {
     this.hitBoxen.spaces.push(spacesBelow2);
     this.hitBoxen.spaces.push(spacesAbove3);
     this.hitBoxen.spaces.push(spacesBelow3);
-    this.hitBoxen.spaces.push(spacesAbove4);
+    this.hitBoxen.spaces.push(spacesAbove4a);
     this.hitBoxen.spaces.push(spacesBelow4);
+    this.hitBoxen.spaces.push(spacesAbove4b);
 
     //rechte Hand
     let spacesBelow5 = new InteractiveObject(
       580,
       250,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -210,7 +269,7 @@ export default class Hand extends MoveableObject {
     let spacesBelow6 = new InteractiveObject(
       640,
       225,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -224,7 +283,7 @@ export default class Hand extends MoveableObject {
     let spacesBelow7 = new InteractiveObject(
       695,
       230,
-      40,
+      50,
       400,
       window.ENUMS.SHAPE.ROUND
     );
@@ -236,17 +295,25 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
     let spacesBelow8 = new InteractiveObject(
-      760,
-      330,
+      770,
+      340,
       60,
       400,
       window.ENUMS.SHAPE.ROUND
     );
-    let spacesAbove8 = new InteractiveObject(
-      770,
-      290,
-      35,
+    let spacesAbove8a = new InteractiveObject(
+      790,
+      295,
+      40,
       30,
+      window.ENUMS.SHAPE.RECT
+    );
+
+    let spacesAbove8b = new InteractiveObject(
+      730,
+      200,
+      30,
+      80,
       window.ENUMS.SHAPE.RECT
     );
 
@@ -257,14 +324,15 @@ export default class Hand extends MoveableObject {
     this.hitBoxen.spaces.push(spacesBelow6);
     this.hitBoxen.spaces.push(spacesAbove7);
     this.hitBoxen.spaces.push(spacesBelow7);
-    this.hitBoxen.spaces.push(spacesAbove8);
+    this.hitBoxen.spaces.push(spacesAbove8a);
     this.hitBoxen.spaces.push(spacesBelow8);
+    this.hitBoxen.spaces.push(spacesAbove8b);
 
     //Handrückseite
     let rückseite1 = new InteractiveObject(
       150,
       355,
-      220,
+      250,
       190,
       window.ENUMS.SHAPE.ROUND
     );
@@ -318,10 +386,10 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
     let thumbLeft3 = new InteractiveObject(
-      290,
+      255,
       360,
-      40,
-      40,
+      60,
+      50,
       window.ENUMS.SHAPE.RECT
     );
     let thumbLeft4 = new InteractiveObject(
@@ -331,10 +399,19 @@ export default class Hand extends MoveableObject {
       20,
       window.ENUMS.SHAPE.RECT
     );
+    let thumbLeft5 = new InteractiveObject(
+      240,
+      410,
+      40,
+      30,
+      window.ENUMS.SHAPE.RECT
+    );
+
     this.hitBoxen.thumb.push(thumbLeft1);
     this.hitBoxen.thumb.push(thumbLeft2);
     this.hitBoxen.thumb.push(thumbLeft3);
     this.hitBoxen.thumb.push(thumbLeft4);
+    this.hitBoxen.thumb.push(thumbLeft5);
 
     //rechter Daumen
 
@@ -353,10 +430,10 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
     let thumbRight3 = new InteractiveObject(
-      780,
+      750,
       360,
-      40,
-      40,
+      60,
+      50,
       window.ENUMS.SHAPE.RECT
     );
     let thumbRight4 = new InteractiveObject(
@@ -366,6 +443,7 @@ export default class Hand extends MoveableObject {
       20,
       window.ENUMS.SHAPE.RECT
     );
+
     this.hitBoxen.thumb.push(thumbRight1);
     this.hitBoxen.thumb.push(thumbRight2);
     this.hitBoxen.thumb.push(thumbRight3);
