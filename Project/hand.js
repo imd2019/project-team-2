@@ -39,21 +39,37 @@ export default class Hand extends MoveableObject {
     //Hitbox Handfläche
     let palm1 = new InteractiveObject(
       640,
-      335,
-      230,
+      355,
+      220,
       190,
       window.ENUMS.SHAPE.ROUND
     );
     let palm2 = new InteractiveObject(
       570,
-      420,
-      160,
+      430,
       150,
+      140,
       window.ENUMS.SHAPE.RECT
     );
 
     this.hitBoxen.palm.push(palm1);
     this.hitBoxen.palm.push(palm2);
+
+    // Fingerinnenseite
+    // let palm1 = new InteractiveObject(
+    //   640,
+    //   355,
+    //   220,
+    //   190,
+    //   window.ENUMS.SHAPE.RECT
+    // );
+    // let palm2 = new InteractiveObject(
+    //   570,
+    //   430,
+    //   150,
+    //   140,
+    //   window.ENUMS.SHAPE.RECT
+    // );
 
     //Hitbox Fingerzwischenräume von links nach rechts
     //linke Hand
@@ -149,6 +165,24 @@ export default class Hand extends MoveableObject {
     this.hitBoxen.spaces.push(spacesAbove5);
     this.hitBoxen.spaces.push(spacesBelow5);
 
+    let tip1 = new InteractiveObject(
+      518,
+      125,
+      30,
+      70,
+      window.ENUMS.SHAPE.ROUND
+    );
+    this.hitBoxen.tips.push(tip1);
+
+    let thumbLeft = new InteractiveObject(
+      370,
+      280,
+      50,
+      70,
+      window.ENUMS.SHAPE.ROUND
+    );
+    this.hitBoxen.thumb.push(thumbLeft);
+
     for (let i in this.hitBoxen) {
       let array = this.hitBoxen[i];
       for (let element of array) {
@@ -199,7 +233,7 @@ export default class Hand extends MoveableObject {
 }
 
 /* 4 Zonen:
-    - Handinnenfläche
+    - Handinnenfläche und Fingerinnenseite
     - Zwischenräume/Handrückseite
     - Fingerspitzen
     - Daumenrückseite
