@@ -38,14 +38,14 @@ export default class Hand extends MoveableObject {
   initHitBox() {
     //Hitbox Handfläche
     let palm1 = new InteractiveObject(
-      655,
+      640,
       335,
       230,
       190,
       window.ENUMS.SHAPE.ROUND
     );
     let palm2 = new InteractiveObject(
-      580,
+      570,
       420,
       160,
       150,
