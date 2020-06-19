@@ -11,14 +11,19 @@ export default class Hand extends MoveableObject {
       thumb: [],
     };
     this.hitBoxInit = false;
+    this.addImage("Weiss-Hand", window.ENUMS.IMAGE.HAND_WHITE);
+    this.addImage("Braun-Hand", window.ENUMS.IMAGE.HAND_BROWN);
   }
   init() {
-    this.addImage("HandWeiss", window.ENUMS.IMAGE.HAND_WHITE);
-    this.switchImage("HandWeiss");
+    this.setSpeed();
+  }
+
+  setSpeed() {
     this.velocity.y = -25;
     this.setAcceleration(0, 0.5);
     this.setMaxMinSpeed(0, -200);
   }
+
   update() {
     if (this.y <= 200) {
       this.stop();
@@ -110,10 +115,10 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
 
-    spacesAbove1.setRotInDegree(-12);
-    spacesAbove2.setRotInDegree(-1);
-    spacesAbove3.setRotInDegree(10);
-    spacesAbove4.setRotInDegree(45);
+    // spacesAbove1.setRotInDegree(-12);
+    // spacesAbove2.setRotInDegree(-1);
+    // spacesAbove3.setRotInDegree(10);
+    // spacesAbove4.setRotInDegree(45);
     this.hitBoxen.spaces.push(spacesAbove1);
     this.hitBoxen.spaces.push(spacesBelow1);
     this.hitBoxen.spaces.push(spacesAbove2);
@@ -140,7 +145,7 @@ export default class Hand extends MoveableObject {
       window.ENUMS.SHAPE.RECT
     );
 
-    spacesAbove5.setRotInDegree(-12);
+    // spacesAbove5.setRotInDegree(-12);
     this.hitBoxen.spaces.push(spacesAbove5);
     this.hitBoxen.spaces.push(spacesBelow5);
 
@@ -169,6 +174,27 @@ export default class Hand extends MoveableObject {
 
   draw() {
     this.drawHitBox();
+  }
+
+  onHand(x, y) {
+    for (let i in this.hitBoxen) {
+      if (this.testHitboxHand(x, y, i)) return true;
+    }
+    return false;
+  }
+
+  testHitboxHand(x, y, area) {
+    if (this.hitBoxen.hasOwnProperty(area)) {
+      for (let i in this.hitBoxen[area]) {
+        if (this.hitBoxen[area][i].hitTest(x, y)) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      console.error(`Es gibt keine Area mit dem Namen ${area}`);
+      return false;
+    }
   }
 }
 

@@ -1,23 +1,22 @@
 import Button from "./Button.js";
 
 export default class Button_Retry extends Button {
-  constructor(x, y) {
-    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, "restartScene");
+  constructor(x, y, event) {
+    super(x, y, 95, 0, window.ENUMS.SHAPE.ROUND, event);
     this.color = color(125, 125, 125);
-  }
-
-  init() {
     this.addImage("Retry", window.ENUMS.IMAGE.BUTTON_RETRY);
     this.switchImage("Retry");
     this.addImage("RetryGrau", window.ENUMS.IMAGE.BUTTON_RETRY_GRAU);
   }
 
-  draw() {
-    if (this.enabled) {
-      this.switchImage("Retry");
-    } else {
-      this.switchImage("RetryGrau");
-    }
+  init() {}
+
+  onDisable() {
+    this.switchImage("RetryGrau");
+    this.rot = 0;
+  }
+  onEnable() {
+    this.switchImage("Retry");
   }
 
   released() {

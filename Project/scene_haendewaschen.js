@@ -21,14 +21,24 @@ export default class Haendewaschen extends Scene {
     this.animation3 = false;
     this.animation4 = false;
     this.level = 1;
+    this.handColor = ["Weiss-", "Braun-"];
+    this.currentColor = "";
+
+    this.savePlace = ["palm", "spaces", "tips", "thumb"];
     window.addEventListener("VirusReleased", (e) => {
       this.virusReleased();
     });
-    window.addEventListener("CheckPlacement", (e) => {
-      this.checkPlacement();
+    window.addEventListener("PlayAnimation", (e) => {
+      this.playAnimation();
     });
     window.addEventListener("MentorVirus", (e) => {
       this.askMentor();
+    });
+    window.addEventListener("nextHaendeLevel", (e) => {
+      this.checkNextLevel();
+    });
+    window.addEventListener("resetLevel", (e) => {
+      this.resetLevel();
     });
   }
 
@@ -37,29 +47,30 @@ export default class Haendewaschen extends Scene {
       this.weiterButton = new Button_Weiter(
         this.width - 170,
         this.height - 135,
-        "CheckPlacement"
+        "PlayAnimation"
       );
     }
     this.retryButton = new Button_Retry(
       0 + 130,
       this.height - 75,
-      "retryScene"
+      "resetLevel"
     );
 
-    this.mentorVirus = new Button_MentorVirus(
-    1170,
-    10,
-      "MentorVirus"
-    );
+    this.mentorVirus = new Button_MentorVirus(1180, 10, "MentorVirus");
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
+    this.newHandColor();
+
     this.virus = new Virus(width / 2, height / 2 + 38);
     this.sign_name = new Sign(50, 0, "Händewaschen");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
     this.retryButton.disable(false);
-    this.weiterButton.disable(false); 
+    this.weiterButton.disable(false);
 
     this.mentorVirus.enable();
+    this.mentorVirus.updateText(
+      "Du wurdest abgewaschen! Probiere es nochmal ..."
+    );
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
@@ -77,18 +88,19 @@ export default class Haendewaschen extends Scene {
     //this.switchDom("Animation3");
     this.addChild(this.mentorVirus);
 
-console.log(this.mentorVirus);
+    //console.log(this.mentorVirus);
   }
   virusReleased() {
     if (
-      (this.virus.x > 245 &&
-        this.virus.x < 610 &&
-        this.virus.y > 205 &&
-        this.virus.y < 1080) ||
-      (this.virus.x > 770 &&
-        this.virus.x < 1140 &&
-        this.virus.y > 205 &&
-        this.virus.y < 1080)
+      // (this.virus.x > 245 &&
+      //   this.virus.x < 610 &&
+      //   this.virus.y > 205 &&
+      //   this.virus.y < 1080) ||
+      // (this.virus.x > 770 &&
+      //   this.virus.x < 1140 &&
+      //   this.virus.y > 205 &&
+      //   this.virus.y < 1080)
+      this.hand.onHand(this.virus.getRealXY().x, this.virus.getRealXY().y)
     ) {
       this.weiterButton.enable();
       // this.retryButton.enable();
@@ -128,34 +140,87 @@ console.log(this.mentorVirus);
       return;
     } else if (this.animation4) {
       this.hideDom();
-      this.nextLevel();
+      console.log(this.isVirusSafe());
+
+      let index = this.isVirusSafe();
+      if (index >= 0) {
+        this.virus.hide(false);
+        this.savePlace.splice(index, 1);
+        this.mentorVirus.updateText(
+          "Du hast es geschafft. Auf zur nächsten Person!"
+        );
+        this.weiterButton.enable();
+      } else {
+        this.mentorVirus.updateText(
+          "Du wurdest abgewaschen! Probiere es nochmal ..."
+        );
+        this.retryButton.enable();
+      }
+      this.mentorVirus.showText();
+      this.hand.enable();
+      this.weiterButton.changeEvent("nextHaendeLevel");
+      if (this.animation4 === true && this.level == 4) {
+        this.weiterButton.changeEvent("nextScene");
+        this.weiterButton.switchSceneId = window.ENUMS.SCENE_NAMES.MAP;
+        this.level = 3;
+      }
       this.animation4 = false;
     }
-    
   }
-  checkPlacement() {
+  playAnimation() {
     this.hand.disable();
     this.virus.disable();
     this.animation1 = true;
   }
-  nextLevel() {
-    console.log(this.animation4);
-    this.hand.enable();
-    this.level++;
 
+  isVirusSafe() {
+    for (let i in this.savePlace) {
+      console.log(this.savePlace);
+
+      if (
+        this.hand.testHitboxHand(
+          this.virus.getRealXY().x,
+          this.virus.getRealXY().y,
+          this.savePlace[i]
+        )
+      )
+        return i;
+    }
+    return -1;
+  }
+
+  resetLevel() {
+    this.setUpLevel();
+  }
+
+  setUpLevel() {
+    this.weiterButton.disable(false);
+    this.retryButton.disable(false);
+    this.hand.setSpeed();
+    this.hand.y = window.ENUMS.SIZE.Y + 50;
+    this.newHandColor();
     this.virus.enable();
+    this.weiterButton.changeEvent("PlayAnimation");
+
+    this.sign_level.changeText("Level " + this.level + "/3");
     this.virus.x = width / 2;
     this.virus.y = height / 2 + 38;
     this.virus.resize(150, 150);
-    if (this.animation4 === true && this.level == 4) {
-      this.weiterButton.changeEvent("nextScene");
-      this.weiterButton.switchSceneId = window.ENUMS.SCENE_NAMES.MAP;
-      this.level = 3;
-    }
-    this.sign_level.changeText("Level " + this.level + "/3");
   }
+
+  checkNextLevel() {
+    this.level++;
+    this.setUpLevel();
+  }
+
+  nextLevel() {}
 
   askMentor() {
     //console.log("hi");
+  }
+
+  newHandColor() {
+    this.currentColor = random(this.handColor);
+    this.hand.switchImage(this.currentColor + "Hand");
   }
 }

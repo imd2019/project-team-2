@@ -17,6 +17,7 @@ let buttonRetryGrau;
 let backgroundHaendewaschen;
 let virus_1;
 let hand_white;
+let hand_brown;
 let sign;
 let backgroundStartscreen;
 let backgroundMap;
@@ -43,7 +44,10 @@ function preload() {
   buttonRetry = loadImage("images/Button_Retry.png");
   buttonWeiterGrau = loadImage("images/Button_Weiter_grau.png");
   buttonRetryGrau = loadImage("images/Button_Retry_grau.png");
+  //Hände
   hand_white = loadImage("images/Haendewaschen_Weiss_Hand.png");
+  hand_brown = loadImage("images/Haendewaschen_Braun_Hand.png");
+
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
@@ -100,6 +104,8 @@ function setup() {
       EMOLGA: emolga,
 
       HAND_WHITE: hand_white,
+      HAND_BROWN: hand_brown,
+
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_MAP: backgroundMap,
