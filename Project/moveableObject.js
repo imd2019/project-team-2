@@ -36,6 +36,11 @@ export default class MoveableObject extends InteractiveObject {
       this.rotVelocity = this.rotMinSpeed;
   }
 
+  setVelocity(x, y) {
+    this.velocity.x = x;
+    this.velocity.y = y;
+  }
+
   setAcceleration(x, y) {
     this.acceleration.x = x;
     this.acceleration.y = y;
