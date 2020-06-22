@@ -160,8 +160,9 @@ window.preload = preload;
 
 function setup() {
   console.log("setup");
-  sketch.createCanvas(1366, 768);
+  let canvas = sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
+  canvas.parent("p5");
 
   window.testVideo = testVideo;
   window.ENUMS = Object.freeze({

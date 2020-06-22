@@ -113,19 +113,8 @@ export default class Haendewaschen extends Scene {
     this.addChild(this.mentorVirus);
   }
   virusReleased() {
-    if (
-      // (this.virus.x > 245 &&
-      //   this.virus.x < 610 &&
-      //   this.virus.y > 205 &&
-      //   this.virus.y < 1080) ||
-      // (this.virus.x > 770 &&
-      //   this.virus.x < 1140 &&
-      //   this.virus.y > 205 &&
-      //   this.virus.y < 1080)
-      this.hand.onHand(this.virus.getRealXY().x, this.virus.getRealXY().y)
-    ) {
+    if (this.hand.onHand(this.virus.getRealXY().x, this.virus.getRealXY().y)) {
       this.weiterButton.enable();
-      // this.retryButton.enable();
     } else {
       this.weiterButton.disable(false);
       this.retryButton.disable(false);
@@ -258,7 +247,6 @@ export default class Haendewaschen extends Scene {
 
   newHandColor() {
     this.currentColor = random(this.handColor);
-    this.currentColor = "Weiss-";
     this.hand.switchImage(this.currentColor + "Hand");
   }
 }
