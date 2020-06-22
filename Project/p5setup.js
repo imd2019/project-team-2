@@ -31,7 +31,8 @@ let mentorVirus;
 let mentorVirusText;
 
 //People von PeopleBouncy
-let PeopleBouncy_boy_vorne;
+let peopleBouncy_boy_vorne;
+let peopleBouncy_girl_vorne;
 
 //DOMS
 let animation_white_palm;
@@ -93,6 +94,10 @@ function preload() {
   sign = loadImage("images/Schild.png");
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
+
+  //People von PeopleBouncy
+  peopleBouncy_boy_vorne = loadImage("images/PeopleBouncy_boy_vorne.png");
+  peopleBouncy_girl_vorne = loadImage("images/PeopleBouncy_girl_vorne.png");
 
   //animations white
   animation_white_palm = createImg(
@@ -213,6 +218,10 @@ function setup() {
       HAND_BROWN_LACK: hand_brown_lack,
       HAND_HEATMAP: hand_heatmap,
 
+      PEOPLEBOUNCY_BOY_FRONT: peopleBouncy_boy_vorne,
+      PEOPLEBOUNCY_GIRL_FRONT: peopleBouncy_girl_vorne,
+
+      BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
