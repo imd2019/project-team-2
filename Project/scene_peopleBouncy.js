@@ -12,6 +12,9 @@ export default class PeopleBouncy extends Scene {
     this.sign_name;
     this.playground;
     this.people = [];
+    window.addEventListener("newGoalPosition", (e) => {
+      this.findNewGoalPosition(e.detail);
+    });
   }
 
   init() {
@@ -41,12 +44,13 @@ export default class PeopleBouncy extends Scene {
 
   update() {
     for (let element of this.people) {
+      element.updateActivity();
       let elRealPos = element.getRealXY();
       let velocity = element.getVelocity();
       if (
         !this.playground.isPointOnPlayground(
-          elRealPos.x + velocity.x,
-          elRealPos.y + velocity.y
+          elRealPos.x + velocity.x * 2,
+          elRealPos.y + velocity.y * 2
         )
       ) {
         let wrongVec = this.getWrongVectorsOnPlayground(
@@ -58,9 +62,7 @@ export default class PeopleBouncy extends Scene {
         element.decideDirection(wrongVec);
         element.setVelocity(0, 0);
         element.move();
-        console.log(wrongVec);
       }
-      element.move();
     }
   }
 
@@ -81,5 +83,10 @@ export default class PeopleBouncy extends Scene {
       result.push("none");
     }
     return result;
+  }
+
+  findNewGoalPosition(people) {
+    let pos = this.playground.getRealRandomPosition();
+    people.setGoalPosition(pos.x, pos.y);
   }
 }
