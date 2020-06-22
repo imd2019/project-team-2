@@ -24,6 +24,8 @@ let hand_heatmap;
 let sign;
 let backgroundStartscreen;
 let background_people_bouncy_1;
+let background_people_bouncy_2;
+let background_people_bouncy_3;
 let backgroundMap;
 let mentorVirus;
 let mentorVirusText;
@@ -81,6 +83,12 @@ function preload() {
   backgroundMap = loadImage("images/background_Karte.png");
   background_people_bouncy_1 = loadImage(
     "images/Hintergrund_PeopleBouncy_Level1.png"
+  );
+  background_people_bouncy_2 = loadImage(
+    "images/Hintergrund_PeopleBouncy_Level2.png"
+  );
+  background_people_bouncy_3 = loadImage(
+    "images/Hintergrund_PeopleBouncy_Level3.png"
   );
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
@@ -215,8 +223,11 @@ function setup() {
 
       BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
-      BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_MAP: backgroundMap,
+      BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
+      BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
+      BACKGROUND_PEOPLEBOUNCY_LEVEL_2: background_people_bouncy_2,
+      BACKGROUND_PEOPLEBOUNCY_LEVEL_3: background_people_bouncy_3,
       VIRUS_1: virus_1,
       SIGN: sign,
     }),
