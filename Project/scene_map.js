@@ -23,7 +23,7 @@ export default class Map extends Scene {
       135,
       window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY
     );
-    this.buttonMap3.disable(false);
+    // this.buttonMap3.disable(false);
     this.addChild(this.buttonMap3);
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_MAP);
     this.switchImage("background");

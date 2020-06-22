@@ -23,9 +23,13 @@ let hand_white_lack;
 let hand_heatmap;
 let sign;
 let backgroundStartscreen;
+let background_people_bouncy_1;
 let backgroundMap;
 let mentorVirus;
 let mentorVirusText;
+
+//People von PeopleBouncy
+let PeopleBouncy_boy_vorne;
 
 //DOMS
 let animation_white_palm;
@@ -74,6 +78,9 @@ function preload() {
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
+  background_people_bouncy_1 = loadImage(
+    "images/Hintergrund_PeopleBouncy_Level1.png"
+  );
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
   mentorVirusText = loadImage("images/MentorVirusText.png");
@@ -180,7 +187,7 @@ function setup() {
       MAP: "Map",
       HAENDEWASCHEN: "Haendewaschen",
       MASK: "SzeneTest",
-      PEOPLE_BOUNCY: "SzeneTest2",
+      PEOPLE_BOUNCY: "PeopleBouncy",
     }),
 
     IMAGE: Object.freeze({
@@ -198,6 +205,7 @@ function setup() {
       HAND_BROWN_LACK: hand_brown_lack,
       HAND_HEATMAP: hand_heatmap,
 
+      BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_MAP: backgroundMap,
