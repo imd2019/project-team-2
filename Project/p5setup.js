@@ -39,6 +39,14 @@ let peopleBouncy_girl_hinten;
 let peopleBouncy_girl_links;
 let peopleBouncy_girl_rechts;
 let peopleBouncy_girl_vorne;
+
+let peopleBouncy_boy_hinten_infiziert;
+let peopleBouncy_boy_links_infiziert;
+let peopleBouncy_boy_rechts_infiziert;
+let peopleBouncy_boy_vorne_infiziert;
+let peopleBouncy_girl_hinten_infiziert;
+let peopleBouncy_girl_links_infiziert;
+let peopleBouncy_girl_rechts_infiziert;
 let peopleBouncy_girl_vorne_infiziert;
 let peopleBouncy_playground1;
 
@@ -112,6 +120,28 @@ function preload() {
   peopleBouncy_girl_links = loadImage("images/PeopleBouncy_girl_links.png");
   peopleBouncy_girl_rechts = loadImage("images/PeopleBouncy_girl_rechts.png");
   peopleBouncy_girl_vorne = loadImage("images/PeopleBouncy_girl_vorne.png");
+  //infiziert
+  peopleBouncy_boy_hinten_infiziert = loadImage(
+    "images/PeopleBouncy_boy_hinten_infiziert.png"
+  );
+  peopleBouncy_boy_links_infiziert = loadImage(
+    "images/PeopleBouncy_boy_links_infiziert.png"
+  );
+  peopleBouncy_boy_rechts_infiziert = loadImage(
+    "images/PeopleBouncy_boy_rechts_infiziert.png"
+  );
+  peopleBouncy_boy_vorne_infiziert = loadImage(
+    "images/PeopleBouncy_boy_vorne_infiziert.png"
+  );
+  peopleBouncy_girl_hinten_infiziert = loadImage(
+    "images/PeopleBouncy_girl_hinten_infiziert.png"
+  );
+  peopleBouncy_girl_links_infiziert = loadImage(
+    "images/PeopleBouncy_girl_links_infiziert.png"
+  );
+  peopleBouncy_girl_rechts_infiziert = loadImage(
+    "images/PeopleBouncy_girl_rechts_infiziert.png"
+  );
   peopleBouncy_girl_vorne_infiziert = loadImage(
     "images/PeopleBouncy_girl_vorne_infiziert.png"
   );
@@ -245,7 +275,16 @@ function setup() {
       PEOPLEBOUNCY_GIRL_LEFT: peopleBouncy_girl_links,
       PEOPLEBOUNCY_GIRL_RIGHT: peopleBouncy_girl_rechts,
       PEOPLEBOUNCY_GIRL_FRONT: peopleBouncy_girl_vorne,
+
+      PEOPLEBOUNCY_BOY_BACK_INFECTED: peopleBouncy_boy_hinten_infiziert,
+      PEOPLEBOUNCY_BOY_LEFT_INFECTED: peopleBouncy_boy_links_infiziert,
+      PEOPLEBOUNCY_BOY_RIGHT_INFECTED: peopleBouncy_boy_rechts_infiziert,
+      PEOPLEBOUNCY_BOY_FRONT_INFECTED: peopleBouncy_boy_vorne_infiziert,
+      PEOPLEBOUNCY_GIRL_BACK_INFECTED: peopleBouncy_girl_hinten_infiziert,
+      PEOPLEBOUNCY_GIRL_LEFT_INFECTED: peopleBouncy_girl_links_infiziert,
+      PEOPLEBOUNCY_GIRL_RIGHT_INFECTED: peopleBouncy_girl_rechts_infiziert,
       PEOPLEBOUNCY_GIRL_FRONT_INFECTED: peopleBouncy_girl_vorne_infiziert,
+
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
 
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
