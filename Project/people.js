@@ -156,11 +156,14 @@ export default class People extends MoveableObject {
       switch (wrongVectors[i]) {
         case "acx":
           oldAcX > 0 ? (newAcX = random(-2, -1)) : (newAcX = random(1, 2));
+          break;
         case "acy":
           oldAcY > 0 ? (newAcY = random(-2, -1)) : (newAcY = random(1, 2));
+          break;
         case "none":
           newAcX = random(-2, 2);
           newAcY = random(-2, 2);
+          break;
       }
     }
     newAcX === null ? (resultX = oldAcX) : (resultX = newAcX);
