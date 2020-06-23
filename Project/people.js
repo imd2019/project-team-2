@@ -149,6 +149,29 @@ export default class People extends MoveableObject {
     return this.currentDirection;
   }
 
+  getVirusOutputVelocity() {
+    let result = { dir: this.currentDirection, x: 5, y: 0 };
+    switch (this.currentDirection) {
+      case this.directions.front:
+        result.x = 0;
+        result.y = 5;
+        break;
+      case this.directions.back:
+        result.x = 0;
+        result.y = -5;
+        break;
+      case this.directions.left:
+        result.x = -5;
+        result.y = 0;
+        break;
+      case this.directions.right:
+        result.x = 5;
+        result.y = 0;
+        break;
+    }
+    return result;
+  }
+
   switchActivity() {
     this.currentActivity = random(this.activities);
     switch (this.currentActivity) {

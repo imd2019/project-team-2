@@ -3,6 +3,7 @@ import Sign from "./sign.js";
 import People from "./people.js";
 import InteractiveObject from "./interactiveObject.js";
 import Playground from "./playground.js";
+import VirusProjectile from "./virusProjectile.js";
 
 export default class PeopleBouncy extends Scene {
   constructor() {
@@ -12,9 +13,13 @@ export default class PeopleBouncy extends Scene {
     this.sign_name;
     this.playground;
     this.people = [];
+    this.viruses = [];
     this.currentPlayer = 0;
     window.addEventListener("newGoalPosition", (e) => {
       this.findNewGoalPosition(e.detail);
+    });
+    window.addEventListener("deleteVirusProjectile", (e) => {
+      this.deleteVirus(e.detail);
     });
   }
 
@@ -93,15 +98,35 @@ export default class PeopleBouncy extends Scene {
   }
 
   switchActivePlayer(index) {
-    this.people[this.currentPlayer].isActivePlayer = false;
+    this.getCurrentPlayer().isActivePlayer = false;
     this.currentPlayer = index;
-    this.people[this.currentPlayer].infect();
+    this.getCurrentPlayer().infect();
+  }
+
+  getCurrentPlayer() {
+    return this.people[this.currentPlayer];
   }
 
   onKeyPressed() {
     if (keyCode === 32) {
-      this.people[this.currentPlayer].keyPressed();
-      this.switchActivePlayer(this.currentPlayer + 1);
+      let pos = this.getCurrentPlayer().getRealXY();
+      let vel = this.getCurrentPlayer().getVirusOutputVelocity();
+      let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
+      virus.init();
+      this.viruses.push(virus);
+      this.addChild(virus);
+    }
+  }
+
+  deleteVirus(virus) {
+    this.removeChild(virus);
+    let index = this.viruses.indexOf(virus);
+    if (index >= 0) {
+      this.viruses.splice(index, 1);
+    } else {
+      console.error(
+        "Der Virus konnte nicht gelöscht werden, da Virus nicht exestiert."
+      );
     }
   }
 }
