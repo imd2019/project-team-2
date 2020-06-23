@@ -6,7 +6,14 @@ export default class People extends MoveableObject {
     this.currentGender = "";
     this.genders = ["boy-", "girl-"];
     this.currentDirection = "";
-    this.directions = { front: "front" };
+    this.directions = {
+      front: "front",
+      left: "left",
+      right: "right",
+      back: "back",
+    };
+    this.healthConditions = { healthy: "healthy", sick: "sick" };
+    this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
     this.currentActivity = "goal";
     this.activities = ["wait", "goal", "rnd"];
@@ -14,20 +21,88 @@ export default class People extends MoveableObject {
     this.normalAcceleration = 0.3;
     this.activityTimer = 0;
     this.activityMaxTimer = 0;
+    this.isInfected = false;
+    this.isActivePlayer = false;
   }
 
   init() {
     this.setGender();
     this.setDirection();
+    //Front
     this.addImage(
-      "boy-" + this.directions.front,
+      "boy-" + this.directions.front + this.healthConditions.healthy,
       window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT
     );
     this.addImage(
-      "girl-" + this.directions.front,
+      "girl-" + this.directions.front + this.healthConditions.healthy,
       window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT
     );
-    this.switchImage(this.currentGender + this.currentDirection);
+    //Left
+    this.addImage(
+      "boy-" + this.directions.left + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT
+    );
+    this.addImage(
+      "girl-" + this.directions.left + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT
+    );
+    //Right
+    this.addImage(
+      "boy-" + this.directions.right + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT
+    );
+    this.addImage(
+      "girl-" + this.directions.right + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT
+    );
+    //Back
+    this.addImage(
+      "boy-" + this.directions.back + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK
+    );
+    this.addImage(
+      "girl-" + this.directions.back + this.healthConditions.healthy,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK
+    );
+
+    //INFECTED
+
+    this.addImage(
+      "boy-" + this.directions.front + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_INFECTED
+    );
+    this.addImage(
+      "girl-" + this.directions.front + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_INFECTED
+    );
+    //Left
+    this.addImage(
+      "boy-" + this.directions.left + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_INFECTED
+    );
+    this.addImage(
+      "girl-" + this.directions.left + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_INFECTED
+    );
+    //Right
+    this.addImage(
+      "boy-" + this.directions.right + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_INFECTED
+    );
+    this.addImage(
+      "girl-" + this.directions.right + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_INFECTED
+    );
+    //Back
+    this.addImage(
+      "boy-" + this.directions.back + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_INFECTED
+    );
+    this.addImage(
+      "girl-" + this.directions.back + this.healthConditions.sick,
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED
+    );
+    this.switchImage(this.currentGender + this.currentDirection + this.health);
     this.setMaxMinSpeed(random(1, 3), random(-3, -1));
     this.decideDirection();
     this.getNewGoalPosition();
@@ -36,6 +111,42 @@ export default class People extends MoveableObject {
 
   getNewGoalPosition() {
     window.dispatchEvent(new CustomEvent("newGoalPosition", { detail: this }));
+  }
+
+  infect() {
+    this.isActivePlayer = true;
+    this.isInfected = true;
+    this.health = this.healthConditions.sick;
+  }
+
+  draw() {
+    this.updateImage();
+    if (this.isActivePlayer) {
+      image(window.ENUMS.IMAGE.VIRUS_1, 0, -35, 20, 20);
+    }
+  }
+
+  updateImage() {
+    this.updateDirection();
+    this.switchImage(this.currentGender + this.currentDirection + this.health);
+  }
+
+  updateDirection() {
+    let vel = this.getVelocity();
+    if (abs(vel.x) > abs(vel.y)) {
+      if (vel.x > 0) {
+        this.currentDirection = this.directions.right;
+      } else {
+        this.currentDirection = this.directions.left;
+      }
+    } else {
+      if (vel.y < 0) {
+        this.currentDirection = this.directions.back;
+      } else {
+        this.currentDirection = this.directions.front;
+      }
+    }
+    return this.currentDirection;
   }
 
   switchActivity() {
@@ -54,7 +165,7 @@ export default class People extends MoveableObject {
     }
     this.activityTimer = 0;
     this.needActivity = false;
-    console.log("new Activity is: " + this.currentActivity);
+    // console.log("new Activity is: " + this.currentActivity);
   }
 
   updateActivity() {

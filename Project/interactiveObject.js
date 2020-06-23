@@ -137,6 +137,19 @@ export default class InteractiveObject extends DisplayObject {
     this.disable(false);
   }
 
+  onKeyPressed() {
+    if (this.enabled) {
+      for (let element of this.children) {
+        if (element instanceof InteractiveObject) {
+          element.onKeyPressed();
+        }
+      }
+      this.keyPressed();
+    }
+  }
+
+  keyPressed() {}
+
   mouseClicked() {
     if (this.hitTest(mouseX, mouseY)) {
       for (let element of this.children) {
