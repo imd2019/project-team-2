@@ -12,6 +12,7 @@ export default class PeopleBouncy extends Scene {
     this.sign_name;
     this.playground;
     this.people = [];
+    this.currentPlayer = 0;
     window.addEventListener("newGoalPosition", (e) => {
       this.findNewGoalPosition(e.detail);
     });
@@ -38,6 +39,7 @@ export default class PeopleBouncy extends Scene {
     this.addChild(this.sign_level);
     this.addChild(this.sign_name);
     this.spawnPeople(10);
+    this.switchActivePlayer(0);
   }
 
   draw() {}
@@ -88,5 +90,18 @@ export default class PeopleBouncy extends Scene {
   findNewGoalPosition(people) {
     let pos = this.playground.getRealRandomPosition();
     people.setGoalPosition(pos.x, pos.y);
+  }
+
+  switchActivePlayer(index) {
+    this.people[this.currentPlayer].isActivePlayer = false;
+    this.currentPlayer = index;
+    this.people[this.currentPlayer].infect();
+  }
+
+  onKeyPressed() {
+    if (keyCode === 32) {
+      this.people[this.currentPlayer].keyPressed();
+      this.switchActivePlayer(this.currentPlayer + 1);
+    }
   }
 }

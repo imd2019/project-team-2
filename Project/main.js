@@ -77,3 +77,8 @@ function mousePressed() {
   world.mousePressed();
 }
 window.mousePressed = mousePressed;
+
+function keyPressed() {
+  world.onKeyPressed();
+}
+window.keyPressed = keyPressed;
