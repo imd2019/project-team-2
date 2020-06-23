@@ -31,7 +31,13 @@ let mentorVirus;
 let mentorVirusText;
 
 //People von PeopleBouncy
+let peopleBouncy_boy_hinten;
+let peopleBouncy_boy_links;
+let peopleBouncy_boy_rechts;
 let peopleBouncy_boy_vorne;
+let peopleBouncy_girl_hinten;
+let peopleBouncy_girl_links;
+let peopleBouncy_girl_rechts;
 let peopleBouncy_girl_vorne;
 let peopleBouncy_playground1;
 
@@ -97,7 +103,13 @@ function preload() {
   mentorVirus = loadImage("images/MentorVirus.png");
 
   //People von PeopleBouncy
+  peopleBouncy_boy_hinten = loadImage("images/PeopleBouncy_boy_hinten.png");
+  peopleBouncy_boy_links = loadImage("images/PeopleBouncy_boy_links.png");
+  peopleBouncy_boy_rechts = loadImage("images/PeopleBouncy_boy_rechts.png");
   peopleBouncy_boy_vorne = loadImage("images/PeopleBouncy_boy_vorne.png");
+  peopleBouncy_girl_hinten = loadImage("images/PeopleBouncy_girl_hinten.png");
+  peopleBouncy_girl_links = loadImage("images/PeopleBouncy_girl_links.png");
+  peopleBouncy_girl_rechts = loadImage("images/PeopleBouncy_girl_rechts.png");
   peopleBouncy_girl_vorne = loadImage("images/PeopleBouncy_girl_vorne.png");
 
   peopleBouncy_playground1 = loadImage("images/PeopleBouncy_spielfeld1.png");
@@ -221,7 +233,13 @@ function setup() {
       HAND_BROWN_LACK: hand_brown_lack,
       HAND_HEATMAP: hand_heatmap,
 
+      PEOPLEBOUNCY_BOY_BACK: peopleBouncy_boy_hinten,
+      PEOPLEBOUNCY_BOY_LEFT: peopleBouncy_boy_links,
+      PEOPLEBOUNCY_BOY_RIGHT: peopleBouncy_boy_rechts,
       PEOPLEBOUNCY_BOY_FRONT: peopleBouncy_boy_vorne,
+      PEOPLEBOUNCY_GIRL_BACK: peopleBouncy_girl_hinten,
+      PEOPLEBOUNCY_GIRL_LEFT: peopleBouncy_girl_links,
+      PEOPLEBOUNCY_GIRL_RIGHT: peopleBouncy_girl_rechts,
       PEOPLEBOUNCY_GIRL_FRONT: peopleBouncy_girl_vorne,
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
 
