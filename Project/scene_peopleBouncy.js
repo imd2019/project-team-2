@@ -4,6 +4,7 @@ import People from "./people.js";
 import InteractiveObject from "./interactiveObject.js";
 import Playground from "./playground.js";
 import VirusProjectile from "./virusProjectile.js";
+import Util from "./util.js";
 
 export default class PeopleBouncy extends Scene {
   constructor() {
@@ -71,6 +72,7 @@ export default class PeopleBouncy extends Scene {
         element.move();
       }
     }
+    this.checkCollision();
   }
 
   spawnPeople(count) {
@@ -127,6 +129,46 @@ export default class PeopleBouncy extends Scene {
       console.error(
         "Der Virus konnte nicht gelöscht werden, da Virus nicht exestiert."
       );
+    }
+  }
+
+  checkCollision() {
+    let result = this.checkPeopleVirusCollision();
+    if (result) {
+      this.switchActivePlayer(this.people.indexOf(result.people));
+      this.deleteVirus(result.virus);
+    }
+  }
+
+  checkPeopleVirusCollision() {
+    for (let pElement of this.people) {
+      if (pElement.isInfected === false) {
+        for (let vElement of this.viruses) {
+          if (this.collideObjObj(pElement, vElement)) {
+            return { virus: vElement, people: pElement };
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  collideObjObj(obj_1, obj_2) {
+    let obj_1_pos = obj_1.getRealXY();
+    let obj_2_pos = obj_2.getRealXY();
+    if (
+      obj_1.shape === window.ENUMS.SHAPE.ROUND &&
+      obj_2.shape === window.ENUMS.SHAPE.ROUND
+    ) {
+      let dx = obj_1_pos.x - obj_2_pos.x;
+      let dy = obj_1_pos.y - obj_2_pos.y;
+      let d = Util.betrag([dx, dy]);
+
+      let r = obj_1.width / 2 + obj_2.width / 2;
+      if (d < r) {
+        return true;
+      }
+      return false;
     }
   }
 }

@@ -2,7 +2,7 @@ import MoveableObject from "./moveableObject.js";
 
 export default class VirusProjectile extends MoveableObject {
   constructor(x, y, velX, velY, direction) {
-    super(x, y, 50, 0, window.ENUMS.SHAPE.ROUND);
+    super(x, y, 20, 0, window.ENUMS.SHAPE.ROUND);
     let xSign = 1;
     let ySign = 1;
     velX > 0 ? (xSign = -1) : (xSign = 1);
