@@ -26,12 +26,12 @@ export default class Button_MentorVirus extends Button {
   }
 
   showText() {
-    this.mentorVirusText.enable();
+    this.mentorVirusText.extract();
     this.text = true;
     this.setRotInDegree(0);
   }
   hideText() {
-    this.mentorVirusText.disable();
+    this.mentorVirusText.retract();
     this.text = false;
   }
 
