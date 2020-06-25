@@ -32,7 +32,7 @@ export default class Button_MentorVirusText extends Button {
       150 * this.animationProgress
     );
     this.offSetX = -this.x + this.x * this.animationProgress;
-    this.animationTime === 0 ? this.hide() : this.hide(false);
+    this.animationTime < 0.2 ? this.hide() : this.hide(false);
   }
 
   updateAnimationValues() {
@@ -43,7 +43,7 @@ export default class Button_MentorVirusText extends Button {
     } else if (this.extend === false && this.animationTime > 0) {
       this.animationTime -= this.animationSpeed;
       if (this.animationTime < 0) this.animationTime = 0;
-      this.animationProgress = Util.easeOutSine(this.animationTime);
+      this.animationProgress = 1 - Util.easeOutSine(1 - this.animationTime);
     }
   }
 

@@ -60,7 +60,6 @@ export default class Button_MentorVirus extends Button {
         this.wiggleProgress = Util.easeOutQuad(abs(this.wiggleTime)) * -1;
       }
     }
-    console.log(this.wiggleProgress);
   }
 
   animate() {

@@ -6,11 +6,13 @@ import Playground from "./playground.js";
 import VirusProjectile from "./virusProjectile.js";
 import Util from "./util.js";
 import Wecker from "./wecker.js";
+import Button_Weiter from "./Button_Weiter.js";
+import Button_MentorVirus from "./button_MentorVirus.js";
 
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 1;
+    this.level = 0;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -18,11 +20,21 @@ export default class PeopleBouncy extends Scene {
     this.people = [];
     this.viruses = [];
     this.currentPlayer = 0;
+    this.weiterButton;
+    this.startScene = true;
+    this.mentorVirus;
+
     window.addEventListener("newGoalPosition", (e) => {
       this.findNewGoalPosition(e.detail);
     });
     window.addEventListener("deleteVirusProjectile", (e) => {
       this.deleteVirus(e.detail);
+    });
+    window.addEventListener("timeIsUp", () => {
+      this.levelEnd();
+    });
+    window.addEventListener("nextPeopleBouncyLevel", (e) => {
+      this.setUpLevel();
     });
   }
 
@@ -31,10 +43,26 @@ export default class PeopleBouncy extends Scene {
       "Hintergrund-1",
       window.ENUMS.IMAGE.BACKGROUND_PEOPLEBOUNCY_LEVEL_1
     );
+    this.addImage(
+      "Hintergrund-2",
+      window.ENUMS.IMAGE.BACKGROUND_PEOPLEBOUNCY_LEVEL_2
+    );
+    this.addImage(
+      "Hintergrund-3",
+      window.ENUMS.IMAGE.BACKGROUND_PEOPLEBOUNCY_LEVEL_3
+    );
     this.switchImage("Hintergrund-" + this.level);
     this.sign_name = new Sign(50, 0, "People Bouncy");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
     this.wecker = new Wecker(380, 0);
+    this.mentorVirus = new Button_MentorVirus(1260, 100, "MentorVirus");
+
+    this.weiterButton = new Button_Weiter(
+      this.width - 170,
+      this.height - 135,
+      "nextPeopleBouncyLevel"
+    );
+    this.weiterButton.disable(false);
     this.playground = new Playground(
       290,
       170,
@@ -49,46 +77,94 @@ export default class PeopleBouncy extends Scene {
     this.addChild(this.sign_level);
     this.addChild(this.sign_name);
     this.addChild(this.wecker);
-    this.spawnPeople(10);
-    this.switchActivePlayer(0);
+    this.addChild(this.weiterButton);
+    this.addChild(this.mentorVirus);
+    this.setUpLevel();
   }
 
+  setUpLevel() {
+    this.level++;
+    this.deletePeople();
+    this.wecker.zeit = 30;
+    switch (this.level) {
+      case 1:
+        this.mentorVirus.updateText(
+          "Drücke die Leertaste, um andere anzustecken!"
+        );
+
+        this.mentorVirus.showText();
+        this.spawnPeople(10);
+        break;
+      case 2:
+        this.mentorVirus.updateText(
+          "Probiere dich jetzt auf dem Schulhof aus."
+        );
+        this.mentorVirus.showText();
+        this.spawnPeople(20);
+        break;
+      case 3:
+        this.mentorVirus.updateText(
+          "Oh nein, Schutzmasken! Schützen sie wirklich?"
+        );
+        this.mentorVirus.showText();
+        this.spawnPeople(20);
+        break;
+    }
+
+    this.sign_level.changeText("Level " + this.level + "/3");
+    this.switchImage("Hintergrund-" + this.level);
+    this.startScene = true;
+    this.switchActivePlayer(0);
+  }
   draw() {}
 
   update() {
-    for (let element of this.people) {
-      element.updateActivity();
-      let elRealPos = element.getRealXY();
-      let velocity = element.getVelocity();
-      if (
-        !this.playground.isPointOnPlayground(
-          elRealPos.x + velocity.x * 2,
-          elRealPos.y + velocity.y * 2
-        )
-      ) {
-        let wrongVec = this.getWrongVectorsOnPlayground(
-          elRealPos.x,
-          elRealPos.y,
-          velocity.x,
-          velocity.y
-        );
-        element.decideDirection(wrongVec);
-        element.setVelocity(0, 0);
-        element.move();
+    if (this.startScene === true) {
+      for (let element of this.people) {
+        element.updateActivity();
+        let elRealPos = element.getRealXY();
+        let velocity = element.getVelocity();
+        if (
+          !this.playground.isPointOnPlayground(
+            elRealPos.x + velocity.x * 2,
+            elRealPos.y + velocity.y * 2
+          )
+        ) {
+          let wrongVec = this.getWrongVectorsOnPlayground(
+            elRealPos.x,
+            elRealPos.y,
+            velocity.x,
+            velocity.y
+          );
+          element.decideDirection(wrongVec);
+          element.setVelocity(0, 0);
+          element.move();
+        }
       }
+      this.checkCollision();
     }
-    this.checkCollision();
   }
 
   spawnPeople(count) {
     for (let i = 0; i < count; i++) {
       let pos = this.playground.getRealRandomPosition();
       let people = new People(pos.x, pos.y);
+      people.init();
       this.people.push(people);
       this.addChild(people);
     }
   }
-
+  disablePeople() {
+    for (let i = 0; i < this.people.length; i++) {
+      this.people[i].disable(false);
+    }
+  }
+  deletePeople() {
+    for (let i = 0; i < this.people.length; i++) {
+      this.removeChild(this.people[i]);
+    }
+    this.people = [];
+  }
   getWrongVectorsOnPlayground(x, y, vcx, vcy) {
     let result = [];
     if (!this.playground.isPointOnPlayground(x + vcx, y)) result.push("acx");
@@ -115,13 +191,15 @@ export default class PeopleBouncy extends Scene {
   }
 
   onKeyPressed() {
-    if (keyCode === 32) {
-      let pos = this.getCurrentPlayer().getRealXY();
-      let vel = this.getCurrentPlayer().getVirusOutputVelocity();
-      let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
-      virus.init();
-      this.viruses.push(virus);
-      this.addChild(virus);
+    if (this.startScene === true) {
+      if (keyCode === 32) {
+        let pos = this.getCurrentPlayer().getRealXY();
+        let vel = this.getCurrentPlayer().getVirusOutputVelocity();
+        let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
+        virus.init();
+        this.viruses.push(virus);
+        this.addChild(virus);
+      }
     }
   }
 
@@ -175,5 +253,25 @@ export default class PeopleBouncy extends Scene {
       }
       return false;
     }
+  }
+  countInfectedPeople() {
+    let count = 0;
+    for (let element of this.people) {
+      if (element.isInfected) {
+        count++;
+      }
+    }
+    return count;
+  }
+  levelEnd() {
+    this.mentorVirus.updateText(
+      "Die Zeit ist um. Du hast " +
+        this.countInfectedPeople() +
+        " Schüler infiziert."
+    );
+    this.mentorVirus.showText();
+    this.weiterButton.enable();
+    this.startScene = false;
+    this.disablePeople();
   }
 }
