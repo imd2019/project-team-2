@@ -5,6 +5,7 @@ import InteractiveObject from "./interactiveObject.js";
 import Playground from "./playground.js";
 import VirusProjectile from "./virusProjectile.js";
 import Util from "./util.js";
+import Wecker from "./wecker.js";
 
 export default class PeopleBouncy extends Scene {
   constructor() {
@@ -12,6 +13,7 @@ export default class PeopleBouncy extends Scene {
     this.level = 1;
     this.sign_level;
     this.sign_name;
+    this.wecker;
     this.playground;
     this.people = [];
     this.viruses = [];
@@ -32,6 +34,7 @@ export default class PeopleBouncy extends Scene {
     this.switchImage("Hintergrund-" + this.level);
     this.sign_name = new Sign(50, 0, "People Bouncy");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
+    this.wecker = new Wecker(380, 0);
     this.playground = new Playground(
       290,
       170,
@@ -44,6 +47,7 @@ export default class PeopleBouncy extends Scene {
     this.addChild(this.playground);
     this.addChild(this.sign_level);
     this.addChild(this.sign_name);
+    this.addChild(this.wecker);
     this.spawnPeople(10);
     this.switchActivePlayer(0);
   }
