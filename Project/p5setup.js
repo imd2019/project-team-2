@@ -23,6 +23,7 @@ let hand_white_lack;
 let hand_heatmap;
 let sign;
 let wecker;
+let startscreenFingers;
 let backgroundStartscreen;
 let background_people_bouncy_1;
 let background_people_bouncy_2;
@@ -94,6 +95,8 @@ function preload() {
   hand_brown_lack = loadImage("images/Haendewaschen_Braun_Lack_Hand.png");
   hand_white_lack = loadImage("images/Haendewaschen_Weiss_Lack_Hand.png");
   hand_heatmap = loadImage("images/Haendewaschen_HeatMap.png");
+
+  startscreenFingers = loadImage("images/Fingerkuppen.png");
 
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
@@ -288,6 +291,8 @@ function setup() {
       PEOPLEBOUNCY_GIRL_FRONT_INFECTED: peopleBouncy_girl_vorne_infiziert,
 
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
+
+      STARTSCREEN_FINGERS: startscreenFingers,
 
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
