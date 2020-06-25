@@ -42,4 +42,7 @@ export default class Util {
   static easeInQuart(x) {
     return x * x * x * x;
   }
+  static easeOutSine(x) {
+    return sin((x * PI) / 2);
+  }
 }
