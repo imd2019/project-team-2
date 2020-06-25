@@ -236,6 +236,7 @@ export default class InteractiveObject extends DisplayObject {
       rotate(this.rot);
       if (this.currentImage != undefined) {
         if (this.shape === window.ENUMS.SHAPE.ROUND) imageMode(CENTER);
+        if (this.shape === window.ENUMS.SHAPE.RECT) imageMode(CORNER);
         image(this.currentImage, 0, 0, this.imageWidth, this.imageHeight);
       }
       this.draw();
