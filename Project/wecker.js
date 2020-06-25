@@ -5,7 +5,7 @@ export default class Wecker extends MoveableObject {
   constructor(x, y) {
     super(x, y, 246 / 3.5, 480 / 3.5, window.ENUMS.SHAPE.RECT);
     this.setOffset(0, -5);
-    this.zeit = 12;
+    this.zeit = 5;
     this.animationTime = 0;
     this.animationSpeed = 0.04;
     this.wiggleTime = 0;
@@ -30,11 +30,16 @@ export default class Wecker extends MoveableObject {
     if (this.zeit > 0) {
       this.zeit--;
       this.wait(1);
+      if (this.zeit == 0) {
+        this.wiggleTime = 0;
+        this.setRotInDegree(0);
+        window.dispatchEvent(new CustomEvent("timeIsUp"));
+      }
     }
   }
   draw() {
     //Wecker Klingeln
-    if (this.zeit <= 10) {
+    if (this.zeit <= 10 && this.zeit > 0) {
       this.wiggleTime += this.wiggleSpeed;
       this.setRotInDegree(0 + 10 * this.wiggleProgress);
       if (this.wiggleTime <= -1 || this.wiggleTime >= 1)
@@ -54,10 +59,7 @@ export default class Wecker extends MoveableObject {
       }
       console.log(this.wiggleProgress);
     }
-    if (this.zeit == 0) {
-      this.wiggleTime = 0;
-      this.setRotInDegree(0);
-    }
+
     fill(0);
     textSize(20);
     textFont(window.ENUMS.FONT.MARKER_FELT);
