@@ -11,6 +11,7 @@ export default class Wecker extends MoveableObject {
     this.wiggleTime = 0;
     this.wiggleSpeed = -0.2;
     this.wiggleProgress = 0;
+    this.setRotationOffset(35, 0);
   }
   init() {
     this.addImage("wecker", window.ENUMS.IMAGE.WECKER);
@@ -56,7 +57,6 @@ export default class Wecker extends MoveableObject {
     if (this.zeit == 0) {
       this.wiggleTime = 0;
       this.setRotInDegree(0);
-      this.weiterButton.enable();
     }
     fill(0);
     textSize(20);
