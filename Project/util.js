@@ -35,11 +35,7 @@ export default class Util {
     return 1 - Math.pow(1 - x, 5);
   } //https://easings.net/de#easeOutQuint
 
-  static easeOutQuart(x) {
-    return 1 - pow(1 - x, 4);
-  }
-
-  static easeInQuart(x) {
-    return x * x * x * x;
+  static easeOutQuad(x) {
+    return 1 - (1 - x) * (1 - x);
   }
 }
