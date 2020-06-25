@@ -70,6 +70,7 @@ export default class PeopleBouncy extends Scene {
       429,
       window.ENUMS.IMAGE.PEOPLEBOUNCY_PLAYGROUND_1
     );
+
     this.playground.addHitbox(0, 0, 600, 340, window.ENUMS.SHAPE.RECT);
     this.playground.addHitbox(470, 120, 370, 280, window.ENUMS.SHAPE.RECT);
     this.addChild(this.playground);
