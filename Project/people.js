@@ -150,7 +150,7 @@ export default class People extends MoveableObject {
   }
 
   getVirusOutputVelocity() {
-    let result = { dir: this.currentDirection, x: 5, y: 0 };
+    let result = { dir: this.currentDirection, x: 0, y: 0 };
     switch (this.currentDirection) {
       case this.directions.front:
         result.x = 0;
