@@ -34,4 +34,16 @@ export default class Util {
   static easeOutQuint(x) {
     return 1 - Math.pow(1 - x, 5);
   } //https://easings.net/de#easeOutQuint
+
+  static easeInOutQuart(x) {
+    return x < 0.5 ? 8 * x * x * x * x : 1 - pow(-2 * x + 2, 4) / 2;
+  } //https://easings.net/de#easeInOutQuart
+
+  static easeOutQuart(x) {
+    return 1 - pow(1 - x, 4);
+  }
+
+  static easeInQuart(x) {
+    return x * x * x * x;
+  }
 }
