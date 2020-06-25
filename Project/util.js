@@ -38,4 +38,8 @@ export default class Util {
   static easeOutQuad(x) {
     return 1 - (1 - x) * (1 - x);
   } //https://easings.net/de#easeOutQuad
+
+  static easeOutSine(x) {
+    return sin((x * PI) / 2);
+  }
 }
