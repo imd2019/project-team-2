@@ -1,5 +1,6 @@
 import Button from "./Button.js";
 import Button_MentorVirusText from "./button_MentorVirusText.js";
+import Util from "./util.js";
 
 export default class Button_MentorVirus extends Button {
   constructor(x, y) {
@@ -8,7 +9,8 @@ export default class Button_MentorVirus extends Button {
     this.text = true;
     this.mentorVirusText = new Button_MentorVirusText(-225, -10);
     this.wiggleTime = 0;
-    this.wiggleSpeed = -0.15;
+    this.wiggleSpeed = -0.05;
+    this.wiggleProgress = 0;
   }
 
   init() {
@@ -45,11 +47,15 @@ export default class Button_MentorVirus extends Button {
     this.wiggleTime += this.wiggleSpeed;
     if (this.wiggleTime <= -1 || this.wiggleTime >= 1)
       this.wiggleSpeed = this.wiggleSpeed * -1;
+    this.wiggleProgress = Util.easeInOutQuart(this.wiggleTime);
+    console.log(this.wiggleProgress);
+    if (this.wiggleProgress > 1) this.wiggleProgress = 1;
+    if (this.wiggleProgress < -1) this.wiggleProgress = -1;
   }
 
   animate() {
     if (this.text === false && this.hovered === true) {
-      this.setRotInDegree(0 + 10 * this.wiggleTime);
+      this.setRotInDegree(0 + 10 * this.wiggleProgress);
     }
   }
 
