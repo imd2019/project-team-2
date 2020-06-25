@@ -20,6 +20,8 @@ export default class InteractiveObject extends DisplayObject {
     this.hovered = false;
     this.waitStarttime = 0;
     this.waitTime = 0;
+    this.rotationOffsetX = 0;
+    this.rotationOffsetY = 0;
   }
 
   onInit() {
@@ -108,6 +110,10 @@ export default class InteractiveObject extends DisplayObject {
     this.setImageSize(sizeX, sizeY);
     this.setDomSize(sizeX, sizeY);
     this.setHitboxSize(sizeX, sizeY);
+  }
+  setRotationOffset(x, y) {
+    this.rotationOffsetX = x;
+    this.rotationOffsetY = y;
   }
 
   onUpdate() {
@@ -233,7 +239,9 @@ export default class InteractiveObject extends DisplayObject {
       push();
       translate(this.x + this.offSetX, this.y + this.offSetY);
       scale(this.scale);
+      translate(this.rotationOffsetX, this.rotationOffsetY);
       rotate(this.rot);
+      translate(-this.rotationOffsetX, -this.rotationOffsetY);
       if (this.currentImage != undefined) {
         if (this.shape === window.ENUMS.SHAPE.ROUND) imageMode(CENTER);
         if (this.shape === window.ENUMS.SHAPE.RECT) imageMode(CORNER);
