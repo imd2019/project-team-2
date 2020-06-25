@@ -9,7 +9,7 @@ export default class Button_MentorVirus extends Button {
     this.text = true;
     this.mentorVirusText = new Button_MentorVirusText(-225, -10);
     this.wiggleTime = 0;
-    this.wiggleSpeed = -0.2;
+    this.wiggleSpeed = -0.16;
     this.wiggleProgress = 0;
   }
 
@@ -49,15 +49,15 @@ export default class Button_MentorVirus extends Button {
       this.wiggleSpeed = this.wiggleSpeed * -1;
     if (this.wiggleSpeed > 0) {
       if (this.wiggleTime < 0) {
-        this.wiggleProgress = Util.easeOutQuart(abs(this.wiggleTime)) * -1;
+        this.wiggleProgress = Util.easeOutQuad(abs(this.wiggleTime)) * -1;
       } else {
-        this.wiggleProgress = Util.easeOutQuart(this.wiggleTime);
+        this.wiggleProgress = Util.easeOutQuad(this.wiggleTime);
       }
     } else {
       if (this.wiggleTime > 0) {
-        this.wiggleProgress = Util.easeOutQuart(this.wiggleTime);
+        this.wiggleProgress = Util.easeOutQuad(this.wiggleTime);
       } else {
-        this.wiggleProgress = Util.easeOutQuart(abs(this.wiggleTime)) * -1;
+        this.wiggleProgress = Util.easeOutQuad(abs(this.wiggleTime)) * -1;
       }
     }
     console.log(this.wiggleProgress);
