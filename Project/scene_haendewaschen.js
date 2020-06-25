@@ -54,7 +54,7 @@ export default class Haendewaschen extends Scene {
       "nextHaendeLevel"
     );
 
-    this.mentorVirus = new Button_MentorVirus(1180, 10, "MentorVirus");
+    this.mentorVirus = new Button_MentorVirus(1260, 100, "MentorVirus");
 
     this.hand = new Hand(235, window.ENUMS.SIZE.Y);
     this.newHandColor();

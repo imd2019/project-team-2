@@ -22,6 +22,7 @@ let hand_brown_lack;
 let hand_white_lack;
 let hand_heatmap;
 let sign;
+let wecker;
 let backgroundStartscreen;
 let background_people_bouncy_1;
 let background_people_bouncy_2;
@@ -108,6 +109,7 @@ function preload() {
   );
   virus_1 = loadImage("images/Virus_1.png");
   sign = loadImage("images/Schild.png");
+  wecker = loadImage("images/Wecker.png");
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
@@ -295,6 +297,7 @@ function setup() {
       BACKGROUND_PEOPLEBOUNCY_LEVEL_3: background_people_bouncy_3,
       VIRUS_1: virus_1,
       SIGN: sign,
+      WECKER: wecker,
     }),
     DOM: Object.freeze({
       ANIMATION_WHITE_PALM: animation_white_palm,
