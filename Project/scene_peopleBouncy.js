@@ -220,6 +220,7 @@ export default class PeopleBouncy extends Scene {
       this.switchActivePlayer(this.people.indexOf(result.people));
       this.deleteVirus(result.virus);
     }
+    this.checkPeopleTalkCollision();
   }
 
   checkPeopleVirusCollision() {
@@ -234,17 +235,40 @@ export default class PeopleBouncy extends Scene {
     }
     return false;
   }
+  checkPeopleTalkCollision() {
+    for (let element1 of this.people) {
+      if (element1.currentExpression === element1.expressions.nothing) {
+        let peopleToTalk = [];
+
+        for (let element2 of this.people) {
+          if (element1 === element2) continue;
+          if (
+            Util.getDistanceBetweenObjects(element1, element2) < 70 &&
+            element2.currentExpression === element2.expressions.nothing
+          ) {
+            peopleToTalk.push(element2);
+          }
+        }
+
+        if (peopleToTalk.length > 0) {
+          let rnd = random(1);
+          if (rnd < 0.002) {
+            let partner = random(peopleToTalk);
+            console.log(partner);
+            element1.setupTalk(partner);
+            partner.setupTalk(element1);
+          }
+        }
+      }
+    }
+  }
 
   collideObjObj(obj_1, obj_2) {
-    let obj_1_pos = obj_1.getRealXY();
-    let obj_2_pos = obj_2.getRealXY();
     if (
       obj_1.shape === window.ENUMS.SHAPE.ROUND &&
       obj_2.shape === window.ENUMS.SHAPE.ROUND
     ) {
-      let dx = obj_1_pos.x - obj_2_pos.x;
-      let dy = obj_1_pos.y - obj_2_pos.y;
-      let d = Util.betrag([dx, dy]);
+      let d = Util.getDistanceBetweenObjects(obj_1, obj_2);
 
       let r = obj_1.width / 2 + obj_2.width / 2;
       if (d < r) {

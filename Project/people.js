@@ -16,7 +16,7 @@ export default class People extends MoveableObject {
     this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
     this.currentActivity = "goal";
-    this.activities = ["wait", "goal", "rnd"];
+    this.activities = ["goal", "rnd"];
     this.needActivity = false;
     this.normalAcceleration = 0.3;
     this.activityTimer = 0;
@@ -188,8 +188,12 @@ export default class People extends MoveableObject {
     return result;
   }
 
-  switchActivity() {
-    this.currentActivity = random(this.activities);
+  switchActivity(activity = null) {
+    if (activity === null) {
+      this.currentActivity = random(this.activities);
+    } else {
+      this.currentActivity = activity;
+    }
     switch (this.currentActivity) {
       case "wait":
         this.activityMaxTimer = random(200);
@@ -201,7 +205,11 @@ export default class People extends MoveableObject {
       case "rnd":
         this.activityMaxTimer = random(300);
         this.decideDirection();
+      case "talk":
+        this.activityMaxTimer = 100;
+        break;
     }
+
     this.activityTimer = 0;
     this.needActivity = false;
     // console.log("new Activity is: " + this.currentActivity);
@@ -266,7 +274,11 @@ export default class People extends MoveableObject {
       this.needActivity = true;
     }
   }
-
+  setupTalk(people) {
+    this.currentExpression = this.expressions.speak;
+    this.expressionTimer = 100;
+    this.switchActivity("talk");
+  }
   setAccelerationToGoal() {
     let newAcX = 0;
     let newAcY = 0;
