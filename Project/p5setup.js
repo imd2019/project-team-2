@@ -1,4 +1,5 @@
 import EventDispatcher from "./eventDispatcher.js";
+//import "./lib/p5.sound.js";
 
 let sketch = new p5();
 
@@ -75,6 +76,8 @@ let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
 
 let testVideo;
+//Sound
+let song;
 
 //Schriftarten
 let markerFelt;
@@ -231,11 +234,15 @@ function preload() {
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
+  song = loadSound("sound/DreamTransition.mp3");
+
   markerFelt = loadFont("typo/MarkerFelt.ttf");
 }
 window.preload = preload;
 
 function setup() {
+  preload();
+
   console.log("setup");
   let canvas = sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
@@ -330,6 +337,10 @@ function setup() {
 
       TEST_VIDEO: testVideo,
     }),
+    SOUND: Object.freeze({
+      SONG: song,
+    }),
+
     FONT: Object.freeze({
       MARKER_FELT: markerFelt,
     }),

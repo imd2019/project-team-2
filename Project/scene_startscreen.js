@@ -7,28 +7,35 @@ export default class Startscreen extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.START);
     this.startbutton;
-    this.msg;
+    this.msg1;
+    this.msg2;
+    this.msg3;
   }
   init() {
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN);
     this.switchImage("background");
 
-    this.msg = new Message(
+    this.msg1 = new Message(
       770,
       240,
       100,
       "Diese Masken sind echt unbequem und was bringen die schon?"
     );
-    this.addChild(this.msg);
-    this.msg = new Message(
+    this.addChild(this.msg1);
+    this.msg2 = new Message(
       865,
       325,
       100,
       "ja das frage ich mich auch und dieses ganze Händewaschen..."
     );
-    this.addChild(this.msg);
-    this.msg = new Message(850, 450, 100, "test test test test test...");
-    this.addChild(this.msg);
+    this.addChild(this.msg2);
+    this.msg3 = new Message(
+      850,
+      450,
+      100,
+      "Ja, das nervt. Weißt du denn eigentlich, wie man sich richtig verhält? Oder wie richtige Hygiene funktioniert?"
+    );
+    this.addChild(this.msg3);
 
     let loch = new DisplayObject(0, 0);
     loch.setImageSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
@@ -36,7 +43,7 @@ export default class Startscreen extends Scene {
     this.addChild(loch);
 
     this.startbutton = new Button_Start(1055, 505);
-    this.startbutton.setRotInDegree(-19);
+    this.startbutton.setRotInDegree(-20);
     this.addChild(this.startbutton);
 
     let fingers = new DisplayObject(0, 0);
