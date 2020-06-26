@@ -23,6 +23,9 @@ export default class People extends MoveableObject {
     this.activityMaxTimer = 0;
     this.isInfected = false;
     this.isActivePlayer = false;
+    this.expressions = { sneeze: "sneeze", nothing: "nothing", speak: "speak" };
+    this.currentExpression = this.expressions.nothing;
+    this.expressionTimer = 0;
   }
 
   init() {
@@ -124,6 +127,7 @@ export default class People extends MoveableObject {
     if (this.isActivePlayer) {
       image(window.ENUMS.IMAGE.VIRUS_1, 0, -35, 20, 20);
     }
+    text(this.currentExpression, 0, -20);
   }
 
   updateImage() {
@@ -150,22 +154,34 @@ export default class People extends MoveableObject {
   }
 
   getVirusOutputVelocity() {
+    let speed = 1;
+    switch (this.currentExpression) {
+      case this.expressions.nothing:
+        speed = 2;
+        break;
+      case this.expressions.sneeze:
+        speed = 7;
+        break;
+      case this.expressions.speak:
+        speed = 4;
+        break;
+    }
     let result = { dir: this.currentDirection, x: 0, y: 0 };
     switch (this.currentDirection) {
       case this.directions.front:
         result.x = 0;
-        result.y = 5;
+        result.y = speed;
         break;
       case this.directions.back:
         result.x = 0;
-        result.y = -5;
+        result.y = -speed;
         break;
       case this.directions.left:
-        result.x = -5;
+        result.x = -speed;
         result.y = 0;
         break;
       case this.directions.right:
-        result.x = 5;
+        result.x = speed;
         result.y = 0;
         break;
     }
@@ -192,16 +208,14 @@ export default class People extends MoveableObject {
   }
 
   updateActivity() {
-    if (this.needActivity) this.switchActivity();
-  }
-
-  update() {
     if (this.activityTimer > this.activityMaxTimer) {
       this.needActivity = true;
     } else {
       this.activityTimer++;
     }
-
+    if (this.needActivity) this.switchActivity();
+  }
+  doActivity() {
     switch (this.currentActivity) {
       case "wait":
         break;
@@ -213,6 +227,30 @@ export default class People extends MoveableObject {
       case "rnd":
         this.move();
         break;
+    }
+  }
+  triggerSneezeRnd() {
+    let rnd = random(1);
+    if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
+      this.currentExpression = this.expressions.sneeze;
+      this.expressionTimer = 40;
+    }
+  }
+  updateExpression() {
+    if (this.expressionTimer > 0) {
+      this.expressionTimer--;
+      if (this.expressionTimer <= 0) {
+        this.currentExpression = this.expressions.nothing;
+      }
+    }
+  }
+
+  update() {
+    this.updateActivity();
+    this.doActivity();
+    this.updateExpression();
+    if (this.isInfected) {
+      this.triggerSneezeRnd();
     }
   }
 
