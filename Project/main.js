@@ -24,6 +24,7 @@ let scenePeopleBouncy;
 let sceneStartscreen;
 
 function draw() {
+  // window.ENUMS.SOUND.SONG.play();
   if (init) {
     world = new Game("world");
 
@@ -52,7 +53,7 @@ function draw() {
     testScene2.addChild(test);
     world.onInit();
 
-    world.nextScene(window.ENUMS.SCENE_NAMES.HAENDEWASCHEN);
+    world.nextScene(window.ENUMS.SCENE_NAMES.START);
 
     init = false;
   }

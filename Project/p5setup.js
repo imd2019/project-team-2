@@ -1,4 +1,5 @@
 import EventDispatcher from "./eventDispatcher.js";
+//import "./lib/p5.sound.js";
 
 let sketch = new p5();
 
@@ -23,6 +24,8 @@ let hand_white_lack;
 let hand_heatmap;
 let sign;
 let wecker;
+let startscreenFingers;
+let backgroundStartscreenLoch;
 let backgroundStartscreen;
 let background_people_bouncy_1;
 let background_people_bouncy_2;
@@ -73,6 +76,8 @@ let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
 
 let testVideo;
+//Sound
+let song;
 
 //Schriftarten
 let markerFelt;
@@ -95,6 +100,10 @@ function preload() {
   hand_white_lack = loadImage("images/Haendewaschen_Weiss_Lack_Hand.png");
   hand_heatmap = loadImage("images/Haendewaschen_HeatMap.png");
 
+  startscreenFingers = loadImage("images/Fingerkuppen.png");
+  backgroundStartscreenLoch = loadImage(
+    "images/background_Startscreen_loch.png"
+  );
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
@@ -225,11 +234,15 @@ function preload() {
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
+  song = loadSound("sound/DreamTransition.mp3");
+
   markerFelt = loadFont("typo/MarkerFelt.ttf");
 }
 window.preload = preload;
 
 function setup() {
+  preload();
+
   console.log("setup");
   let canvas = sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
@@ -289,6 +302,8 @@ function setup() {
 
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
 
+      STARTSCREEN_FINGERS: startscreenFingers,
+      BACKGROUND_STARTSCREEN_LOCH: backgroundStartscreenLoch,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
@@ -322,6 +337,10 @@ function setup() {
 
       TEST_VIDEO: testVideo,
     }),
+    SOUND: Object.freeze({
+      SONG: song,
+    }),
+
     FONT: Object.freeze({
       MARKER_FELT: markerFelt,
     }),
