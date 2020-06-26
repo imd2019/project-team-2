@@ -24,6 +24,7 @@ let hand_heatmap;
 let sign;
 let wecker;
 let startscreenFingers;
+let backgroundStartscreenLoch;
 let backgroundStartscreen;
 let background_people_bouncy_1;
 let background_people_bouncy_2;
@@ -97,7 +98,9 @@ function preload() {
   hand_heatmap = loadImage("images/Haendewaschen_HeatMap.png");
 
   startscreenFingers = loadImage("images/Fingerkuppen.png");
-
+  backgroundStartscreenLoch = loadImage(
+    "images/background_Startscreen_loch.png"
+  );
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
@@ -293,7 +296,7 @@ function setup() {
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
 
       STARTSCREEN_FINGERS: startscreenFingers,
-
+      BACKGROUND_STARTSCREEN_LOCH: backgroundStartscreenLoch,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,

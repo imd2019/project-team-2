@@ -10,9 +10,6 @@ export default class Startscreen extends Scene {
     this.msg;
   }
   init() {
-    this.startbutton = new Button_Start(1045, 460);
-    this.startbutton.setRotInDegree(-19);
-    this.addChild(this.startbutton);
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN);
     this.switchImage("background");
 
@@ -20,9 +17,27 @@ export default class Startscreen extends Scene {
       770,
       240,
       100,
-      "Diese Masken sind echt unbequem und was bringen die schon..."
+      "Diese Masken sind echt unbequem und was bringen die schon?"
     );
     this.addChild(this.msg);
+    this.msg = new Message(
+      865,
+      325,
+      100,
+      "ja das frage ich mich auch und dieses ganze Händewaschen..."
+    );
+    this.addChild(this.msg);
+    this.msg = new Message(850, 450, 100, "test test test test test...");
+    this.addChild(this.msg);
+
+    let loch = new DisplayObject(0, 0);
+    loch.setImageSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
+    loch.currentImage = window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN_LOCH;
+    this.addChild(loch);
+
+    this.startbutton = new Button_Start(1055, 505);
+    this.startbutton.setRotInDegree(-19);
+    this.addChild(this.startbutton);
 
     let fingers = new DisplayObject(0, 0);
     fingers.setImageSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
