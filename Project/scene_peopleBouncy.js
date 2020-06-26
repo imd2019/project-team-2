@@ -51,7 +51,7 @@ export default class PeopleBouncy extends Scene {
       "Hintergrund-3",
       window.ENUMS.IMAGE.BACKGROUND_PEOPLEBOUNCY_LEVEL_3
     );
-    this.switchImage("Hintergrund-" + this.level);
+
     this.sign_name = new Sign(50, 0, "People Bouncy");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
     this.wecker = new Wecker(380, 0);
@@ -121,7 +121,6 @@ export default class PeopleBouncy extends Scene {
   update() {
     if (this.startScene === true) {
       for (let element of this.people) {
-        element.updateActivity();
         let elRealPos = element.getRealXY();
         let velocity = element.getVelocity();
         if (

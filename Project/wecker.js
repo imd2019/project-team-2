@@ -57,7 +57,6 @@ export default class Wecker extends MoveableObject {
           this.wiggleProgress = Util.easeOutSine(abs(this.wiggleTime)) * -1;
         }
       }
-      console.log(this.wiggleProgress);
     }
 
     fill(0);
