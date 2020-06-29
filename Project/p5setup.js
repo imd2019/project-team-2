@@ -235,13 +235,15 @@ function preload() {
   testVideo.hide();
 
   song = loadSound("sound/DreamTransition.mp3");
+  song.setVolume(0.2);
 
   markerFelt = loadFont("typo/MarkerFelt.ttf");
 }
+
 window.preload = preload;
 
 function setup() {
-  preload();
+  // preload();
 
   console.log("setup");
   let canvas = sketch.createCanvas(1366, 768);

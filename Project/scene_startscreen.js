@@ -42,7 +42,7 @@ export default class Startscreen extends Scene {
     loch.currentImage = window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN_LOCH;
     this.addChild(loch);
 
-    this.startbutton = new Button_Start(1055, 505);
+    this.startbutton = new Button_Start(1068, 509);
     this.startbutton.setRotInDegree(-20);
     this.addChild(this.startbutton);
 

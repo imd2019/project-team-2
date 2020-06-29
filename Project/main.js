@@ -24,7 +24,6 @@ let scenePeopleBouncy;
 let sceneStartscreen;
 
 function draw() {
-  // window.ENUMS.SOUND.SONG.play();
   if (init) {
     world = new Game("world");
 
