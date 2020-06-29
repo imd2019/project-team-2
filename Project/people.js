@@ -125,7 +125,7 @@ export default class People extends MoveableObject {
   draw() {
     this.updateImage();
     if (this.isActivePlayer) {
-      image(window.ENUMS.IMAGE.VIRUS_1, 0, -35, 20, 20);
+      image(window.ENUMS.IMAGE.VIRUS_1, 0, -40, 25, 25);
     }
     text(this.currentExpression, 0, -20);
   }
