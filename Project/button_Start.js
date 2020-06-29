@@ -2,9 +2,10 @@ import Button from "./Button.js";
 
 export default class Button_Start extends Button {
   constructor(x, y) {
-    super(x, y, 80, 60, window.ENUMS.SHAPE.RECT, "Weiter");
+    super(x, y, 70, 50, window.ENUMS.SHAPE.RECT, "Weiter");
     this.color = color(170, 201, 91);
-    this.textSize = 25;
+    this.textSize = 20;
+    this.setScaleOffset(35, 25);
   }
 
   init() {}
@@ -19,23 +20,17 @@ export default class Button_Start extends Button {
     rect(0, 0, this.width, this.height, 10);
     fill(255);
     noStroke();
-    text("START", 0, this.height / 2 + 10, this.width);
+    text(" START", 0, this.height / 2 + 7.5, this.width);
   }
 
   clicked() {
+    window.ENUMS.SOUND.SONG.play();
     window.dispatchEvent(new CustomEvent("nextScene"));
   }
   released() {}
   pressed() {}
   animate() {
-    this.width = 80 + 20 * this.animationProgress;
-    this.height = 60 + 10 * this.animationProgress;
-    //this.color = color(125+45*this.animationProgress, 125 + 76 * this.animationProgress, 125-34*this.animationProgress);
-    this.textSize = 25 + 5 * this.animationProgress;
-    this.setImageSize(
-      221 + 113 * this.animationProgress,
-      180 - 30 * this.animationProgress
-    );
+    this.scale = 1 + 0.2 * this.animationProgress;
   }
   hoverEnd() {}
 }
