@@ -6,6 +6,7 @@ export default class Util {
   static vecRotate(v, a) {
     return [v[0] * cos(a) - v[1] * sin(a), v[0] * sin(a) + v[1] * cos(a)];
   }
+
   static getDistanceBetweenObjects(obj_1, obj_2) {
     let obj_1_pos = obj_1.getRealXY();
     let obj_2_pos = obj_2.getRealXY();
@@ -13,6 +14,10 @@ export default class Util {
     let dy = obj_1_pos.y - obj_2_pos.y;
     let d = this.betrag([dx, dy]);
     return d;
+  }
+
+  static easeInOutSine(x) {
+    return -(cos(PI * x) - 1) / 2;
   }
 
   static easeOutBounce(x) {
