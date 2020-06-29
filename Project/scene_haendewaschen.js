@@ -135,6 +135,7 @@ export default class Haendewaschen extends Scene {
         this.weiterButton.disable(false);
         switch (this.animationRow[this.animationIndexNow]) {
           case "palm":
+            window.ENUMS.SOUND.HAENDEWASCHEN_RUB.play();
             this.wait(2.5);
             break;
           case "tips":

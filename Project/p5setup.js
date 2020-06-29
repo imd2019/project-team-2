@@ -78,6 +78,7 @@ let animation_brown_lack_thumb;
 let testVideo;
 //Sound
 let song;
+let haendewaschen_sound_rub;
 
 //Schriftarten
 let markerFelt;
@@ -235,6 +236,8 @@ function preload() {
   testVideo.hide();
 
   song = loadSound("sound/DreamTransition.mp3");
+  haendewaschen_sound_rub = loadSound("sound/Haendewaschen_sound_reiben.mp3");
+  haendewaschen_sound_rub.setVolume(0.5);
   song.setVolume(0.2);
 
   markerFelt = loadFont("typo/MarkerFelt.ttf");
@@ -341,6 +344,7 @@ function setup() {
     }),
     SOUND: Object.freeze({
       SONG: song,
+      HAENDEWASCHEN_RUB: haendewaschen_sound_rub,
     }),
 
     FONT: Object.freeze({
