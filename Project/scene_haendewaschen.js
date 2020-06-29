@@ -113,14 +113,16 @@ export default class Haendewaschen extends Scene {
 
     this.addChild(this.mentorVirus);
   }
+
   virusReleased() {
     if (this.hand.onHand(this.virus.getRealXY().x, this.virus.getRealXY().y)) {
-      this.weiterButton.enable();
+      if (!this.weiterButton.enabled) this.weiterButton.enable();
     } else {
       this.weiterButton.disable(false);
       this.retryButton.disable(false);
     }
   }
+
   update() {
     if (this.animationIndexNow >= 0) {
       if (this.animationIndexNow < this.animationRow.length) {

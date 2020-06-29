@@ -22,6 +22,8 @@ export default class InteractiveObject extends DisplayObject {
     this.waitTime = 0;
     this.rotationOffsetX = 0;
     this.rotationOffsetY = 0;
+    this.scaleOffsetX = 0;
+    this.scaleOffsetY = 0;
   }
 
   onInit() {
@@ -111,9 +113,15 @@ export default class InteractiveObject extends DisplayObject {
     this.setDomSize(sizeX, sizeY);
     this.setHitboxSize(sizeX, sizeY);
   }
+
   setRotationOffset(x, y) {
     this.rotationOffsetX = x;
     this.rotationOffsetY = y;
+  }
+
+  setScaleOffset(x, y) {
+    this.scaleOffsetX = x;
+    this.scaleOffsetY = y;
   }
 
   onUpdate() {
@@ -238,7 +246,9 @@ export default class InteractiveObject extends DisplayObject {
     if (this.visible) {
       push();
       translate(this.x + this.offSetX, this.y + this.offSetY);
+      translate(this.scaleOffsetX, this.scaleOffsetY);
       scale(this.scale);
+      translate(-this.scaleOffsetX, -this.scaleOffsetY);
       translate(this.rotationOffsetX, this.rotationOffsetY);
       rotate(this.rot);
       translate(-this.rotationOffsetX, -this.rotationOffsetY);
