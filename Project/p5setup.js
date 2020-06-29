@@ -76,9 +76,14 @@ let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
 
 let testVideo;
+
 //Sound
 let song;
 let haendewaschen_sound_rub;
+let haendewaschen_sound_squish;
+let haendewaschen_sound_squash;
+let haendewaschen_sound_full;
+
 
 //Schriftarten
 let markerFelt;
@@ -235,11 +240,25 @@ function preload() {
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
+
+  //sound
   song = loadSound("sound/DreamTransition.mp3");
-  haendewaschen_sound_rub = loadSound("sound/Haendewaschen_sound_reiben.mp3");
-  haendewaschen_sound_rub.setVolume(0.5);
   song.setVolume(0.2);
 
+  haendewaschen_sound_rub = loadSound("sound/Haendewaschen_sound_reiben.mp3");
+  haendewaschen_sound_rub.setVolume(0.5);
+
+
+  haendewaschen_sound_squish = loadSound("sound/Haendewaschen_sound_squish.mp3");
+  haendewaschen_sound_squish.setVolume(0.5);
+
+  haendewaschen_sound_squash = loadSound("sound/Haendewaschen_sound_squash.mp3");
+  haendewaschen_sound_squash.setVolume(0.5);
+
+  haendewaschen_sound_full = loadSound("sound/Haendewaschen_sound_full.mp3");
+  haendewaschen_sound_full.setVolume(0.5);
+
+  //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
 }
 
@@ -345,6 +364,9 @@ function setup() {
     SOUND: Object.freeze({
       SONG: song,
       HAENDEWASCHEN_RUB: haendewaschen_sound_rub,
+      HAENDEWASCHEN_SQUISH: haendewaschen_sound_squish,
+      HAENDEWASCHEN_SQUASH: haendewaschen_sound_squash,
+      HAENDEWASCHEN_FULLSOUND: haendewaschen_sound_full,
     }),
 
     FONT: Object.freeze({

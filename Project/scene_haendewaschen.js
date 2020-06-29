@@ -139,12 +139,15 @@ export default class Haendewaschen extends Scene {
             this.wait(2.5);
             break;
           case "tips":
+            window.ENUMS.SOUND.HAENDEWASCHEN_SQUISH.play();
             this.wait(3);
             break;
           case "spaces":
+            window.ENUMS.SOUND.HAENDEWASCHEN_FULLSOUND.play();
             this.wait(4.5);
             break;
           case "thumb":
+            window.ENUMS.SOUND.HAENDEWASCHEN_SQUASH.play();
             this.wait(3);
             break;
         }
