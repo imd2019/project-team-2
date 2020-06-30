@@ -31,7 +31,6 @@ export default class Startscreen extends Scene {
 
   update() {
     if (this.goToMap) {
-      window.ENUMS.SOUND.SONG.play();
       this.stopDom();
       this.hideDom();
       window.dispatchEvent(new CustomEvent("nextScene"));
