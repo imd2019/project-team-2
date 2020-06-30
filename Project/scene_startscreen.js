@@ -18,17 +18,21 @@ export default class Startscreen extends Scene {
 
   animationTraum() {
     window.ENUMS.SOUND.SONG.play();
-    this.addDom("traum", window.ENUMS.DOM.ANIMATION_TRAUM);
-    this.switchDom("traum");
+    this.setDomOffset(
+      windowWidth / 2 - window.ENUMS.SIZE.X / 2,
+      windowHeight / 2 - window.ENUMS.SIZE.Y / 2
+    );
     this.showDom();
     this.playDom();
-    this.wait(12);
+    this.wait(10);
     this.goToMap = true;
     console.log("Gute Nacht");
   }
 
   update() {
     if (this.goToMap) {
+      window.ENUMS.SOUND.SONG.play();
+      this.stopDom();
       this.hideDom();
       window.dispatchEvent(new CustomEvent("nextScene"));
     }
@@ -37,12 +41,6 @@ export default class Startscreen extends Scene {
   init() {
     this.addDom("traum", window.ENUMS.DOM.ANIMATION_TRAUM);
     this.switchDom("traum");
-
-    this.setDomOffset(
-      windowWidth / 2 - window.ENUMS.SIZE.X / 2,
-      windowHeight / 2 - window.ENUMS.SIZE.Y / 2
-    );
-    //this.setDomSize(200, 200);
 
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN);
     this.switchImage("background");
