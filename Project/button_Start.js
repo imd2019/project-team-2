@@ -24,8 +24,7 @@ export default class Button_Start extends Button {
   }
 
   clicked() {
-    window.ENUMS.SOUND.SONG.play();
-    window.dispatchEvent(new CustomEvent("nextScene"));
+    window.dispatchEvent(new CustomEvent("animationTraum"));
   }
   released() {}
   pressed() {}

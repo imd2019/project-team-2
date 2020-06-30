@@ -75,6 +75,7 @@ let animation_brown_lack_tips;
 let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
 
+let animation_traum;
 let testVideo;
 
 //Sound
@@ -237,6 +238,9 @@ function preload() {
   animation_brown_lack_spaces.hide();
   animation_brown_lack_thumb.hide();
 
+  animation_traum = sketch.createVideo("videos/StartAnimation.mp4");
+  animation_traum.hide();
+
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
@@ -277,6 +281,7 @@ function setup() {
   sketch.frameRate(30);
   canvas.parent("p5");
 
+  window.animation_traum = animation_traum;
   window.testVideo = testVideo;
   window.ENUMS = Object.freeze({
     SIZE: Object.freeze({
@@ -363,6 +368,8 @@ function setup() {
       ANIMATION_BROWN_LACK_TIPS: animation_brown_lack_tips,
       ANIMATION_BROWN_LACK_SPACES: animation_brown_lack_spaces,
       ANIMATION_BROWN_LACK_THUMB: animation_brown_lack_thumb,
+
+      ANIMATION_TRAUM: animation_traum,
 
       TEST_VIDEO: testVideo,
     }),

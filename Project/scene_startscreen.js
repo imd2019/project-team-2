@@ -10,8 +10,40 @@ export default class Startscreen extends Scene {
     this.msg1;
     this.msg2;
     this.msg3;
+    window.addEventListener("animationTraum", () => {
+      this.animationTraum();
+    });
+    this.goToMap = false;
   }
+
+  animationTraum() {
+    window.ENUMS.SOUND.SONG.play();
+    this.addDom("traum", window.ENUMS.DOM.ANIMATION_TRAUM);
+    this.switchDom("traum");
+    this.showDom();
+    this.playDom();
+    this.wait(12);
+    this.goToMap = true;
+    console.log("Gute Nacht");
+  }
+
+  update() {
+    if (this.goToMap) {
+      this.hideDom();
+      window.dispatchEvent(new CustomEvent("nextScene"));
+    }
+  }
+
   init() {
+    this.addDom("traum", window.ENUMS.DOM.ANIMATION_TRAUM);
+    this.switchDom("traum");
+
+    this.setDomOffset(
+      windowWidth / 2 - window.ENUMS.SIZE.X / 2,
+      windowHeight / 2 - window.ENUMS.SIZE.Y / 2
+    );
+    //this.setDomSize(200, 200);
+
     this.addImage("background", window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN);
     this.switchImage("background");
 
