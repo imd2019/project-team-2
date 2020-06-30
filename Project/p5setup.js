@@ -31,6 +31,7 @@ let background_people_bouncy_1;
 let background_people_bouncy_2;
 let background_people_bouncy_3;
 let backgroundMap;
+let backgroundMap_2;
 let mentorVirus;
 let mentorVirusText;
 
@@ -114,6 +115,7 @@ function preload() {
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
+  backgroundMap_2 = loadImage("images/background_Karte_2.png");
   background_people_bouncy_1 = loadImage(
     "images/Hintergrund_PeopleBouncy_Level1.png"
   );
@@ -340,6 +342,7 @@ function setup() {
       BACKGROUND_STARTSCREEN_LOCH: backgroundStartscreenLoch,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
+      BACKGROUND_MAP_2: backgroundMap_2,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
       BACKGROUND_PEOPLEBOUNCY_LEVEL_2: background_people_bouncy_2,
