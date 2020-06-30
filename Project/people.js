@@ -129,7 +129,29 @@ export default class People extends MoveableObject {
     if (this.isActivePlayer) {
       image(window.ENUMS.IMAGE.VIRUS_1, 0, -40, 25, 25);
     }
-    text(this.currentExpression, 0, 25);
+    if (
+      this.currentExpression === this.expressions.sneeze &&
+      this.isActivePlayer
+    ) {
+      switch (this.currentDirection) {
+        case "left":
+          line(-11, -10, -15, -8);
+          line(-11, -12, -15, -14);
+          line(-15, -11, -17, -11);
+          break;
+        case "right":
+          line(11, -10, 15, -8);
+          line(11, -12, 15, -14);
+          line(15, -11, 17, -11);
+          break;
+        case "front":
+          line(-1, -8, -3, -4);
+          line(1, -8, 3, -4);
+          line(0, -4, 0, -2);
+          break;
+      }
+    }
+    // text(this.currentExpression, 0, 25);
   }
 
   updateImage() {
@@ -257,7 +279,7 @@ export default class People extends MoveableObject {
       this.currentExpression = this.expressions.sneeze;
       if (this.isActivePlayer)
         window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
-      this.expressionTimer = 40;
+      this.expressionTimer = 25;
     }
   }
   updateExpression() {
