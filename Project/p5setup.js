@@ -31,6 +31,7 @@ let background_people_bouncy_1;
 let background_people_bouncy_2;
 let background_people_bouncy_3;
 let backgroundMap;
+let backgroundMap_2;
 let mentorVirus;
 let mentorVirusText;
 
@@ -75,6 +76,7 @@ let animation_brown_lack_tips;
 let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
 
+let animation_traum;
 let testVideo;
 
 //Sound
@@ -113,6 +115,7 @@ function preload() {
   backgroundStartscreen = loadImage("images/background_Startscreen.png");
   backgroundHaendewaschen = loadImage("images/Hintergrund_Haendewaschen.png");
   backgroundMap = loadImage("images/background_Karte.png");
+  backgroundMap_2 = loadImage("images/background_Karte_2.png");
   background_people_bouncy_1 = loadImage(
     "images/Hintergrund_PeopleBouncy_Level1.png"
   );
@@ -237,6 +240,9 @@ function preload() {
   animation_brown_lack_spaces.hide();
   animation_brown_lack_thumb.hide();
 
+  animation_traum = sketch.createVideo("videos/StartAnimation.mp4");
+  animation_traum.hide();
+
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
@@ -277,6 +283,7 @@ function setup() {
   sketch.frameRate(30);
   canvas.parent("p5");
 
+  window.animation_traum = animation_traum;
   window.testVideo = testVideo;
   window.ENUMS = Object.freeze({
     SIZE: Object.freeze({
@@ -335,6 +342,7 @@ function setup() {
       BACKGROUND_STARTSCREEN_LOCH: backgroundStartscreenLoch,
       BACKGROUND_STARTSCREEN: backgroundStartscreen,
       BACKGROUND_MAP: backgroundMap,
+      BACKGROUND_MAP_2: backgroundMap_2,
       BACKGROUND_HAENDEWASCHEN: backgroundHaendewaschen,
       BACKGROUND_PEOPLEBOUNCY_LEVEL_1: background_people_bouncy_1,
       BACKGROUND_PEOPLEBOUNCY_LEVEL_2: background_people_bouncy_2,
@@ -363,6 +371,8 @@ function setup() {
       ANIMATION_BROWN_LACK_TIPS: animation_brown_lack_tips,
       ANIMATION_BROWN_LACK_SPACES: animation_brown_lack_spaces,
       ANIMATION_BROWN_LACK_THUMB: animation_brown_lack_thumb,
+
+      ANIMATION_TRAUM: animation_traum,
 
       TEST_VIDEO: testVideo,
     }),
