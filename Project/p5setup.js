@@ -83,7 +83,7 @@ let haendewaschen_sound_rub;
 let haendewaschen_sound_squish;
 let haendewaschen_sound_squash;
 let haendewaschen_sound_full;
-
+let peopleBouncy_girl_sneeze;
 
 //Schriftarten
 let markerFelt;
@@ -240,7 +240,6 @@ function preload() {
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
 
-
   //sound
   song = loadSound("sound/DreamTransition.mp3");
   song.setVolume(0.2);
@@ -248,15 +247,21 @@ function preload() {
   haendewaschen_sound_rub = loadSound("sound/Haendewaschen_sound_reiben.mp3");
   haendewaschen_sound_rub.setVolume(0.5);
 
-
-  haendewaschen_sound_squish = loadSound("sound/Haendewaschen_sound_squish.mp3");
+  haendewaschen_sound_squish = loadSound(
+    "sound/Haendewaschen_sound_squish.mp3"
+  );
   haendewaschen_sound_squish.setVolume(0.5);
 
-  haendewaschen_sound_squash = loadSound("sound/Haendewaschen_sound_squash.mp3");
+  haendewaschen_sound_squash = loadSound(
+    "sound/Haendewaschen_sound_squash.mp3"
+  );
   haendewaschen_sound_squash.setVolume(0.5);
 
   haendewaschen_sound_full = loadSound("sound/Haendewaschen_sound_full.mp3");
   haendewaschen_sound_full.setVolume(0.5);
+
+  peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
+  peopleBouncy_girl_sneeze.setVolume(0.5);
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
@@ -367,6 +372,7 @@ function setup() {
       HAENDEWASCHEN_SQUISH: haendewaschen_sound_squish,
       HAENDEWASCHEN_SQUASH: haendewaschen_sound_squash,
       HAENDEWASCHEN_FULLSOUND: haendewaschen_sound_full,
+      PEOPLEBOUNCY_GIRL_SNEEZE: peopleBouncy_girl_sneeze,
     }),
 
     FONT: Object.freeze({
