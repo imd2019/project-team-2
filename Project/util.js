@@ -16,6 +16,11 @@ export default class Util {
     return d;
   }
 
+  static getRandomLetter() {
+    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    return letters.charAt(floor(random(0, letters.length)));
+  }
+
   static easeInOutSine(x) {
     return -(cos(PI * x) - 1) / 2;
   }
