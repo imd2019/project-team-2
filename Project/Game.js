@@ -20,6 +20,9 @@ export default class Game extends InteractiveObject {
     window.addEventListener("nextScene", (e) => {
       this.nextScene(e.detail);
     });
+    window.addEventListener("switchToMap", (e) => {
+      this.switchToMap(e.detail);
+    });
   }
 
   update() {}
@@ -58,6 +61,11 @@ export default class Game extends InteractiveObject {
 
   getCurrentScene() {
     return this.scenes[this.currentScene];
+  }
+
+  switchToMap(mapState) {
+    this.nextScene(window.ENUMS.SCENE_NAMES.MAP);
+    this.getCurrentScene().switchMapState(mapState);
   }
 
   nextScene(specific = null) {

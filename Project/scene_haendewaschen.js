@@ -244,8 +244,8 @@ export default class Haendewaschen extends Scene {
       dVir.switchImage("virus");
       this.addChild(dVir);
     }
-    this.weiterButton.changeEvent("nextScene");
-    this.weiterButton.switchSceneId = window.ENUMS.SCENE_NAMES.MAP;
+    this.weiterButton.changeEvent("switchToMap");
+    this.weiterButton.switchSceneId = 2;
     this.mentorVirus.updateText("Hier sind die Schwachstellen der Menschen.");
     this.mentorVirus.showText();
   }
