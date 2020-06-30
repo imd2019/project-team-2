@@ -1,4 +1,6 @@
 import MoveableObject from "./moveableObject.js";
+import FlyingLetter from "./flyingLetter.js";
+import Util from "./util.js";
 
 export default class People extends MoveableObject {
   constructor(x, y) {
@@ -127,7 +129,7 @@ export default class People extends MoveableObject {
     if (this.isActivePlayer) {
       image(window.ENUMS.IMAGE.VIRUS_1, 0, -40, 25, 25);
     }
-    text(this.currentExpression, 0, -20);
+    text(this.currentExpression, 0, 25);
   }
 
   updateImage() {
@@ -136,21 +138,23 @@ export default class People extends MoveableObject {
   }
 
   updateDirection() {
-    let vel = this.getVelocity();
-    if (abs(vel.x) > abs(vel.y)) {
-      if (vel.x > 0) {
-        this.currentDirection = this.directions.right;
+    if (this.currentExpression != "speak") {
+      let vel = this.getVelocity();
+      if (abs(vel.x) > abs(vel.y)) {
+        if (vel.x > 0) {
+          this.currentDirection = this.directions.right;
+        } else {
+          this.currentDirection = this.directions.left;
+        }
       } else {
-        this.currentDirection = this.directions.left;
+        if (vel.y < 0) {
+          this.currentDirection = this.directions.back;
+        } else {
+          this.currentDirection = this.directions.front;
+        }
       }
-    } else {
-      if (vel.y < 0) {
-        this.currentDirection = this.directions.back;
-      } else {
-        this.currentDirection = this.directions.front;
-      }
+      return this.currentDirection;
     }
-    return this.currentDirection;
   }
 
   getVirusOutputVelocity() {
@@ -223,7 +227,9 @@ export default class People extends MoveableObject {
     }
     if (this.needActivity) this.switchActivity();
   }
+
   doActivity() {
+    if (this.currentActivity != "talk") this.children = []; //LÖSCHT DAS KINDER ARRAY !!!!!!!!!!!!!!
     switch (this.currentActivity) {
       case "wait":
         break;
@@ -235,12 +241,22 @@ export default class People extends MoveableObject {
       case "rnd":
         this.move();
         break;
+      case "talk":
+        let r = random();
+        if (r < 0.04) {
+          this.addChild(
+            new FlyingLetter(0, -this.width / 2, Util.getRandomLetter())
+          );
+        }
     }
   }
+
   triggerSneezeRnd() {
     let rnd = random(1);
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
+      if (this.isActivePlayer)
+        window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
       this.expressionTimer = 40;
     }
   }
@@ -278,6 +294,27 @@ export default class People extends MoveableObject {
     this.currentExpression = this.expressions.speak;
     this.expressionTimer = 100;
     this.switchActivity("talk");
+    this.stop();
+    let dx = abs(people.x - this.x);
+    let dy = abs(people.y - this.y);
+    if (dx > dy) {
+      if (this.x > people.x) {
+        this.currentDirection = this.directions.left;
+        console.log("links");
+      } else {
+        this.currentDirection = this.directions.right;
+        console.log("rechts");
+      }
+    } else {
+      if (this.y > people.y) {
+        this.currentDirection = this.directions.back;
+        console.log("nach oben");
+      } else {
+        console.log("nach unten");
+
+        this.currentDirection = this.directions.front;
+      }
+    }
   }
   setAccelerationToGoal() {
     let newAcX = 0;
