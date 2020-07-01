@@ -358,22 +358,22 @@ export default class People extends MoveableObject {
     }
     if (this.velocity.x > 0) {
       if (this.velocity.x > abs(this.x - this.goalPosition.x)) {
-        this.velocity.x = -(abs(this.x - this.goalPosition.x) / 2);
+        this.velocity.x = (this.goalPosition.x - this.x) / 2;
       }
     }
     if (this.velocity.x < 0) {
       if (abs(this.velocity.x) > abs(this.x - this.goalPosition.x)) {
-        this.velocity.x = abs(this.x - this.goalPosition.x) / 2;
+        this.velocity.x = (this.goalPosition.x - this.x) / 2;
       }
     }
     if (this.velocity.y > 0) {
       if (this.velocity.y > abs(this.y - this.goalPosition.y)) {
-        this.velocity.y = -(abs(this.y - this.goalPosition.y) / 2);
+        this.velocity.y = (this.goalPosition.y - this.y) / 2;
       }
     }
     if (this.velocity.y < 0) {
       if (abs(this.velocity.y) > abs(this.y - this.goalPosition.y)) {
-        this.velocity.y = abs(this.y - this.goalPosition.y) / 2;
+        this.velocity.y = (this.goalPosition.y - this.y) / 2;
       }
     }
 
