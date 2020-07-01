@@ -337,7 +337,7 @@ export default class PeopleBouncy extends Scene {
     this.mentorVirus.updateText(
       "Die Zeit ist um. Du hast " +
         round(this.countInfectedPeople()) +
-        "% Schüler infiziert."
+        "% der Schüler infiziert."
     );
     this.mentorVirus.showText();
     this.weiterButton.enable();
