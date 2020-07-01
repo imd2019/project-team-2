@@ -44,6 +44,12 @@ let peopleBouncy_girl_hinten;
 let peopleBouncy_girl_links;
 let peopleBouncy_girl_rechts;
 let peopleBouncy_girl_vorne;
+let peopleBouncy_hannah_hinten;
+let peopleBouncy_hannah_links;
+let peopleBouncy_hannah_rechts;
+let peopleBouncy_hannah_vorne;
+
+let peopleBouncy_heart;
 
 let peopleBouncy_boy_hinten_infiziert;
 let peopleBouncy_boy_links_infiziert;
@@ -53,6 +59,11 @@ let peopleBouncy_girl_hinten_infiziert;
 let peopleBouncy_girl_links_infiziert;
 let peopleBouncy_girl_rechts_infiziert;
 let peopleBouncy_girl_vorne_infiziert;
+let peopleBouncy_hannah_hinten_infiziert;
+let peopleBouncy_hannah_links_infiziert;
+let peopleBouncy_hannah_rechts_infiziert;
+let peopleBouncy_hannah_vorne_infiziert;
+
 let peopleBouncy_playground1;
 let peopleBouncy_playground2;
 let peopleBouncy_playground3;
@@ -142,6 +153,17 @@ function preload() {
   peopleBouncy_girl_links = loadImage("images/PeopleBouncy_girl_links.png");
   peopleBouncy_girl_rechts = loadImage("images/PeopleBouncy_girl_rechts.png");
   peopleBouncy_girl_vorne = loadImage("images/PeopleBouncy_girl_vorne.png");
+  peopleBouncy_hannah_hinten = loadImage(
+    "images/PeopleBouncy_hannah_hinten.png"
+  );
+  peopleBouncy_hannah_links = loadImage("images/PeopleBouncy_hannah_links.png");
+  peopleBouncy_hannah_rechts = loadImage(
+    "images/PeopleBouncy_hannah_rechts.png"
+  );
+  peopleBouncy_hannah_vorne = loadImage("images/PeopleBouncy_hannah_vorne.png");
+
+  peopleBouncy_heart = loadImage("images/PeopleBouncy_heart.png");
+
   //infiziert
   peopleBouncy_boy_hinten_infiziert = loadImage(
     "images/PeopleBouncy_boy_hinten_infiziert.png"
@@ -166,6 +188,18 @@ function preload() {
   );
   peopleBouncy_girl_vorne_infiziert = loadImage(
     "images/PeopleBouncy_girl_vorne_infiziert.png"
+  );
+  peopleBouncy_hannah_hinten_infiziert = loadImage(
+    "images/PeopleBouncy_hannah_hinten_infiziert.png"
+  );
+  peopleBouncy_hannah_links_infiziert = loadImage(
+    "images/PeopleBouncy_hannah_links_infiziert.png"
+  );
+  peopleBouncy_hannah_rechts_infiziert = loadImage(
+    "images/PeopleBouncy_hannah_rechts_infiziert.png"
+  );
+  peopleBouncy_hannah_vorne_infiziert = loadImage(
+    "images/PeopleBouncy_hannah_vorne_infiziert.png"
   );
 
   peopleBouncy_playground1 = loadImage("images/PeopleBouncy_spielfeld1.png");
@@ -330,6 +364,12 @@ function setup() {
       PEOPLEBOUNCY_GIRL_LEFT: peopleBouncy_girl_links,
       PEOPLEBOUNCY_GIRL_RIGHT: peopleBouncy_girl_rechts,
       PEOPLEBOUNCY_GIRL_FRONT: peopleBouncy_girl_vorne,
+      PEOPLEBOUNCY_HANNAH_BACK: peopleBouncy_hannah_hinten,
+      PEOPLEBOUNCY_HANNAH_LEFT: peopleBouncy_hannah_links,
+      PEOPLEBOUNCY_HANNAH_RIGHT: peopleBouncy_hannah_rechts,
+      PEOPLEBOUNCY_HANNAH_FRONT: peopleBouncy_hannah_vorne,
+
+      PEOPLEBOUNCY_HEART: peopleBouncy_heart,
 
       PEOPLEBOUNCY_BOY_BACK_INFECTED: peopleBouncy_boy_hinten_infiziert,
       PEOPLEBOUNCY_BOY_LEFT_INFECTED: peopleBouncy_boy_links_infiziert,
@@ -339,6 +379,10 @@ function setup() {
       PEOPLEBOUNCY_GIRL_LEFT_INFECTED: peopleBouncy_girl_links_infiziert,
       PEOPLEBOUNCY_GIRL_RIGHT_INFECTED: peopleBouncy_girl_rechts_infiziert,
       PEOPLEBOUNCY_GIRL_FRONT_INFECTED: peopleBouncy_girl_vorne_infiziert,
+      PEOPLEBOUNCY_HANNAH_BACK_INFECTED: peopleBouncy_hannah_hinten_infiziert,
+      PEOPLEBOUNCY_HANNAH_LEFT_INFECTED: peopleBouncy_hannah_links_infiziert,
+      PEOPLEBOUNCY_HANNAH_RIGHT_INFECTED: peopleBouncy_hannah_rechts_infiziert,
+      PEOPLEBOUNCY_HANNAH_FRONT_INFECTED: peopleBouncy_hannah_vorne_infiziert,
 
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
       PEOPLEBOUNCY_PLAYGROUND_2: peopleBouncy_playground2,

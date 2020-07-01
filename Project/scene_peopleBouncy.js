@@ -8,6 +8,7 @@ import Util from "./util.js";
 import Wecker from "./wecker.js";
 import Button_Weiter from "./Button_Weiter.js";
 import Button_MentorVirus from "./button_MentorVirus.js";
+import Hannah from "./hannah.js";
 
 export default class PeopleBouncy extends Scene {
   constructor() {
@@ -129,6 +130,13 @@ export default class PeopleBouncy extends Scene {
         this.peopleSize = 1.7;
         this.mentorVirus.showText();
         this.spawnPeople(10);
+        let pos = this.playground.getRealRandomPosition();
+        let hannah = new Hannah(pos.x, pos.y);
+        hannah.init();
+        hannah.scaleSize(this.peopleSize);
+        this.people.push(hannah);
+        this.addChild(hannah);
+
         break;
       case 2:
         this.mentorVirus.updateText(
