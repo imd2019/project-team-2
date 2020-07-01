@@ -54,6 +54,8 @@ let peopleBouncy_girl_links_infiziert;
 let peopleBouncy_girl_rechts_infiziert;
 let peopleBouncy_girl_vorne_infiziert;
 let peopleBouncy_playground1;
+let peopleBouncy_playground2;
+let peopleBouncy_playground3;
 
 //DOMS
 let animation_white_palm;
@@ -167,6 +169,8 @@ function preload() {
   );
 
   peopleBouncy_playground1 = loadImage("images/PeopleBouncy_spielfeld1.png");
+  peopleBouncy_playground2 = loadImage("images/PeopleBouncy_spielfeld2.png");
+  peopleBouncy_playground3 = loadImage("images/PeopleBouncy_spielfeld3.png");
 
   //animations white
   animation_white_palm = createImg(
@@ -337,6 +341,8 @@ function setup() {
       PEOPLEBOUNCY_GIRL_FRONT_INFECTED: peopleBouncy_girl_vorne_infiziert,
 
       PEOPLEBOUNCY_PLAYGROUND_1: peopleBouncy_playground1,
+      PEOPLEBOUNCY_PLAYGROUND_2: peopleBouncy_playground2,
+      PEOPLEBOUNCY_PLAYGROUND_3: peopleBouncy_playground3,
 
       STARTSCREEN_FINGERS: startscreenFingers,
       BACKGROUND_STARTSCREEN_LOCH: backgroundStartscreenLoch,

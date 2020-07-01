@@ -98,6 +98,11 @@ export default class InteractiveObject extends DisplayObject {
     return false;
   }
 
+  scaleSize(amount) {
+    this.scale = amount;
+    this.setHitboxSize(50 * amount, 50 * amount);
+  }
+
   setHitboxSize(w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
