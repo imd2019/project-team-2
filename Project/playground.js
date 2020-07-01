@@ -48,6 +48,6 @@ export default class Playground extends InteractiveObject {
   }
 
   draw() {
-    this.drawHitbox();
+    // this.drawHitbox();
   }
 }
