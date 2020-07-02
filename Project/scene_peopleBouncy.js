@@ -151,7 +151,7 @@ export default class PeopleBouncy extends Scene {
           "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
       //  this.mentorVirus.showText();
-        this.spawnPeople(20,0.66);
+        this.spawnPeople(20,1);
         break;
     }
 
@@ -248,11 +248,13 @@ export default class PeopleBouncy extends Scene {
       if (keyCode === 32) {
         let pos = this.getCurrentPlayer().getRealXY();
         let vel = this.getCurrentPlayer().getVirusOutputVelocity();
+        if(vel.x != 0 || vel.y !=0){
         let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
         virus.scaleSize(this.peopleSize);
         virus.init();
         this.viruses.push(virus);
         this.addChild(virus);
+      }
       }
     }
   }

@@ -15,6 +15,7 @@ export default class People extends MoveableObject {
       back: "back",
     };
     this.masked = "";
+    this.virusCooldown = 0;
     this.healthConditions = { healthy: "healthy", sick: "sick" };
     this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
@@ -270,7 +271,10 @@ return false;
     }
   }
 
-  getVirusOutputVelocity() {
+  getVirusOutputVelocity() {  
+      let result = { dir: this.currentDirection, x: 0, y: 0 };
+
+    if(this.virusCooldown<=0) {
     let speed = 1;
     switch (this.currentExpression) {
       case this.expressions.nothing:
@@ -283,7 +287,6 @@ return false;
         speed = 4;
         break;
     }
-    let result = { dir: this.currentDirection, x: 0, y: 0 };
     switch (this.currentDirection) {
       case this.directions.front:
         result.x = 0;
@@ -305,9 +308,16 @@ return false;
     if(this.isMasked()){
       result.x = result.x/2;
       result.y= result.y/2;
+      let r = random();
+      if(r<0.4){
+        result.x=0;
+        result.y=0;
+      }
     }
-    return result;
-  }
+   this.virusCooldown=20;
+  } 
+  return result;
+}
 
   switchActivity(activity = null) {
     if (activity === null) {
@@ -390,6 +400,9 @@ return false;
     this.updateActivity();
     this.doActivity();
     this.updateExpression();
+    if(this.virusCooldown>0){
+  this.virusCooldown--;
+}
     if (this.isInfected) {
       this.triggerSneezeRnd();
     }
