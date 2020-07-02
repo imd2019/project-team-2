@@ -14,6 +14,10 @@ export default class Game extends InteractiveObject {
     this.currentScene;
     this.scenes = [];
     this.started = false;
+    this.gameScores = {
+      haendewaschen: [],
+      people_bouncy: [],
+    };
   }
 
   init() {
@@ -22,6 +26,9 @@ export default class Game extends InteractiveObject {
     });
     window.addEventListener("switchToMap", (e) => {
       this.switchToMap(e.detail);
+    });
+    window.addEventListener("setGameScore", (e) => {
+      this.setGameScore(e.detail.game, e.detail.score);
     });
   }
 
@@ -100,5 +107,12 @@ export default class Game extends InteractiveObject {
       }
     }
     return result;
+  }
+
+  setGameScore(game, score) {
+    for (let i in score) {
+      this.gameScores[game].push(score[i]);
+    }
+    console.log(this.gameScores);
   }
 }

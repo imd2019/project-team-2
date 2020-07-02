@@ -31,7 +31,7 @@ export default class People extends MoveableObject {
     this.currentExpression = this.expressions.nothing;
     this.expressionTimer = 0;
     this.turnCooldown = 0;
-    this.turnCooldownMax = 3;
+    this.turnCooldownMax = 2;
   }
 
   init() {

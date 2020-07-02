@@ -76,4 +76,7 @@ export default class Hannah extends People {
       this.currentGender + this.directions.left + this.health + this.masked
     );
   }
+  infect() {
+    window.dispatchEvent(new CustomEvent("hannahInfected"));
+  }
 }

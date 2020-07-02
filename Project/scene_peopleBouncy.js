@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 2;
+    this.level = 0;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -25,6 +25,7 @@ export default class PeopleBouncy extends Scene {
     this.startScene = true;
     this.mentorVirus;
     this.peopleSize = 1;
+    this.scores = [];
 
     window.addEventListener("newGoalPosition", (e) => {
       this.findNewGoalPosition(e.detail);
@@ -37,6 +38,9 @@ export default class PeopleBouncy extends Scene {
     });
     window.addEventListener("nextPeopleBouncyLevel", (e) => {
       this.setUpLevel();
+    });
+    window.addEventListener("hannahInfected", (e) => {
+      this.sceneEnd();
     });
   }
 
@@ -133,7 +137,7 @@ export default class PeopleBouncy extends Scene {
     this.level++;
     this.setupPlayground(this.level);
     this.deletePeople();
-    this.wecker.zeit = 30;
+    this.wecker.zeit = 2;
     this.weiterButton.disable(false);
     switch (this.level) {
       case 1:
@@ -146,20 +150,22 @@ export default class PeopleBouncy extends Scene {
         break;
       case 2:
         this.mentorVirus.updateText(
-          "Probiere dich jetzt auf dem Schulhof aus."
+          "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
         this.peopleSize = 1;
         //   this.mentorVirus.showText();
-        this.spawnPeople(20, 0);
+        this.spawnPeople(25, 0.5);
         break;
       case 3:
         this.mentorVirus.updateText(
-          "Oh nein, Schutzmasken! Schützen sie wirklich?"
+          "Was sie sich jetzt wohl ausgedacht haben ?"
         );
         //  this.mentorVirus.showText();
         this.spawnPeople(20, 1);
         break;
       case 4:
+        this.mentorVirus.hideText();
+        this.mentorVirus.disable();
         this.peopleSize = 2;
         let people = new People(400, 400);
         people.init();
@@ -173,6 +179,7 @@ export default class PeopleBouncy extends Scene {
         hannah.scaleSize(this.peopleSize);
         this.people.push(hannah);
         this.addChild(hannah);
+        this.removeChild(this.wecker);
         break;
     }
 
@@ -323,11 +330,15 @@ export default class PeopleBouncy extends Scene {
 
   checkPeopleTalkCollision() {
     for (let element1 of this.people) {
-      if (element1.currentExpression === element1.expressions.nothing) {
+      if (
+        element1.currentExpression === element1.expressions.nothing &&
+        element1.currentActivity != "fixGoal"
+      ) {
         let peopleToTalk = [];
 
         for (let element2 of this.people) {
-          if (element1 === element2) continue;
+          if (element1 === element2 || element2.currentActivity === "fixGoal")
+            continue;
           if (
             Util.getDistanceBetweenObjects(element1, element2) < 70 &&
             element2.currentExpression === element2.expressions.nothing
@@ -410,14 +421,22 @@ export default class PeopleBouncy extends Scene {
   }
 
   levelEnd() {
+    let score = round(this.countInfectedPeople());
     this.mentorVirus.updateText(
-      "Die Zeit ist um. Du hast " +
-        round(this.countInfectedPeople()) +
-        "% der Schüler infiziert."
+      "Die Zeit ist um. Du hast " + score + "% der Schüler infiziert."
     );
+    this.scores.push(score);
     //this.mentorVirus.showText();
     this.weiterButton.enable();
     this.startScene = false;
     this.disablePeople();
+  }
+
+  sceneEnd() {
+    window.dispatchEvent(
+      new CustomEvent("setGameScore", {
+        detail: { game: "people_bouncy", score: this.scores },
+      })
+    );
   }
 }

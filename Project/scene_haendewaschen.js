@@ -38,6 +38,7 @@ export default class Haendewaschen extends Scene {
     window.addEventListener("heatmap", (e) => {
       this.showHeatmap();
     });
+    this.trys = 0;
   }
 
   init() {
@@ -208,6 +209,7 @@ export default class Haendewaschen extends Scene {
     if (this.level == 4) {
       this.showHeatmap();
     } else {
+      this.trys++;
       this.weiterButton.disable(false);
       this.retryButton.disable(false);
       this.hand.setSpeed();
@@ -244,6 +246,11 @@ export default class Haendewaschen extends Scene {
       dVir.switchImage("virus");
       this.addChild(dVir);
     }
+    window.dispatchEvent(
+      new CustomEvent("setGameScore", {
+        detail: { game: "haendewaschen", score: [this.trys] },
+      })
+    );
     this.weiterButton.changeEvent("switchToMap");
     this.weiterButton.switchSceneId = 2;
     this.mentorVirus.updateText("Hier sind die Schwachstellen der Menschen.");
