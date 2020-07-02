@@ -309,7 +309,7 @@ return false;
       result.x = result.x/2;
       result.y= result.y/2;
       let r = random();
-      if(r<0.4){
+      if(r<0.5){
         result.x=0;
         result.y=0;
       }
