@@ -308,11 +308,11 @@ return false;
     if(this.isMasked()){
       result.x = result.x/2;
       result.y= result.y/2;
-      let r = random();
-      if(r<0.5){
-        result.x=0;
-        result.y=0;
-      }
+     // let r = random();
+      // if(r<0.5){
+      //   result.x=0;
+      //   result.y=0;
+      // }
     }
    this.virusCooldown=20;
   } 
