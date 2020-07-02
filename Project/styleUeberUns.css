@@ -6,6 +6,9 @@ body {
   font-family: "MarkerFelt";
   src: url(/typo/MarkerFelt.ttf) format("truetype");
 }
+#typo1 {
+  font-family: "MarkerFelt";
+}
 
 h2 {
   cursor: default;
@@ -16,28 +19,44 @@ h2 {
   font-size: 40px;
 }
 
-.pngroundFlo {
-  margin-left: 165px;
-  margin-top: 50px;
-  border-radius: 50%;
-  width: 220px;
-  height: 220px;
+.flex-container {
+  display: flex;
+  justify-content: center;
 }
-.pngroundDiandra {
-  margin-left: 100px;
-  border-radius: 50%;
-  width: 220px;
-  height: 220px;
+.flex-item1 {
+  background: url("images/leander_gez.png");
 }
-.pngroundMarie {
-  margin-left: 100px;
-  border-radius: 50%;
-  width: 220px;
-  height: 220px;
+.flex-item2 {
+  background: url("images/diandra_gez.png");
 }
-.pngroundLeander {
-  margin-left: 100px;
+.flex-item3 {
+  background: url("images/marie_gez.png");
+}
+.flex-item4 {
+  background: url("images/flo_gez.png");
+}
+
+.flex-item1:hover {
+  background: url("images/leander.jpg");
+  background-size: contain;
+}
+.flex-item2:hover {
+  background: url("images/diandra.jpg");
+  background-size: contain;
+}
+.flex-item3:hover {
+  background: url("images/leander_gez.png");
+  background-size: contain;
+}
+.flex-item4:hover {
+  background: url("images/flo.jpg");
+  background-size: contain;
+}
+
+.pnground {
+  margin: 10px;
   border-radius: 50%;
   width: 220px;
   height: 220px;
+  background-size: contain;
 }
