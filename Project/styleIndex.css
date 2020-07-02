@@ -1,3 +1,12 @@
 body {
   background-color: #2c9dc6;
 }
+
+#p5_loading {
+  position: relative;
+  width: 1366px;
+  height: 768px;
+  /* top: 100px;
+  left: 100px; */
+  background: url("images/loading.gif");
+}

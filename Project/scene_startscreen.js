@@ -20,7 +20,7 @@ export default class Startscreen extends Scene {
     window.ENUMS.SOUND.SONG.play();
     this.setDomOffset(
       windowWidth / 2 - window.ENUMS.SIZE.X / 2,
-      0 //windowHeight / 2 - window.ENUMS.SIZE.Y / 2
+      windowHeight / 2 - window.ENUMS.SIZE.Y / 2 + 53
     );
     this.showDom();
     this.playDom();

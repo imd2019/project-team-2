@@ -2,6 +2,7 @@ import EventDispatcher from "./eventDispatcher.js";
 //import "./lib/p5.sound.js";
 
 let sketch = new p5();
+sketch._incrementPreload();
 
 let width = windowWidth;
 let heigh = windowHeight;
@@ -86,7 +87,6 @@ let peopleBouncy_girl_hinten_infiziert_mask;
 let peopleBouncy_girl_links_infiziert_mask;
 let peopleBouncy_girl_rechts_infiziert_mask;
 let peopleBouncy_girl_vorne_infiziert_mask;
-
 
 //DOMS
 let animation_white_palm;
@@ -222,34 +222,49 @@ function preload() {
     "images/PeopleBouncy_hannah_vorne_infiziert.png"
   );
 
-
   //masked people
-  peopleBouncy_boy_hinten_mask = loadImage("images/PeopleBouncy_boy_hinten.png");
-  peopleBouncy_boy_links_mask = loadImage("images/PeopleBouncy_boy_links_maske.png"); 
-  peopleBouncy_boy_rechts_mask = loadImage("images/PeopleBouncy_boy_rechts_maske.png"); 
-  peopleBouncy_boy_vorne_mask = loadImage("images/PeopleBouncy_boy_vorne_maske.png"); 
-  peopleBouncy_girl_hinten_mask = loadImage("images/PeopleBouncy_girl_hinten.png");
-  peopleBouncy_girl_links_mask = loadImage("images/PeopleBouncy_girl_links_maske.png"); 
-  peopleBouncy_girl_rechts_mask = loadImage("images/PeopleBouncy_girl_rechts_maske.png");
-  peopleBouncy_girl_vorne_mask = loadImage("images/PeopleBouncy_girl_vorne_maske.png");
+  peopleBouncy_boy_hinten_mask = loadImage(
+    "images/PeopleBouncy_boy_hinten.png"
+  );
+  peopleBouncy_boy_links_mask = loadImage(
+    "images/PeopleBouncy_boy_links_maske.png"
+  );
+  peopleBouncy_boy_rechts_mask = loadImage(
+    "images/PeopleBouncy_boy_rechts_maske.png"
+  );
+  peopleBouncy_boy_vorne_mask = loadImage(
+    "images/PeopleBouncy_boy_vorne_maske.png"
+  );
+  peopleBouncy_girl_hinten_mask = loadImage(
+    "images/PeopleBouncy_girl_hinten.png"
+  );
+  peopleBouncy_girl_links_mask = loadImage(
+    "images/PeopleBouncy_girl_links_maske.png"
+  );
+  peopleBouncy_girl_rechts_mask = loadImage(
+    "images/PeopleBouncy_girl_rechts_maske.png"
+  );
+  peopleBouncy_girl_vorne_mask = loadImage(
+    "images/PeopleBouncy_girl_vorne_maske.png"
+  );
 
   peopleBouncy_boy_hinten_infiziert_mask = loadImage(
     "images/PeopleBouncy_boy_hinten_infiziert.png"
   );
   peopleBouncy_boy_links_infiziert_mask = loadImage(
-    "images/PeopleBouncy_boy_links_infiziert_maske.png" 
+    "images/PeopleBouncy_boy_links_infiziert_maske.png"
   );
   peopleBouncy_boy_rechts_infiziert_mask = loadImage(
-    "images/PeopleBouncy_boy_rechts_infiziert_maske.png" 
+    "images/PeopleBouncy_boy_rechts_infiziert_maske.png"
   );
   peopleBouncy_boy_vorne_infiziert_mask = loadImage(
-    "images/PeopleBouncy_boy_vorne_infiziert_maske.png" 
+    "images/PeopleBouncy_boy_vorne_infiziert_maske.png"
   );
   peopleBouncy_girl_hinten_infiziert_mask = loadImage(
     "images/PeopleBouncy_girl_hinten_infiziert.png"
   );
   peopleBouncy_girl_links_infiziert_mask = loadImage(
-    "images/PeopleBouncy_girl_links_infiziert_maske.png" 
+    "images/PeopleBouncy_girl_links_infiziert_maske.png"
   );
   peopleBouncy_girl_rechts_infiziert_mask = loadImage(
     "images/PeopleBouncy_girl_rechts_infiziert_maske.png"
@@ -257,9 +272,6 @@ function preload() {
   peopleBouncy_girl_vorne_infiziert_mask = loadImage(
     "images/PeopleBouncy_girl_vorne_infiziert_maske.png"
   );
-
-
-
 
   peopleBouncy_playground1 = loadImage("images/PeopleBouncy_spielfeld1.png");
   peopleBouncy_playground2 = loadImage("images/PeopleBouncy_spielfeld2.png");
@@ -368,6 +380,8 @@ function preload() {
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
+  // let fake = loadImage("asfjhkjashjfh.png");
+  sketch._decrementPreload();
 }
 
 window.preload = preload;
@@ -376,8 +390,8 @@ function setup() {
   // preload();
 
   console.log("setup");
- // let canvas = sketch.createCanvas(1366, 768);
- let canvas = sketch.createCanvas(1366, 768);
+  // let canvas = sketch.createCanvas(1366, 768);
+  let canvas = sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
   canvas.parent("p5");
 
@@ -444,7 +458,6 @@ function setup() {
       PEOPLEBOUNCY_HANNAH_RIGHT_INFECTED: peopleBouncy_hannah_rechts_infiziert,
       PEOPLEBOUNCY_HANNAH_FRONT_INFECTED: peopleBouncy_hannah_vorne_infiziert,
 
-
       //masked people
 
       PEOPLEBOUNCY_BOY_BACK_MASK: peopleBouncy_boy_hinten_mask,
@@ -464,7 +477,6 @@ function setup() {
       PEOPLEBOUNCY_GIRL_LEFT_INFECTED_MASK: peopleBouncy_girl_links_infiziert_mask,
       PEOPLEBOUNCY_GIRL_RIGHT_INFECTED_MASK: peopleBouncy_girl_rechts_infiziert_mask,
       PEOPLEBOUNCY_GIRL_FRONT_INFECTED_MASK: peopleBouncy_girl_vorne_infiziert_mask,
-
 
       //backgrounds
 
