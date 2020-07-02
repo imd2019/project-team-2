@@ -395,12 +395,18 @@ function setup() {
   sketch.frameRate(30);
   canvas.parent("p5");
 
+  var div = document.getElementById("defaultCanvas0");
+  var canvasPos = div.getBoundingClientRect();
   window.animation_traum = animation_traum;
   window.testVideo = testVideo;
   window.ENUMS = Object.freeze({
     SIZE: Object.freeze({
       X: 1366,
       Y: 768,
+    }),
+    POS: Object.freeze({
+      X: canvasPos.x,
+      Y: canvasPos.y,
     }),
     SHAPE: Object.freeze({
       ROUND: 0,
