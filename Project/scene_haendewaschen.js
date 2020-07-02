@@ -69,7 +69,7 @@ export default class Haendewaschen extends Scene {
     this.mentorVirus.updateText(
       "Beginnen wir mit deinem Training. Setze dich auf die Hand!"
     );
-  //  this.mentorVirus.showText();
+    //  this.mentorVirus.showText();
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
@@ -130,7 +130,7 @@ export default class Haendewaschen extends Scene {
           this.currentColor + this.animationRow[this.animationIndexNow]
         );
         this.setDomSize(1000, 800);
-        this.setDomOffset(windowWidth / 2 - 600, 80);
+        this.setDomOffset(window.ENUMS.POS.X + 110, window.ENUMS.POS.Y + 80);
         this.showDom();
         this.weiterButton.disable(false);
         switch (this.animationRow[this.animationIndexNow]) {
@@ -166,9 +166,7 @@ export default class Haendewaschen extends Scene {
       //Gewonnen
       this.virus.hide(false);
       this.animationRow.push("" + this.savePlace.splice(index, 1)[0]);
-      this.mentorVirus.updateText(
-        "Du hast es geschafft. Weiter gehts!"
-      );
+      this.mentorVirus.updateText("Du hast es geschafft. Weiter gehts!");
       this.weiterButton.enable();
       this.level++;
       this.virusPositions.push({ x: this.virus.x, y: this.virus.y });
@@ -179,10 +177,10 @@ export default class Haendewaschen extends Scene {
       );
       this.retryButton.enable();
     }
- //   this.mentorVirus.showText();
+    //   this.mentorVirus.showText();
     this.hand.enable();
     this.weiterButton.changeEvent("nextHaendeLevel");
- 
+
     this.animationIndexNow = -1;
   }
 
@@ -210,21 +208,21 @@ export default class Haendewaschen extends Scene {
     if (this.level == 4) {
       this.showHeatmap();
     } else {
-    this.weiterButton.disable(false);
-    this.retryButton.disable(false);
-    this.hand.setSpeed();
-    this.hand.y = window.ENUMS.SIZE.Y + 50;
-    this.newHandColor();
-    this.virus.enable();
-    this.weiterButton.changeEvent("PlayAnimation");
-    this.mentorVirus.hideText();
+      this.weiterButton.disable(false);
+      this.retryButton.disable(false);
+      this.hand.setSpeed();
+      this.hand.y = window.ENUMS.SIZE.Y + 50;
+      this.newHandColor();
+      this.virus.enable();
+      this.weiterButton.changeEvent("PlayAnimation");
+      this.mentorVirus.hideText();
 
-    this.sign_level.changeText("Level " + this.level + "/3");
-    this.virus.x = width / 2;
-    this.virus.y = height / 2 + 38;
-    this.virus.resize(150, 150);
+      this.sign_level.changeText("Level " + this.level + "/3");
+      this.virus.x = width / 2;
+      this.virus.y = height / 2 + 38;
+      this.virus.resize(150, 150);
+    }
   }
-}
   showHeatmap() {
     this.level = 3;
     this.weiterButton.enable();
@@ -249,7 +247,7 @@ export default class Haendewaschen extends Scene {
     this.weiterButton.changeEvent("switchToMap");
     this.weiterButton.switchSceneId = 2;
     this.mentorVirus.updateText("Hier sind die Schwachstellen der Menschen.");
-   // this.mentorVirus.showText();
+    // this.mentorVirus.showText();
   }
 
   nextLevel() {}
