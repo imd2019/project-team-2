@@ -61,3 +61,16 @@ h2 {
   margin-top: 225px;
   font-size: 30px;
 }
+.aboutUs {
+  font-family: "Frutiger";
+  color: white;
+  font-size: 25px;
+  text-align: center;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 920px;
+  height: 620px;
+  /* background-color: red; */
+}
