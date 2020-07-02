@@ -305,7 +305,7 @@ function preload() {
   haendewaschen_sound_full.setVolume(0.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
-  peopleBouncy_girl_sneeze.setVolume(0.5);
+  peopleBouncy_girl_sneeze.setVolume(0.3);
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
