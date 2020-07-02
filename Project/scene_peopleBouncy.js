@@ -278,6 +278,7 @@ export default class PeopleBouncy extends Scene {
       this.deleteVirus(result.virus);
     }
     this.checkPeopleTalkCollision();
+    this.checkPeoplePandemicDistanceCollision();
   }
 
   checkPeopleVirusCollision() {
@@ -320,6 +321,37 @@ export default class PeopleBouncy extends Scene {
       }
     }
   }
+
+  checkPeoplePandemicDistanceCollision() {
+    for (let element1 of this.people) {
+        let peopleInDistance = [];
+
+        for (let element2 of this.people) {
+          if (element1 === element2) continue;
+          if (
+            Util.getDistanceBetweenObjects(element1, element2) < 90
+          ) {
+            peopleInDistance.push(element2);
+          }
+        }
+
+        if (peopleInDistance.length > 0) {
+           let rnd = random();
+           if(this.level==3){
+           if (rnd < 0.5) {
+          this.findNewGoalPosition(element1);
+          element1.setActivityAway(peopleInDistance[0].x,peopleInDistance[0].y);
+          }
+        }
+          //   let partner = random(peopleInDistance);
+          //   console.log(partner);
+          //   element1.setupTalk(partner);
+          //   partner.setupTalk(element1);
+          // }        
+      }
+    }
+  }
+  
 
   collideObjObj(obj_1, obj_2) {
     if (

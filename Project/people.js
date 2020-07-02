@@ -20,7 +20,7 @@ export default class People extends MoveableObject {
     this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
     this.currentActivity = "goal";
-    this.activities = ["goal", "rnd"];
+    this.activities = ["goal", "rnd", "away"];
     this.needActivity = false;
     this.normalAcceleration = 0.3;
     this.activityTimer = 0;
@@ -199,6 +199,7 @@ this.addImage(
     window.dispatchEvent(new CustomEvent("newGoalPosition", { detail: this }));
   }
 
+
   infect() {
     this.isActivePlayer = true;
     this.isInfected = true;
@@ -339,6 +340,9 @@ return false;
       case "talk":
         this.activityMaxTimer = 100;
         break;
+        case "away":
+          this.activityMaxTimer = 100;
+          break;
     }
 
     this.activityTimer = 0;
@@ -375,6 +379,13 @@ return false;
             new FlyingLetter(0, -this.width / 2, Util.getRandomLetter())
           );
         }
+        break;
+
+        case "away":
+          this.checkAway();
+          this.setAccelerationAwayFromGoal();
+          this.move();
+          break;
     }
   }
 
@@ -383,7 +394,7 @@ return false;
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
       if (this.isActivePlayer)
-    //    window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
+        window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
       this.expressionTimer = 25;
     }
   }
@@ -413,6 +424,11 @@ return false;
     this.goalPosition.y = y;
   }
 
+  setActivityAway(x,y) {
+    this.setGoalPosition(x,y);
+this.switchActivity("away");
+  }
+
   checkGoal() {
     if (abs(this.x - this.goalPosition.x) < 0.5) this.x = this.goalPosition.x;
     if (abs(this.y - this.goalPosition.y) < 0.5) this.y = this.goalPosition.y;
@@ -420,6 +436,14 @@ return false;
       this.needActivity = true;
     }
   }
+
+checkAway() {
+let distance =Util.getDistanceBetweenObjects(this,this.goalPosition); 
+if(distance>70){
+  this.needActivity=true;
+}
+}
+
   setupTalk(people) {
     this.currentExpression = this.expressions.speak;
     this.expressionTimer = 100;
@@ -487,6 +511,29 @@ return false;
 
     this.setAcceleration(newAcX, newAcY);
   }
+
+
+  setAccelerationAwayFromGoal() {
+    let newAcX = 0;
+    let newAcY = 0;
+
+    if (this.x < this.goalPosition.x) {
+      newAcX = -this.normalAcceleration;
+    } else if (this.x > this.goalPosition.x) {
+      newAcX = +this.normalAcceleration;
+    } else if (this.x === this.goalPosition.x) {
+      newAcX = 0;
+    }
+    if (this.y < this.goalPosition.y) {
+      newAcY = -this.normalAcceleration;
+    } else if (this.y > this.goalPosition.y) {
+      newAcY = +this.normalAcceleration;
+    } else if (this.y === this.goalPosition.y) {
+      newAcY = 0;
+    }
+    this.setAcceleration(newAcX, newAcY);
+  }
+
 
   setGender() {
     this.currentGender = random(this.genders);
