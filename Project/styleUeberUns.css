@@ -16,23 +16,32 @@ h2 {
   font-size: 40px;
 }
 
-.pngroundFlo {
+/* .profilbild {
+  display: flex;
+} */
+
+.profilbild pngroundFlo {
+  margin-left: 165px;
+  margin-top: 50px;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
 }
-.pngroundDiandra {
+/* .pngroundDiandra {
+  margin-left: 100px;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
 }
 .pngroundMarie {
+  margin-left: 100px;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
 }
 .pngroundLeander {
+  margin-left: 100px;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
-}
+  width: 220px;
+  height: 220px;
+} */
