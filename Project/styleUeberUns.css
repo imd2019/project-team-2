@@ -33,7 +33,6 @@ h2 {
 }
 .flex-item4 {
   background: url("images/flo_gez.png");
-  background-repeat: no-repeat;
 }
 
 .flex-item1:hover {
@@ -62,10 +61,10 @@ h2 {
 }
 
 .text {
+  padding-top: 225px;
   text-align: center;
   cursor: default;
   font-family: "MarkerFelt";
-  color: black;
-
+  color: white;
   font-size: 25px;
 }
