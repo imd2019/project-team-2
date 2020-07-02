@@ -10,3 +10,14 @@ h2 {
   margin-top: 20px;
   font-size: 40px;
 }
+
+p {
+  cursor: default;
+  font-family: "Frutiger";
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 20px;
+}

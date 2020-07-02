@@ -2,10 +2,6 @@ body {
   background-color: #2c9dc6;
 }
 
-#typo1 {
-  font-family: "MarkerFelt";
-}
-
 h2 {
   cursor: default;
   font-family: "MarkerFelt";
@@ -21,15 +17,12 @@ h2 {
 }
 .flex-item1 {
   background: url("images/leander_gez.png");
-  background-repeat: no-repeat;
 }
 .flex-item2 {
   background: url("images/diandra_gez.png");
-  background-repeat: no-repeat;
 }
 .flex-item3 {
   background: url("images/marie_gez.png");
-  background-repeat: no-repeat;
 }
 .flex-item4 {
   background: url("images/flo_gez.png");
@@ -53,7 +46,7 @@ h2 {
 }
 
 .pnground {
-  margin: 10px;
+  margin: 20px;
   border-radius: 50%;
   width: 220px;
   height: 220px;
@@ -61,10 +54,10 @@ h2 {
 }
 
 .text {
-  padding-top: 225px;
-  text-align: center;
   cursor: default;
   font-family: "MarkerFelt";
   color: white;
-  font-size: 25px;
+  text-align: center;
+  margin-top: 225px;
+  font-size: 30px;
 }
