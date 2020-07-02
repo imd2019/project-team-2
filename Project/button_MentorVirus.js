@@ -7,6 +7,8 @@ export default class Button_MentorVirus extends Button {
     super(x, y, 165, 165, window.ENUMS.SHAPE.ROUND, "MentorVirus");
     // this.color = color(125, 125, 125);
     this.text = true;
+    this.textIsUpdating = false;
+    this.textUpdate = "";
     this.mentorVirusText = new Button_MentorVirusText(-225, -10);
     this.wiggleTime = 0;
     this.wiggleSpeed = -0.16;
@@ -22,7 +24,11 @@ export default class Button_MentorVirus extends Button {
   }
 
   updateText(string) {
-    this.mentorVirusText.textbubble = string;
+    this.textUpdate= string;
+    //  if(this.text){
+      this.hideText();
+   //}
+    this.textIsUpdating = true;
   }
 
   showText() {
@@ -42,6 +48,18 @@ export default class Button_MentorVirus extends Button {
       this.hideText();
     }
   }
+
+update() {
+super.update();
+if(this.textIsUpdating){
+  if(!this.mentorVirusText.isRetracting()){
+    this.mentorVirusText.textbubble= this.textUpdate;
+    this.showText();
+    this.textIsUpdating=false;
+  }
+}
+
+}
 
   updateAnimationValues() {
     this.wiggleTime += this.wiggleSpeed;

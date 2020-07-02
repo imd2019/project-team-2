@@ -35,6 +35,15 @@ export default class Button_MentorVirusText extends Button {
     this.animationTime < 0.2 ? this.hide() : this.hide(false);
   }
 
+  isRetracting() {
+    if(!this.extend) {
+      if(this.animationTime==0){
+      return false;
+      }
+    }
+      return true;
+  }
+
   updateAnimationValues() {
     if (this.extend && this.animationTime < 1) {
       this.animationTime += this.animationSpeed;

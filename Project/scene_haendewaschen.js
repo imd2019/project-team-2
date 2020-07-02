@@ -69,7 +69,7 @@ export default class Haendewaschen extends Scene {
     this.mentorVirus.updateText(
       "Beginnen wir mit deinem Training. Setze dich auf die Hand!"
     );
-    this.mentorVirus.showText();
+  //  this.mentorVirus.showText();
     this.addChild(this.hand);
     this.addChild(this.weiterButton);
     this.addChild(this.retryButton);
@@ -179,7 +179,7 @@ export default class Haendewaschen extends Scene {
       );
       this.retryButton.enable();
     }
-    this.mentorVirus.showText();
+ //   this.mentorVirus.showText();
     this.hand.enable();
     this.weiterButton.changeEvent("nextHaendeLevel");
     if (this.level == 4) {
@@ -247,7 +247,7 @@ export default class Haendewaschen extends Scene {
     this.weiterButton.changeEvent("switchToMap");
     this.weiterButton.switchSceneId = 2;
     this.mentorVirus.updateText("Hier sind die Schwachstellen der Menschen.");
-    this.mentorVirus.showText();
+   // this.mentorVirus.showText();
   }
 
   nextLevel() {}
