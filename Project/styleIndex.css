@@ -3,6 +3,10 @@ body {
 }
 
 #p5_loading {
-  width: 1000px;
-  height: 500px;
+  position: relative;
+  width: 1366px;
+  height: 768px;
+  /* top: 100px;
+  left: 100px; */
+  background: url("images/loading.gif");
 }
