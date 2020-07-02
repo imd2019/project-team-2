@@ -6,15 +6,8 @@
     <title>Be[at] the Virus</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styleIndex.css" />
-    <script src="./lib/p5.min.js"></script>
-
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="./lib/p5.dom.min.js"
-    ></script>
-    <script src="./lib/p5.sound.js"></script>
-
+    <script src="./lib/p5.min.js" defer></script>
+    <script src="./lib/p5.sound.js" defer></script>
     <script src="p5setup.js" type="module"></script>
 
     <script src="main.js" type="module"></script>
@@ -24,12 +17,17 @@
       <nav>
         <ul class="navigation">
           <li><h1>Be[at] the Virus</h1></li>
-          <li><a href="index.html">Das Spiel</a></li>
-          <li><a href="ueberUns.html">Über Uns</a></li>
+          <li><a href="index.html">PLAY</a></li>
+          <li><a href="howTo.html">HOW TO</a></li>
+          <li><a href="ueberUns.html">TEAM</a></li>
         </ul>
       </nav>
     </header>
 
-    <div id="p5"></div>
+    <div id="p5">
+      <div id="p5_loading">
+        <p></p>
+      </div>
+    </div>
   </body>
 </html>
