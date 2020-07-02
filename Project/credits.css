@@ -9,3 +9,21 @@ h2 {
   margin-top: 20px;
   font-size: 40px;
 }
+
+h3 {
+  cursor: default;
+  font-family: "MarkerFelt";
+  color: white;
+  margin-left: 300px;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+p {
+  cursor: default;
+  font-family: "Frutiger";
+  color: white;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 20px;
+}
