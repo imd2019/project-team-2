@@ -30,6 +30,8 @@ export default class People extends MoveableObject {
     this.expressions = { sneeze: "sneeze", nothing: "nothing", speak: "speak" };
     this.currentExpression = this.expressions.nothing;
     this.expressionTimer = 0;
+    this.turnCooldown = 0;
+    this.turnCooldownMax = 3;
   }
 
   init() {
@@ -256,21 +258,22 @@ export default class People extends MoveableObject {
   }
 
   updateDirection() {
-    if (this.currentExpression != "speak") {
+    if (this.currentExpression != "speak" && this.turnCooldown <= 0) {
       let vel = this.getVelocity();
-      if (abs(vel.x) > abs(vel.y)) {
-        if (vel.x > 0) {
-          this.currentDirection = this.directions.right;
-        } else {
-          this.currentDirection = this.directions.left;
-        }
-      } else {
+      if (abs(vel.x) < abs(vel.y)) {
         if (vel.y < 0) {
           this.currentDirection = this.directions.back;
         } else {
           this.currentDirection = this.directions.front;
         }
+      } else {
+        if (vel.x < 0) {
+          this.currentDirection = this.directions.left;
+        } else {
+          this.currentDirection = this.directions.right;
+        }
       }
+      this.turnCooldown = this.turnCooldownMax;
       return this.currentDirection;
     }
   }
@@ -423,6 +426,9 @@ export default class People extends MoveableObject {
     this.updateExpression();
     if (this.virusCooldown > 0) {
       this.virusCooldown--;
+    }
+    if (this.turnCooldown > 0) {
+      this.turnCooldown--;
     }
     if (this.isInfected) {
       this.triggerSneezeRnd();
