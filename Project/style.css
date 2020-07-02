@@ -1,6 +1,4 @@
 body {
-  background-color: #3a6270;
-
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -24,9 +22,40 @@ body {
 
 #p5 {
   display: flex;
-justify-content: center;
-width: 100vw;
-height: 100vh;
-align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
 
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-left: -7.8px;
+  margin-right: -7.8px;
+  background: #b761cf;
+  align-items: center;
+}
+
+.navigation a {
+  font-family: "MarkerFelt";
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.navigation a:hover {
+  background: rgb(153, 73, 175);
+}
+
+.navigation h1 {
+  font-size: 25px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  cursor: default;
+  font-family: "MarkerFelt";
+  color: white;
 }
