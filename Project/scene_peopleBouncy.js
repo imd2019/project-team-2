@@ -128,7 +128,7 @@ export default class PeopleBouncy extends Scene {
           "Drücke die Leertaste, um andere anzustecken!"
         );
         this.peopleSize = 1.7;
-        this.mentorVirus.showText();
+     //   this.mentorVirus.showText();
         this.spawnPeople(10);
         let pos = this.playground.getRealRandomPosition();
         let hannah = new Hannah(pos.x, pos.y);
@@ -143,14 +143,14 @@ export default class PeopleBouncy extends Scene {
           "Probiere dich jetzt auf dem Schulhof aus."
         );
         this.peopleSize = 1;
-        this.mentorVirus.showText();
+     //   this.mentorVirus.showText();
         this.spawnPeople(20);
         break;
       case 3:
         this.mentorVirus.updateText(
           "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
-        this.mentorVirus.showText();
+      //  this.mentorVirus.showText();
         this.spawnPeople(20);
         break;
     }
@@ -347,7 +347,7 @@ export default class PeopleBouncy extends Scene {
         round(this.countInfectedPeople()) +
         "% der Schüler infiziert."
     );
-    this.mentorVirus.showText();
+    //this.mentorVirus.showText();
     this.weiterButton.enable();
     this.startScene = false;
     this.disablePeople();
