@@ -8,7 +8,7 @@ body {
 
 @font-face {
   font-family: "MarkerFelt";
-  src: url(/typo/MarkerFelt.ttf) format("truetype");
+  src: url(./typo/MarkerFelt.ttf) format("truetype");
 }
 
 #typo1 {
