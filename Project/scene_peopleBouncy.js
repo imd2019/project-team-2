@@ -129,7 +129,7 @@ export default class PeopleBouncy extends Scene {
         );
         this.peopleSize = 1.7;
      //   this.mentorVirus.showText();
-        this.spawnPeople(10);
+        this.spawnPeople(10,0);
         let pos = this.playground.getRealRandomPosition();
         let hannah = new Hannah(pos.x, pos.y);
         hannah.init();
@@ -144,14 +144,14 @@ export default class PeopleBouncy extends Scene {
         );
         this.peopleSize = 1;
      //   this.mentorVirus.showText();
-        this.spawnPeople(20);
+        this.spawnPeople(20,0);
         break;
       case 3:
         this.mentorVirus.updateText(
           "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
       //  this.mentorVirus.showText();
-        this.spawnPeople(20);
+        this.spawnPeople(20,0.66);
         break;
     }
 
@@ -189,12 +189,17 @@ export default class PeopleBouncy extends Scene {
     }
   }
 
-  spawnPeople(count) {
+  spawnPeople(count, pMask) {
     for (let i = 0; i < count; i++) {
       let pos = this.playground.getRealRandomPosition();
       let people = new People(pos.x, pos.y);
       people.init();
       people.scaleSize(this.peopleSize);
+      let r = random();
+      if(r<pMask) {
+        people.setMask();
+      }
+
       this.people.push(people);
       this.addChild(people);
     }

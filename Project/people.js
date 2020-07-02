@@ -14,6 +14,7 @@ export default class People extends MoveableObject {
       right: "right",
       back: "back",
     };
+    this.masked = "";
     this.healthConditions = { healthy: "healthy", sick: "sick" };
     this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
@@ -107,6 +108,85 @@ export default class People extends MoveableObject {
       "girl-" + this.directions.back + this.healthConditions.sick,
       window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED
     );
+
+//masked people
+
+this.addImage(
+  "boy-" + this.directions.front + this.healthConditions.healthy + "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_MASK
+);
+this.addImage(
+  "girl-" + this.directions.front + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_MASK
+);
+//Left
+this.addImage(
+  "boy-" + this.directions.left + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_MASK
+);
+this.addImage(
+  "girl-" + this.directions.left + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_MASK
+);
+//Right
+this.addImage(
+  "boy-" + this.directions.right + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_MASK
+);
+this.addImage(
+  "girl-" + this.directions.right + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_MASK
+);
+//Back
+this.addImage(
+  "boy-" + this.directions.back + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_MASK
+);
+this.addImage(
+  "girl-" + this.directions.back + this.healthConditions.healthy+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_MASK
+);
+
+//INFECTED
+
+this.addImage(
+  "boy-" + this.directions.front + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_INFECTED_MASK
+);
+this.addImage(
+  "girl-" + this.directions.front + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_INFECTED_MASK
+);
+//Left
+this.addImage(
+  "boy-" + this.directions.left + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_INFECTED_MASK
+);
+this.addImage(
+  "girl-" + this.directions.left + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_INFECTED_MASK
+);
+//Right
+this.addImage(
+  "boy-" + this.directions.right + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_INFECTED_MASK
+);
+this.addImage(
+  "girl-" + this.directions.right + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_INFECTED_MASK
+);
+//Back
+this.addImage(
+  "boy-" + this.directions.back + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_INFECTED_MASK
+);
+this.addImage(
+  "girl-" + this.directions.back + this.healthConditions.sick+ "masked",
+  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED_MASK
+);
+
+
+
     this.switchImage(this.currentGender + this.currentDirection + this.health);
     this.setMaxMinSpeed(random(1, 3), random(-3, -1));
     this.decideDirection();
@@ -154,9 +234,20 @@ export default class People extends MoveableObject {
     // text(this.currentExpression, 0, 25);
   }
 
+  setMask() {
+    this.masked = "masked";
+  }
+
+  isMasked() {
+  if(this.masked === "masked"){
+return true;
+  }
+return false;
+  }
+
   updateImage() {
     this.updateDirection();
-    this.switchImage(this.currentGender + this.currentDirection + this.health);
+    this.switchImage(this.currentGender + this.currentDirection + this.health + this.masked);
   }
 
   updateDirection() {
@@ -210,6 +301,10 @@ export default class People extends MoveableObject {
         result.x = speed;
         result.y = 0;
         break;
+    }
+    if(this.isMasked()){
+      result.x = result.x/2;
+      result.y= result.y/2;
     }
     return result;
   }
@@ -278,7 +373,7 @@ export default class People extends MoveableObject {
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
       if (this.isActivePlayer)
-        window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
+    //    window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
       this.expressionTimer = 25;
     }
   }
