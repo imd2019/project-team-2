@@ -16,18 +16,14 @@ h2 {
   font-size: 40px;
 }
 
-/* .profilbild {
-  display: flex;
-} */
-
-.profilbild pngroundFlo {
+.pngroundFlo {
   margin-left: 165px;
   margin-top: 50px;
   border-radius: 50%;
   width: 220px;
   height: 220px;
 }
-/* .pngroundDiandra {
+.pngroundDiandra {
   margin-left: 100px;
   border-radius: 50%;
   width: 220px;
@@ -44,4 +40,4 @@ h2 {
   border-radius: 50%;
   width: 220px;
   height: 220px;
-} */
+}
