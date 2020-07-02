@@ -317,7 +317,8 @@ function setup() {
   // preload();
 
   console.log("setup");
-  let canvas = sketch.createCanvas(1366, 768);
+ // let canvas = sketch.createCanvas(1366, 768);
+ let canvas = sketch.createCanvas(1366, 768);
   sketch.frameRate(30);
   canvas.parent("p5");
 
