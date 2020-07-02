@@ -65,8 +65,15 @@ export default class Hannah extends People {
     console.log(this.goalPosition);
   }
 
+  update() {}
+
   draw() {
     super.draw();
     image(window.ENUMS.IMAGE.PEOPLEBOUNCY_HEART, -1, -30, 20, 15);
+  }
+  updateImage() {
+    this.switchImage(
+      this.currentGender + this.directions.left + this.health + this.masked
+    );
   }
 }

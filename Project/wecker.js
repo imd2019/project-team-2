@@ -12,6 +12,7 @@ export default class Wecker extends MoveableObject {
     this.wiggleSpeed = -0.2;
     this.wiggleProgress = 0;
     this.setRotationOffset(35, 0);
+    this.waiting = true;
   }
   init() {
     this.addImage("wecker", window.ENUMS.IMAGE.WECKER);
@@ -19,7 +20,12 @@ export default class Wecker extends MoveableObject {
   }
   update() {
     if (this.animationTime == 1) {
-      this.countdown();
+      if (this.waiting) {
+        this.waiting = false;
+        this.wait(4);
+      } else {
+        this.countdown();
+      }
     }
     if (this.animationTime < 1) this.animationTime += this.animationSpeed;
     if (this.animationTime > 1) this.animationTime = 1;

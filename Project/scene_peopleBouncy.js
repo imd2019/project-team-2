@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 0;
+    this.level = 2;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -113,6 +113,19 @@ export default class PeopleBouncy extends Scene {
         this.playground.addHitbox(470, 120, 370, 280, window.ENUMS.SHAPE.RECT);
         this.addChild(this.playground);
         break;
+      case 4:
+        this.removeChild(this.playground);
+        this.playground = new Playground(
+          290,
+          170,
+          852,
+          429,
+          window.ENUMS.IMAGE.PEOPLEBOUNCY_PLAYGROUND_3
+        );
+        this.playground.addHitbox(0, 0, 600, 330, window.ENUMS.SHAPE.RECT);
+        this.playground.addHitbox(470, 120, 370, 280, window.ENUMS.SHAPE.RECT);
+        this.addChild(this.playground);
+        break;
     }
   }
 
@@ -128,36 +141,49 @@ export default class PeopleBouncy extends Scene {
           "Drücke die Leertaste, um andere anzustecken!"
         );
         this.peopleSize = 1.7;
-     //   this.mentorVirus.showText();
-        this.spawnPeople(10,0);
-        let pos = this.playground.getRealRandomPosition();
-        let hannah = new Hannah(pos.x, pos.y);
-        hannah.init();
-        hannah.scaleSize(this.peopleSize);
-        this.people.push(hannah);
-        this.addChild(hannah);
-
+        //   this.mentorVirus.showText();
+        this.spawnPeople(10, 0);
         break;
       case 2:
         this.mentorVirus.updateText(
           "Probiere dich jetzt auf dem Schulhof aus."
         );
         this.peopleSize = 1;
-     //   this.mentorVirus.showText();
-        this.spawnPeople(20,0);
+        //   this.mentorVirus.showText();
+        this.spawnPeople(20, 0);
         break;
       case 3:
         this.mentorVirus.updateText(
           "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
-      //  this.mentorVirus.showText();
-        this.spawnPeople(20,1);
+        //  this.mentorVirus.showText();
+        this.spawnPeople(20, 1);
+        break;
+      case 4:
+        this.peopleSize = 2;
+        let people = new People(400, 400);
+        people.init();
+        people.setActivityFixGoal(900, 400);
+        people.scaleSize(this.peopleSize);
+        console.log(people);
+        this.people.push(people);
+        this.addChild(people);
+        let hannah = new Hannah(1000, 400);
+        hannah.init();
+        hannah.scaleSize(this.peopleSize);
+        this.people.push(hannah);
+        this.addChild(hannah);
         break;
     }
 
     this.sign_level.changeText("Level " + this.level + "/3");
-    this.switchImage("Hintergrund-" + this.level);
+    if (this.level === 4) {
+      this.switchImage("Hintergrund-3");
+    } else {
+      this.switchImage("Hintergrund-" + this.level);
+    }
     this.startScene = true;
+    console.log(this.people);
     this.switchActivePlayer(0);
   }
 
@@ -196,7 +222,7 @@ export default class PeopleBouncy extends Scene {
       people.init();
       people.scaleSize(this.peopleSize);
       let r = random();
-      if(r<pMask) {
+      if (r < pMask) {
         people.setMask();
       }
 
@@ -234,7 +260,8 @@ export default class PeopleBouncy extends Scene {
   }
 
   switchActivePlayer(index) {
-    this.getCurrentPlayer().isActivePlayer = false;
+    if (this.getCurrentPlayer() != undefined)
+      this.getCurrentPlayer().isActivePlayer = false;
     this.currentPlayer = index;
     this.getCurrentPlayer().infect();
   }
@@ -248,13 +275,13 @@ export default class PeopleBouncy extends Scene {
       if (keyCode === 32) {
         let pos = this.getCurrentPlayer().getRealXY();
         let vel = this.getCurrentPlayer().getVirusOutputVelocity();
-        if(vel.x != 0 || vel.y !=0){
-        let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
-        virus.scaleSize(this.peopleSize);
-        virus.init();
-        this.viruses.push(virus);
-        this.addChild(virus);
-      }
+        if (vel.x != 0 || vel.y != 0) {
+          let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
+          virus.scaleSize(this.peopleSize);
+          virus.init();
+          this.viruses.push(virus);
+          this.addChild(virus);
+        }
       }
     }
   }
@@ -324,34 +351,36 @@ export default class PeopleBouncy extends Scene {
 
   checkPeoplePandemicDistanceCollision() {
     for (let element1 of this.people) {
-        let peopleInDistance = [];
-
+      let peopleInDistance = [];
+      if (element1.currentActivity != "away") {
+        //ANDEREN FRAGEN
         for (let element2 of this.people) {
           if (element1 === element2) continue;
-          if (
-            Util.getDistanceBetweenObjects(element1, element2) < 90
-          ) {
+          if (Util.getDistanceBetweenObjects(element1, element2) < 90) {
             peopleInDistance.push(element2);
           }
         }
 
         if (peopleInDistance.length > 0) {
-           let rnd = random();
-           if(this.level==3){
-           if (rnd < 0.5) {
-          this.findNewGoalPosition(element1);
-          element1.setActivityAway(peopleInDistance[0].x,peopleInDistance[0].y);
+          let rnd = random();
+          if (this.level == 3) {
+            if (rnd < 0.5) {
+              this.findNewGoalPosition(element1);
+              element1.setActivityAway(
+                peopleInDistance[0].x,
+                peopleInDistance[0].y
+              );
+            }
           }
         }
-          //   let partner = random(peopleInDistance);
-          //   console.log(partner);
-          //   element1.setupTalk(partner);
-          //   partner.setupTalk(element1);
-          // }        
+        //   let partner = random(peopleInDistance);
+        //   console.log(partner);
+        //   element1.setupTalk(partner);
+        //   partner.setupTalk(element1);
+        // }
       }
     }
   }
-  
 
   collideObjObj(obj_1, obj_2) {
     if (

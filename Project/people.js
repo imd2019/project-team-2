@@ -19,8 +19,8 @@ export default class People extends MoveableObject {
     this.healthConditions = { healthy: "healthy", sick: "sick" };
     this.health = this.healthConditions.healthy;
     this.goalPosition = { x: 0, y: 0 };
-    this.currentActivity = "goal";
-    this.activities = ["goal", "rnd", "away"];
+    this.currentActivity = "";
+    this.activities = ["goal", "rnd"];
     this.needActivity = false;
     this.normalAcceleration = 0.3;
     this.activityTimer = 0;
@@ -110,95 +110,96 @@ export default class People extends MoveableObject {
       window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED
     );
 
-//masked people
+    //masked people
 
-this.addImage(
-  "boy-" + this.directions.front + this.healthConditions.healthy + "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_MASK
-);
-this.addImage(
-  "girl-" + this.directions.front + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_MASK
-);
-//Left
-this.addImage(
-  "boy-" + this.directions.left + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_MASK
-);
-this.addImage(
-  "girl-" + this.directions.left + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_MASK
-);
-//Right
-this.addImage(
-  "boy-" + this.directions.right + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_MASK
-);
-this.addImage(
-  "girl-" + this.directions.right + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_MASK
-);
-//Back
-this.addImage(
-  "boy-" + this.directions.back + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_MASK
-);
-this.addImage(
-  "girl-" + this.directions.back + this.healthConditions.healthy+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_MASK
-);
+    this.addImage(
+      "boy-" + this.directions.front + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_MASK
+    );
+    this.addImage(
+      "girl-" +
+        this.directions.front +
+        this.healthConditions.healthy +
+        "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_MASK
+    );
+    //Left
+    this.addImage(
+      "boy-" + this.directions.left + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.left + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_MASK
+    );
+    //Right
+    this.addImage(
+      "boy-" + this.directions.right + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_MASK
+    );
+    this.addImage(
+      "girl-" +
+        this.directions.right +
+        this.healthConditions.healthy +
+        "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_MASK
+    );
+    //Back
+    this.addImage(
+      "boy-" + this.directions.back + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.back + this.healthConditions.healthy + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_MASK
+    );
 
-//INFECTED
+    //INFECTED
 
-this.addImage(
-  "boy-" + this.directions.front + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_INFECTED_MASK
-);
-this.addImage(
-  "girl-" + this.directions.front + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_INFECTED_MASK
-);
-//Left
-this.addImage(
-  "boy-" + this.directions.left + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_INFECTED_MASK
-);
-this.addImage(
-  "girl-" + this.directions.left + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_INFECTED_MASK
-);
-//Right
-this.addImage(
-  "boy-" + this.directions.right + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_INFECTED_MASK
-);
-this.addImage(
-  "girl-" + this.directions.right + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_INFECTED_MASK
-);
-//Back
-this.addImage(
-  "boy-" + this.directions.back + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_INFECTED_MASK
-);
-this.addImage(
-  "girl-" + this.directions.back + this.healthConditions.sick+ "masked",
-  window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED_MASK
-);
-
-
+    this.addImage(
+      "boy-" + this.directions.front + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_FRONT_INFECTED_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.front + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_FRONT_INFECTED_MASK
+    );
+    //Left
+    this.addImage(
+      "boy-" + this.directions.left + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_LEFT_INFECTED_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.left + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_LEFT_INFECTED_MASK
+    );
+    //Right
+    this.addImage(
+      "boy-" + this.directions.right + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_RIGHT_INFECTED_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.right + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_RIGHT_INFECTED_MASK
+    );
+    //Back
+    this.addImage(
+      "boy-" + this.directions.back + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_BOY_BACK_INFECTED_MASK
+    );
+    this.addImage(
+      "girl-" + this.directions.back + this.healthConditions.sick + "masked",
+      window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED_MASK
+    );
 
     this.switchImage(this.currentGender + this.currentDirection + this.health);
     this.setMaxMinSpeed(random(1, 3), random(-3, -1));
-    this.decideDirection();
-    this.getNewGoalPosition();
-    console.log(this.goalPosition);
+    this.switchActivity();
   }
 
   getNewGoalPosition() {
     window.dispatchEvent(new CustomEvent("newGoalPosition", { detail: this }));
   }
-
 
   infect() {
     this.isActivePlayer = true;
@@ -241,15 +242,17 @@ this.addImage(
   }
 
   isMasked() {
-  if(this.masked === "masked"){
-return true;
-  }
-return false;
+    if (this.masked === "masked") {
+      return true;
+    }
+    return false;
   }
 
   updateImage() {
     this.updateDirection();
-    this.switchImage(this.currentGender + this.currentDirection + this.health + this.masked);
+    this.switchImage(
+      this.currentGender + this.currentDirection + this.health + this.masked
+    );
   }
 
   updateDirection() {
@@ -272,53 +275,53 @@ return false;
     }
   }
 
-  getVirusOutputVelocity() {  
-      let result = { dir: this.currentDirection, x: 0, y: 0 };
+  getVirusOutputVelocity() {
+    let result = { dir: this.currentDirection, x: 0, y: 0 };
 
-    if(this.virusCooldown<=0) {
-    let speed = 1;
-    switch (this.currentExpression) {
-      case this.expressions.nothing:
-        speed = 2;
-        break;
-      case this.expressions.sneeze:
-        speed = 7;
-        break;
-      case this.expressions.speak:
-        speed = 4;
-        break;
+    if (this.virusCooldown <= 0) {
+      let speed = 1;
+      switch (this.currentExpression) {
+        case this.expressions.nothing:
+          speed = 2;
+          break;
+        case this.expressions.sneeze:
+          speed = 7;
+          break;
+        case this.expressions.speak:
+          speed = 4;
+          break;
+      }
+      switch (this.currentDirection) {
+        case this.directions.front:
+          result.x = 0;
+          result.y = speed;
+          break;
+        case this.directions.back:
+          result.x = 0;
+          result.y = -speed;
+          break;
+        case this.directions.left:
+          result.x = -speed;
+          result.y = 0;
+          break;
+        case this.directions.right:
+          result.x = speed;
+          result.y = 0;
+          break;
+      }
+      if (this.isMasked()) {
+        result.x = result.x / 2;
+        result.y = result.y / 2;
+        // let r = random();
+        // if(r<0.5){
+        //   result.x=0;
+        //   result.y=0;
+        // }
+      }
+      this.virusCooldown = 20;
     }
-    switch (this.currentDirection) {
-      case this.directions.front:
-        result.x = 0;
-        result.y = speed;
-        break;
-      case this.directions.back:
-        result.x = 0;
-        result.y = -speed;
-        break;
-      case this.directions.left:
-        result.x = -speed;
-        result.y = 0;
-        break;
-      case this.directions.right:
-        result.x = speed;
-        result.y = 0;
-        break;
-    }
-    if(this.isMasked()){
-      result.x = result.x/2;
-      result.y= result.y/2;
-     // let r = random();
-      // if(r<0.5){
-      //   result.x=0;
-      //   result.y=0;
-      // }
-    }
-   this.virusCooldown=20;
-  } 
-  return result;
-}
+    return result;
+  }
 
   switchActivity(activity = null) {
     if (activity === null) {
@@ -340,9 +343,12 @@ return false;
       case "talk":
         this.activityMaxTimer = 100;
         break;
-        case "away":
-          this.activityMaxTimer = 100;
-          break;
+      case "away":
+        this.activityMaxTimer = 100;
+        break;
+      case "fixGoal":
+        this.activityMaxTimer = 100000000000;
+        break;
     }
 
     this.activityTimer = 0;
@@ -380,12 +386,16 @@ return false;
           );
         }
         break;
-
-        case "away":
-          this.checkAway();
-          this.setAccelerationAwayFromGoal();
-          this.move();
-          break;
+      case "away":
+        this.checkAway();
+        this.setAccelerationAwayFromGoal();
+        this.move();
+        break;
+      case "fixGoal":
+        //this.checkGoal();
+        this.setAccelerationToGoal();
+        this.move();
+        break;
     }
   }
 
@@ -394,8 +404,8 @@ return false;
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
       if (this.isActivePlayer)
-        window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
-      this.expressionTimer = 25;
+        // window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
+        this.expressionTimer = 25;
     }
   }
   updateExpression() {
@@ -411,9 +421,9 @@ return false;
     this.updateActivity();
     this.doActivity();
     this.updateExpression();
-    if(this.virusCooldown>0){
-  this.virusCooldown--;
-}
+    if (this.virusCooldown > 0) {
+      this.virusCooldown--;
+    }
     if (this.isInfected) {
       this.triggerSneezeRnd();
     }
@@ -422,11 +432,17 @@ return false;
   setGoalPosition(x, y) {
     this.goalPosition.x = x;
     this.goalPosition.y = y;
+    // console.log("Setze neues Ziel auf: " + x + " " + y);
   }
 
-  setActivityAway(x,y) {
-    this.setGoalPosition(x,y);
-this.switchActivity("away");
+  setActivityAway(x, y) {
+    this.setGoalPosition(x, y);
+    this.switchActivity("away");
+  }
+
+  setActivityFixGoal(x, y) {
+    this.setGoalPosition(x, y);
+    this.switchActivity("fixGoal");
   }
 
   checkGoal() {
@@ -437,12 +453,12 @@ this.switchActivity("away");
     }
   }
 
-checkAway() {
-let distance =Util.getDistanceBetweenObjects(this,this.goalPosition); 
-if(distance>70){
-  this.needActivity=true;
-}
-}
+  checkAway() {
+    let distance = Util.getDistanceBetweenObjects(this, this.goalPosition);
+    if (distance > 70) {
+      this.needActivity = true;
+    }
+  }
 
   setupTalk(people) {
     this.currentExpression = this.expressions.speak;
@@ -512,7 +528,6 @@ if(distance>70){
     this.setAcceleration(newAcX, newAcY);
   }
 
-
   setAccelerationAwayFromGoal() {
     let newAcX = 0;
     let newAcY = 0;
@@ -533,7 +548,6 @@ if(distance>70){
     }
     this.setAcceleration(newAcX, newAcY);
   }
-
 
   setGender() {
     this.currentGender = random(this.genders);
