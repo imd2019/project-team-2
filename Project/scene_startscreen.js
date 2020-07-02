@@ -18,10 +18,7 @@ export default class Startscreen extends Scene {
 
   animationTraum() {
     window.ENUMS.SOUND.SONG.play();
-    this.setDomOffset(
-      windowWidth / 2 - window.ENUMS.SIZE.X / 2,
-      windowHeight / 2 - window.ENUMS.SIZE.Y / 2 + 53
-    );
+    this.setDomOffset(window.ENUMS.POS.X, window.ENUMS.POS.Y);
     this.showDom();
     this.playDom();
     this.wait(10);
