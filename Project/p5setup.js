@@ -2,6 +2,7 @@ import EventDispatcher from "./eventDispatcher.js";
 //import "./lib/p5.sound.js";
 
 let sketch = new p5();
+sketch._incrementPreload();
 
 let width = windowWidth;
 let heigh = windowHeight;
@@ -380,6 +381,7 @@ function preload() {
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
   // let fake = loadImage("asfjhkjashjfh.png");
+  sketch._decrementPreload();
 }
 
 window.preload = preload;
