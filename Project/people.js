@@ -394,7 +394,7 @@ return false;
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
       if (this.isActivePlayer)
-    //    window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
+        window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
       this.expressionTimer = 25;
     }
   }
