@@ -165,7 +165,7 @@ export default class PeopleBouncy extends Scene {
         people.init();
         people.setActivityFixGoal(900, 400);
         people.scaleSize(this.peopleSize);
-        console.log(people);
+        people.setMaxMinSpeed(3, -3);
         this.people.push(people);
         this.addChild(people);
         let hannah = new Hannah(1000, 400);
