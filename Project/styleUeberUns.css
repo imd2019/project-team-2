@@ -37,7 +37,7 @@ h2 {
 }
 
 .flex-item1:hover {
-  background: url("images/leander.jpg");
+  background: url("images/leander.jpeg");
   background-size: contain;
 }
 .flex-item2:hover {
@@ -45,7 +45,7 @@ h2 {
   background-size: contain;
 }
 .flex-item3:hover {
-  background: url("images/leander_gez.png");
+  background: url("images/marie.jpg");
   background-size: contain;
 }
 .flex-item4:hover {
