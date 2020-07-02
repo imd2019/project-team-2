@@ -1,3 +1,38 @@
 body {
-  background-color: #f8e2b9;
+  background-color: #2c9dc6;
+}
+
+@font-face {
+  font-family: "MarkerFelt";
+  src: url(/typo/MarkerFelt.ttf) format("truetype");
+}
+
+h2 {
+  cursor: default;
+  font-family: "MarkerFelt";
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+.pngroundFlo {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+.pngroundDiandra {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+.pngroundMarie {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+.pngroundLeander {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
 }
