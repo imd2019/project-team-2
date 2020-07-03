@@ -18,6 +18,8 @@ let buttonWeiterGrau;
 let buttonRetryGrau;
 let backgroundHaendewaschen;
 let virus_1;
+let virus_2;
+let virus_3;
 let hand_white;
 let hand_brown;
 let hand_brown_lack;
@@ -159,6 +161,8 @@ function preload() {
     "images/Hintergrund_PeopleBouncy_Level3.png"
   );
   virus_1 = loadImage("images/Virus_1.png");
+  virus_2 = loadImage("images/Virus_2.png");
+  virus_3 = loadImage("images/Virus_3.png");
   sign = loadImage("images/Schild.png");
   wecker = loadImage("images/Wecker.png");
   mentorVirusText = loadImage("images/MentorVirusText.png");
@@ -500,6 +504,8 @@ function setup() {
       BACKGROUND_PEOPLEBOUNCY_LEVEL_2: background_people_bouncy_2,
       BACKGROUND_PEOPLEBOUNCY_LEVEL_3: background_people_bouncy_3,
       VIRUS_1: virus_1,
+      VIRUS_2: virus_2,
+      VIRUS_3: virus_3,
       SIGN: sign,
       WECKER: wecker,
     }),
