@@ -130,8 +130,8 @@ export default class Haendewaschen extends Scene {
         this.switchDom(
           this.currentColor + this.animationRow[this.animationIndexNow]
         );
-        this.setDomSize(1000, 800);
-        this.setDomOffset(window.ENUMS.POS.X + 110, window.ENUMS.POS.Y + 80);
+        // this.setDomSize(1000, 800);
+        this.setDomOffset(window.ENUMS.POS.X, window.ENUMS.POS.Y);
         this.showDom();
         this.weiterButton.disable(false);
         switch (this.animationRow[this.animationIndexNow]) {
