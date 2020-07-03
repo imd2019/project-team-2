@@ -19,6 +19,11 @@ h3 {
   font-size: 30px;
 }
 
+.Danksagung {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
 p {
   cursor: default;
   font-family: "Frutiger";
@@ -26,4 +31,6 @@ p {
   text-align: center;
   margin-top: 10px;
   font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
