@@ -123,6 +123,21 @@ let haendewaschen_sound_squash;
 let haendewaschen_sound_full;
 let peopleBouncy_girl_sneeze;
 
+let peopelBouncy_L_cough_1;
+let peopelBouncy_L_cough_2;
+let peopelBouncy_L_cough_3;
+
+let peopelBouncy_L_sneeze_1;
+let peopelBouncy_L_sneeze_2;
+let peopelBouncy_L_sneeze_3;
+
+let peopelBouncy_F_cough_1;
+let peopelBouncy_F_cough_2;
+let peopelBouncy_F_cough_3;
+
+let peopelBouncy_F_sneeze_1;
+let peopelBouncy_F_sneeze_2;
+let peopelBouncy_F_sneeze_3;
 //Schriftarten
 let markerFelt;
 let frutiger;
@@ -385,6 +400,43 @@ function preload() {
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
   peopleBouncy_girl_sneeze.setVolume(0.3);
+  //People Bouncy Leander Sound
+  peopelBouncy_L_cough_1 = loadSound("sound/L_husten_1.mp3");
+  peopelBouncy_L_cough_1.setVolume(0.3);
+
+  peopelBouncy_L_cough_2 = loadSound("sound/L_husten_2.mp3");
+  peopelBouncy_L_cough_2.setVolume(0.3);
+
+  peopelBouncy_L_cough_3 = loadSound("sound/L_husten_3.mp3");
+  peopelBouncy_L_cough_3.setVolume(0.3);
+
+  peopelBouncy_L_sneeze_1 = loadSound("sound/L_niesen_1.mp3");
+  peopelBouncy_L_sneeze_1.setVolume(0.3);
+
+  peopelBouncy_L_sneeze_2 = loadSound("sound/L_niesen_2.mp3");
+  peopelBouncy_L_sneeze_2.setVolume(0.3);
+
+  peopelBouncy_L_sneeze_3 = loadSound("sound/L_niesen_3.mp3");
+  peopelBouncy_L_sneeze_3.setVolume(0.3);
+
+  //People Bouncy Flo Sound
+  peopelBouncy_F_cough_1 = loadSound("sound/f_husten1.mp3");
+  peopelBouncy_F_cough_1.setVolume(0.3);
+
+  peopelBouncy_F_cough_2 = loadSound("sound/f_husten2.mp3");
+  peopelBouncy_F_cough_2.setVolume(0.3);
+
+  peopelBouncy_F_cough_3 = loadSound("sound/f_husten3.mp3");
+  peopelBouncy_F_cough_3.setVolume(0.3);
+
+  peopelBouncy_F_sneeze_1 = loadSound("sound/f_niesen1.mp3");
+  peopelBouncy_F_sneeze_1.setVolume(0.3);
+
+  peopelBouncy_F_sneeze_2 = loadSound("sound/f_niesen2.mp3");
+  peopelBouncy_F_sneeze_2.setVolume(0.3);
+
+  peopelBouncy_F_sneeze_3 = loadSound("sound/f_niesen3.mp3");
+  peopelBouncy_F_sneeze_3.setVolume(0.3);
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
@@ -549,6 +601,20 @@ function setup() {
       HAENDEWASCHEN_SQUASH: haendewaschen_sound_squash,
       HAENDEWASCHEN_FULLSOUND: haendewaschen_sound_full,
       PEOPLEBOUNCY_GIRL_SNEEZE: peopleBouncy_girl_sneeze,
+
+      PEOPLEBOUNCY_L_COUGH_1: peopelBouncy_L_cough_1,
+      PEOPLEBOUNCY_L_COUGH_2: peopelBouncy_L_cough_2,
+      PEOPLEBOUNCY_L_COUGH_3: peopelBouncy_L_cough_3,
+      PEOPLEBOUNCY_L_SNEEZE_1: peopelBouncy_L_sneeze_1,
+      PEOPLEBOUNCY_L_SNEEZE_2: peopelBouncy_L_sneeze_2,
+      PEOPLEBOUNCY_L_SNEEZE_3: peopelBouncy_L_sneeze_3,
+
+      PEOPLEBOUNCY_F_COUGH_1: peopelBouncy_F_cough_1,
+      PEOPLEBOUNCY_F_COUGH_2: peopelBouncy_F_cough_2,
+      PEOPLEBOUNCY_F_COUGH_3: peopelBouncy_F_cough_3,
+      PEOPLEBOUNCY_F_SNEEZE_1: peopelBouncy_F_sneeze_1,
+      PEOPLEBOUNCY_F_SNEEZE_2: peopelBouncy_F_sneeze_2,
+      PEOPLEBOUNCY_F_SNEEZE_3: peopelBouncy_F_sneeze_3,
     }),
 
     FONT: Object.freeze({

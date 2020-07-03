@@ -14,6 +14,8 @@ export default class People extends MoveableObject {
       right: "right",
       back: "back",
     };
+    this.voice = "l";
+    this.voices = { l: [], d: [], f: [], m: [] };
     this.masked = "";
     this.virusCooldown = 0;
     this.healthConditions = { healthy: "healthy", sick: "sick" };
@@ -195,9 +197,41 @@ export default class People extends MoveableObject {
       window.ENUMS.IMAGE.PEOPLEBOUNCY_GIRL_BACK_INFECTED_MASK
     );
 
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_COUGH_1);
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_COUGH_2);
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_COUGH_3);
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_SNEEZE_1);
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_SNEEZE_2);
+    this.addVoiceline("l", window.ENUMS.SOUND.PEOPLEBOUNCY_L_SNEEZE_3);
+
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_COUGH_1);
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_COUGH_2);
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_COUGH_3);
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_SNEEZE_1);
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_SNEEZE_2);
+    this.addVoiceline("f", window.ENUMS.SOUND.PEOPLEBOUNCY_F_SNEEZE_3);
+
     this.switchImage(this.currentGender + this.currentDirection + this.health);
     this.setMaxMinSpeed(random(1, 3), random(-3, -1));
     this.switchActivity();
+    this.setVoice(this.currentGender);
+  }
+
+  setVoice(gender) {
+    switch (gender) {
+      case "girl-":
+      case "boy-":
+        this.voice = random(["l", "f"]);
+        break;
+    }
+  }
+
+  addVoiceline(key, sound) {
+    if (this.voices.hasOwnProperty(key)) this.voices[key].push(sound);
+  }
+
+  playVoiceline() {
+    random(this.voices[this.voice]).play();
   }
 
   getNewGoalPosition() {
@@ -416,9 +450,8 @@ export default class People extends MoveableObject {
     let rnd = random(1);
     if (rnd < 0.02 && this.currentExpression === this.expressions.nothing) {
       this.currentExpression = this.expressions.sneeze;
-      if (this.isActivePlayer)
-        // window.ENUMS.SOUND.PEOPLEBOUNCY_GIRL_SNEEZE.play();
-        this.expressionTimer = 25;
+      if (this.isActivePlayer) this.playVoiceline();
+      this.expressionTimer = 25;
     }
   }
   updateExpression() {

@@ -34,7 +34,6 @@ export default class Endscreen extends Scene {
       x: window.ENUMS.SIZE.X / 2,
       y: window.ENUMS.SIZE.Y / 2,
     };
-    console.log("hi");
     fill(255);
     textSize(40);
     textFont(window.ENUMS.FONT.MARKER_FELT);
