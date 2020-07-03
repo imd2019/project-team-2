@@ -2,7 +2,7 @@ import People from "./people.js";
 
 export default class Hannah extends People {
   constructor(x, y) {
-    super(x, y);
+    super(x, y, -1);
   }
 
   init() {
@@ -69,7 +69,7 @@ export default class Hannah extends People {
 
   draw() {
     super.draw();
-    image(window.ENUMS.IMAGE.PEOPLEBOUNCY_HEART, -1, -30, 20, 15);
+    image(window.ENUMS.IMAGE.PEOPLEBOUNCY_HEART, -1, -33, 20, 15);
   }
   updateImage() {
     this.switchImage(
@@ -78,5 +78,6 @@ export default class Hannah extends People {
   }
   infect() {
     window.dispatchEvent(new CustomEvent("hannahInfected"));
+    this.health = this.healthConditions.sick;
   }
 }

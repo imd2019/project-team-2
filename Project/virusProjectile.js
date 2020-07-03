@@ -1,7 +1,7 @@
 import MoveableObject from "./moveableObject.js";
 
 export default class VirusProjectile extends MoveableObject {
-  constructor(x, y, velX, velY, direction) {
+  constructor(x, y, velX, velY, direction, virusState) {
     super(x, y, 20, 0, window.ENUMS.SHAPE.ROUND);
     let xSign = 1;
     let ySign = 1;
@@ -13,11 +13,23 @@ export default class VirusProjectile extends MoveableObject {
 
     this.setVelocity(velX, velY);
     this.direction = direction;
+    this.virusState = virusState;
   }
 
   init() {
-    this.addImage("swarm", window.ENUMS.IMAGE.VIRUS_1);
-    this.switchImage("swarm");
+    this.addImage("swarm1", window.ENUMS.IMAGE.VIRUS_2);
+    this.addImage("swarm2", window.ENUMS.IMAGE.VIRUS_3);
+
+    switch (this.virusState) {
+      case 1:
+      case 2:
+      case 3:
+        this.switchImage("swarm1");
+        break;
+      case 4:
+        this.switchImage("swarm2");
+        break;
+    }
   }
 
   update() {
