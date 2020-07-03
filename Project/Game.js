@@ -113,6 +113,7 @@ export default class Game extends InteractiveObject {
     for (let i in score) {
       this.gameScores[game].push(score[i]);
     }
+    // this.nextScene(window.ENUMS.SCENE_NAMES.END_SCREEN);
     console.log(this.gameScores);
   }
 }
