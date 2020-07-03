@@ -118,9 +118,10 @@ let testVideo;
 //Sound
 let song;
 let haendewaschen_sound_rub;
-let haendewaschen_sound_squish;
-let haendewaschen_sound_squash;
-let haendewaschen_sound_full;
+let haendewaschen_sound_tips;
+let haendewaschen_sound_inbetween;
+let haendewaschen_sound_thumb;
+
 let peopleBouncy_girl_sneeze;
 
 let peopelBouncy_L_cough_1;
@@ -382,21 +383,17 @@ function preload() {
   song = loadSound("sound/DreamTransition.mp3");
   song.setVolume(0.2);
 
-  haendewaschen_sound_rub = loadSound("sound/Haendewaschen_sound_reiben.mp3");
-  haendewaschen_sound_rub.setVolume(0.5);
+  haendewaschen_sound_rub = loadSound("sound/d_Handflächen.m4a");
+  haendewaschen_sound_rub.setVolume(2.5);
 
-  haendewaschen_sound_squish = loadSound(
-    "sound/Haendewaschen_sound_squish.mp3"
-  );
-  haendewaschen_sound_squish.setVolume(0.5);
+  haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.m4a");
+  haendewaschen_sound_tips.setVolume(2.5);
 
-  haendewaschen_sound_squash = loadSound(
-    "sound/Haendewaschen_sound_squash.mp3"
-  );
-  haendewaschen_sound_squash.setVolume(0.5);
+  haendewaschen_sound_inbetween = loadSound("sound/d_Daumen.m4a");
+  haendewaschen_sound_inbetween.setVolume(2.5);
 
-  haendewaschen_sound_full = loadSound("sound/Haendewaschen_sound_full.mp3");
-  haendewaschen_sound_full.setVolume(0.5);
+  haendewaschen_sound_thumb = loadSound("sound/d_Zwischenräume.m4a");
+  haendewaschen_sound_thumb.setVolume(2.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
   peopleBouncy_girl_sneeze.setVolume(0.3);
@@ -597,9 +594,9 @@ function setup() {
     SOUND: Object.freeze({
       SONG: song,
       HAENDEWASCHEN_RUB: haendewaschen_sound_rub,
-      HAENDEWASCHEN_SQUISH: haendewaschen_sound_squish,
-      HAENDEWASCHEN_SQUASH: haendewaschen_sound_squash,
-      HAENDEWASCHEN_FULLSOUND: haendewaschen_sound_full,
+      HAENDEWASCHEN_TIPS: haendewaschen_sound_tips,
+      HAENDEWASCHEN_INBETWEEN: haendewaschen_sound_inbetween,
+      HAENDEWASCHEN_THUMB: haendewaschen_sound_thumb,
       PEOPLEBOUNCY_GIRL_SNEEZE: peopleBouncy_girl_sneeze,
 
       PEOPLEBOUNCY_L_COUGH_1: peopelBouncy_L_cough_1,
