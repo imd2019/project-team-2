@@ -3,7 +3,7 @@ import FlyingLetter from "./flyingLetter.js";
 import Util from "./util.js";
 
 export default class People extends MoveableObject {
-  constructor(x, y) {
+  constructor(x, y, virusState) {
     super(x, y, 50, 100, window.ENUMS.SHAPE.ROUND);
     this.currentGender = "";
     this.genders = ["boy-", "girl-"];
@@ -32,6 +32,7 @@ export default class People extends MoveableObject {
     this.expressionTimer = 0;
     this.turnCooldown = 0;
     this.turnCooldownMax = 2;
+    this.virusState = virusState;
   }
 
   init() {
@@ -212,7 +213,16 @@ export default class People extends MoveableObject {
   draw() {
     this.updateImage();
     if (this.isActivePlayer) {
-      image(window.ENUMS.IMAGE.VIRUS_1, 0, -40, 25, 25);
+      switch (this.virusState) {
+        case 1:
+        case 2:
+        case 3:
+          image(window.ENUMS.IMAGE.VIRUS_2, 0, -40, 25, 25);
+          break;
+        case 4:
+          image(window.ENUMS.IMAGE.VIRUS_3, 0, -40, 25, 25);
+          break;
+      }
     }
     if (
       this.currentExpression === this.expressions.sneeze &&

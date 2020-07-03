@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 0;
+    this.level = 2;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -166,15 +166,18 @@ export default class PeopleBouncy extends Scene {
       case 4:
         this.mentorVirus.hideText();
         this.mentorVirus.disable();
+        this.sign_level.disable();
+        this.weiterButton.disable();
         this.peopleSize = 2;
-        let people = new People(400, 400);
+        let people = new People(400, 400, 4);
         people.init();
-        people.setActivityFixGoal(900, 400);
+        people.currentGender = "girl-";
+        people.setActivityFixGoal(660, 400);
         people.scaleSize(this.peopleSize);
         people.setMaxMinSpeed(3, -3);
         this.people.push(people);
         this.addChild(people);
-        let hannah = new Hannah(1000, 400);
+        let hannah = new Hannah(770, 400);
         hannah.init();
         hannah.scaleSize(this.peopleSize);
         this.people.push(hannah);
@@ -225,7 +228,7 @@ export default class PeopleBouncy extends Scene {
   spawnPeople(count, pMask) {
     for (let i = 0; i < count; i++) {
       let pos = this.playground.getRealRandomPosition();
-      let people = new People(pos.x, pos.y);
+      let people = new People(pos.x, pos.y, this.level);
       people.init();
       people.scaleSize(this.peopleSize);
       let r = random();
@@ -283,7 +286,14 @@ export default class PeopleBouncy extends Scene {
         let pos = this.getCurrentPlayer().getRealXY();
         let vel = this.getCurrentPlayer().getVirusOutputVelocity();
         if (vel.x != 0 || vel.y != 0) {
-          let virus = new VirusProjectile(pos.x, pos.y, vel.x, vel.y, vel.dir);
+          let virus = new VirusProjectile(
+            pos.x,
+            pos.y,
+            vel.x,
+            vel.y,
+            vel.dir,
+            this.level
+          );
           virus.scaleSize(this.peopleSize);
           virus.init();
           this.viruses.push(virus);
@@ -308,7 +318,11 @@ export default class PeopleBouncy extends Scene {
   checkCollision() {
     let result = this.checkPeopleVirusCollision();
     if (result) {
-      this.switchActivePlayer(this.people.indexOf(result.people));
+      if (result.people instanceof Hannah) {
+        result.people.infect();
+      } else {
+        this.switchActivePlayer(this.people.indexOf(result.people));
+      }
       this.deleteVirus(result.virus);
     }
     this.checkPeopleTalkCollision();
@@ -351,7 +365,6 @@ export default class PeopleBouncy extends Scene {
           let rnd = random(1);
           if (rnd < 0.002) {
             let partner = random(peopleToTalk);
-            console.log(partner);
             element1.setupTalk(partner);
             partner.setupTalk(element1);
           }
