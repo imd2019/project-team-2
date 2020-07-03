@@ -389,10 +389,10 @@ function preload() {
   haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.m4a");
   haendewaschen_sound_tips.setVolume(2.5);
 
-  haendewaschen_sound_inbetween = loadSound("sound/d_Daumen.m4a");
+  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.m4a");
   haendewaschen_sound_inbetween.setVolume(2.5);
 
-  haendewaschen_sound_thumb = loadSound("sound/d_Zwischenräume.m4a");
+  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.m4a");
   haendewaschen_sound_thumb.setVolume(2.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
@@ -434,6 +434,25 @@ function preload() {
 
   peopelBouncy_F_sneeze_3 = loadSound("sound/f_niesen3.mp3");
   peopelBouncy_F_sneeze_3.setVolume(0.3);
+
+  //People Bouncy Diandra Sound
+  peopelBouncy_D_cough_1 = loadSound("sound/d_Husten.m4a");
+  peopelBouncy_D_cough_1.setVolume(0.3);
+
+  peopelBouncy_D_cough_2 = loadSound("sound/d_Husten1.m4a");
+  peopelBouncy_D_cough_2.setVolume(0.3);
+
+  peopelBouncy_D_cough_3 = loadSound("sound/d_Husten2.m4a");
+  peopelBouncy_D_cough_3.setVolume(0.3);
+
+  peopelBouncy_D_sneeze_1 = loadSound("sound/d_Niesen.m4a");
+  peopelBouncy_D_sneeze_1.setVolume(0.3);
+
+  peopelBouncy_D_sneeze_2 = loadSound("sound/d_Niesen1.m4a");
+  peopelBouncy_D_sneeze_2.setVolume(0.3);
+
+  peopelBouncy_D_sneeze_3 = loadSound("sound/d_Niesen2.m4a");
+  peopelBouncy_D_sneeze_3.setVolume(0.3);
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
@@ -612,6 +631,13 @@ function setup() {
       PEOPLEBOUNCY_F_SNEEZE_1: peopelBouncy_F_sneeze_1,
       PEOPLEBOUNCY_F_SNEEZE_2: peopelBouncy_F_sneeze_2,
       PEOPLEBOUNCY_F_SNEEZE_3: peopelBouncy_F_sneeze_3,
+
+      PEOPLEBOUNCY_D_COUGH_1: peopelBouncy_D_cough_1,
+      PEOPLEBOUNCY_D_COUGH_2: peopelBouncy_D_cough_2,
+      PEOPLEBOUNCY_D_COUGH_3: peopelBouncy_D_cough_3,
+      PEOPLEBOUNCY_D_SNEEZE_1: peopelBouncy_D_sneeze_1,
+      PEOPLEBOUNCY_D_SNEEZE_2: peopelBouncy_D_sneeze_2,
+      PEOPLEBOUNCY_D_SNEEZE_3: peopelBouncy_D_sneeze_3,
     }),
 
     FONT: Object.freeze({
