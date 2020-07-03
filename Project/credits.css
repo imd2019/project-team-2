@@ -37,3 +37,14 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+
+.Quellen {
+  margin-left: 400px;
+  cursor: default;
+  font-family: "Frutiger";
+  color: white;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 20px;
+  margin-right: auto;
+}

@@ -51,10 +51,10 @@ h3 {
   background: url("images/MentorVirus_html.png");
 }
 .flex-item3 {
-  background: url("images/marie_gez.png");
+  background: url("images/html_hände.png");
 }
 .flex-item4 {
-  background: url("images/flo_gez.png");
+  background: url("images/html_peoplebouncy_girl.png");
 }
 
 /* .flex-item1:hover {
@@ -81,11 +81,20 @@ h3 {
   height: 220px;
   background-size: contain;
 }
-.text {
+.topic {
   cursor: default;
   font-family: "MarkerFelt";
   color: white;
   text-align: center;
   margin-top: 225px;
   font-size: 30px;
+}
+.detail {
+  height: 200px;
+  cursor: default;
+  font-family: "Frutiger";
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
 }
