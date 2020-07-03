@@ -125,7 +125,7 @@ let peopleBouncy_girl_sneeze;
 
 //Schriftarten
 let markerFelt;
-
+let frutiger;
 function preload() {
   console.log("preload");
 
@@ -388,6 +388,8 @@ function preload() {
 
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
+  frutiger = loadFont("typo/FrutigerLT45Light.ttf");
+
   // let fake = loadImage("asfjhkjashjfh.png");
   sketch._decrementPreload();
 }
@@ -551,6 +553,7 @@ function setup() {
 
     FONT: Object.freeze({
       MARKER_FELT: markerFelt,
+      FRUTIGER: frutiger,
     }),
   });
 }

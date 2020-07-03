@@ -15,8 +15,8 @@ export default class Game extends InteractiveObject {
     this.scenes = [];
     this.started = false;
     this.gameScores = {
-      haendewaschen: [],
-      people_bouncy: [],
+      haendewaschen: [0],
+      people_bouncy: [0, 0, 0],
     };
   }
 
