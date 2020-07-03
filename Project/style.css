@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100vw;
   height: 100vh;
 }
@@ -35,6 +35,7 @@ body {
 }
 
 #p5 {
+  background: url("images/html_hintergrund.png");
   display: flex;
   justify-content: center;
   width: 100vw;
