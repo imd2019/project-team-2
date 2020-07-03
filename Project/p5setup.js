@@ -389,10 +389,10 @@ function preload() {
   haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.m4a");
   haendewaschen_sound_tips.setVolume(2.5);
 
-  haendewaschen_sound_inbetween = loadSound("sound/d_Daumen.m4a");
+  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.m4a");
   haendewaschen_sound_inbetween.setVolume(2.5);
 
-  haendewaschen_sound_thumb = loadSound("sound/d_Zwischenräume.m4a");
+  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.m4a");
   haendewaschen_sound_thumb.setVolume(2.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
