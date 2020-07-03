@@ -139,6 +139,14 @@ let peopelBouncy_F_cough_3;
 let peopelBouncy_F_sneeze_1;
 let peopelBouncy_F_sneeze_2;
 let peopelBouncy_F_sneeze_3;
+
+let peopelBouncy_D_cough_1;
+let peopelBouncy_D_cough_2;
+let peopelBouncy_D_cough_3;
+
+let peopelBouncy_D_sneeze_1;
+let peopelBouncy_D_sneeze_2;
+let peopelBouncy_D_sneeze_3;
 //Schriftarten
 let markerFelt;
 let frutiger;

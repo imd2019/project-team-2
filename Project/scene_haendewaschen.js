@@ -144,11 +144,11 @@ export default class Haendewaschen extends Scene {
             this.wait(3);
             break;
           case "spaces":
-            window.ENUMS.SOUND.HAENDEWASCHEN_THUMB.play();
-            this.wait(3.5);
+            window.ENUMS.SOUND.HAENDEWASCHEN_INBETWEEN.play();
+            this.wait(4);
             break;
           case "thumb":
-            window.ENUMS.SOUND.HAENDEWASCHEN_INBETWEEN.play();
+            window.ENUMS.SOUND.HAENDEWASCHEN_THUMB.play();
             this.wait(3);
             break;
         }

@@ -220,6 +220,7 @@ export default class People extends MoveableObject {
   setVoice(gender) {
     switch (gender) {
       case "girl-":
+      // this.voice = random(["d", "m"]);
       case "boy-":
         this.voice = random(["l", "f"]);
         break;
