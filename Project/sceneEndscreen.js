@@ -17,20 +17,41 @@ export default class Endscreen extends Scene {
       this.datafetched = true;
     }
     if (this.playVideo) {
-      this.switchDom("end");
-      this.showDom();
-      this.setDomSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
-      this.setDomOffset(window.ENUMS.POS.X, window.ENUMS.POS.Y);
-      this.playDom();
-      this.wait(3);
+      //   this.switchDom("end");
+      //   this.showDom();
+      //   this.setDomSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
+      //   this.setDomOffset(window.ENUMS.POS.X, window.ENUMS.POS.Y);
+      //   this.playDom();
+      //   this.wait(3);
       this.playVideo = false;
     } else {
-      this.hideDom();
+      //   this.hideDom();
     }
   }
   draw() {
     if (this.playVideo) return;
-    if (this.scores.length > 0)
-      text(this.scores.people_bouncy[0] + "", 100, 100);
+    let midScreen = {
+      x: window.ENUMS.SIZE.X / 2,
+      y: window.ENUMS.SIZE.Y / 2,
+    };
+    console.log("hi");
+    fill(255);
+    textSize(40);
+    textFont(window.ENUMS.FONT.MARKER_FELT);
+    textAlign(CENTER);
+    text("Oh Nein, du hast deine Freundin Hannah infiziert!", midScreen.x, 70);
+    textSize(27);
+    textFont(window.ENUMS.FONT.FRUTIGER);
+
+    text(
+      "Das sollte dir mit deinen Freunden in Wirklichkeit nicht passieren.\n Wenn du husten oder niesen musst, dann halte Abstand von anderen Menschen.",
+      midScreen.x - 550,
+      120,
+      1100
+    );
+    text("Händewaschen", midScreen.x - 400, 270);
+    text("Versuche: " + this.scores.haendewaschen[0], midScreen.x - 400, 320);
+    imageMode(CENTER);
+    image(window.ENUMS.IMAGE.HAND_HEATMAP, midScreen.x - 400, 370, 300, 300);
   }
 }
