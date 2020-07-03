@@ -1,5 +1,7 @@
 body {
-  background-color: #2c9dc6;
+  background-image: url("images/loading.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -7,5 +9,4 @@ body {
   position: relative;
   width: 1366px;
   height: 768px;
-  background: url("images/loading.gif");
 }
