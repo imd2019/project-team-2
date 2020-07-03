@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 0;
+    this.level = 2;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -137,7 +137,7 @@ export default class PeopleBouncy extends Scene {
     this.level++;
     this.setupPlayground(this.level);
     this.deletePeople();
-    this.wecker.zeit = 30;
+    this.wecker.zeit = 4;
     this.weiterButton.disable(false);
     switch (this.level) {
       case 1:

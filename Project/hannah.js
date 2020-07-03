@@ -78,6 +78,12 @@ export default class Hannah extends People {
   }
   infect() {
     window.dispatchEvent(new CustomEvent("hannahInfected"));
+    window.dispatchEvent(
+      new CustomEvent("nextScene", {
+        detail: window.ENUMS.SCENE_NAMES.END_SCREEN,
+      })
+    );
+
     this.health = this.healthConditions.sick;
   }
 }

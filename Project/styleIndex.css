@@ -5,7 +5,8 @@ body {
 
 #p5_loading {
   position: relative;
-  width: 1366px;
-  height: 768px;
+  width: 656px;
+  height: 368px;
   background: url("images/loading.gif");
+  background-size: contain;
 }

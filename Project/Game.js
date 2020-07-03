@@ -30,6 +30,9 @@ export default class Game extends InteractiveObject {
     window.addEventListener("setGameScore", (e) => {
       this.setGameScore(e.detail.game, e.detail.score);
     });
+    window.addEventListener("getGameScores", (e) => {
+      this.getGameScores(e.detail);
+    });
   }
 
   update() {}
@@ -109,11 +112,14 @@ export default class Game extends InteractiveObject {
     return result;
   }
 
+  getGameScores(scene) {
+    scene.scores = this.gameScores;
+  }
+
   setGameScore(game, score) {
     for (let i in score) {
       this.gameScores[game].push(score[i]);
     }
-    // this.nextScene(window.ENUMS.SCENE_NAMES.END_SCREEN);
     console.log(this.gameScores);
   }
 }
