@@ -33,7 +33,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
+canvas,
+video,
+img {
+  width: 75% !important;
+  height: auto !important;
+}
 #p5 {
   background: url("images/html_hintergrund.png");
   display: flex;

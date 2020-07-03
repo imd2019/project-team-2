@@ -9,6 +9,7 @@ import Haendewaschen from "./scene_haendewaschen.js";
 import Startscreen from "./scene_startscreen.js";
 import Map from "./scene_map.js";
 import PeopleBouncy from "./scene_peopleBouncy.js";
+import Endscreen from "./sceneEndscreen.js";
 
 let weiter;
 let world;
@@ -20,7 +21,7 @@ let testScene2;
 let sceneHaendewaschen;
 let sceneMap1;
 let scenePeopleBouncy;
-
+let sceneEnd;
 let sceneStartscreen;
 
 function draw() {
@@ -36,12 +37,14 @@ function draw() {
     sceneHaendewaschen = new Haendewaschen();
     testScene = new Scene("SzeneTest");
     testScene2 = new Scene("SzeneTest2");
+    sceneEnd = new Endscreen();
 
     world.addScene(sceneMap1);
     world.addScene(sceneHaendewaschen);
     world.addScene(scenePeopleBouncy);
     world.addScene(testScene);
     world.addScene(testScene2);
+    world.addScene(sceneEnd);
 
     world.start();
     test = new Test();
@@ -52,7 +55,7 @@ function draw() {
     testScene2.addChild(test);
     world.onInit();
 
-    world.nextScene(window.ENUMS.SCENE_NAMES.START);
+    world.nextScene(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
 
     init = false;
   }

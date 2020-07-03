@@ -110,8 +110,9 @@ let animation_brown_lack_palm;
 let animation_brown_lack_tips;
 let animation_brown_lack_spaces;
 let animation_brown_lack_thumb;
-
+//Videos
 let animation_traum;
+let peopleBouncyEnd;
 let testVideo;
 
 //Sound
@@ -353,8 +354,11 @@ function preload() {
   animation_brown_lack_spaces.hide();
   animation_brown_lack_thumb.hide();
 
+  //Video
   animation_traum = sketch.createVideo("videos/StartAnimation.mp4");
   animation_traum.hide();
+  peopleBouncyEnd = sketch.createVideo("videos/PeopleBouncy_Zerreissen.mp4");
+  peopleBouncyEnd.hide();
 
   testVideo = sketch.createVideo("videos/Backup.mp4");
   testVideo.hide();
@@ -423,6 +427,7 @@ function setup() {
       HAENDEWASCHEN: "Haendewaschen",
       MASK: "SzeneTest",
       PEOPLE_BOUNCY: "PeopleBouncy",
+      END_SCREEN: "Endscreen",
     }),
 
     IMAGE: Object.freeze({
@@ -531,6 +536,7 @@ function setup() {
       ANIMATION_BROWN_LACK_THUMB: animation_brown_lack_thumb,
 
       ANIMATION_TRAUM: animation_traum,
+      PEOPLE_BOUNCY_END: peopleBouncyEnd,
 
       TEST_VIDEO: testVideo,
     }),

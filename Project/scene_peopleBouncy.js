@@ -137,7 +137,7 @@ export default class PeopleBouncy extends Scene {
     this.level++;
     this.setupPlayground(this.level);
     this.deletePeople();
-    this.wecker.zeit = 5;
+    this.wecker.zeit = 4;
     this.weiterButton.disable(false);
     switch (this.level) {
       case 1:

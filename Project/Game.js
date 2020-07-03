@@ -30,6 +30,9 @@ export default class Game extends InteractiveObject {
     window.addEventListener("setGameScore", (e) => {
       this.setGameScore(e.detail.game, e.detail.score);
     });
+    window.addEventListener("getGameScores", (e) => {
+      this.getGameScores(e.detail);
+    });
   }
 
   update() {}
@@ -107,6 +110,10 @@ export default class Game extends InteractiveObject {
       }
     }
     return result;
+  }
+
+  getGameScores(scene) {
+    scene.scores = this.gameScores;
   }
 
   setGameScore(game, score) {
