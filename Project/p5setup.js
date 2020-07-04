@@ -450,22 +450,22 @@ function preload() {
   peopelBouncy_F_sneeze_3.setVolume(0.3);
 
   //People Bouncy Diandra Sound
-  peopelBouncy_D_cough_1 = loadSound("sound/d_Husten.m4a");
+  peopelBouncy_D_cough_1 = loadSound("sound/d_husten1.m4a");
   peopelBouncy_D_cough_1.setVolume(0.3);
 
-  peopelBouncy_D_cough_2 = loadSound("sound/d_Husten1.m4a");
+  peopelBouncy_D_cough_2 = loadSound("sound/d_husten2.m4a");
   peopelBouncy_D_cough_2.setVolume(0.3);
 
-  peopelBouncy_D_cough_3 = loadSound("sound/d_Husten2.m4a");
+  peopelBouncy_D_cough_3 = loadSound("sound/d_husten3.m4a");
   peopelBouncy_D_cough_3.setVolume(0.3);
 
-  peopelBouncy_D_sneeze_1 = loadSound("sound/d_Niesen.m4a");
+  peopelBouncy_D_sneeze_1 = loadSound("sound/d_niesen1.m4a");
   peopelBouncy_D_sneeze_1.setVolume(0.3);
 
-  peopelBouncy_D_sneeze_2 = loadSound("sound/d_Niesen1.m4a");
+  peopelBouncy_D_sneeze_2 = loadSound("sound/d_niesen2.m4a");
   peopelBouncy_D_sneeze_2.setVolume(0.3);
 
-  peopelBouncy_D_sneeze_3 = loadSound("sound/d_Niesen2.m4a");
+  peopelBouncy_D_sneeze_3 = loadSound("sound/d_niesen3.m4a");
   peopelBouncy_D_sneeze_3.setVolume(0.3);
 
   //People Bouncy Leander Sound
