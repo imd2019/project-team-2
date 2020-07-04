@@ -6,7 +6,6 @@
 #### Constructor
   Der Constructor verlangt **x**, **y**. Setzt alle unten aufgeführten Attribute.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -25,7 +24,6 @@
 |**offsetY** |Die Verschiebung, um welches das aktuelle Bild des Objektes beim Zeichnen in Y-Richtung verschoben wird.|
 |**visible** |Bestimmt, ob das Objekt dargestellt wird oder nicht. True: das aktuelle Image wird gezeichnet und die Draw-Funktion ausgeführt.| 
 |**parent** |Wenn das Objekt einem anderem Objekt(einem Elternobjekt) als Child zugewiesen wird, wird hier das Elternobejekt gespeichert.|
-<br>
 <br>
 
 #### Methoden
@@ -60,7 +58,6 @@
 #### Constructor
   Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. Außerdem wird die imageWidth und imageHeight gleich width und height gesetzt.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -77,7 +74,6 @@
 |**rotationOffsetY** |Verschiebung des Rotationspunktes in Y-Richtung|
 |**scaleOffsetX** |Verschiebung des Skalierungspunktes in X-Richtung|
 |**scaleOffsetY** |Verschiebung des Skalierungspunktes in Y-Richtung|
-<br>
 <br>
 
 #### Methoden
@@ -122,7 +118,6 @@
 #### Constructor
 Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. **minSpeed** und **maxSpeed** sind am Anfang 0!.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -135,7 +130,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 |**rotAcceleration**|Speichert die aktuelle Rotationsbeschleunigung als in Bogenmaß|
 |**maxRotSpeed**|Speichert die maximale **rotVelocity** in Bogenmaß |
 |**minRotSpeed**|Speichert die minimale **rotVelocity** in Bogenmaß |
-<br>
 <br>
 
 #### Methoden
@@ -161,7 +155,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 #### Constructor
 Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event**. Setzt alle unten aufgeführten Attribute.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -170,7 +163,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event
 |**animationProgress**|Speichert den durch die jeweilige Animationsfunktion errechneten Fortschritt der Animation 1 = 100%|
 |**animationSpeed**|legt den Wert fest, um den animationTime erhöht pro frame erhöht wird. Gibt somit auch die "Geschwindigkeit" der Animation vor|
 |**event**|Enthält den Namen des Events, welches beim drücken ausgeführt werden soll.|
-<br>
 <br>
 
 #### Methoden
@@ -181,12 +173,15 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event
 |  updateAnimationValues() | jedes update() | Wenn **hovered** false ist, wird die **animationTime** um **animationSpeed** reduziert, bis **animationTime** 0 ist. Wenn **hovered** true ist, wird die **animationTime** um **animationSpeed** erhöht, bis **animationTime** 1 ist. Je nach dem ob **hovered** true oder false ist, wird die **animationTime** durch eine Funktion von Util in den Animationsfortschritt umgewandelt und in **animationProgress** gespeichert.| nein |
 |  changeEvent(`event`) |custom | Setzt **event** auf `event`.| nein |
 | clicked() | Nach dem die Maus geklickt wurde | Überschreibt die clicked() Methode aus InteractiveObject. Ruft über den an das window angehängten Eventdispatcher das zugewiesene **event** auf.| nein|
+<br>
+<br>
+<br>
+<br>
 
 ### Scene extendes InteractiveObejct
 
 #### Constructor
 Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** und **height**. werden auf die Canvasgröße gesetzt.
-<br>
 <br>
 
 #### Attribute
@@ -194,13 +189,11 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 | --- | --- |
 |**name**|Speichert den Namen der Scene ab. Sollte einzigartig sein und in dem ENUM vermerkt sein! |
 <br>
-<br>
 
 #### Events
 |name|Bescheibung|
 | --- | --- |
 |*restartScene*|Führt restartScene() aus. Soll die ganze Scene neustarten.|
-<br>
 <br>
 
 #### Methoden
@@ -208,12 +201,15 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 | --- | --- | --- | --- |
 |  restartScene() | beim *restartScene* Event | Führt restart() aus, wenn **enabled** true ist.| nein |
 | restart() | nach restartScene() | Hier kann festgelegt werden, wie sich der Button bei veränderndem **animationProgress** verhalten soll.| ja|
+<br>
+<br>
+<br>
+<br>
 
 ### Game extendes InteractiveObejct
 
 #### Constructor
 Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** und **height**. werden auf die Canvasgröße gesetzt.
-<br>
 <br>
 
 #### Attribute
@@ -225,7 +221,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 |**started**| Gibt an ob das Spiel schon gestartet hat.|
 |**gameScores**| Speichert die Scores der Untersimulationen ab.|
 <br>
-<br>
 
 #### Events
 |name|Bescheibung|
@@ -235,7 +230,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 |*setGameScore*| Führt setGameScore(game,score) aus. Muss einen Szenennamen und ein Array mit den scores beinhalten.|
 |*getGameScore*| Führt getGameScore(Objekt) aus. Sollte das Objekt beinhalten, welches das Event aufruft, um diesen alle scores mitzuteilen.|
 <br>
-<br>
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
@@ -243,7 +237,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 | init() | beim Starten der Anwendung | Eventdispatcher werden festgelegt.| nein|
 | addScene(`scene`) | custom | Hängt die `scene` an das **scenes** Array hinten an.| nein |
 | start() | custom | Setzt **started** auf true wenn **scenes** eine mindestlänge von 1 hat. Setzt **currentScene** auf 0 und wechselt auf diese Szene| nein |
-
 |  nextScene(`specific`) | beim *nextScene* Event | Wenn ein Szenenname mitgegeben wird, wird **currentScene** auf den Index der Szene mit diesen Namen gesetzt. Wenn nicht wird **currentScene** um eins erhöht.| nein |
 |  getCurrentScene() | custom | Gibt das aktuell ausgewählte Szenen Obejekt zurück.| nein |
 |  switchToMap(`mapState`) | custom | Wechselt die Szene auf die Karte und setzt den Status der Karte auf `mapState`| nein |
