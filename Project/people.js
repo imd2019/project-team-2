@@ -218,6 +218,11 @@ export default class People extends MoveableObject {
     this.addVoiceline("d", window.ENUMS.SOUND.PEOPLEBOUNCY_D_SNEEZE_2);
     this.addVoiceline("d", window.ENUMS.SOUND.PEOPLEBOUNCY_D_SNEEZE_3);
 
+    this.addVoiceline("m", window.ENUMS.SOUND.PEOPLEBOUNCY_M_COUGH_1);
+    this.addVoiceline("m", window.ENUMS.SOUND.PEOPLEBOUNCY_M_COUGH_2);
+    this.addVoiceline("m", window.ENUMS.SOUND.PEOPLEBOUNCY_M_SNEEZE_1);
+    this.addVoiceline("m", window.ENUMS.SOUND.PEOPLEBOUNCY_M_SNEEZE_2);
+
     this.switchImage(this.currentGender + this.currentDirection + this.health);
     this.setMaxMinSpeed(random(1, 3), random(-3, -1));
     this.switchActivity();
@@ -227,7 +232,7 @@ export default class People extends MoveableObject {
   setVoice(gender) {
     switch (gender) {
       case "girl-":
-        this.voice = random(["d"]);
+        this.voice = random(["d", "m"]);
         break;
       case "boy-":
         this.voice = random(["l", "f"]);
