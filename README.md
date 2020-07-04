@@ -181,6 +181,10 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event
 |  updateAnimationValues() | jedes update() | Wenn **hovered** false ist, wird die **animationTime** um **animationSpeed** reduziert, bis **animationTime** 0 ist. Wenn **hovered** true ist, wird die **animationTime** um **animationSpeed** erhöht, bis **animationTime** 1 ist. Je nach dem ob **hovered** true oder false ist, wird die **animationTime** durch eine Funktion von Util in den Animationsfortschritt umgewandelt und in **animationProgress** gespeichert.| nein |
 |  changeEvent(`event`) |custom | Setzt **event** auf `event`.| nein |
 | clicked() | Nach dem die Maus geklickt wurde | Überschreibt die clicked() Methode aus InteractiveObject. Ruft über den an das window angehängten Eventdispatcher das zugewiesene **event** auf.| nein|
+<br>
+<br>
+<br>
+<br>
 
 ### Scene extendes InteractiveObejct
 
@@ -208,6 +212,10 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 | --- | --- | --- | --- |
 |  restartScene() | beim *restartScene* Event | Führt restart() aus, wenn **enabled** true ist.| nein |
 | restart() | nach restartScene() | Hier kann festgelegt werden, wie sich der Button bei veränderndem **animationProgress** verhalten soll.| ja|
+<br>
+<br>
+<br>
+<br>
 
 ### Game extendes InteractiveObejct
 
