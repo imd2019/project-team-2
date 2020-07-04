@@ -30,14 +30,19 @@ export class DisplayObject {
     this.visible = hide ? false : true;
   }
 
+  setRotInDegree(degree) {
+    this.rot = radians(degree);
+  }
+
+  //Setze das bildliche Offset des Objektes
+  setOffset(x, y) {
+    this.offSetX = x;
+    this.offSetY = y;
+  }
+
   //Fügt ein neues Bild der BilderListe hinzu unter dem endsprechenden Schlüssel
   addImage(key, image) {
     this.images[key] = image;
-  }
-
-  addDom(key, dom) {
-    dom.position(this.x, this.y);
-    this.doms[key] = dom;
   }
 
   //Wechselt das aktuelle Bild auf das Bild des entsprechenden Keys aus der Bilderliste
@@ -51,6 +56,17 @@ export class DisplayObject {
     return false;
   }
 
+  //Setzt die größen des aktuell gezeichneten Bildes neu
+  setImageSize(width, height) {
+    this.imageWidth = width;
+    this.imageHeight = height;
+  }
+
+  addDom(key, dom) {
+    dom.position(this.x, this.y);
+    this.doms[key] = dom;
+  }
+
   switchDom(key) {
     if (this.currentDom != undefined) {
       this.hideDom();
@@ -62,12 +78,6 @@ export class DisplayObject {
 
     console.error("There is no Dom named " + key);
     return false;
-  }
-
-  //Setzt die größen des aktuell gezeichneten Bildes neu
-  setImageSize(width, height) {
-    this.imageWidth = width;
-    this.imageHeight = height;
   }
 
   setDomSize(width, height) {
@@ -122,16 +132,6 @@ export class DisplayObject {
       );
       return false;
     }
-  }
-
-  setRotInDegree(degree) {
-    this.rot = radians(degree);
-  }
-
-  //Setze das bildliche Offset des Objektes
-  setOffset(x, y) {
-    this.offSetX = x;
-    this.offSetY = y;
   }
 
   setDomOffset(x, y) {

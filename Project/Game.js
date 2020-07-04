@@ -35,17 +35,11 @@ export default class Game extends InteractiveObject {
     });
   }
 
-  update() {}
-
   onInit() {
     this.init();
     for (let element of this.scenes) {
       element.onInit();
     }
-  }
-
-  clicked() {
-    // this.wait(4);
   }
 
   addScene(scene) {
@@ -73,11 +67,6 @@ export default class Game extends InteractiveObject {
     return this.scenes[this.currentScene];
   }
 
-  switchToMap(mapState) {
-    this.nextScene(window.ENUMS.SCENE_NAMES.MAP);
-    this.getCurrentScene().switchMapState(mapState);
-  }
-
   nextScene(specific = null) {
     if (this.started === true) {
       if (this.children.length > 0) this.removeChild(this.getCurrentScene());
@@ -89,18 +78,13 @@ export default class Game extends InteractiveObject {
         : (this.currentScene = this.getSceneByName(specific));
       this.addChild(this.getCurrentScene());
       this.getCurrentScene().enable();
-      this.onNextScene();
     }
   }
 
-  onNextScene() {}
-
-  end() {
-    this.start = false;
-    this.onEnd();
+  switchToMap(mapState) {
+    this.nextScene(window.ENUMS.SCENE_NAMES.MAP);
+    this.getCurrentScene().switchMapState(mapState);
   }
-
-  onEnd() {}
 
   getSceneByName(name) {
     let result = -1;
