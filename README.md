@@ -25,7 +25,6 @@
 |**visible** |Bestimmt, ob das Objekt dargestellt wird oder nicht. True: das aktuelle Image wird gezeichnet und die Draw-Funktion ausgeführt.| 
 |**parent** |Wenn das Objekt einem anderem Objekt(einem Elternobjekt) als Child zugewiesen wird, wird hier das Elternobejekt gespeichert.|
 <br>
-<br>
 
 #### Methoden
 | Name | Aufruf | Beschreibung|Leer|
@@ -59,7 +58,6 @@
 #### Constructor
   Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. Außerdem wird die imageWidth und imageHeight gleich width und height gesetzt.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -76,7 +74,6 @@
 |**rotationOffsetY** |Verschiebung des Rotationspunktes in Y-Richtung|
 |**scaleOffsetX** |Verschiebung des Skalierungspunktes in X-Richtung|
 |**scaleOffsetY** |Verschiebung des Skalierungspunktes in Y-Richtung|
-<br>
 <br>
 
 #### Methoden
@@ -121,7 +118,6 @@
 #### Constructor
 Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt alle unten aufgeführten Attribute. **minSpeed** und **maxSpeed** sind am Anfang 0!.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -134,7 +130,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 |**rotAcceleration**|Speichert die aktuelle Rotationsbeschleunigung als in Bogenmaß|
 |**maxRotSpeed**|Speichert die maximale **rotVelocity** in Bogenmaß |
 |**minRotSpeed**|Speichert die minimale **rotVelocity** in Bogenmaß |
-<br>
 <br>
 
 #### Methoden
@@ -160,7 +155,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**. Setzt a
 #### Constructor
 Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event**. Setzt alle unten aufgeführten Attribute.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -169,7 +163,6 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event
 |**animationProgress**|Speichert den durch die jeweilige Animationsfunktion errechneten Fortschritt der Animation 1 = 100%|
 |**animationSpeed**|legt den Wert fest, um den animationTime erhöht pro frame erhöht wird. Gibt somit auch die "Geschwindigkeit" der Animation vor|
 |**event**|Enthält den Namen des Events, welches beim drücken ausgeführt werden soll.|
-<br>
 <br>
 
 #### Methoden
@@ -190,20 +183,17 @@ Der Constructor verlangt **x**, **y**, **width**, **height**, **shape**, **event
 #### Constructor
 Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** und **height**. werden auf die Canvasgröße gesetzt.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
 | --- | --- |
 |**name**|Speichert den Namen der Scene ab. Sollte einzigartig sein und in dem ENUM vermerkt sein! |
 <br>
-<br>
 
 #### Events
 |name|Bescheibung|
 | --- | --- |
 |*restartScene*|Führt restartScene() aus. Soll die ganze Scene neustarten.|
-<br>
 <br>
 
 #### Methoden
@@ -221,7 +211,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 #### Constructor
 Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** und **height**. werden auf die Canvasgröße gesetzt.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
@@ -232,7 +221,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 |**started**| Gibt an ob das Spiel schon gestartet hat.|
 |**gameScores**| Speichert die Scores der Untersimulationen ab.|
 <br>
-<br>
 
 #### Events
 |name|Bescheibung|
@@ -241,7 +229,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 |*swtichToMap*| Führt switchToMap(mapState) aus. Muss einen MapStatus beinhalten.|
 |*setGameScore*| Führt setGameScore(game,score) aus. Muss einen Szenennamen und ein Array mit den scores beinhalten.|
 |*getGameScore*| Führt getGameScore(Objekt) aus. Sollte das Objekt beinhalten, welches das Event aufruft, um diesen alle scores mitzuteilen.|
-<br>
 <br>
 
 #### Methoden
