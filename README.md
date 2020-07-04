@@ -251,7 +251,6 @@ Der Constructor verlangt **name**. Setzt die **x** und **y** auf 0. **width** un
 | init() | beim Starten der Anwendung | Eventdispatcher werden festgelegt.| nein|
 | addScene(`scene`) | custom | Hängt die `scene` an das **scenes** Array hinten an.| nein |
 | start() | custom | Setzt **started** auf true wenn **scenes** eine mindestlänge von 1 hat. Setzt **currentScene** auf 0 und wechselt auf diese Szene| nein |
-
 |  nextScene(`specific`) | beim *nextScene* Event | Wenn ein Szenenname mitgegeben wird, wird **currentScene** auf den Index der Szene mit diesen Namen gesetzt. Wenn nicht wird **currentScene** um eins erhöht.| nein |
 |  getCurrentScene() | custom | Gibt das aktuell ausgewählte Szenen Obejekt zurück.| nein |
 |  switchToMap(`mapState`) | custom | Wechselt die Szene auf die Karte und setzt den Status der Karte auf `mapState`| nein |
