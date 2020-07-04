@@ -23,6 +23,7 @@ export default class Haendewaschen extends Scene {
     this.animationIndexNow = -1;
     this.savePlace = ["spaces", "tips", "thumb"];
     this.virusPositions = [];
+    this.trys = 0;
     window.addEventListener("VirusReleased", (e) => {
       this.virusReleased();
     });
@@ -38,7 +39,6 @@ export default class Haendewaschen extends Scene {
     window.addEventListener("heatmap", (e) => {
       this.showHeatmap();
     });
-    this.trys = 0;
   }
 
   init() {
@@ -176,6 +176,7 @@ export default class Haendewaschen extends Scene {
       this.mentorVirus.updateText(
         "Du wurdest abgewaschen! Probiere es nochmal ..."
       );
+      this.trys++;
       this.retryButton.enable();
     }
     //   this.mentorVirus.showText();
@@ -209,7 +210,6 @@ export default class Haendewaschen extends Scene {
     if (this.level == 4) {
       this.showHeatmap();
     } else {
-      this.trys++;
       this.weiterButton.disable(false);
       this.retryButton.disable(false);
       this.hand.setSpeed();
