@@ -74,6 +74,4 @@ export default class MoveableObject extends InteractiveObject {
     this.rotAcceleration = 0;
     this.rotVelocity = 0;
   }
-
-  onHit() {}
 }

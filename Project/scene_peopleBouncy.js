@@ -172,6 +172,7 @@ export default class PeopleBouncy extends Scene {
         let people = new People(400, 400, 4);
         people.init();
         people.currentGender = "girl-";
+        people.voice = "m";
         people.setActivityFixGoal(660, 400);
         people.scaleSize(this.peopleSize);
         people.setMaxMinSpeed(3, -3);
