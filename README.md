@@ -6,7 +6,6 @@
 #### Constructor
   Der Constructor verlangt **x**, **y**. Setzt alle unten aufgeführten Attribute.
 <br>
-<br>
 
 #### Attribute
 |name|Bescheibung|
