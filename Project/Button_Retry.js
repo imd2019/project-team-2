@@ -30,14 +30,6 @@ export default class Button_Retry extends Button {
     this.scaleAnimationStart = true;
   }
 
-  released() {
-    console.log("released");
-  }
-
-  pressed() {
-    console.log("pressed");
-  }
-
   updateAnimationValues() {
     super.updateAnimationValues();
     if (this.scaleAnimationStart) {
@@ -62,6 +54,4 @@ export default class Button_Retry extends Button {
     this.scale = 1 + 0.2 * this.scaleAnimationProgress;
     this.setRotInDegree(-90 * this.animationProgress);
   }
-
-  hoverEnd() {}
 }
