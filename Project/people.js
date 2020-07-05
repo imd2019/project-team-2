@@ -533,18 +533,13 @@ export default class People extends MoveableObject {
     if (dx > dy) {
       if (this.x > people.x) {
         this.currentDirection = this.directions.left;
-        console.log("links");
       } else {
         this.currentDirection = this.directions.right;
-        console.log("rechts");
       }
     } else {
       if (this.y > people.y) {
         this.currentDirection = this.directions.back;
-        console.log("nach oben");
       } else {
-        console.log("nach unten");
-
         this.currentDirection = this.directions.front;
       }
     }

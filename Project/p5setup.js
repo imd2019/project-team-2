@@ -37,6 +37,11 @@ let backgroundMap;
 let backgroundMap_2;
 let mentorVirus;
 let mentorVirusText;
+let endscreen_heatMap;
+let endscreen_schrift;
+let peopleBouncy_level1;
+let peopleBouncy_level2;
+let peopleBouncy_level3;
 
 //People von PeopleBouncy
 let peopleBouncy_boy_hinten;
@@ -167,6 +172,12 @@ function preload() {
   buttonRetry = loadImage("images/Button_Retry.png");
   buttonWeiterGrau = loadImage("images/Button_Weiter_grau.png");
   buttonRetryGrau = loadImage("images/Button_Retry_grau.png");
+  endscreen_heatMap = loadImage("images/Endscreen_HeatMap.png");
+  endscreen_schrift = loadImage("images/Endscreen_HeatMap_schrift.png");
+  peopleBouncy_level1 = loadImage("images/PeopleBouncy_level1.png");
+  peopleBouncy_level2 = loadImage("images/PeopleBouncy_level2.png");
+  peopleBouncy_level3 = loadImage("images/PeopleBouncy_level3.png");
+
   //Hände
   hand_white = loadImage("images/Haendewaschen_Weiss_Hand.png");
   hand_brown = loadImage("images/Haendewaschen_Braun_Hand.png");
@@ -450,10 +461,10 @@ function preload() {
   peopelBouncy_F_sneeze_3.setVolume(0.3);
 
   //People Bouncy Diandra Sound
-  peopelBouncy_D_cough_1 = loadSound("sound/d_husten1.m4a");
+  peopelBouncy_D_cough_1 = loadSound("sound/d_husten_1.m4a");
   peopelBouncy_D_cough_1.setVolume(0.3);
 
-  peopelBouncy_D_cough_2 = loadSound("sound/d_husten2.m4a");
+  peopelBouncy_D_cough_2 = loadSound("sound/d_husten_2.m4a");
   peopelBouncy_D_cough_2.setVolume(0.3);
 
   peopelBouncy_D_cough_3 = loadSound("sound/d_husten3.m4a");
@@ -535,6 +546,11 @@ function setup() {
       BUTTON_MENTORVIRUS: mentorVirus,
       BUTTON_MENTORVIRUSTEXT: mentorVirusText,
       EMOLGA: emolga,
+      ENDSCREEN_HEATMAP: endscreen_heatMap,
+      ENDSCREEN_SCHRIFT: endscreen_schrift,
+      PEOPLEBOUNCY_LEVEL1: peopleBouncy_level1,
+      PEOPLEBOUNCY_LEVEL2: peopleBouncy_level2,
+      PEOPLEBOUNCY_LEVEL3: peopleBouncy_level3,
 
       HAND_WHITE: hand_white,
       HAND_BROWN: hand_brown,

@@ -154,6 +154,7 @@ export class DisplayObject {
       pop();
     }
   }
+
   getRealXY() {
     let result = { x: this.x, y: this.y };
     let p = this.parent;
