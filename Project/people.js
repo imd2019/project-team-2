@@ -14,7 +14,7 @@ export default class People extends MoveableObject {
       right: "right",
       back: "back",
     };
-    this.voice = "l";
+    this.voice;
     this.voices = { l: [], d: [], f: [], m: [] };
     this.masked = "";
     this.virusCooldown = 0;
