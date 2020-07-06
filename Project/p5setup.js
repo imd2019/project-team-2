@@ -416,16 +416,16 @@ function preload() {
   song = loadSound("sound/DreamTransition.mp3");
   song.setVolume(0.2);
 
-  haendewaschen_sound_rub = loadSound("sound/d_Handflächen.m4a");
+  haendewaschen_sound_rub = loadSound("sound/d_Handflächen.mp3");
   haendewaschen_sound_rub.setVolume(2.5);
 
-  haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.m4a");
+  haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.mp3");
   haendewaschen_sound_tips.setVolume(2.5);
 
-  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.m4a");
+  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.mp3");
   haendewaschen_sound_inbetween.setVolume(2.5);
 
-  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.m4a");
+  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.mp3");
   haendewaschen_sound_thumb.setVolume(2.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
@@ -512,7 +512,7 @@ function preload() {
   peopleBouncy_bm_storm.setVolume(0.3);
 
   peopleBouncy_bm_wind = loadSound("sound/zapsplat_wind_window_hard.mp3");
-  peopleBouncy_bm_wind.setVolume(0.1);
+  peopleBouncy_bm_wind.setVolume(0.04);
 
   peopleBouncy_bm_classroom = loadSound(
     "sound/zapsplat_children_classroom.mp3"
