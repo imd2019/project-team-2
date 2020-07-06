@@ -161,8 +161,6 @@ let peopelBouncy_m_sneeze_2;
 
 //Hintergrund Musik
 
-let haendewaschen_bm;
-
 let peopleBouncy_bm_playground;
 let peopleBouncy_bm_storm;
 let peopleBouncy_bm_wind;
@@ -418,16 +416,16 @@ function preload() {
   song = loadSound("sound/DreamTransition.mp3");
   song.setVolume(0.2);
 
-  haendewaschen_sound_rub = loadSound("sound/d_Handflächen.m4a");
+  haendewaschen_sound_rub = loadSound("sound/d_Handflächen.mp3");
   haendewaschen_sound_rub.setVolume(2.5);
 
-  haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.m4a");
+  haendewaschen_sound_tips = loadSound("sound/d_Fingerspitzen.mp3");
   haendewaschen_sound_tips.setVolume(2.5);
 
-  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.m4a");
+  haendewaschen_sound_inbetween = loadSound("sound/d_Zwischenräume.mp3");
   haendewaschen_sound_inbetween.setVolume(2.5);
 
-  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.m4a");
+  haendewaschen_sound_thumb = loadSound("sound/d_Daumen.mp3");
   haendewaschen_sound_thumb.setVolume(2.5);
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
@@ -504,8 +502,6 @@ function preload() {
   peopelBouncy_m_sneeze_2.setVolume(0.3);
 
   //HintergrundMusik
-  haendewaschen_bm = loadSound("sound/zapsplat_menschenTalk.mp3");
-  haendewaschen_bm.setVolume(0.3);
 
   peopleBouncy_bm_playground = loadSound(
     "sound/zapsplat_playground_sounds.mp3"
@@ -516,7 +512,7 @@ function preload() {
   peopleBouncy_bm_storm.setVolume(0.3);
 
   peopleBouncy_bm_wind = loadSound("sound/zapsplat_wind_window_hard.mp3");
-  peopleBouncy_bm_wind.setVolume(0.1);
+  peopleBouncy_bm_wind.setVolume(0.04);
 
   peopleBouncy_bm_classroom = loadSound(
     "sound/zapsplat_children_classroom.mp3"
@@ -717,8 +713,6 @@ function setup() {
       PEOPLEBOUNCY_M_COUGH_2: peopelBouncy_m_cough_2,
       PEOPLEBOUNCY_M_SNEEZE_1: peopelBouncy_m_sneeze_1,
       PEOPLEBOUNCY_M_SNEEZE_2: peopelBouncy_m_sneeze_2,
-
-      HAENDEWASCHEN_BM: haendewaschen_bm,
 
       PEOPLEBOUNCY_BM_PLAYGROUND: peopleBouncy_bm_playground,
       PEOPLEBOUNCY_BM_STORM: peopleBouncy_bm_storm,
