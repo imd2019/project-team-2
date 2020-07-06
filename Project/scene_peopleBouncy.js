@@ -143,7 +143,7 @@ export default class PeopleBouncy extends Scene {
       case 1:
         window.ENUMS.SOUND.PEOPLEBOUNCY_BM_CLASSROOM.play();
         this.mentorVirus.updateText(
-          "Drücke die Leertaste, um andere anzustecken!"
+          "Wie viel kannst du anstecken? Drücke die Leertaste!"
         );
         this.peopleSize = 1.7;
         //   this.mentorVirus.showText();
