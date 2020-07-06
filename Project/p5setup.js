@@ -158,6 +158,13 @@ let peopelBouncy_m_cough_2;
 
 let peopelBouncy_m_sneeze_1;
 let peopelBouncy_m_sneeze_2;
+
+//Hintergrund Musik
+
+let peopleBouncy_bm_playground;
+let peopleBouncy_bm_storm;
+let peopleBouncy_bm_wind;
+
 //Schriftarten
 let markerFelt;
 let frutiger;
@@ -422,6 +429,7 @@ function preload() {
 
   peopleBouncy_girl_sneeze = loadSound("sound/PeopleBouncy_girl_sneeze.mp3");
   peopleBouncy_girl_sneeze.setVolume(0.3);
+
   //People Bouncy Leander Sound
   peopelBouncy_L_cough_1 = loadSound("sound/L_husten_1.mp3");
   peopelBouncy_L_cough_1.setVolume(0.3);
@@ -492,6 +500,17 @@ function preload() {
   peopelBouncy_m_sneeze_2 = loadSound("sound/m_niesen_2.mp3");
   peopelBouncy_m_sneeze_2.setVolume(0.3);
 
+  //HintergrundMusik
+  peopleBouncy_bm_playground = loadSound(
+    "sound/zapsplat_playground_sounds.mp3"
+  );
+  peopleBouncy_bm_playground.setVolume(0.02);
+
+  peopleBouncy_bm_storm = loadSound("sound/zapsplat_Thunderstrom.mp3");
+  peopleBouncy_bm_storm.setVolume(0.3);
+
+  peopleBouncy_bm_wind = loadSound("sound/zapsplat_wind_window_hard.mp3");
+  peopleBouncy_bm_wind.setVolume(0.1);
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
   frutiger = loadFont("typo/FrutigerLT45Light.ttf");
@@ -686,6 +705,10 @@ function setup() {
       PEOPLEBOUNCY_M_COUGH_2: peopelBouncy_m_cough_2,
       PEOPLEBOUNCY_M_SNEEZE_1: peopelBouncy_m_sneeze_1,
       PEOPLEBOUNCY_M_SNEEZE_2: peopelBouncy_m_sneeze_2,
+
+      PEOPLEBOUNCY_BM_PLAYGROUND: peopleBouncy_bm_playground,
+      PEOPLEBOUNCY_BM_STORM: peopleBouncy_bm_storm,
+      PEOPLEBOUNCY_BM_WIND: peopleBouncy_bm_wind,
     }),
 
     FONT: Object.freeze({
