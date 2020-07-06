@@ -505,7 +505,7 @@ function preload() {
 
   //HintergrundMusik
   haendewaschen_bm = loadSound("sound/zapsplat_menschenTalk.mp3");
-  haendewaschen_bm.setVolume(0.3);
+  haendewaschen_bm.setVolume(0.2);
 
   peopleBouncy_bm_playground = loadSound(
     "sound/zapsplat_playground_sounds.mp3"
