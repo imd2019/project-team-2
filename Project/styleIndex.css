@@ -1,11 +1,13 @@
 body {
   background-image: url("images/loading.gif");
+
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
 #p5_loading {
+  background-color: url("images/html_hintergrund.png");
   position: relative;
   width: 656px;
   height: 368px;
