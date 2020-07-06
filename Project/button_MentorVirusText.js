@@ -36,12 +36,12 @@ export default class Button_MentorVirusText extends Button {
   }
 
   isRetracting() {
-    if(!this.extend) {
-      if(this.animationTime==0){
-      return false;
+    if (!this.extend) {
+      if (this.animationTime == 0) {
+        return false;
       }
     }
-      return true;
+    return true;
   }
 
   updateAnimationValues() {
@@ -62,10 +62,4 @@ export default class Button_MentorVirusText extends Button {
   retract() {
     this.extend = false;
   }
-
-  pressed() {}
-
-  clicked() {}
-
-  hoverEnd() {}
 }

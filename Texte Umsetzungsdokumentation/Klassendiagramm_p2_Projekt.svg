@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1152.5 742.5" style="enable-background:new 0 0 1152.5 742.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st2{font-family:'FrutigerCE-Roman';}
+	.st3{font-size:12px;}
+</style>
+<g>
+	<path pointer-events="stroke" class="st0" d="M495.8,725.6l-42.5-0.1V17.6L419,17.6"/>
+	<path pointer-events="all" class="st0" d="M412,17.6l7-3.5l0,7L412,17.6z"/>
+	<path pointer-events="all" class="st1" d="M495.8,738.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M495.8,738.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 544.986 730.0851)" class="st2 st3">Playground</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M495.8,687.6l-42.5,0.1v-670L419,17.6"/>
+	<path pointer-events="all" class="st0" d="M412,17.6l7-3.5l0,7L412,17.6z"/>
+	<path pointer-events="all" class="st1" d="M495.8,700.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M495.8,700.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 559.0016 692.0851)" class="st2 st3">Game</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M495.8,487.6l-42.5,0.1v-470L419,17.6"/>
+	<path pointer-events="all" class="st0" d="M412,17.6l7-3.5l0,7L412,17.6z"/>
+	<path pointer-events="all" class="st1" d="M495.8,500.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M495.8,500.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 558.3278 492.0851)" class="st2 st3">Scene</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,487.6H664"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5v7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,500.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,500.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 767.6471 492.0851)" class="st2 st3">Scene_FlappyMask</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,517.6l-42.5,0.1v-30l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5l0,7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,530.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,530.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 755.2926 522.0851)" class="st2 st3">Scene_Haendewaschen</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,547.6l-42.5,0.1v-60l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5l0,7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,560.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,560.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 761.2955 552.0851)" class="st2 st3">Scene_PeopleBouncy</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,577.6l-42.5,0.1v-90l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5l0,7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,590.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,590.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 769.3112 582.0851)" class="st2 st3">Scene_Startscreen</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,607.6l-42.5,0.1v-120l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5l0,7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,620.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,620.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 771.3063 612.0851)" class="st2 st3">Scene_Endscreen</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,637.6l-42.5,0.1v-150l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,487.6l7-3.5l0,7L657,487.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,650.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,650.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 788.319 642.0851)" class="st2 st3">Scene_Map</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,277.6H664"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5v7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,290.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,290.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 786.986 282.0851)" class="st2 st3">Button_Start</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,307.6l-42.5,0.1v-30l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5l0,7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,320.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,320.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 787.985 312.0851)" class="st2 st3">Button_Map</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,337.6l-42.5,0.1v-60l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5l0,7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,350.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,350.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 785.3219 342.0851)" class="st2 st3">Button_Retry</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,367.6l-42.5,0.1v-90l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5l0,7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,380.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,380.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 782.4303 372.0851)" class="st2 st3">Button_Weiter</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,427.6l-42.5,0.1v-150l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5l0,7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,440.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,440.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 756.3033 432.0851)" class="st2 st3">Button_MentorVirusText</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,397.6l-42.5,0.1v-120l-34.4,0"/>
+	<path pointer-events="all" class="st0" d="M657,277.6l7-3.5l0,7L657,277.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,410.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,410.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 767.4215 402.0851)" class="st2 st3">Button_MentorVirus</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M495.8,277.6l-42.5,0.1v-260L419,17.6"/>
+	<path pointer-events="all" class="st0" d="M412,17.6l7-3.5l0,7L412,17.6z"/>
+	<path pointer-events="all" class="st1" d="M495.8,290.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M495.8,290.6h160"/>
+	<g>
+		<text transform="matrix(1.2509 0 0 1 557.9938 282.8664)" class="st2 st3">Button</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,223.6l-42.5-0.1V17.6L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,236.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,236.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 795.9948 228.0851)" class="st2 st3">Message</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,194.6h-42.5V17.6L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,207.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,207.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 805.9967 199.0851)" class="st2 st3">Hand</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,164.6h-42.5V17.6L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,177.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,177.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 808.3317 169.0851)" class="st2 st3">Sign</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,135.6l-42.5,0.1v-118L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,148.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,148.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 800.1139 140.0851)" class="st2 st3">Wecker</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,105.6l-42.5,0.1v-88L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,118.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,118.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 782.1022 110.0851)" class="st2 st3">VirusProjectile</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,76.6h-42.5V17.6L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,89.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,89.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 806.7789 81.0851)" class="st2 st3">Virus</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,46.6h-42.5V17.6L664,17.6"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5l0,7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,59.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,59.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 788.9928 51.0851)" class="st2 st3">FlyingLetter</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M495.8,17.6H419"/>
+	<path pointer-events="all" class="st0" d="M412,17.6l7-3.5v7L412,17.6z"/>
+	<path pointer-events="all" class="st1" d="M495.8,30.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M495.8,30.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 531.984 22.0851)" class="st2 st3">MoveableObject</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M250.8,17.6H174"/>
+	<path pointer-events="all" class="st0" d="M167,17.6l7-3.5v7L167,17.6z"/>
+	<path pointer-events="all" class="st1" d="M250.8,30.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M250.8,30.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 285.3199 22.0851)" class="st2 st3">InteractiveObject</text>
+	</g>
+	<path pointer-events="all" class="st1" d="M5.8,30.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M5.8,30.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 48.3268 22.0851)" class="st2 st3">DisplayObject</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M985.8,17.6H909"/>
+	<path pointer-events="all" class="st0" d="M902,17.6l7-3.5v7L902,17.6z"/>
+	<path pointer-events="all" class="st1" d="M985.8,30.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M985.8,30.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 1044.3229 22.0851)" class="st2 st3">Hannah</text>
+	</g>
+	<path pointer-events="stroke" class="st0" d="M740.8,17.6H664"/>
+	<path pointer-events="all" class="st0" d="M657,17.6l7-3.5v7L657,17.6z"/>
+	<path pointer-events="all" class="st1" d="M740.8,30.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M740.8,30.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 801.6578 22.0851)" class="st2 st3">People</text>
+	</g>
+	<path pointer-events="all" class="st1" d="M5.8,70.6v-26h160v26"/>
+	<path pointer-events="all" class="st0" d="M5.8,70.6h160"/>
+	<g>
+		<text transform="matrix(1 0 0 1 41.3189 62.0851)" class="st2 st3">EventDispatcher</text>
+	</g>
+</g>
+</svg>
