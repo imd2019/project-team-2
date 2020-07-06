@@ -51,35 +51,18 @@ h3 {
   background: url("images/MentorVirus_html.png");
 }
 .flex-item3 {
-  background: url("images/html_hände.png");
+  background: url("images/html_hände.png");
 }
 .flex-item4 {
   background: url("images/html_peoplebouncy_girl.png");
 }
-
-/* .flex-item1:hover {
-  background: url("images/leander.jpeg");
-  background-size: contain;
-}
-.flex-item2:hover {
-  background: url("images/diandra.jpg");
-  background-size: contain;
-}
-.flex-item3:hover {
-  background: url("images/marie.jpg");
-  background-size: contain;
-}
-.flex-item4:hover {
-  background: url("images/flo.jpg");
-  background-size: contain;
-} */
 
 .pnground {
   margin: 20px;
   border-radius: 50%;
   width: 220px;
   height: 220px;
-  background-size: contain;
+  background-size: cover;
 }
 .topic {
   cursor: default;
