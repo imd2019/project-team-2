@@ -143,7 +143,7 @@ export default class PeopleBouncy extends Scene {
       case 1:
         window.ENUMS.SOUND.PEOPLEBOUNCY_BM_CLASSROOM.play();
         this.mentorVirus.updateText(
-          "Drücke die Leertaste, um andere anzustecken!"
+          "Wie viel kannst du anstecken? Drücke die Leertaste!"
         );
         this.peopleSize = 1.7;
         //   this.mentorVirus.showText();
@@ -169,7 +169,7 @@ export default class PeopleBouncy extends Scene {
         break;
       case 4:
         window.ENUMS.SOUND.PEOPLEBOUNCY_BM_STORM.play();
-        this.mentorVirus.updateText("Oh, sieh mal, da ist ja Hannah!");
+        this.mentorVirus.updateText("Oh, sieh mal, da ist ja Hannah!", 25);
         this.sign_level.disable();
         this.weiterButton.disable();
         this.peopleSize = 2;

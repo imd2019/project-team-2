@@ -52,23 +52,23 @@ export default class Startscreen extends Scene {
 
     this.msg1 = new Message(
       770,
-      240,
+      243,
       100,
       "Diese Masken sind echt unbequem und was bringen die schon?"
     );
     this.addChild(this.msg1);
     this.msg2 = new Message(
       865,
-      325,
+      328,
       100,
-      "ja das frage ich mich auch und dieses ganze Händewaschen..."
+      "Ja, das frage ich mich auch und das ganze Händewaschen nervt"
     );
     this.addChild(this.msg2);
     this.msg3 = new Message(
       850,
-      450,
+      453,
       100,
-      "Ja, das nervt. Weißt du denn eigentlich, wie man sich richtig verhält? Oder wie richtige Hygiene funktioniert?"
+      "Ja, d  Stimmt. Weißt du den  eigentlich, wie du dich richtig verhälst?"
     );
     this.addChild(this.msg3);
 

@@ -169,6 +169,7 @@ let peopleBouncy_bm_classroom;
 //Schriftarten
 let markerFelt;
 let frutiger;
+let frutiger_roman;
 function preload() {
   console.log("preload");
 
@@ -522,6 +523,7 @@ function preload() {
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
   frutiger = loadFont("typo/FrutigerLT45Light.ttf");
+  frutiger_roman = loadFont("typo/FrutigerCE55Roman.ttf");
 
   // let fake = loadImage("asfjhkjashjfh.png");
   sketch._decrementPreload();
@@ -723,6 +725,7 @@ function setup() {
     FONT: Object.freeze({
       MARKER_FELT: markerFelt,
       FRUTIGER: frutiger,
+      FRUTIGER_ROMAN: frutiger_roman,
     }),
   });
 }

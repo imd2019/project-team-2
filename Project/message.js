@@ -26,7 +26,7 @@ export default class Message extends MoveableObject {
     rect(0, 0, this.width, this.height, 10);
     fill(0);
     textSize(16);
-    textFont(window.ENUMS.FONT.MARKER_FELT);
-    text(this.msg, 5, 21, this.width - 5);
+    textFont(window.ENUMS.FONT.FRUTIGER_ROMAN);
+    text(this.msg, 10, 33, this.width - 10);
   }
 }
