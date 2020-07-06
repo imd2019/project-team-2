@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 0;
+    this.level = 2;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -149,6 +149,7 @@ export default class PeopleBouncy extends Scene {
         this.spawnPeople(10, 0);
         break;
       case 2:
+        window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.play();
         this.mentorVirus.updateText(
           "Oh nein, Schutzmasken! Schützen sie wirklich?"
         );
@@ -157,6 +158,8 @@ export default class PeopleBouncy extends Scene {
         this.spawnPeople(25, 0.5);
         break;
       case 3:
+        window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.play();
+        window.ENUMS.SOUND.PEOPLEBOUNCY_BM_WIND.play();
         this.mentorVirus.updateText(
           "Was sie sich jetzt wohl ausgedacht haben ?"
         );
@@ -164,8 +167,8 @@ export default class PeopleBouncy extends Scene {
         this.spawnPeople(20, 1);
         break;
       case 4:
-        this.mentorVirus.hideText();
-        this.mentorVirus.disable();
+        window.ENUMS.SOUND.PEOPLEBOUNCY_BM_STORM.play();
+        this.mentorVirus.updateText("Oh sie mal da ist ja Hannah!");
         this.sign_level.disable();
         this.weiterButton.disable();
         this.peopleSize = 2;
@@ -435,6 +438,8 @@ export default class PeopleBouncy extends Scene {
   }
 
   levelEnd() {
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.stop();
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_WIND.stop();
     let score = round(this.countInfectedPeople());
     this.mentorVirus.updateText(
       "Die Zeit ist um. Du hast " + score + "% der Schüler infiziert."
@@ -447,6 +452,8 @@ export default class PeopleBouncy extends Scene {
   }
 
   sceneEnd() {
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_STORM.stop();
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.stop();
     window.dispatchEvent(
       new CustomEvent("setGameScore", {
         detail: { game: "people_bouncy", score: this.scores },
