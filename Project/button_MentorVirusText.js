@@ -8,6 +8,7 @@ export default class Button_MentorVirusText extends Button {
     this.textbubble = "";
     this.extend = false;
     this.animationSpeed = 0.1;
+    this.textSize = 20;
   }
 
   init() {
@@ -19,7 +20,7 @@ export default class Button_MentorVirusText extends Button {
 
   draw() {
     fill("white");
-    textSize(20);
+    textSize(this.textSize);
     textFont(window.ENUMS.FONT.MARKER_FELT);
     textAlign(CENTER);
     if (this.animationProgress === 1)
