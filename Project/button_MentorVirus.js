@@ -13,6 +13,7 @@ export default class Button_MentorVirus extends Button {
     this.wiggleTime = 0;
     this.wiggleSpeed = -0.16;
     this.wiggleProgress = 0;
+    this.textSize;
   }
 
   init() {
@@ -23,11 +24,12 @@ export default class Button_MentorVirus extends Button {
     console.log(this);
   }
 
-  updateText(string) {
-    this.textUpdate= string;
+  updateText(string, textSize = 20) {
+    this.textUpdate = string;
+    this.textSize = textSize;
     //  if(this.text){
-      this.hideText();
-   //}
+    this.hideText();
+    //}
     this.textIsUpdating = true;
   }
 
@@ -49,17 +51,17 @@ export default class Button_MentorVirus extends Button {
     }
   }
 
-update() {
-super.update();
-if(this.textIsUpdating){
-  if(!this.mentorVirusText.isRetracting()){
-    this.mentorVirusText.textbubble= this.textUpdate;
-    this.showText();
-    this.textIsUpdating=false;
+  update() {
+    super.update();
+    if (this.textIsUpdating) {
+      if (!this.mentorVirusText.isRetracting()) {
+        this.mentorVirusText.textbubble = this.textUpdate;
+        this.mentorVirusText.textSize = this.textSize;
+        this.showText();
+        this.textIsUpdating = false;
+      }
+    }
   }
-}
-
-}
 
   updateAnimationValues() {
     this.wiggleTime += this.wiggleSpeed;

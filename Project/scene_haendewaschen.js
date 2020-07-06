@@ -168,14 +168,22 @@ export default class Haendewaschen extends Scene {
       //Gewonnen
       this.virus.hide(false);
       this.animationRow.push("" + this.savePlace.splice(index, 1)[0]);
-      this.mentorVirus.updateText("Du hast es geschafft. Weiter gehts!");
+      if (this.level < 3) {
+        this.mentorVirus.updateText(
+          "Klasse! Du hast es geschafft. Weiter zur nächsten Person!"
+        );
+      } else if (this.level === 3) {
+        this.mentorVirus.updateText(
+          "Klasse! Du hast bestanden. Lass mich dir etwas zeigen."
+        );
+      }
       this.weiterButton.enable();
       this.level++;
       this.virusPositions.push({ x: this.virus.x, y: this.virus.y });
     } else {
       //Verloren
       this.mentorVirus.updateText(
-        "Du wurdest abgewaschen! Probiere es nochmal ..."
+        "Du wurdest abgewaschen! Findest du einen besseren Platz?"
       );
       this.trys++;
       this.retryButton.enable();
@@ -254,7 +262,9 @@ export default class Haendewaschen extends Scene {
     );
     this.weiterButton.changeEvent("switchToMap");
     this.weiterButton.switchSceneId = 2;
-    this.mentorVirus.updateText("Hier sind die Schwachstellen der Menschen.");
+    this.mentorVirus.updateText(
+      "Diese Stellen werden am häufigsten übersehen."
+    );
     // this.mentorVirus.showText();
   }
 
