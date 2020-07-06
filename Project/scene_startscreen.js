@@ -14,6 +14,7 @@ export default class Startscreen extends Scene {
       this.animationTraum();
     });
     this.goToMap = false;
+    this.msgSend = false;
   }
 
   animationTraum() {
@@ -27,11 +28,19 @@ export default class Startscreen extends Scene {
   }
 
   update() {
+    if (!this.msgSend) this.sendMessages();
     if (this.goToMap) {
       this.stopDom();
       this.hideDom();
       window.dispatchEvent(new CustomEvent("nextScene"));
     }
+  }
+
+  sendMessages() {
+    this.msgSend = true;
+    this.msg1.enable();
+    this.msg2.enable();
+    this.msg3.enable();
   }
 
   init() {
@@ -63,6 +72,10 @@ export default class Startscreen extends Scene {
     );
     this.addChild(this.msg3);
 
+    this.msg1.disable();
+    this.msg2.disable();
+    this.msg3.disable();
+
     let loch = new DisplayObject(0, 0);
     loch.setImageSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
     loch.currentImage = window.ENUMS.IMAGE.BACKGROUND_STARTSCREEN_LOCH;
@@ -76,5 +89,6 @@ export default class Startscreen extends Scene {
     fingers.setImageSize(window.ENUMS.SIZE.X, window.ENUMS.SIZE.Y);
     fingers.currentImage = window.ENUMS.IMAGE.STARTSCREEN_FINGERS;
     this.addChild(fingers);
+    this.wait(0.7);
   }
 }

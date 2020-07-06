@@ -113,6 +113,7 @@ export default class Haendewaschen extends Scene {
     );
 
     this.addChild(this.mentorVirus);
+    this.setUpLevel();
   }
 
   virusReleased() {
@@ -209,7 +210,9 @@ export default class Haendewaschen extends Scene {
   setUpLevel() {
     if (this.level == 4) {
       this.showHeatmap();
+      window.ENUMS.SOUND.HAENDEWASCHEN_BM.stop();
     } else {
+      window.ENUMS.SOUND.HAENDEWASCHEN_BM.play();
       this.weiterButton.disable(false);
       this.retryButton.disable(false);
       this.hand.setSpeed();

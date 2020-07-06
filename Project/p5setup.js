@@ -161,9 +161,12 @@ let peopelBouncy_m_sneeze_2;
 
 //Hintergrund Musik
 
+let haendewaschen_bm;
+
 let peopleBouncy_bm_playground;
 let peopleBouncy_bm_storm;
 let peopleBouncy_bm_wind;
+let peopleBouncy_bm_classroom;
 
 //Schriftarten
 let markerFelt;
@@ -501,6 +504,9 @@ function preload() {
   peopelBouncy_m_sneeze_2.setVolume(0.3);
 
   //HintergrundMusik
+  haendewaschen_bm = loadSound("sound/zapsplat_menschenTalk.mp3");
+  haendewaschen_bm.setVolume(0.3);
+
   peopleBouncy_bm_playground = loadSound(
     "sound/zapsplat_playground_sounds.mp3"
   );
@@ -511,6 +517,12 @@ function preload() {
 
   peopleBouncy_bm_wind = loadSound("sound/zapsplat_wind_window_hard.mp3");
   peopleBouncy_bm_wind.setVolume(0.1);
+
+  peopleBouncy_bm_classroom = loadSound(
+    "sound/zapsplat_children_classroom.mp3"
+  );
+  peopleBouncy_bm_classroom.setVolume(0.02);
+
   //typo
   markerFelt = loadFont("typo/MarkerFelt.ttf");
   frutiger = loadFont("typo/FrutigerLT45Light.ttf");
@@ -706,9 +718,12 @@ function setup() {
       PEOPLEBOUNCY_M_SNEEZE_1: peopelBouncy_m_sneeze_1,
       PEOPLEBOUNCY_M_SNEEZE_2: peopelBouncy_m_sneeze_2,
 
+      HAENDEWASCHEN_BM: haendewaschen_bm,
+
       PEOPLEBOUNCY_BM_PLAYGROUND: peopleBouncy_bm_playground,
       PEOPLEBOUNCY_BM_STORM: peopleBouncy_bm_storm,
       PEOPLEBOUNCY_BM_WIND: peopleBouncy_bm_wind,
+      PEOPLEBOUNCY_BM_CLASSROOM: peopleBouncy_bm_classroom,
     }),
 
     FONT: Object.freeze({

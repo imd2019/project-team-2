@@ -37,9 +37,6 @@ export default class Game extends InteractiveObject {
 
   onInit() {
     this.init();
-    for (let element of this.scenes) {
-      element.onInit();
-    }
   }
 
   addScene(scene) {
@@ -76,6 +73,7 @@ export default class Game extends InteractiveObject {
       specific === null
         ? this.currentScene++
         : (this.currentScene = this.getSceneByName(specific));
+      this.getCurrentScene().onInit();
       this.addChild(this.getCurrentScene());
       this.getCurrentScene().enable();
     }

@@ -24,10 +24,12 @@ export default class InteractiveObject extends DisplayObject {
     this.rotationOffsetY = 0;
     this.scaleOffsetX = 0;
     this.scaleOffsetY = 0;
+    this.initialized = false;
   }
 
   onInit() {
-    if (this.enable) {
+    if (this.enable && !this.initialized) {
+      this.initialized = true;
       this.init();
       for (let element of this.children) {
         if (element instanceof InteractiveObject) {

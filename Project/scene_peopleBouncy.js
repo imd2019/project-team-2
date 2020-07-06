@@ -13,7 +13,7 @@ import Hannah from "./hannah.js";
 export default class PeopleBouncy extends Scene {
   constructor() {
     super(window.ENUMS.SCENE_NAMES.PEOPLE_BOUNCY);
-    this.level = 2;
+    this.level = 0;
     this.sign_level;
     this.sign_name;
     this.wecker;
@@ -141,6 +141,7 @@ export default class PeopleBouncy extends Scene {
     this.weiterButton.disable(false);
     switch (this.level) {
       case 1:
+        window.ENUMS.SOUND.PEOPLEBOUNCY_BM_CLASSROOM.play();
         this.mentorVirus.updateText(
           "Drücke die Leertaste, um andere anzustecken!"
         );
@@ -440,6 +441,8 @@ export default class PeopleBouncy extends Scene {
   levelEnd() {
     window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.stop();
     window.ENUMS.SOUND.PEOPLEBOUNCY_BM_WIND.stop();
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_CLASSROOM.stop();
+
     let score = round(this.countInfectedPeople());
     this.mentorVirus.updateText(
       "Die Zeit ist um. Du hast " + score + "% der Schüler infiziert."
@@ -452,6 +455,7 @@ export default class PeopleBouncy extends Scene {
   }
 
   sceneEnd() {
+    window.ENUMS.SOUND.PEOPLEBOUNCY_BM_CLASSROOM.stop();
     window.ENUMS.SOUND.PEOPLEBOUNCY_BM_STORM.stop();
     window.ENUMS.SOUND.PEOPLEBOUNCY_BM_PLAYGROUND.stop();
     window.dispatchEvent(
