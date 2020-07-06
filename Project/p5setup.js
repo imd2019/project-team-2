@@ -161,8 +161,6 @@ let peopelBouncy_m_sneeze_2;
 
 //Hintergrund Musik
 
-let haendewaschen_bm;
-
 let peopleBouncy_bm_playground;
 let peopleBouncy_bm_storm;
 let peopleBouncy_bm_wind;
@@ -504,8 +502,6 @@ function preload() {
   peopelBouncy_m_sneeze_2.setVolume(0.3);
 
   //HintergrundMusik
-  haendewaschen_bm = loadSound("sound/zapsplat_menschenTalk.mp3");
-  haendewaschen_bm.setVolume(0.2);
 
   peopleBouncy_bm_playground = loadSound(
     "sound/zapsplat_playground_sounds.mp3"
@@ -717,8 +713,6 @@ function setup() {
       PEOPLEBOUNCY_M_COUGH_2: peopelBouncy_m_cough_2,
       PEOPLEBOUNCY_M_SNEEZE_1: peopelBouncy_m_sneeze_1,
       PEOPLEBOUNCY_M_SNEEZE_2: peopelBouncy_m_sneeze_2,
-
-      HAENDEWASCHEN_BM: haendewaschen_bm,
 
       PEOPLEBOUNCY_BM_PLAYGROUND: peopleBouncy_bm_playground,
       PEOPLEBOUNCY_BM_STORM: peopleBouncy_bm_storm,
