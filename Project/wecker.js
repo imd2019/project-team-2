@@ -3,7 +3,8 @@ import Util from "./util.js";
 
 export default class Wecker extends MoveableObject {
   constructor(x, y) {
-    super(x, y, 246 / 3.5, 480 / 3.5, window.ENUMS.SHAPE.RECT);
+    //246
+    super(x, y, 90, 115, window.ENUMS.SHAPE.RECT);
     this.setOffset(0, -5);
     this.zeit = 5;
     this.animationTime = 0;
@@ -11,11 +12,13 @@ export default class Wecker extends MoveableObject {
     this.wiggleTime = 0;
     this.wiggleSpeed = -0.2;
     this.wiggleProgress = 0;
-    this.setRotationOffset(35, 0);
+    this.setRotationOffset(45, 0);
     this.waiting = true;
   }
   init() {
     this.addImage("wecker", window.ENUMS.IMAGE.WECKER);
+    this.addImage("weckerKlingeln", window.ENUMS.IMAGE.WECKER_KLINGELND);
+
     this.switchImage("wecker");
   }
   update() {
@@ -45,7 +48,9 @@ export default class Wecker extends MoveableObject {
   }
   draw() {
     //Wecker Klingeln
+    this.switchImage("wecker");
     if (this.zeit <= 10 && this.zeit > 0) {
+      this.switchImage("weckerKlingeln");
       this.wiggleTime += this.wiggleSpeed;
       this.setRotInDegree(0 + 10 * this.wiggleProgress);
       if (this.wiggleTime <= -1 || this.wiggleTime >= 1)
@@ -69,6 +74,6 @@ export default class Wecker extends MoveableObject {
     textSize(20);
     textFont(window.ENUMS.FONT.MARKER_FELT);
     textAlign(CENTER);
-    text(this.zeit, 0, 110, this.width * 1.3);
+    text(this.zeit, -2, 95, this.width * this.scale);
   }
 }
