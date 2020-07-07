@@ -69,6 +69,6 @@ export default class Wecker extends MoveableObject {
     textSize(20);
     textFont(window.ENUMS.FONT.MARKER_FELT);
     textAlign(CENTER);
-    text(this.zeit, 0, 110, this.width);
+    text(this.zeit, 0, 110, this.width * 1.3);
   }
 }

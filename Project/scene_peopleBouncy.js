@@ -60,7 +60,8 @@ export default class PeopleBouncy extends Scene {
 
     this.sign_name = new Sign(50, 0, "People Bouncy");
     this.sign_level = new Sign(215, 0, "Level " + this.level + "/3");
-    this.wecker = new Wecker(380, 0);
+    this.wecker = new Wecker(390, 0);
+    this.wecker.scaleSize(1.1);
     this.mentorVirus = new Button_MentorVirus(1260, 100, "MentorVirus");
 
     this.weiterButton = new Button_Weiter(
