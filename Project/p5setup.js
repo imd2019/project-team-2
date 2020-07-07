@@ -27,6 +27,7 @@ let hand_white_lack;
 let hand_heatmap;
 let sign;
 let wecker;
+let wecker_klingelnd;
 let startscreenFingers;
 let backgroundStartscreenLoch;
 let backgroundStartscreen;
@@ -215,7 +216,8 @@ function preload() {
   virus_2 = loadImage("images/Virus_2.png");
   virus_3 = loadImage("images/Virus_3.png");
   sign = loadImage("images/Schild.png");
-  wecker = loadImage("images/Wecker.png");
+  wecker = loadImage("images/PeopleBouncy_wecker.png");
+  wecker_klingelnd = loadImage("images/PeopleBouncy_wecker_klingelnd.png");
   mentorVirusText = loadImage("images/MentorVirusText.png");
   mentorVirus = loadImage("images/MentorVirus.png");
 
@@ -655,6 +657,7 @@ function setup() {
       VIRUS_3: virus_3,
       SIGN: sign,
       WECKER: wecker,
+      WECKER_KLINGELND: wecker_klingelnd,
     }),
     DOM: Object.freeze({
       ANIMATION_WHITE_PALM: animation_white_palm,
