@@ -1,16 +1,31 @@
 body {
-  background-image: url("images/loading.gif");
-
+  background-image: url("images/html_hintergrund.svg");
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
 #p5_loading {
-  background-color: url("images/html_hintergrund.png");
+  background-color: url("images/loading.gif");
+
   position: relative;
   width: 656px;
   height: 368px;
   background: url("images/loading.gif");
   background-size: contain;
+}
+canvas,
+video,
+img {
+  width: 75% !important;
+  height: auto !important;
+}
+#p5 {
+  background-color: url("images/html_hintergrund.svg");
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
 }
